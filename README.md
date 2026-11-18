@@ -9,6 +9,28 @@ Xưởng sản xuất phim lịch sử hoạt họa có biên kịch rõ ràng. 
 
 Phong cách kịch bản (khung 12 nhịp, giọng phản đề, gieo – trả, gương soi) và các con số nhịp được **đo từ hai tập mẫu của Việt Sử Kiêu Hùng**. Xưởng chỉ học **cấu trúc và nhịp**. Nhân vật, thoại, hình và nhạc của mỗi tập đều phải là của riêng mình.
 
+## Trang web của xưởng (Vercel)
+
+Toàn bộ xưởng chạy được trên web, không cần cài gì và không cần Claude:
+
+- **Các tập:** mỗi tập có 7 tab.
+  - **Tuyến phim:** sơ đồ tự vẽ từ kịch bản.
+  - **Kịch bản:** từng cảnh, từng shot.
+  - **Phiếu dựng:** hướng dẫn dựng CapCut cho từng shot.
+  - **Prompt ảnh:** có nút chép; kèm sổ nhân vật.
+  - **Kịch bản đọc:** lọc theo vai, tên file giọng ghi sẵn.
+  - **Kiểm tra:** so với khung 12 nhịp.
+  - **Tiến độ:** đánh dấu ảnh / giọng / dựng.
+- **Soạn tập:** tạo khung 12 nhịp, sửa cảnh / shot / thoại / chữ / nhân vật / gieo – trả, kiểm tra ngay khi gõ, tự lưu nháp, tải `tap.json`.
+- **Quy chuẩn & hướng dẫn:** khung 12 nhịp, hướng dẫn làm video, định dạng `tap.json`, quy trình làm tập mới trên web.
+
+**Đưa tập mới lên web:**
+1. Soạn xong, bấm *Tải tap.json*.
+2. Trên GitHub, mở repo này → `tap` → *Add file → Upload files* → đặt file ở `tap/<mã tập>/tap.json` → *Commit changes*.
+3. Vercel tự build lại; tập mới hiện sau khoảng 1 phút.
+
+Vercel chạy `python3 cong_cu/cap_nhat_danh_sach.py` (khai báo trong `vercel.json`) để cập nhật danh sách tập. Chạy thử trên máy: `python -m http.server 8765`, rồi mở http://localhost:8765.
+
 ## Cấu trúc
 
 ```
@@ -21,8 +43,12 @@ cong_cu/
   kiem_tra.py             kiểm tra kịch bản: nhịp, thoại lọt shot, màu đỏ, gieo – trả, file thiếu → kiem_tra.md
   phieu_dung.py           xuất phieu_dung.md, bang_shot.csv, prompt_anh.txt, kich_ban_doc.md
   dung_animatic.py        ráp video nháp: ảnh + camera ảo + chuyển cảnh + phướn + giọng + nhạc (tự hạ nhạc dưới giọng) + SFX
+  cap_nhat_danh_sach.py   ghi tap/danh_sach.json cho trang web (Vercel tự chạy khi build)
+index.html, web/          trang web của xưởng (xem tập, phiếu dựng, prompt, soạn tập, kiểm tra) – chạy thuần trình duyệt
+vercel.json               cấu hình deploy Vercel
 tap/
-  T01_nhu_nguyet/         tập mẫu (mới viết 4/12 nhịp để chạy thử xưởng)
+  danh_sach.json          danh sách tập cho web
+  T01_nhu_nguyet/         tập 1: SÔNG – Như Nguyệt 1077, đủ 15 cảnh / 210 shot
 .claude/skills/xuong-phim-vox/   skill để Claude viết và kiểm tra tập mới theo đúng quy trình
 ```
 

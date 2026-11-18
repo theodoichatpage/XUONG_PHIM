@@ -1,0 +1,109 @@
+/* Xưởng Phim VOX – giấy xám lạnh, mực đen, đỏ sẫm cho vật dẫn đường. Dark mode theo hệ thống. */
+:root{
+  --bg:#eceeee; --paper:#f8f9f9; --ink:#17191b; --muted:#5d6266; --line:#cdd1d3; --soft:#e2e5e6;
+  --red:#7a1414; --red-soft:#f0dcdc; --ok:#2f6b4f; --warn:#8a6414; --err:#9b2222;
+  --c-mo:#9aa1a6; --c-drama:#2f3a44; --c-action:#7a3b2e; --c-thuyet:#5f7f86; --c-tho:#b9c0c4; --c-ket:#77808a;
+  --font-d:"Noto Serif",Georgia,"Times New Roman",serif;
+  --font-b:"Be Vietnam Pro",system-ui,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#121416; --paper:#1a1d20; --ink:#e7e9ea; --muted:#9aa1a6; --line:#33383c; --soft:#24282c;
+  --red:#d0574f; --red-soft:#3a2222; --ok:#6fbf95; --warn:#d9b25c; --err:#ef7a7a;
+  --c-mo:#5b6368; --c-drama:#8fa5b8; --c-action:#c0705c; --c-thuyet:#6fa3ad; --c-tho:#3c4348; --c-ket:#6b7580;
+  color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--font-b)}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--bg)}
+.top-in{max-width:1240px;margin:0 auto;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px))}
+.brand{font:700 18px var(--font-d);text-decoration:none;letter-spacing:.01em}
+.brand b{color:#e7a3a3}
+.mainnav{display:flex;gap:4px;flex-wrap:wrap}
+.mainnav a{text-decoration:none;padding:6px 10px;border-radius:6px;font-size:14px;opacity:.85}
+.mainnav a[aria-current="page"]{background:rgba(255,255,255,.14);opacity:1}
+.wrap{max-width:1240px;margin:0 auto;padding-block:24px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:18px;outline:none}
+h1{font:700 clamp(24px,3.6vw,34px)/1.2 var(--font-d);margin:0;text-wrap:balance}
+h2{font:700 21px/1.3 var(--font-d);margin:0;text-wrap:balance}
+h3{font-size:15px;margin:0}
+.muted{color:var(--muted)}
+.lead{color:var(--muted);max-width:72ch;margin:0}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:14px;min-width:0}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:8px;text-decoration:none;min-width:0}
+.card:hover{border-color:var(--ink)}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.tab{font:600 14px var(--font-b);padding:7px 12px;border:1px solid transparent;border-radius:6px;background:none;color:var(--muted);cursor:pointer;text-decoration:none}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+button,.btn{font:600 14px var(--font-b);padding:8px 13px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+button:hover,.btn:hover{border-color:var(--ink)}
+.btn.primary,button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button.small{padding:3px 8px;font-size:12.5px;font-weight:500}
+button.danger{color:var(--err)}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.pill.err{background:var(--err);color:#fff}.pill.warn{background:var(--warn);color:#fff}.pill.ok{background:var(--ok);color:#fff}
+.pill.red{background:var(--red);color:#fff}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:1px 7px;color:var(--muted);white-space:nowrap}
+.tag.red{border-color:var(--red);color:var(--red)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+svg text{font-family:var(--font-b)}
+.scene{border:1px solid var(--line);border-radius:8px;background:var(--paper);min-width:0}
+.scene > summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.scene > summary::-webkit-details-marker{display:none}
+.scene[open] > summary{border-bottom:1px solid var(--line)}
+.sc-no{font:700 20px var(--font-d)}
+.sc-body{padding:12px 14px;display:grid;gap:10px}
+.shot{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--soft);min-width:0}
+.shot:first-child{border-top:0}
+.shot .st{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;display:grid;gap:3px;align-content:start}
+.shot .st b{color:var(--ink);font-size:13.5px}
+.shot .sb{display:grid;gap:5px;min-width:0}
+.line{border-left:3px solid var(--line);padding:2px 0 2px 10px}
+.line .who{font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--muted)}
+.prompt{font:12.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;white-space:pre-wrap;word-break:break-word}
+.do-mark{border-left:3px solid var(--red)}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:4px 12px;font-size:13.5px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;min-width:0}
+.progress{height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--ok)}
+.doc{max-width:80ch}
+.doc table{font-size:13.5px}
+.doc pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;overflow-x:auto}
+.doc code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
+.doc h1{font-size:28px}.doc h2{margin-top:18px}.doc h3{margin-top:14px}
+.doc-wrap{overflow-x:auto}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:14px;z-index:50}
+/* trình soạn */
+.ed{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:start}
+.ed-side{position:sticky;top:64px;display:grid;gap:12px}
+label.f{display:grid;gap:3px;font-size:12.5px;color:var(--muted);min-width:0}
+label.f input,label.f select,label.f textarea,.cell input,.cell select,.cell textarea{font:14px var(--font-b);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:6px 8px;width:100%;min-width:0}
+textarea{resize:vertical}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.shot-ed{border:1px solid var(--line);border-radius:6px;padding:10px;display:grid;gap:8px;background:var(--bg)}
+.shot-ed.do{border-left:4px solid var(--red)}
+.sub{display:grid;gap:6px}
+.subrow{display:grid;grid-template-columns:110px 1fr 70px 26px;gap:6px;align-items:start}
+.subrow.chu{grid-template-columns:96px 1fr 64px 64px 26px}
+.cell{min-width:0}
+.issues{display:grid;gap:4px;font-size:13px;max-height:340px;overflow:auto}
+.issues .i{padding:4px 6px;border-radius:4px;background:var(--bg)}
+.issues .i.e{border-left:3px solid var(--err)}.issues .i.w{border-left:3px solid var(--warn)}
+.issues a{color:inherit}
+@media (max-width:900px){.ed{grid-template-columns:1fr}.ed-side{position:static}}
+@media (max-width:640px){.shot{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.subrow,.subrow.chu{grid-template-columns:1fr 1fr}}
+@media print{.top,.tabs,button{display:none}}

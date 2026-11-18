@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo khong-can-cai",
+  "buildCommand": "python3 cong_cu/cap_nhat_danh_sach.py",
+  "outputDirectory": ".",
+  "headers": [
+    { "source": "/tap/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] }
+  ]
+}

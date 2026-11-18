@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xưởng Phim VOX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap">
+<link rel="stylesheet" href="web/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#/">Xưởng Phim <b>VOX</b></a>
+    <nav class="mainnav" aria-label="Điều hướng chính">
+      <a href="#/" data-nav="home">Các tập</a>
+      <a href="#/soan" data-nav="soan">Soạn tập</a>
+      <a href="#/quy-chuan" data-nav="quy">Quy chuẩn &amp; hướng dẫn</a>
+    </nav>
+  </div>
+</header>
+<main id="app" class="wrap" tabindex="-1"><p class="muted">Đang tải…</p></main>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="web/logic.js"></script>
+<script src="web/ve.js"></script>
+<script src="web/soan.js"></script>
+<script src="web/app.js"></script>
+</body>
+</html>

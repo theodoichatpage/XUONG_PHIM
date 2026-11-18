@@ -1,8 +1,8 @@
 {
  "ma_tap": "T01_nhu_nguyet",
  "tieu_de": "SÔNG – Phòng tuyến Như Nguyệt 1077",
- "trang_thai": "BẢN MẪU: mới viết cảnh C01–C04 (nhịp 1–4) để chạy thử xưởng. Các cảnh sau viết tiếp theo khung 12 nhịp.",
- "tong_du_kien_s": 1080,
+ "trang_thai": "Đã viết đủ 15 cảnh theo tuyến phim duyệt ngày 18/11/2026 (khuôn Đa Bang).",
+ "tong_du_kien_s": 1000,
  "fps": 24,
  "rong": 1920,
  "cao": 1080,
@@ -54,30 +54,51 @@
    "ten": "Người dẫn",
    "loai": "giọng",
    "giong": "nam trầm, chậm, 155 từ/phút"
+  },
+  {
+   "ma": "BA",
+   "ten": "Bà nội Gáo",
+   "loai": "hư cấu",
+   "nhan_dang": "bà cụ gầy, khăn vấn, áo nâu",
+   "anh_mau": "so_nhan_vat/BA.png",
+   "giong": "không thoại"
+  },
+  {
+   "ma": "HT",
+   "ten": "Hàn Tuấn",
+   "loai": "hư cấu",
+   "nhan_dang": "a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin",
+   "anh_mau": "so_nhan_vat/HT.png",
+   "giong": "nam, khàn, kiêu ngạo"
+  },
+  {
+   "ma": "SU",
+   "ten": "Sứ giả Tống",
+   "loai": "hư cấu",
+   "nhan_dang": "áo bào trơn, cúi đầu",
+   "giong": "nam, nhỏ nhẹ"
+  },
+  {
+   "ma": "THO",
+   "ten": "Tiếng ngâm thơ thần",
+   "loai": "giọng",
+   "giong": "nam trầm, ngâm vang có tiếng vọng (reverb lớn)"
   }
  ],
  "gieo_tra": [
   {
-   "ma": "MAI_CHEO",
-   "mo_ta": "mái chèo Kiên đưa cho bé Gáo",
+   "ma": "NO_CUU_MANG",
+   "mo_ta": "món nợ cứu mạng mùa lũ",
    "gieo": [
-    "C02_S06",
-    "C02_S08"
+    "C02_S06"
    ],
    "nhac": [
-    "C04_S05",
-    "C04_S08"
+    "C09_S13",
+    "C10_S12"
    ],
-   "tra": []
-  },
-  {
-   "ma": "NGUOI_LA_THANH",
-   "mo_ta": "câu chủ đề 'người đứng trên đê mới là thành'",
-   "gieo": [
-    "C03_S04"
-   ],
-   "nhac": [],
-   "tra": []
+   "tra": [
+    "C11_S05"
+   ]
   },
   {
    "ma": "LOI_THE_GAO",
@@ -86,7 +107,89 @@
     "C04_S07"
    ],
    "nhac": [],
-   "tra": []
+   "tra": [
+    "C11_S07"
+   ]
+  },
+  {
+   "ma": "NGUOI_LA_THANH",
+   "mo_ta": "câu chủ đề 'người đứng trên đê mới là thành'",
+   "gieo": [
+    "C03_S04"
+   ],
+   "nhac": [
+    "C04_S02",
+    "C09_S09"
+   ],
+   "tra": [
+    "C12_S05"
+   ]
+  },
+  {
+   "ma": "SO_DONG",
+   "mo_ta": "mười vạn người / một con đê (gương soi Quách Quỳ)",
+   "gieo": [
+    "C03_S02"
+   ],
+   "nhac": [
+    "C05_S05",
+    "C07_S22"
+   ],
+   "tra": [
+    "C12_S02"
+   ]
+  },
+  {
+   "ma": "LUA",
+   "mo_ta": "lửa phản chủ (không màu) → lửa trúng đích (đỏ sẫm)",
+   "gieo": [
+    "C07_S09"
+   ],
+   "nhac": [
+    "C07_S13"
+   ],
+   "tra": [
+    "C11_S07"
+   ]
+  },
+  {
+   "ma": "BA_VACH",
+   "mo_ta": "ba vạch khắc trên mái chèo",
+   "gieo": [
+    "C02_S08"
+   ],
+   "nhac": [
+    "C04_S08",
+    "C07_S28"
+   ],
+   "tra": [
+    "C09_S13"
+   ]
+  },
+  {
+   "ma": "THO_THAN",
+   "mo_ta": "thơ thần vọng ra từ đền",
+   "gieo": [
+    "C09_S16"
+   ],
+   "nhac": [],
+   "tra": [
+    "C13_S02"
+   ]
+  },
+  {
+   "ma": "MAI_CHEO",
+   "mo_ta": "mái chèo – vật dẫn đường",
+   "gieo": [
+    "C02_S06"
+   ],
+   "nhac": [
+    "C04_S05",
+    "C10_S14"
+   ],
+   "tra": [
+    "C14_S01"
+   ]
   }
  ],
  "canh": [
@@ -360,10 +463,11 @@
      "chuyen_dong": "keo_ra",
      "nhan_vat": [
       "GAO",
+      "BA",
       "KIEN"
      ],
-     "noi_dung": "Trên gò đất cao, bé ôm mái chèo; bóng người lạ quay đi, khuất vào màn mưa",
-     "prompt": "wide shot, a small boy on a muddy hill hugging a wooden oar, a soldier's silhouette walking away into the heavy rain",
+     "noi_dung": "Trên gò đất cao, bà nội ôm bé, bé ôm mái chèo; bóng người lạ quay đi, khuất vào màn mưa",
+     "prompt": "wide shot, a small boy and his old grandmother on a muddy hill, the boy hugging a wooden oar, a soldier's silhouette walking away into the heavy rain",
      "thoai": [
       {
        "vai": "GAO",
@@ -731,6 +835,2824 @@
      "noi_dung": "Kiên nhặt nửa mái chèo, ngón tay chạm vào ba vạch khắc. Anh nhận ra.",
      "prompt": "close-up top-down, a soldier's fingers touching three carved notches on half of a broken oar, a strip of deep crimson cloth, mud",
      "ghi_chu": "Khán giả biết, Gáo không biết: tạo kịch tính chờ."
+    }
+   ]
+  },
+  {
+   "ma": "C05",
+   "ten": "Quân Tống áp sông – bè gỗ thử vượt",
+   "nhip": "THU_THACH",
+   "muc_dich": "Thử thách 1: phe Tống ra mắt bằng số đông; bè gỗ thử vượt và bị đẩy lùi. Gáo đứng ngoài nhìn.",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/tran_mo.mp3",
+    "am_luong_db": -10,
+    "ghi_chu": "trống trận + dây, dồn dập"
+   },
+   "shot": [
+    {
+     "ma": "C05_S01",
+     "dai": 4.5,
+     "vao": "fade_den",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Bờ bắc: doanh trại Tống trải tới chân trời, khói bếp",
+     "prompt": "extreme wide high-angle shot of a vast Song dynasty army camp stretching to the horizon along a river's north bank, hundreds of tents, cooking smoke",
+     "nhan_vat": [],
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Bờ bắc sông Như Nguyệt"
+       ],
+       "luc": 0.5,
+       "dai": 3.5
+      }
+     ],
+     "am_thanh": [
+      "trống trận xa",
+      "đám đông"
+     ]
+    },
+    {
+     "ma": "C05_S02",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàng trống trận lớn, lính Tống đánh trống",
+     "prompt": "wide shot, a row of huge war drums beaten by Song dynasty Chinese soldiers in lamellar armor, dust",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S03",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Quách Quỳ đứng trên đài gỗ, gió thổi áo choàng",
+     "prompt": "medium shot low angle, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, standing on a wooden command platform, cloak blowing",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "chu": [
+      {
+       "kieu": "phuon",
+       "dong": [
+        "Quách Quỳ",
+        "chủ tướng quân Tống"
+       ],
+       "luc": 0.4,
+       "vi_tri": "phai"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S04",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tay Quách Quỳ cắm cờ nhỏ lên sa bàn dày đặc cờ",
+     "prompt": "extreme close-up, a commander's hand planting a tiny flag on a sand-table map crowded with tiny flags",
+     "nhan_vat": [
+      "QQ"
+     ]
+    },
+    {
+     "ma": "C05_S05",
+     "dai": 5.3,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Quách Quỳ nói, mắt nhìn sang bờ nam",
+     "prompt": "close-up, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, cold gaze across the river",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Mười vạn người. // Một con sông.",
+       "luc": 1.0,
+       "cam_xuc": "lạnh, chậm"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S06",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Lính Tống đẩy bè gỗ xuống nước",
+     "prompt": "wide shot, Song dynasty Chinese soldiers in lamellar armor pushing log rafts into a dark river, mist",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S07",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn nhảy lên bè, rút đao",
+     "prompt": "medium shot low angle, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, leaping onto a log raft, drawing a broad saber",
+     "nhan_vat": [
+      "HT"
+     ],
+     "chu": [
+      {
+       "kieu": "phuon",
+       "dong": [
+        "Hàn Tuấn",
+        "tiên phong Tống (hư cấu)"
+       ],
+       "luc": 0.4,
+       "vi_tri": "phai"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S08",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàn Tuấn hô",
+     "prompt": "medium close-up, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, shouting a command, saber raised",
+     "nhan_vat": [
+      "HT"
+     ],
+     "thoai": [
+      {
+       "vai": "HT",
+       "loi": "Qua sông!",
+       "luc": 0.4,
+       "cam_xuc": "gầm"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S09",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Hàng chục bè trôi ra giữa sông trong sương",
+     "prompt": "extreme wide high-angle shot, dozens of log rafts full of soldiers drifting out across a misty river",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S10",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bờ nam: Kiên trên đê giơ tay ra hiệu",
+     "prompt": "wide low-angle shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, standing on an earthen dike raising one arm as a signal, palisade stakes",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C05_S11",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên ra lệnh",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, shouting an order",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Thả thuyền!",
+       "luc": 0.3
+      }
+     ]
+    },
+    {
+     "ma": "C05_S12",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Thuyền độc mộc nhỏ của ta lao ra từ sau hàng cọc",
+     "prompt": "wide shot, small Vietnamese dugout canoes darting out from behind rows of river stakes, oars splashing",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S13",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mưa tên che kín trời",
+     "prompt": "a sky darkened by a dense volley of arrows",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S14",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống giơ khiên trên bè, tên cắm đầy khiên",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor on a raft raising shields bristling with arrows",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S15",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "thấp sát nước",
+     "chuyen_dong": "zoom_giat",
+     "noi_dung": "Cọc nhọn dưới nước đâm thủng đáy bè",
+     "prompt": "close-up at water level, a sharpened underwater stake splitting a log raft",
+     "nhan_vat": [],
+     "diem_nhan": 0.6
+    },
+    {
+     "ma": "C05_S16",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Bè nghiêng, lính Tống rơi xuống nước",
+     "prompt": "wide shot, a raft tipping over, soldiers falling into the river",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S17",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Người chèo đò của ta lách thuyền giữa cọc, thuộc từng khúc nước",
+     "prompt": "medium shot, a Vietnamese ferryman steering a small boat expertly between hidden stakes",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S18",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Gáo nấp trong lau sậy nhìn trận, ôm nửa mái chèo còn lại",
+     "prompt": "medium shot through reeds, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, hiding and watching the battle, clutching the blade half of a broken oar",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C05_S19",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàn Tuấn chém đứt dây thuyền ta, đá người chèo xuống nước",
+     "prompt": "medium shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, cutting a boat rope and kicking a ferryman into the water",
+     "nhan_vat": [
+      "HT"
+     ]
+    },
+    {
+     "ma": "C05_S20",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên nhìn thấy, siết chặt cọc gỗ",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, watching grimly, gripping a wooden stake",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C05_S21",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Bè bị đẩy lùi trôi về bờ bắc, khói",
+     "prompt": "wide high-angle shot, broken rafts drifting back toward the north bank, smoke on water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S22",
+     "dai": 5.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Quách Quỳ không đổi sắc mặt",
+     "prompt": "medium shot, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, expressionless on the command platform",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Đêm nay / chưa phải đêm của sông.",
+       "luc": 0.5,
+       "cam_xuc": "thản nhiên"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S23",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tay Quách Quỳ nhấc một lá cờ khỏi sa bàn, đặt sang chỗ khác",
+     "prompt": "close-up, a hand lifting one tiny flag off a sand-table map and placing it elsewhere",
+     "nhan_vat": [
+      "QQ"
+     ]
+    },
+    {
+     "ma": "C05_S24",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Bờ nam: lính reo, dân phu vẫn gánh đất",
+     "prompt": "wide shot, Vietnamese soldiers cheering on a dike while villagers keep carrying baskets of earth",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C05_S25",
+     "dai": 6,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên nhìn sang bờ bắc; Lý Thường Kiệt đến bên",
+     "prompt": "medium two-shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf and an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds, standing side by side on the dike looking north",
+     "nhan_vat": [
+      "KIEN",
+      "LTK"
+     ],
+     "thoai": [
+      {
+       "vai": "LTK",
+       "loi": "Họ không thử sông. / Họ thử chúng ta.",
+       "luc": 1.0,
+       "cam_xuc": "trầm"
+      }
+     ]
+    },
+    {
+     "ma": "C05_S26",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Hai bờ, dòng sông đen ở giữa, sương",
+     "prompt": "extreme wide high-angle shot, two riverbanks with a black river between them, mist, torches on both sides",
+     "nhan_vat": []
+    }
+   ]
+  },
+  {
+   "ma": "C06",
+   "ten": "Bản đồ: mưu cầu phao của Quách Quỳ",
+   "nhip": "THU_THACH",
+   "muc_dich": "Thuyết minh: số đông của Tống, thế sông, mưu cầu phao; nhấn vào người chèo đò.",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/thuyet_minh.mp3",
+    "am_luong_db": -14,
+    "ghi_chu": "nền trầm, ostinato đều"
+   },
+   "shot": [
+    {
+     "ma": "C06_S01",
+     "dai": 6.5,
+     "vao": "cat",
+     "co_canh": "Bản đồ",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Bản đồ mực: mũi tên quân Tống tràn qua biên giới phía bắc",
+     "prompt": "top-down view of a hand-drawn ink map on aged paper, Song dynasty and Dai Viet territories, a river line, no labels, thick black ink arrows sweeping south across the northern border",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Mùa xuân năm 1077, / mười vạn quân Tống tràn qua biên giới phía bắc.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S02",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Đoàn quân Tống hành quân qua núi",
+     "prompt": "wide high-angle shot, a long column of Song dynasty Chinese soldiers in lamellar armor marching through mountain passes",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C06_S03",
+     "dai": 5.5,
+     "vao": "cat",
+     "co_canh": "Bản đồ",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Mũi tên dừng lại trước một đường sông",
+     "prompt": "top-down view of a hand-drawn ink map on aged paper, Song dynasty and Dai Viet territories, a river line, no labels, black ink arrows stopping at a winding river line",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Họ đi rất nhanh, / cho đến khi gặp con sông này.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S04",
+     "dai": 5,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Sông Như Nguyệt: không rộng nhưng chảy xiết",
+     "prompt": "extreme wide shot, a deep fast-flowing river with strong currents between steep banks",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Như Nguyệt không rộng, / nhưng sâu và chảy xiết.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S05",
+     "dai": 6.5,
+     "vao": "cat",
+     "co_canh": "Bản đồ",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Bản đồ: tuyến đê, cọc, chiến lũy bờ nam vẽ dần",
+     "prompt": "top-down view of a hand-drawn ink map on aged paper, Song dynasty and Dai Viet territories, a river line, no labels, a long fortified line of dikes and palisades drawn along the south bank",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Bờ nam, nhà Lý đắp đê, cắm cọc, / dựng chiến lũy suốt nhiều dặm.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S06",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Hàng cọc, chiến lũy, lính canh",
+     "prompt": "wide low-angle shot, a palisade of sharpened stakes and earthen ramparts with guards, grey sky",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C06_S07",
+     "dai": 9.5,
+     "vao": "cat",
+     "co_canh": "Bản đồ",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Bản đồ: thủy quân Tống bị chặn ngoài cửa biển; quân bộ đứng bên kia sông",
+     "prompt": "top-down view of a hand-drawn ink map on aged paper, Song dynasty and Dai Viet territories, a river line, no labels, ink ships blocked at a river mouth by a line of small boats, infantry symbols massed on the north bank",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Thủy quân Tống bị chặn ngoài cửa biển. / Không có thuyền, / mười vạn người đứng nhìn sang bờ bên kia.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S08",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lính Tống đứng nhìn sang sông",
+     "prompt": "wide shot from behind, Song dynasty Chinese soldiers in lamellar armor standing on the riverbank staring across the water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C06_S09",
+     "dai": 6.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Lính Tống chặt cây, đóng bè, nối phao",
+     "prompt": "wide shot, Song dynasty Chinese soldiers in lamellar armor felling trees and lashing logs into pontoons along the bank",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Quách Quỳ cho chặt cây, đóng bè, / nối từng nhịp cầu phao.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S10",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Quách Quỳ nhìn trời",
+     "prompt": "medium close-up, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, looking up at a thin crescent moon behind clouds",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Hắn chờ một đêm không trăng.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S11",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Vầng trăng mỏng bị mây che dần",
+     "prompt": "extreme close-up, a thin crescent moon being covered by dark clouds",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C06_S12",
+     "dai": 10.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Bờ nam: lính, dân phu, người chèo đò bên những con đò nhỏ",
+     "prompt": "wide shot, Vietnamese soldiers, villagers and ferrymen with small boats along the south bank at dusk",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Còn bên này, / người giữ bến là lính, / là dân phu, / và những người chèo đò thuộc từng khúc nước.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C06_S13",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tay một người chèo đò già quấn dây vào mái chèo",
+     "prompt": "close-up, an old ferryman's weathered hands wrapping rope around an oar",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C06_S14",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Gáo ngồi một mình trên đò, buộc lại lưỡi mái chèo gãy",
+     "prompt": "medium shot, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, alone in a small boat, binding the broken blade of an oar",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C06_S15",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Sông lúc chạng vạng, đuốc hai bờ thắp lên",
+     "prompt": "extreme wide high-angle shot, the river at dusk, torches being lit along both banks",
+     "nhan_vat": []
+    }
+   ]
+  },
+  {
+   "ma": "C07",
+   "ten": "Bè lửa của ta – gió đổi chiều",
+   "nhip": "THU_THACH",
+   "muc_dich": "Vũ khí phản chủ: bè lửa của ta bị gió thổi ngược. Lửa ở cảnh này vẽ KHÔNG MÀU (trắng xám).",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 1.5
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/be_lua.mp3",
+    "am_luong_db": -10,
+    "ghi_chu": "dâng lên khi bè trôi, gãy đột ngột lúc gió đổi"
+   },
+   "shot": [
+    {
+     "ma": "C07_S01",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lều chỉ huy ban đêm: Kiên quỳ trước Lý Thường Kiệt",
+     "prompt": "wide shot inside a command tent at night, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf kneeling before an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds, oil lamp",
+     "nhan_vat": [
+      "KIEN",
+      "LTK"
+     ]
+    },
+    {
+     "ma": "C07_S02",
+     "dai": 5.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên xin lệnh",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, kneeling, earnest",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Để thuộc hạ thả bè lửa xuôi dòng.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C07_S03",
+     "dai": 6.5,
+     "vao": "cat",
+     "co_canh": "OTS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Qua vai Lý Thường Kiệt thấy Kiên",
+     "prompt": "over-the-shoulder shot from behind an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds toward a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf",
+     "nhan_vat": [
+      "LTK",
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Cháy được cầu phao, / chúng phải đóng lại từ đầu.",
+       "luc": 0.3
+      }
+     ]
+    },
+    {
+     "ma": "C07_S04",
+     "dai": 7,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lý Thường Kiệt",
+     "prompt": "close-up, an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds, lamp light, heavy gaze",
+     "nhan_vat": [
+      "LTK"
+     ],
+     "thoai": [
+      {
+       "vai": "LTK",
+       "loi": "Lửa không có chủ. // Gió đổi / thì nó cũng đổi.",
+       "luc": 0.4,
+       "cam_xuc": "chậm"
+      }
+     ]
+    },
+    {
+     "ma": "C07_S05",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên đáp",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Gió đang thổi xuống.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C07_S06",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lý Thường Kiệt nhắm mắt, gật đầu",
+     "prompt": "close-up, an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds, closing his eyes and nodding slowly",
+     "nhan_vat": [
+      "LTK"
+     ]
+    },
+    {
+     "ma": "C07_S07",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Dân phu chất rơm, đổ dầu lên bè",
+     "prompt": "wide shot at night, villagers piling straw and pouring oil onto log rafts by torchlight",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S08",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "zoom_giat",
+     "noi_dung": "Đuốc châm vào rơm",
+     "prompt": "close-up, a torch igniting oil-soaked straw, fire rendered in pale white and grey glow",
+     "nhan_vat": [],
+     "diem_nhan": 0.8
+    },
+    {
+     "ma": "C07_S09",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Năm bè lửa trôi xuôi, mặt sông sáng trắng",
+     "prompt": "wide high-angle shot, five burning rafts drifting downstream, the whole river lit by pale white-grey firelight",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S10",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống trên cầu phao dang dở hoảng hốt",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor on an unfinished pontoon bridge panicking at approaching fire",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S11",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mặt Kiên sáng lửa, hy vọng",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, face lit by pale firelight, hopeful",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C07_S12",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "hếch",
+     "chuyen_dong": "zoom_giat",
+     "noi_dung": "Lá cờ trên đê đột ngột đổi hướng bay",
+     "prompt": "close-up, a war banner on a dike suddenly whipping around to fly the opposite way",
+     "nhan_vat": [],
+     "diem_nhan": 0.9
+    },
+    {
+     "ma": "C07_S13",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Ngọn lửa trên bè ngả ngược",
+     "prompt": "extreme close-up, flames on a raft bending backward against the wind, pale grey fire",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S14",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Bè lửa dạt ngược vào bến nam, chạm thuyền ta",
+     "prompt": "wide shot, burning rafts drifting back into the southern harbor and hitting moored boats",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S15",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Thuyền nhà bốc cháy, dân phu nhảy xuống nước",
+     "prompt": "medium shot, small boats catching fire, villagers jumping into the water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S16",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên hét lệnh",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, shouting through smoke",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Cắt dây! / Đẩy ra!",
+       "luc": 0.3
+      }
+     ]
+    },
+    {
+     "ma": "C07_S17",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính ta dùng sào đẩy bè lửa",
+     "prompt": "medium shot, soldiers pushing a burning raft away with long bamboo poles",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S18",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Dây thuyền bị chém đứt",
+     "prompt": "close-up, a mooring rope being cut by a blade",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S19",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Khói phủ bến, bóng người chạy",
+     "prompt": "wide shot, thick smoke over a harbor, silhouettes running",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S20",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Một người chèo đò già bị bỏng ôm tay",
+     "prompt": "medium shot, an old ferryman clutching his burned arm, smoke",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S21",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bờ bắc: lính Tống reo hò, chỉ trỏ",
+     "prompt": "wide shot across the river, Song dynasty Chinese soldiers in lamellar armor cheering and pointing at the fire",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S22",
+     "dai": 6,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Quách Quỳ trên đài cười nhạt",
+     "prompt": "medium close-up low angle, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, a thin smile",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Trời cũng biết / đứng về phía đông người.",
+       "luc": 0.5
+      }
+     ]
+    },
+    {
+     "ma": "C07_S23",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Gáo kéo một đứa trẻ ra khỏi khói",
+     "prompt": "medium shot, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, pulling a small child out of the smoke",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C07_S24",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Gáo nhìn Kiên, ánh mắt khinh",
+     "prompt": "close-up, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, glaring with contempt through smoke",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C07_S25",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bến nam tan hoang, ba chiếc thuyền cháy rụi",
+     "prompt": "wide high-angle shot, a ruined harbor, three boats burned to black hulls",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C07_S26",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên đứng giữa khói, tay cầm nửa mái chèo",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, standing alone in smoke holding the handle half of a broken oar",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C07_S27",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Kiên thì thầm",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, ash on his face",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Lửa của ta… / đốt nhà ta.",
+       "luc": 0.5,
+       "cam_xuc": "thì thầm"
+      }
+     ]
+    },
+    {
+     "ma": "C07_S28",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Nửa mái chèo, ba vạch khắc, dải vải đỏ sẫm",
+     "prompt": "extreme close-up, the handle half of an oar with three carved notches and a strip of deep crimson cloth, ash falling",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "do": true
+    },
+    {
+     "ma": "C07_S29",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Mặt sông khói; cầu phao Tống vẫn nối thêm một nhịp",
+     "prompt": "extreme wide high-angle shot, smoke over the river while the Song pontoon bridge is extended by another section",
+     "nhan_vat": []
+    }
+   ]
+  },
+  {
+   "ma": "C08",
+   "ten": "Đêm không trăng: song đấu trên cầu phao",
+   "nhip": "DINH_ACTION",
+   "muc_dich": "Đỉnh action: khoảng lặng 5 s → tập kích → song đấu nhanh nhất phim → cả hai rơi xuống sông, kết quả chưa ngã ngũ.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 2.0
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/song_dau.mp3",
+    "am_luong_db": -9,
+    "luc": 9,
+    "ghi_chu": "vào lúc đuốc bừng sáng, dừng hẳn khi rơi xuống nước"
+   },
+   "shot": [
+    {
+     "ma": "C08_S01",
+     "dai": 5,
+     "vao": "cat",
+     "co_canh": "Đen",
+     "goc": "-",
+     "chuyen_dong": "dung",
+     "noi_dung": "Màn đen: chỉ tiếng nước và nhịp thở",
+     "prompt": "",
+     "nhan_vat": [],
+     "am_thanh": [
+      "nước vỗ",
+      "tiếng thở"
+     ],
+     "loai": "den"
+    },
+    {
+     "ma": "C08_S02",
+     "dai": 4,
+     "vao": "fade_den",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Đêm không trăng: cầu phao Tống nối gần sát bờ nam, đuốc che",
+     "prompt": "wide shot on a moonless night, a long pontoon bridge almost reaching the south bank, shielded torches, black water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S03",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lính Tống bò trên cầu phao, ngậm tăm",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor crawling silently along a pontoon bridge in darkness",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S04",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "thấp",
+     "chuyen_dong": "dung",
+     "noi_dung": "Chân trần bước trên ván ướt",
+     "prompt": "close-up, bare feet stepping on wet planks of a floating bridge",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S05",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên nằm trên đê, mắt mở trong bóng tối",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, lying flat on a dike in darkness, eyes open",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S06",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mắt Kiên",
+     "prompt": "extreme close-up of a young soldier's eye in darkness with a thin scar above the brow",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S07",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tấm ván cầu phao kêu cót két",
+     "prompt": "close-up, a wooden plank of a pontoon bridge flexing under weight",
+     "nhan_vat": [],
+     "am_thanh": [
+      "ván gỗ cót két"
+     ]
+    },
+    {
+     "ma": "C08_S08",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên ra hiệu",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, whispering",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Giờ.",
+       "luc": 0.4,
+       "cam_xuc": "thì thầm"
+      }
+     ]
+    },
+    {
+     "ma": "C08_S09",
+     "dai": 2,
+     "vao": "flash_trang",
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàng đuốc trên đê đồng loạt bừng sáng",
+     "prompt": "wide low-angle shot, a long row of torches flaring up at once along a dike",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S10",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống trên cầu sững lại, chói mắt",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor on a pontoon bridge frozen, shielding their eyes",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S11",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mưa tên",
+     "prompt": "a volley of arrows streaking through torchlight",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S12",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống ngã xuống nước",
+     "prompt": "medium shot, soldiers falling off a bridge into black water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S13",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống tràn qua cầu, xông lên bãi",
+     "prompt": "wide shot, Song dynasty Chinese soldiers in lamellar armor rushing across the bridge onto the muddy bank",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S14",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Giáo đâm",
+     "prompt": "medium shot, spears thrusting in close combat, motion blur",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S15",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Khiên vỡ",
+     "prompt": "close-up, a wooden shield splintering under an axe",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S16",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "hếch",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên lao xuống từ đê, rút kiếm",
+     "prompt": "medium shot low angle, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, leaping down from the dike drawing his sword",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S17",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên chém, xoay người",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, slashing and spinning, motion blur",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S18",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn đứng giữa cầu phao, giơ đao ra hiệu dừng",
+     "prompt": "wide shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, standing in the middle of the pontoon bridge, saber raised to halt the fighting",
+     "nhan_vat": [
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S19",
+     "dai": 8.0,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn thách đấu",
+     "prompt": "medium close-up low angle, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, torchlight",
+     "nhan_vat": [
+      "HT"
+     ],
+     "thoai": [
+      {
+       "vai": "HT",
+       "loi": "Tướng nam! / Đấu với ta. // Ngươi thắng, / ta cho quân rút.",
+       "luc": 0.4,
+       "cam_xuc": "khinh khỉnh"
+      }
+     ]
+    },
+    {
+     "ma": "C08_S20",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên thở dốc, nhìn Hàn Tuấn",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, breathing hard, staring",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S21",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lính hai bên lùi lại, giữ đuốc, tạo vòng",
+     "prompt": "medium shot, soldiers of both sides stepping back holding torches, forming a circle",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S22",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên bước lên cầu phao chòng chành",
+     "prompt": "wide shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, stepping onto a swaying pontoon bridge",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S23",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hai lưỡi va nhau tóe lửa trắng",
+     "prompt": "close-up, two blades clashing with white sparks",
+     "nhan_vat": [
+      "KIEN",
+      "HT"
+     ],
+     "am_thanh": [
+      "va kiếm"
+     ]
+    },
+    {
+     "ma": "C08_S24",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàn Tuấn chém ngang, Kiên ngửa người tránh",
+     "prompt": "medium shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin swinging a saber as a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf bends back to dodge",
+     "nhan_vat": [
+      "KIEN",
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S25",
+     "dai": 1.0,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Ván cầu lún xuống nước",
+     "prompt": "extreme close-up, a bridge plank dipping under water",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S26",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên đâm, Hàn Tuấn gạt",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf thrusting, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin parrying",
+     "nhan_vat": [
+      "KIEN",
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S27",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Chân trượt mép ván",
+     "prompt": "close-up, a boot slipping at the edge of a wet plank",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S28",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Từ xa: hai bóng người trên dải cầu giữa sông đen, đuốc hai bờ",
+     "prompt": "wide shot from afar, two dueling silhouettes on a thin floating bridge in the middle of a black river, torches on both banks",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S29",
+     "dai": 1.0,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn cười",
+     "prompt": "close-up, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, grinning",
+     "nhan_vat": [
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S30",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàn Tuấn đá Kiên ngã xuống ván",
+     "prompt": "medium shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin kicking a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf down onto the planks",
+     "nhan_vat": [
+      "KIEN",
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S31",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lưỡi đao bổ xuống cắm vào ván cạnh mặt Kiên",
+     "prompt": "close-up, a saber blade slamming into a plank inches from a fallen soldier's face",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "am_thanh": [
+      "va kiếm"
+     ]
+    },
+    {
+     "ma": "C08_S32",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên lăn, chém dây buộc phao",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf rolling and slashing a pontoon lashing rope",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S33",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Dây đứt",
+     "prompt": "close-up, a thick rope snapping",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S34",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Nhịp cầu nghiêng",
+     "prompt": "wide shot, a pontoon bridge section tilting sharply",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S35",
+     "dai": 1.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Cả hai chao đảo",
+     "prompt": "medium shot, two fighters staggering on a tilting bridge",
+     "nhan_vat": [
+      "KIEN",
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S36",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên lao tới",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, lunging forward",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S37",
+     "dai": 1.0,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hai lưỡi khóa nhau",
+     "prompt": "extreme close-up, two blades locked together",
+     "nhan_vat": [],
+     "am_thanh": [
+      "va kiếm"
+     ]
+    },
+    {
+     "ma": "C08_S38",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mặt sát mặt, Hàn Tuấn nói",
+     "prompt": "medium close-up, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin face to face with a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, blades locked",
+     "nhan_vat": [
+      "HT",
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "HT",
+       "loi": "Sông… / không phải của ngươi.",
+       "luc": 0.3,
+       "cam_xuc": "rít qua kẽ răng"
+      }
+     ]
+    },
+    {
+     "ma": "C08_S39",
+     "dai": 3.1,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên đáp",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, blades locked",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Cũng không phải của ngươi.",
+       "luc": 0.2
+      }
+     ]
+    },
+    {
+     "ma": "C08_S40",
+     "dai": 1.2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "zoom_giat",
+     "noi_dung": "Nhịp cầu gãy rắc",
+     "prompt": "close-up, a pontoon bridge section snapping apart",
+     "nhan_vat": [],
+     "am_thanh": [
+      "gỗ gãy lớn"
+     ],
+     "diem_nhan": 0.4
+    },
+    {
+     "ma": "C08_S41",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Cả hai rơi xuống nước, đuốc rơi theo",
+     "prompt": "wide shot, two fighters falling into the river, torches tumbling after them",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S42",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Dưới nước: hai bóng người chìm, bọt khí",
+     "prompt": "medium shot underwater, two dark figures sinking, air bubbles, dim torchlight above",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S43",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Dưới nước: tay Kiên vươn lên, ánh đuốc mờ trên mặt nước",
+     "prompt": "extreme close-up underwater, a hand reaching up toward blurred torchlight on the surface",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S44",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mặt sông: nhịp cầu gãy trôi, không thấy ai",
+     "prompt": "wide shot, broken bridge sections drifting on the black river, no one visible",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C08_S45",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bờ nam: Kiên ngoi lên bám cọc, ho sặc",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, surfacing and clinging to a stake, coughing",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C08_S46",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bờ bắc: Hàn Tuấn được kéo lên bè Tống, ôm vai",
+     "prompt": "wide shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin being hauled onto a raft by soldiers, clutching his shoulder",
+     "nhan_vat": [
+      "HT"
+     ]
+    },
+    {
+     "ma": "C08_S47",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Cầu phao đứt đôi giữa sông, đuốc trôi",
+     "prompt": "extreme wide high-angle shot, a pontoon bridge broken in two in the middle of the river, floating torches",
+     "nhan_vat": []
+    }
+   ]
+  },
+  {
+   "ma": "C09",
+   "ten": "Thư dụ hàng – diễn văn – trả nửa mái chèo – thơ thần",
+   "nhip": "DIEN_VAN",
+   "muc_dich": "Phản diện đưa lối thoát; Kiên nói lại câu chủ đề bằng hình ảnh mới; Gáo nhận ra người cứu mình; thơ thần vọng ra.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 1.5
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/dien_van.mp3",
+    "am_luong_db": -16,
+    "ghi_chu": "dây dâng chậm 60 s; tắt hẳn khi tiếng ngâm thơ vào"
+   },
+   "shot": [
+    {
+     "ma": "C09_S01",
+     "dai": 4,
+     "vao": "fade_den",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Sáng sớm: bến nam ướt, khói tàn; thuyền sứ Tống cắm cờ trắng sang",
+     "prompt": "wide shot at dawn, a wet smoky southern harbor, a small boat with a white flag crossing the river",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C09_S02",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Sứ Tống dâng thư",
+     "prompt": "medium shot, a Song dynasty envoy in a plain robe bowing and holding out a sealed letter",
+     "nhan_vat": [
+      "SU"
+     ],
+     "thoai": [
+      {
+       "vai": "SU",
+       "loi": "Thư của Quách tướng quân.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C09_S03",
+     "dai": 11.7,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Lý Thường Kiệt đọc thư",
+     "prompt": "medium close-up, an elderly Vietnamese general with a trimmed white beard, dark robe embroidered with clouds, reading a letter aloud, morning light",
+     "nhan_vat": [
+      "LTK"
+     ],
+     "thoai": [
+      {
+       "vai": "LTK",
+       "loi": "Hàng, / thì giữ được mạng / và giữ được đất. // Không hàng, / thì sông này sẽ đầy xác.",
+       "luc": 0.5,
+       "cam_xuc": "đọc lạnh, không cảm xúc"
+      }
+     ]
+    },
+    {
+     "ma": "C09_S04",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên vai băng bó, lắng nghe",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, bandaged shoulder, listening",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C09_S05",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Lính và dân phu tụ trên đê, mệt mỏi, nhìn nhau",
+     "prompt": "wide shot, exhausted soldiers and villagers gathered on a dike, looking at each other",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C09_S06",
+     "dai": 9.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Kiên đứng lên mặt đê nói với mọi người",
+     "prompt": "medium shot low angle, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, standing on top of the dike addressing a crowd",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Ai muốn về, / ta không giữ. // Về bây giờ, / còn kịp gặt mùa này.",
+       "luc": 0.5
+      }
+     ]
+    },
+    {
+     "ma": "C09_S07",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Một dân phu già đặt quang gánh xuống, ngập ngừng",
+     "prompt": "close-up, an old villager slowly setting down his shoulder pole with two baskets, hesitating",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C09_S08",
+     "dai": 13.6,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Kiên nói tiếp, push-in chậm",
+     "prompt": "medium close-up low angle, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, wind in his grey scarf",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Năm ngoái lũ, / đê này vỡ ba chỗ. // Không phải vì đất yếu. / Vì người bỏ đi trước khi nước tới.",
+       "luc": 0.5,
+       "cam_xuc": "chậm, chắc"
+      }
+     ],
+     "toc_do": 1.2
+    },
+    {
+     "ma": "C09_S09",
+     "dai": 7.3,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Kiên nói câu chủ đề lần nữa",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Đê là đất. // Người đứng trên đê / mới là thành.",
+       "luc": 0.5
+      }
+     ]
+    },
+    {
+     "ma": "C09_S10",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Dân phu già cầm lại quang gánh; mọi người lần lượt đứng dậy",
+     "prompt": "wide shot, the old villager lifting his shoulder pole again, others standing up one by one",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C09_S11",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Gáo đứng cuối đám đông, khoanh tay",
+     "prompt": "medium shot, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, standing at the back of the crowd, arms crossed",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C09_S12",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên đi qua đám đông, đặt nửa mái chèo vào tay Gáo, không nói",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf placing the handle half of an oar tied with a deep crimson cloth into the hands of a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, silently",
+     "nhan_vat": [
+      "KIEN",
+      "GAO"
+     ],
+     "do": true
+    },
+    {
+     "ma": "C09_S13",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Tay Gáo ráp hai nửa mái chèo: ba vạch khắc khớp lại",
+     "prompt": "extreme close-up, two hands fitting two broken halves of an oar together, three carved notches lining up, deep crimson cloth",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "do": true
+    },
+    {
+     "ma": "C09_S14",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Gáo ngẩng lên, nhận ra",
+     "prompt": "close-up, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, looking up in sudden recognition",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Người giữ đê…",
+       "luc": 1.4,
+       "cam_xuc": "thì thầm, run"
+      }
+     ]
+    },
+    {
+     "ma": "C09_S15",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên đã quay đi, không ngoảnh lại",
+     "prompt": "wide shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf walking away along the dike without looking back",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C09_S16",
+     "dai": 8.5,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Đêm: ngôi đền nhỏ bên sông, đèn le lói, tiếng ngâm thơ vọng ra",
+     "prompt": "extreme wide shot at night, a small ancient temple by the river with a faint lamp glow, mist",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "THO",
+       "loi": "Nam quốc sơn hà Nam đế cư. / Tiệt nhiên định phận tại thiên thư.",
+       "luc": 0.6,
+       "cam_xuc": "ngâm, vang, chậm"
+      }
+     ],
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Tương truyền",
+        "thơ thần vọng ra từ đền bên sông"
+       ],
+       "luc": 0.8,
+       "dai": 5
+      }
+     ]
+    },
+    {
+     "ma": "C09_S17",
+     "dai": 8.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Lính hai bờ ngừng tay lắng nghe; lính Tống nhìn nhau sợ hãi",
+     "prompt": "wide shot at night, soldiers on both banks frozen, listening; Song dynasty Chinese soldiers in lamellar armor on the north bank glancing at each other in fear",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "THO",
+       "loi": "Như hà nghịch lỗ lai xâm phạm? / Nhữ đẳng hành khan thủ bại hư.",
+       "luc": 0.4,
+       "cam_xuc": "ngâm, vang, chậm"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C10",
+   "ten": "Tổng vượt sông – mực đen trắng + bài hát",
+   "nhip": "TRAN_CUOI",
+   "muc_dich": "Trận cuối đổi chất liệu sang mực đen trắng. Màu duy nhất: dải vải đỏ sẫm trên mái chèo của Gáo. Hình nhắc mùa lũ.",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/bai_hat.mp3",
+    "am_luong_db": -8,
+    "luc": 6,
+    "ghi_chu": "bài hát / hợp xướng bi tráng, phủ cả trận"
+   },
+   "shot": [
+    {
+     "ma": "C10_S01",
+     "dai": 6,
+     "vao": "fade_den",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Sương sớm: hàng trăm bè, thuyền Tống cùng lúc rời bờ bắc",
+     "prompt": "wide shot, hundreds of rafts and boats leaving the north bank at once in morning mist, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S02",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống dàn khiên trên bè",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor with shields locked on rafts, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S03",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "dung",
+     "noi_dung": "Trên đê ta: Kiên và lính chờ, giáo chĩa",
+     "prompt": "wide low-angle shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf and soldiers waiting on the dike with spears lowered, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C10_S04",
+     "dai": 8,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Top-down: sông như một nét mực, bè như chấm đen tiến sang",
+     "prompt": "top-down extreme wide shot, the river as a single brush stroke, rafts as black dots crossing, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S05",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Va chạm ở bãi, giáo đâm, mực văng",
+     "prompt": "medium shot, spears clashing on the riverbank, ink splatter, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S06",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "hếch",
+     "chuyen_dong": "rung",
+     "noi_dung": "Tay dân phu ném đá từ đê",
+     "prompt": "close-up, villagers' hands hurling stones from a dike, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S07",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Một đoạn đê vỡ, nước và người tràn qua",
+     "prompt": "wide shot, a section of the dike collapsing, water and soldiers pouring through, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S08",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên cùng vài người lấp chỗ vỡ bằng bao đất và thân mình",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf and a few men plugging a breach with sandbags and their own bodies, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Lấp! / Lấp bằng người cũng được!",
+       "luc": 0.4,
+       "cam_xuc": "gào"
+      }
+     ]
+    },
+    {
+     "ma": "C10_S09",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "hếch",
+     "chuyen_dong": "rung",
+     "noi_dung": "Hàn Tuấn vai băng, chém lên đê",
+     "prompt": "close-up, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, bandaged shoulder, slashing up the dike, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "HT"
+     ]
+    },
+    {
+     "ma": "C10_S10",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lính ta ngã",
+     "prompt": "medium shot, defenders falling, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S11",
+     "dai": 6,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Cầu phao chính nối lại, chạm bờ nam; quân Tống ùn ùn qua",
+     "prompt": "wide shot, a rebuilt pontoon bridge reaching the south bank, soldiers swarming across, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S12",
+     "dai": 7,
+     "vao": "hoa_hinh",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hình nhắc: mùa lũ, bóng người cõng đứa trẻ qua nước, mực loang",
+     "prompt": "wide shot, a ghostly ink memory: a man carrying a child on his back through floodwater, ink bleeding into white, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C10_S13",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Gáo trên bến nhìn cầu phao, rồi nhìn chiếc đò của mình",
+     "prompt": "medium shot, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, on the bank looking at the bridge then at his own small boat, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C10_S14",
+     "dai": 5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Gáo buộc hai nửa mái chèo bằng dải vải: màu đỏ sẫm duy nhất trong khung đen trắng",
+     "prompt": "close-up, hands binding two halves of an oar with a strip of deep crimson cloth, everything else stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "do": true
+    },
+    {
+     "ma": "C10_S15",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Kiên bị dồn ra mép đê, kiếm gãy",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf pushed to the edge of the dike, broken sword, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C10_S16",
+     "dai": 4.5,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn tiến tới Kiên trên đê",
+     "prompt": "wide shot, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin advancing on a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf along the dike, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "HT",
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "HT",
+       "loi": "Hết đê rồi, / tướng nam.",
+       "luc": 0.6
+      }
+     ]
+    },
+    {
+     "ma": "C10_S17",
+     "dai": 3.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên quỳ một gối, nhìn ra sông",
+     "prompt": "close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, on one knee, looking out at the river, stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C10_S18",
+     "dai": 6,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "noi_dung": "Trên mặt sông trắng, một chiếc đò nhỏ đen lướt về phía cầu phao, chấm đỏ ở mũi",
+     "prompt": "wide shot, a tiny dark boat gliding toward the pontoon bridge with a deep crimson speck at its bow, everything else stark black-and-white ink wash on white paper, splattered black ink, no color",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "do": true
+    }
+   ]
+  },
+  {
+   "ma": "C11",
+   "ten": "Gáo chở lửa vào chân cầu phao",
+   "nhip": "TRA_NO",
+   "muc_dich": "Trả nợ: trở lại tranh màu. Lửa của Gáo màu ĐỎ SẪM, trúng đích (đối lập lửa không màu ở C07).",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/bai_hat.mp3",
+    "am_luong_db": -10,
+    "luc": 0,
+    "ghi_chu": "tiếp bài hát, cao trào"
+   },
+   "shot": [
+    {
+     "ma": "C11_S01",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Chiếc đò chất đầy rơm tẩm dầu, Gáo chèo, mái chèo buộc dải đỏ",
+     "prompt": "wide shot, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic rowing a small boat piled with oil-soaked straw, an oar bound with deep crimson cloth",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "do": true
+    },
+    {
+     "ma": "C11_S02",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Gáo nghiến răng chèo, nước bắn",
+     "prompt": "medium close-up, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, teeth clenched, rowing hard, spray",
+     "nhan_vat": [
+      "GAO"
+     ]
+    },
+    {
+     "ma": "C11_S03",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên trên đê thấy chiếc đò, đứng bật dậy",
+     "prompt": "medium shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf on the dike seeing the boat and rising",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C11_S04",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên gọi",
+     "prompt": "medium close-up, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, shouting",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Gáo!",
+       "luc": 0.3,
+       "cam_xuc": "hét"
+      }
+     ]
+    },
+    {
+     "ma": "C11_S05",
+     "dai": 9,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Gáo không quay lại",
+     "prompt": "close-up, a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic, not turning around, eyes fixed ahead",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Năm ấy chú cõng tôi qua nước. // Hôm nay / tôi chở chú qua sông.",
+       "luc": 0.3,
+       "cam_xuc": "bình thản, không quay lại"
+      }
+     ]
+    },
+    {
+     "ma": "C11_S06",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "zoom_giat",
+     "noi_dung": "Gáo châm đuốc vào rơm, lửa đỏ sẫm bùng",
+     "prompt": "extreme close-up, a torch igniting straw, deep crimson flames erupting",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "do": true,
+     "diem_nhan": 0.6
+    },
+    {
+     "ma": "C11_S07",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Đò lửa đỏ lao vào chân cầu phao giữa hàng bè Tống",
+     "prompt": "wide shot, a boat engulfed in deep crimson fire ramming the base of a pontoon bridge among enemy rafts",
+     "nhan_vat": [],
+     "do": true
+    },
+    {
+     "ma": "C11_S08",
+     "dai": 2,
+     "vao": "cat",
+     "co_canh": "Insert",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Dải vải đỏ trên mũi đò bay trong lửa",
+     "prompt": "close-up, a strip of deep crimson cloth fluttering in fire at a boat's bow",
+     "nhan_vat": [],
+     "do": true
+    },
+    {
+     "ma": "C11_S09",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "noi_dung": "Lính Tống trên cầu hoảng loạn",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor panicking on the burning bridge",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C11_S10",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Lửa đỏ sẫm bùng giữa sông, cầu phao gãy đôi",
+     "prompt": "extreme wide high-angle shot, a deep crimson blaze in the middle of the river, the pontoon bridge breaking in two",
+     "nhan_vat": [],
+     "do": true,
+     "am_thanh": [
+      "nổ lớn",
+      "gỗ gãy"
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C12",
+   "ten": "Quách Quỳ: sông không ở dưới nước",
+   "nhip": "GUONG_SOI",
+   "muc_dich": "Gương soi: kẻ tin số đông thua vì những người không chịu bỏ đê. Kết bằng cắt vào đen trên tiếng trống thu quân.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 3.0
+   },
+   "nhac": null,
+   "shot": [
+    {
+     "ma": "C12_S01",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Bờ bắc: Quách Quỳ trên đài nhìn cầu phao cháy",
+     "prompt": "wide shot, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap on his platform watching the bridge burn in the distance, glow on his face",
+     "nhan_vat": [
+      "QQ"
+     ]
+    },
+    {
+     "ma": "C12_S02",
+     "dai": 7.5,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Quách Quỳ nói",
+     "prompt": "medium close-up, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Ta mang mười vạn người / đến để lấy một con sông.",
+       "luc": 0.4,
+       "cam_xuc": "chậm, tự giễu"
+      }
+     ]
+    },
+    {
+     "ma": "C12_S03",
+     "dai": 4.4,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Hàn Tuấn bị thương quỳ cạnh",
+     "prompt": "close-up, a tall Song dynasty vanguard officer, lamellar armor, horsetail-plumed helmet, scar across his chin, wounded, kneeling",
+     "nhan_vat": [
+      "HT"
+     ],
+     "thoai": [
+      {
+       "vai": "HT",
+       "loi": "Tướng quân, / còn bè. / Còn người.",
+       "luc": 0.3
+      }
+     ]
+    },
+    {
+     "ma": "C12_S04",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Bờ nam: lính và dân phu đứng thành hàng dài trên đê, không ai bỏ đi",
+     "prompt": "wide shot across the river, soldiers and villagers standing in a long unbroken line on the dike with torches",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C12_S05",
+     "dai": 8.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Quách Quỳ hiểu ra",
+     "prompt": "close-up, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Hóa ra / con sông không ở dưới nước. // Nó đứng trên đê.",
+       "luc": 0.4,
+       "cam_xuc": "khẽ"
+      }
+     ]
+    },
+    {
+     "ma": "C12_S06",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "ECU",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tay Quách Quỳ rút lá cờ khỏi sa bàn, bẻ gãy",
+     "prompt": "extreme close-up, a hand pulling a tiny flag from a sand-table map and snapping it",
+     "nhan_vat": [
+      "QQ"
+     ]
+    },
+    {
+     "ma": "C12_S07",
+     "dai": 4,
+     "vao": "cat",
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Quách Quỳ ra lệnh",
+     "prompt": "medium close-up, a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap",
+     "nhan_vat": [
+      "QQ"
+     ],
+     "thoai": [
+      {
+       "vai": "QQ",
+       "loi": "Truyền lệnh. / Lui quân.",
+       "luc": 0.4
+      }
+     ]
+    },
+    {
+     "ma": "C12_S08",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Lính Tống hạ cờ",
+     "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor lowering their banners",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C12_S09",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Kiên trên đê nhìn ra nơi đò cháy tàn",
+     "prompt": "wide shot, a young Vietnamese soldier with a thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf, wounded, on the dike looking at the dying fire on the river",
+     "nhan_vat": [
+      "KIEN"
+     ]
+    },
+    {
+     "ma": "C12_S10",
+     "dai": 2.5,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "thấp sát nước",
+     "chuyen_dong": "dung",
+     "noi_dung": "Nước sông cuốn trôi tro",
+     "prompt": "close-up at water level, the current carrying ash away",
+     "nhan_vat": []
+    },
+    {
+     "ma": "C12_S11",
+     "dai": 3,
+     "vao": "cat",
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Trống thu quân Tống",
+     "prompt": "medium shot, a Song drummer striking the retreat signal",
+     "nhan_vat": [],
+     "am_thanh": [
+      "trống thu quân 3 tiếng"
+     ],
+     "sfx": [
+      {
+       "file": "am_thanh/sfx/trong_thu_quan.wav",
+       "luc": 0.2,
+       "db": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C13",
+   "ten": "Tranh cuộn: quân Tống rút, giá phải trả",
+   "nhip": "LICH_SU_LANH",
+   "muc_dich": "Lịch sử lạnh: người dẫn kể hậu quả trên tranh cuộn. Không kịch, không nhạc lớn.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 1.5
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/lich_su.mp3",
+    "am_luong_db": -18,
+    "ghi_chu": "nhỏ, đàn bầu/sáo đơn"
+   },
+   "shot": [
+    {
+     "ma": "C13_S01",
+     "dai": 26,
+     "vao": "fade_den",
+     "co_canh": "Tranh cuộn",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Tranh cuộn: trại Tống bờ bắc, người ốm nằm, ngựa gầy; rồi đoàn quân quay lưng về bắc",
+     "prompt": "ancient Vietnamese horizontal handscroll painting on aged paper, fine ink lines, figures small, an army camp on a riverbank with sick soldiers lying down, thin horses, then a long column marching north",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Quân Tống không vượt được sông Như Nguyệt. // Đóng quân bên bờ bắc qua nhiều tháng, / họ mỏi mệt, đau ốm, / hao mòn từng ngày.",
+       "luc": 1.0
+      },
+      {
+       "vai": "DAN",
+       "loi": "Khi thế đã rõ, / nhà Lý chủ động đề nghị giảng hòa, / để kẻ thua có đường lui. // Quách Quỳ rút quân về phương Bắc.",
+       "luc": 13.5
+      }
+     ]
+    },
+    {
+     "ma": "C13_S02",
+     "dai": 21,
+     "vao": "cat",
+     "co_canh": "Tranh cuộn",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "noi_dung": "Tranh cuộn: ngôi đền bên sông, những dòng chữ Hán mờ bay lên như khói",
+     "prompt": "ancient Vietnamese horizontal handscroll painting on aged paper, fine ink lines, figures small, a small riverside temple with faint lines of calligraphy rising like smoke",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Bài thơ vọng ra từ ngôi đền bên sông đêm ấy, / tương truyền, / được người đời sau xem như một bản tuyên ngôn: / sông núi nước Nam, / vua Nam ở.",
+       "luc": 1.0
+      },
+      {
+       "vai": "DAN",
+       "loi": "Biên giới phía bắc yên ổn trong nhiều năm sau đó.",
+       "luc": 15.0
+      }
+     ]
+    },
+    {
+     "ma": "C13_S03",
+     "dai": 12,
+     "vao": "cat",
+     "co_canh": "Tranh cuộn",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Tranh cuộn: những con đò nhỏ trên sông, người chèo không vẽ mặt",
+     "prompt": "ancient Vietnamese horizontal handscroll painting on aged paper, fine ink lines, figures small, small ferry boats on a river, the rowers drawn without faces",
+     "nhan_vat": [],
+     "thoai": [
+      {
+       "vai": "DAN",
+       "loi": "Sử sách ghi tên những người cầm quân. // Không ghi tên những người chèo đò.",
+       "luc": 2.0,
+       "cam_xuc": "chậm hơn, dừng lâu ở dấu //"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C14",
+   "ten": "Mái chèo dạt bờ",
+   "nhip": "MOC_CREDIT",
+   "muc_dich": "Hình chốt bằng vật dẫn đường; móc tập sau.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 2.0
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/chu_de.mp3",
+    "am_luong_db": -12,
+    "ghi_chu": "nhạc chủ đề vào"
+   },
+   "shot": [
+    {
+     "ma": "C14_S01",
+     "dai": 12,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Bãi cát sáng sớm: mái chèo (hai nửa buộc dải đỏ) dạt vào bờ, nước rút",
+     "prompt": "wide low-angle shot at dawn, an oar made of two halves bound with deep crimson cloth washed up on a sandy bank, receding water",
+     "nhan_vat": [],
+     "do": true,
+     "toc_do": 0.8
+    },
+    {
+     "ma": "C14_S02",
+     "dai": 10,
+     "vao": "cat",
+     "co_canh": "CU",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "noi_dung": "Một bàn tay có vết sẹo nhặt mái chèo lên",
+     "prompt": "close-up, a scarred hand picking up an oar bound with deep crimson cloth from wet sand",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "do": true,
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Còn tiếp"
+       ],
+       "luc": 5,
+       "dai": 4.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C15",
+   "ten": "Credit",
+   "nhip": "MOC_CREDIT",
+   "muc_dich": "Credit, nguồn nhạc, ghi chú nhân vật hư cấu.",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/chu_de.mp3",
+    "am_luong_db": -10,
+    "ghi_chu": "nhạc chủ đề đến hết"
+   },
+   "shot": [
+    {
+     "ma": "C15_S01",
+     "dai": 70,
+     "vao": "cat",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "keo_ra",
+     "noi_dung": "Sông sáng sớm yên ả, chữ credit",
+     "prompt": "wide shot, a calm river at dawn, mist, empty boats moored, lots of empty space for text",
+     "nhan_vat": [],
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "XƯỞNG VOX trình bày",
+        "SÔNG – Phòng tuyến Như Nguyệt 1077",
+        "Biên kịch: …   Dựng: …   Lồng tiếng: …"
+       ],
+       "luc": 2,
+       "dai": 30
+      },
+      {
+       "kieu": "the",
+       "dong": [
+        "Nhạc và hiệu ứng: (ghi nguồn, giấy phép)"
+       ],
+       "luc": 36,
+       "dai": 30
+      }
+     ],
+     "toc_do": 0.15
+    },
+    {
+     "ma": "C15_S02",
+     "dai": 20,
+     "vao": "cat",
+     "co_canh": "Đen",
+     "goc": "-",
+     "chuyen_dong": "dung",
+     "noi_dung": "Ghi chú hư cấu",
+     "prompt": "",
+     "nhan_vat": [],
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Gáo, Trần Kiên, Hàn Tuấn, bà nội Gáo và sứ giả là nhân vật hư cấu.",
+        "Bè lửa, cầu phao bị đốt và trận song đấu là chi tiết hư cấu."
+       ],
+       "luc": 1,
+       "dai": 18
+      }
+     ],
+     "loai": "den"
     }
    ]
   }
