@@ -115,23 +115,24 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
 function tabTuyen(tap, r, body, ma) {
   body.innerHTML = `
     <div class="legend">${VE.chuGiai()}</div>
-    <div class="scroll" id="sv"></div>
+    <div class="scroll sodo" id="sv"></div>
     <p class="muted" style="font-size:13px;margin:0">Sơ đồ tự vẽ từ kịch bản. Bấm một cảnh để đọc kịch bản cảnh đó. Ô đặc: nhân vật có trong hình; ô mờ: chỉ có giọng.</p>
     <h3>Đường dây gieo → trả</h3>
     <div class="grid-cards" id="gt"></div>
-    <h3>Đọc dọc từng cảnh</h3>
-    <div style="display:grid;gap:10px">${theCanh(tap, r, ma)}</div>
-    <h3>Bảng tóm tắt cảnh</h3>
-    <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Cảnh</th><th>Tên</th><th>Nhịp</th><th class="num">Vào</th><th class="num">Dài</th><th class="num">Shot</th><th class="num">Cắt/phút</th><th class="num">Từ thoại</th><th>Mục đích</th></tr></thead>
+    <div class="cot2">
+    <div class="cot"><h3>Đọc dọc từng cảnh</h3>
+    <div style="display:grid;gap:10px">${theCanh(tap, r, ma)}</div></div>
+    <div class="cot cot-dinh"><h3>Bảng tóm tắt cảnh</h3>
+    <div class="scroll" style="background:var(--paper)"><table class="gon"><thead><tr><th>Cảnh</th><th>Tên</th><th>Nhịp</th><th class="num">Vào</th><th class="num">Dài</th><th class="num">Shot</th><th class="num">Cắt/phút</th><th class="num">Từ thoại</th><th>Mục đích</th></tr></thead>
     <tbody>${r.bang.map(b => {
       const c = tap.canh.find(x => x.ma === b.ma) || {};
       return `<tr><td><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${b.ma}">${b.ma}</a></td><td>${esc(b.ten)}</td><td><span class="tag">${esc(b.nhip)}</span></td>
         <td class="num">${XP.tc(b.bd, false)}</td><td class="num">${b.dai.toFixed(0)} s</td><td class="num">${b.ns}</td><td class="num">${(b.cat / b.dai * 60).toFixed(1)}</td><td class="num">${b.tu}</td><td>${esc(c.muc_dich || '')}</td></tr>`;
-    }).join('')}</tbody></table></div>`;
-  $('#sv').append(VE.tuyenPhim(tap, null, cm => {
+    }).join('')}</tbody></table></div></div></div>`;
+  VE.vuaKhung($('#sv'), w => VE.tuyenPhim(tap, null, cm => {
     const card = document.getElementById(`tc-${cm}`);
     if (card) { card.scrollIntoView({block: 'center'}); card.classList.add('hl'); setTimeout(() => card.classList.remove('hl'), 1600); }
-  }));
+  }, w));
   $('#gt').innerHTML = r.gt.map(({g, moc}, i) => `<div class="card" style="gap:4px">
       <span class="tag${VE.chinh(tap, g, i) ? ' red' : ''}" style="justify-self:start">${VE.chinh(tap, g, i) ? 'Đường dây chính' : 'Đường dây phụ'}</span>
       <b>${esc(g.mo_ta || g.ma)}</b>

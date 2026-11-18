@@ -11,14 +11,15 @@ const TK = (() => {
   const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   const CHU_THICH = 'Phân tích cấu trúc phim của Việt Sử Kiêu Hùng để học cách dựng tuyến phim. Thoại ghi dạng diễn ý (không phải nguyên văn); “chưa chắc” là chỗ chưa xác định được. Nhân vật, thoại, hình và nhạc thuộc về Việt Sử Kiêu Hùng – xem phim gốc theo link.';
 
-  function so(f) {
+  function so(f, rong) {
     const svg = (() => {
-      const L = 150, R = 20, pps = 1.15, W = L + f.dai_s * pps + R, x = t => L + t * pps;
+      const {L, R, pps, W} = VE.co(rong, f.dai_s), x = t => L + t * pps;
       const arcH = 120, axisY = arcH + 14, sceneY = axisY + 12, sceneH = 46, laneY0 = sceneY + sceneH + 18, laneH = 22;
       const H = laneY0 + f.nhanvat.length * laneH + 14;
       const s = el('svg', {width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': `Sơ đồ tuyến phim ${f.ten}`});
       const ink = css('--ink'), muted = css('--muted'), line = css('--line'), red = css('--red'), paper = css('--paper');
-      for (let m = 0; m * 60 <= f.dai_s; m++) {
+      const bm = pps * 60 < 34 ? 2 : 1;
+      for (let m = 0; m * 60 <= f.dai_s; m += bm) {
         s.append(el('line', {x1: x(m * 60), x2: x(m * 60), y1: axisY - 4, y2: H - 6, stroke: line, 'stroke-width': m % 5 ? 0.6 : 1.2}));
         s.append(el('text', {x: x(m * 60) + 3, y: axisY - 4, 'font-size': 10.5, fill: muted}, `${m}:00`));
       }
@@ -32,7 +33,7 @@ const TK = (() => {
         g.append(r);
         const tc = ['tho', 'mo'].includes(c.loai) ? ink : '#fff';
         g.append(el('text', {x: x(a) + 6, y: sceneY + 16, 'font-size': 12, 'font-weight': 700, fill: tc}, c.n));
-        if (w > 70) { const mx = Math.floor((w - 10) / 6.2); g.append(el('text', {x: x(a) + 6, y: sceneY + 32, 'font-size': 10.5, fill: tc}, c.ten.length > mx ? c.ten.slice(0, mx - 1) + '…' : c.ten)); }
+        if (w > 46) { const mx = Math.floor((w - 10) / 6.2); g.append(el('text', {x: x(a) + 6, y: sceneY + 32, 'font-size': 10.5, fill: tc}, c.ten.length > mx ? c.ten.slice(0, mx - 1) + '…' : c.ten)); }
         const go = () => { const card = document.getElementById(`tk-canh-${c.n}`); if (card) { card.scrollIntoView({block: 'center'}); card.classList.add('hl'); setTimeout(() => card.classList.remove('hl'), 1600); } };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -40,7 +41,8 @@ const TK = (() => {
       });
       f.nhanvat.forEach((n, i) => {
         const y = laneY0 + i * laneH, col = n.main ? red : ink;
-        s.append(el('text', {x: 8, y: y + 14, 'font-size': 11.5, fill: col, 'font-weight': n.main ? 700 : 500}, n.ten.length > 22 ? n.ten.slice(0, 21) + '…' : n.ten));
+        const mxt = L < 120 ? 13 : 22;
+        s.append(el('text', {x: 8, y: y + 14, 'font-size': 11.5, fill: col, 'font-weight': n.main ? 700 : 500}, n.ten.length > mxt ? n.ten.slice(0, mxt - 1) + '…' : n.ten));
         s.append(el('line', {x1: L, x2: W - R, y1: y + 10, y2: y + 10, stroke: line, 'stroke-width': 0.6}));
         n.seg.forEach(([a, b]) => s.append(el('rect', {x: x(T(a)), y: y + 3, width: Math.max(3, (T(b) - T(a)) * pps), height: 14, rx: 2, fill: col, opacity: 0.85})));
         n.mo.forEach(([a, b]) => s.append(el('rect', {x: x(T(a)), y: y + 6, width: Math.max(3, (T(b) - T(a)) * pps), height: 8, rx: 2, fill: col, opacity: 0.28})));
@@ -79,7 +81,7 @@ const TK = (() => {
       <div class="meta"><span>Câu chủ đề: <b style="font-weight:500">${esc(f.chude)}</b></span></div>
       <div class="meta"><span>Giọng phản đề: <b style="font-weight:500">${esc(f.phande)}</b></span></div>
       <div class="legend">${Object.values(LOAI).map(([t, v]) => `<span><i class="sw" style="background:var(${v})"></i>${t}</span>`).join('')}<span><i class="sw" style="background:var(--red)"></i>Đường dây nhân vật chính</span></div>
-      <div class="scroll" id="tk-sv"></div>
+      <div class="scroll sodo" id="tk-sv"></div>
       <p class="muted" style="font-size:13px;margin:0">Bấm một cảnh để đọc chi tiết. Ô đặc: nhân vật trong khung; ô mờ: chỉ giọng, được nhắc, hoặc chưa chắc. Số cắt/phút và % có lời là số đo.</p>
       <h3>Đường dây gieo → trả</h3>
       <div class="grid-cards">${f.day.map(d => `<div class="card" style="gap:4px"><span class="tag${d.main ? ' red' : ''}" style="justify-self:start">${d.main ? 'Tuyến nhân vật chính' : 'Đường dây phụ'}</span>
@@ -102,7 +104,7 @@ const TK = (() => {
           </div></article>`;
       }).join('')}</div>
       <p class="muted" style="font-size:13px;margin:0">${esc(CHU_THICH)}</p></section>`;
-    app.querySelector('#tk-sv').append(so(f));
+    VE.vuaKhung(app.querySelector('#tk-sv'), w => so(f, w));
     if (canh) {
       const card = document.getElementById(`tk-canh-${canh}`);
       if (card) setTimeout(() => { card.scrollIntoView({block: 'center'}); card.classList.add('hl'); setTimeout(() => card.classList.remove('hl'), 2000); }, 60);

@@ -32,18 +32,30 @@ const VE = (() => {
     return lan;
   }
 
-  function tuyenPhim(tap, khung, onScene) {
+  // Cỡ sơ đồ: rong = bề ngang khung chứa → co vừa, không cuộn ngang (màn quá hẹp mới cuộn)
+  function co(rong, tong) {
+    const L = rong && rong < 700 ? 96 : 160, R = 14;
+    const pps = rong ? Math.max(0.3, (rong - L - R) / Math.max(60, tong)) : Math.max(0.9, Math.min(2.2, 1400 / Math.max(60, tong)));
+    return {L, R, pps, W: Math.max(rong || 0, L + tong * pps + R)};
+  }
+  // Vẽ vào khung và tự vẽ lại khi khung đổi bề ngang
+  function vuaKhung(box, ve) {
+    let w0 = 0;
+    const veLai = () => { const w = Math.floor(box.clientWidth); if (!w || Math.abs(w - w0) < 4) return; w0 = w; box.replaceChildren(ve(w)); };
+    veLai();
+    if (window.ResizeObserver) { const ro = new ResizeObserver(() => { if (!box.isConnected) return ro.disconnect(); veLai(); }); ro.observe(box); }
+  }
+
+  function tuyenPhim(tap, khung, onScene, rong) {
     const {tl, tong} = XP.timeline(tap);
     const lan = lanNhanVat(tap, tl);
-    const L = 160, R = 20;
-    const pps = Math.max(0.9, Math.min(2.2, 1400 / Math.max(60, tong)));
-    const W = L + tong * pps + R;
+    const {L, R, pps, W} = co(rong, tong);
     const x = t => L + t * pps;
     const arcH = 120, axisY = arcH + 14, sceneY = axisY + 12, sceneH = 50, laneY0 = sceneY + sceneH + 18, laneH = 22;
     const H = laneY0 + lan.length * laneH + 14;
     const svg = el('svg', {width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Sơ đồ tuyến phim'});
     const ink = css('--ink'), muted = css('--muted'), line = css('--line'), red = css('--red'), paper = css('--paper');
-    const buoc = tong > 900 ? 60 : 30;
+    const buoc = pps * 60 < 34 ? 120 : (tong > 900 || pps * 30 < 40 ? 60 : 30);
     for (let t = 0; t <= tong; t += buoc) {
       svg.append(el('line', {x1: x(t), x2: x(t), y1: axisY - 4, y2: H - 6, stroke: line, 'stroke-width': t % 300 ? 0.6 : 1.2}));
       svg.append(el('text', {x: x(t) + 3, y: axisY - 4, 'font-size': 10.5, fill: muted}, XP.tc(t, false)));
@@ -62,7 +74,7 @@ const VE = (() => {
       g.append(r);
       const tc = ['tho', 'mo'].includes(loai) ? ink : '#fff';
       g.append(el('text', {x: x(a) + 6, y: sceneY + 17, 'font-size': 12, 'font-weight': 700, fill: tc}, c.ma.replace(/^C0?/, '')));
-      if (w > 70) {
+      if (w > 46) {
         const maxc = Math.floor((w - 10) / 6.2), ten = c.ten || '';
         g.append(el('text', {x: x(a) + 6, y: sceneY + 34, 'font-size': 10.5, fill: tc}, ten.length > maxc ? ten.slice(0, maxc - 1) + '…' : ten));
       }
@@ -77,7 +89,8 @@ const VE = (() => {
       const main = giongChinh.has(n.ma);
       const col = main ? red : ink;
       const ten = `${n.ten || n.ma}${n.loai === 'hư cấu' ? ' *' : ''}`;
-      svg.append(el('text', {x: 8, y: y + 14, 'font-size': 11.5, fill: col, 'font-weight': main ? 700 : 500}, ten.length > 24 ? ten.slice(0, 23) + '…' : ten));
+      const mx = L < 120 ? 13 : 24;
+      svg.append(el('text', {x: 8, y: y + 14, 'font-size': 11.5, fill: col, 'font-weight': main ? 700 : 500}, ten.length > mx ? ten.slice(0, mx - 1) + '…' : ten));
       svg.append(el('line', {x1: L, x2: W - R, y1: y + 10, y2: y + 10, stroke: line, 'stroke-width': 0.6}));
       dac.forEach(([a, b]) => svg.append(el('rect', {x: x(a), y: y + 3, width: Math.max(3, (b - a) * pps), height: 14, rx: 2, fill: col, opacity: 0.85})));
       mo.forEach(([a, b]) => svg.append(el('rect', {x: x(a), y: y + 6, width: Math.max(3, (b - a) * pps), height: 8, rx: 2, fill: col, opacity: 0.3})));
@@ -104,5 +117,5 @@ const VE = (() => {
     return Object.values(LOAI).map(([t, v]) => `<span><i class="sw" style="background:var(${v})"></i>${t}</span>`).join('') +
       '<span><i class="sw" style="background:var(--red)"></i>Đường dây chính / giọng phản đề</span><span>* nhân vật hư cấu</span>';
   }
-  return {tuyenPhim, chuGiai, NHOM, LOAI, chinh};
+  return {tuyenPhim, chuGiai, vuaKhung, co, NHOM, LOAI, chinh};
 })();
