@@ -1,0 +1,27 @@
+# môi trường
+.venv/
+__pycache__/
+*.pyc
+
+# media của từng tập (nặng, giữ trên máy hoặc ổ lưu trữ riêng)
+tap/*/anh/
+tap/*/giong/
+tap/*/am_thanh/
+tap/*/so_nhan_vat/
+tap/*/do_hoa/
+tap/*/xuat/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# file sinh ra (chạy lại công cụ là có)
+tap/*/kiem_tra.md
+tap/*/phieu_dung.md
+tap/*/bang_shot.csv
+tap/*/prompt_anh.txt
+tap/*/kich_ban_doc.md

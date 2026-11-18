@@ -1,0 +1,738 @@
+{
+ "ma_tap": "T01_nhu_nguyet",
+ "tieu_de": "SÔNG – Phòng tuyến Như Nguyệt 1077",
+ "trang_thai": "BẢN MẪU: mới viết cảnh C01–C04 (nhịp 1–4) để chạy thử xưởng. Các cảnh sau viết tiếp theo khung 12 nhịp.",
+ "tong_du_kien_s": 1080,
+ "fps": 24,
+ "rong": 1920,
+ "cao": 1080,
+ "phong_cach_prompt": "dark ink-wash and charcoal digital painting, Vietnamese Ly dynasty 1077, near-monochrome palette of black and cold greys, heavy brush texture, mist and smoke, dramatic rim light, cinematic 16:9 widescreen composition, film grain, no text, no watermark",
+ "mau_nhan": {
+  "do_sam": "#7A1414",
+  "ghi_chu": "chỉ dùng cho vật dẫn đường: dải vải đỏ buộc mái chèo, lửa ở cao trào"
+ },
+ "chu_de": "Đê cao mấy cũng chỉ là đất; người đứng trên đê mới là thành.",
+ "giong_phan_de": "GAO – đứa trẻ từng được cứu, nay trách người giữ đê vì làng bị đốt.",
+ "vat_dan_duong": [
+  "Mái chèo gỗ khắc ba vạch, buộc dải vải đỏ sẫm"
+ ],
+ "nhan_vat": [
+  {
+   "ma": "GAO",
+   "ten": "Gáo",
+   "loai": "hư cấu",
+   "nhan_dang": "cậu bé chèo đò; lúc bé 8 tuổi, hiện tại 14 tuổi; gầy, da sạm, tóc ngắn rối, khăn vải buộc trán, áo nâu vá vai",
+   "anh_mau": "so_nhan_vat/GAO.png",
+   "giong": "thiếu niên; lúc bé dùng giọng trẻ em"
+  },
+  {
+   "ma": "KIEN",
+   "ten": "Trần Kiên",
+   "loai": "hư cấu",
+   "nhan_dang": "tướng trẻ ~25 tuổi, mặt vuông, sẹo mảnh lông mày trái, mũ trụ da, giáp vảy sẫm, khăn quàng xám dài",
+   "anh_mau": "so_nhan_vat/KIEN.png",
+   "giong": "nam trẻ, chắc, 110 từ/phút"
+  },
+  {
+   "ma": "LTK",
+   "ten": "Lý Thường Kiệt",
+   "loai": "có thật",
+   "nhan_dang": "ngoài 60, râu bạc cắt gọn, áo bào sẫm thêu mây, ánh mắt trầm",
+   "anh_mau": "so_nhan_vat/LTK.png",
+   "giong": "nam lớn tuổi, trầm, ngắn gọn"
+  },
+  {
+   "ma": "QQ",
+   "ten": "Quách Quỳ",
+   "loai": "có thật",
+   "nhan_dang": "chủ tướng quân Tống, ngoài 50, râu quai nón đen pha bạc, áo choàng lông thú",
+   "anh_mau": "so_nhan_vat/QQ.png",
+   "giong": "nam trung niên, lạnh"
+  },
+  {
+   "ma": "DAN",
+   "ten": "Người dẫn",
+   "loai": "giọng",
+   "giong": "nam trầm, chậm, 155 từ/phút"
+  }
+ ],
+ "gieo_tra": [
+  {
+   "ma": "MAI_CHEO",
+   "mo_ta": "mái chèo Kiên đưa cho bé Gáo",
+   "gieo": [
+    "C02_S06",
+    "C02_S08"
+   ],
+   "nhac": [
+    "C04_S05",
+    "C04_S08"
+   ],
+   "tra": []
+  },
+  {
+   "ma": "NGUOI_LA_THANH",
+   "mo_ta": "câu chủ đề 'người đứng trên đê mới là thành'",
+   "gieo": [
+    "C03_S04"
+   ],
+   "nhac": [],
+   "tra": []
+  },
+  {
+   "ma": "LOI_THE_GAO",
+   "mo_ta": "lời thề 'ông không giữ được thì tôi giữ'",
+   "gieo": [
+    "C04_S07"
+   ],
+   "nhac": [],
+   "tra": []
+  }
+ ],
+ "canh": [
+  {
+   "ma": "C01",
+   "ten": "Dòng sông",
+   "nhip": "MO",
+   "muc_dich": "Hình biểu tượng, không lời. Đặt nơi chốn và thời gian.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 1.5
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/drone_tram.mp3",
+    "am_luong_db": -8,
+    "ghi_chu": "drone trầm, không giai điệu"
+   },
+   "shot": [
+    {
+     "ma": "C01_S01",
+     "dai": 14,
+     "vao": "fade_den",
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Dòng sông đêm, hàng cọc gỗ nhọn cắm dưới lòng sông chạy ra xa trong sương",
+     "nhan_vat": [],
+     "prompt": "extreme wide high-angle shot of a dark river at night, rows of sharpened wooden stakes planted in the water receding into mist, faint moonlight",
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Sông Như Nguyệt",
+        "mùa xuân năm 1077"
+       ],
+       "luc": 4,
+       "dai": 7
+      }
+     ],
+     "am_thanh": [
+      "gió",
+      "nước chảy",
+      "côn trùng đêm"
+     ]
+    },
+    {
+     "ma": "C01_S02",
+     "dai": 9,
+     "co_canh": "CU",
+     "goc": "thấp sát mặt nước",
+     "chuyen_dong": "lia_trai",
+     "do": true,
+     "noi_dung": "Một dải vải đỏ sẫm trôi qua giữa các chân cọc",
+     "nhan_vat": [],
+     "prompt": "close-up at water level, a single strip of deep crimson cloth drifting between wooden stakes, black water, mist",
+     "am_thanh": [
+      "nước vỗ cọc"
+     ]
+    },
+    {
+     "ma": "C01_S03",
+     "dai": 12,
+     "co_canh": "WS",
+     "goc": "thấp",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Bờ đê đất cao, cờ rách bay, đàn quạ bay qua trời xám",
+     "nhan_vat": [],
+     "prompt": "wide low-angle shot of a tall earthen dike on a riverbank, torn war banners flapping, a flock of crows crossing a grey sky",
+     "am_thanh": [
+      "gió mạnh",
+      "cờ phần phật",
+      "quạ"
+     ]
+    },
+    {
+     "ma": "C01_S04",
+     "dai": 9,
+     "co_canh": "ECU",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "dung",
+     "noi_dung": "Mặt nước đen, bóng trăng vỡ ra theo gợn sóng",
+     "nhan_vat": [],
+     "prompt": "top-down extreme close-up of black river water, the reflection of the moon breaking apart in ripples",
+     "am_thanh": [
+      "giọt nước"
+     ]
+    },
+    {
+     "ma": "C01_S05",
+     "loai": "trang",
+     "dai": 2.4,
+     "noi_dung": "Màn trắng trước tựa"
+    },
+    {
+     "ma": "C01_S06",
+     "dai": 6,
+     "vao": "cat",
+     "co_canh": "Tựa",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "noi_dung": "Tựa phim trên nền sương trắng, silhouette hàng cọc dưới chân chữ",
+     "nhan_vat": [],
+     "prompt": "white misty background, faint silhouette of a row of wooden stakes along the bottom edge, large empty space in the center",
+     "chu": [
+      {
+       "kieu": "tua",
+       "dong": [
+        "SÔNG",
+        "Như Nguyệt · 1077"
+       ],
+       "luc": 0.3
+      }
+     ],
+     "am_thanh": [
+      "hit lớn + chuông đồng ngân"
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C02",
+   "ten": "Mùa lũ năm trước",
+   "nhip": "GIEO_NO",
+   "muc_dich": "Gieo món nợ: người lạ cứu bé Gáo và đưa mái chèo. Chưa lộ tên người cứu.",
+   "ket_thuc": {
+    "kieu": "cat"
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/sao_buon.mp3",
+    "am_luong_db": -12,
+    "luc": 8,
+    "ghi_chu": "sáo/đàn bầu buồn, vào sau 8 s"
+   },
+   "shot": [
+    {
+     "ma": "C02_S01",
+     "dai": 8,
+     "vao": "hoa_hinh",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "noi_dung": "Làng ngập lũ trong mưa đêm, chỉ còn mái nhà nhô lên mặt nước",
+     "nhan_vat": [],
+     "prompt": "wide high-angle shot of a flooded Vietnamese village at night in heavy rain, only thatched roofs above the water",
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Một năm trước",
+        "mùa lũ"
+       ],
+       "luc": 1,
+       "dai": 5
+      }
+     ],
+     "am_thanh": [
+      "mưa lớn",
+      "nước lũ"
+     ]
+    },
+    {
+     "ma": "C02_S02",
+     "dai": 5,
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Bé Gáo (8 tuổi) ôm cột trên mái nhà, ướt sũng, khóc",
+     "prompt": "medium shot, an 8-year-old Vietnamese boy soaked in rain clinging to a wooden post on a thatched roof, crying, floodwater around",
+     "am_thanh": [
+      "mưa",
+      "tiếng trẻ khóc"
+     ],
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Nội ơi! // Nội ơi!",
+       "luc": 0.8,
+       "cam_xuc": "khóc, gọi"
+      }
+     ]
+    },
+    {
+     "ma": "C02_S03",
+     "dai": 5,
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_phai",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Bóng một người lội nước ngang ngực tiến tới, đuốc chập chờn phía sau; không thấy rõ mặt",
+     "prompt": "wide shot, silhouette of a man wading chest-deep through floodwater toward a roof, torchlight flickering behind him, face hidden in shadow"
+    },
+    {
+     "ma": "C02_S04",
+     "dai": 4,
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Người lạ giơ tay; mưa che mặt, chỉ thấy vết sẹo ở lông mày trái",
+     "prompt": "medium close-up low angle, a young soldier reaching up with one hand, rain streaming over his face, only a thin scar on his left eyebrow clearly visible",
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Nắm lấy! / Đừng nhìn xuống nước.",
+       "luc": 0.4,
+       "cam_xuc": "gấp, chắc"
+      }
+     ]
+    },
+    {
+     "ma": "C02_S05",
+     "dai": 6,
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "rung",
+     "nhan_vat": [
+      "KIEN",
+      "GAO"
+     ],
+     "noi_dung": "Người lạ cõng bé trên lưng lội nước",
+     "prompt": "medium shot, a young soldier carrying a small boy on his back wading through dark floodwater in the rain",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Chú là ai?",
+       "luc": 0.8,
+       "cam_xuc": "run, nhỏ"
+      },
+      {
+       "vai": "KIEN",
+       "loi": "Người giữ đê.",
+       "luc": 3.0
+      }
+     ]
+    },
+    {
+     "ma": "C02_S06",
+     "dai": 7,
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "do": true,
+     "nhan_vat": [
+      "KIEN",
+      "GAO"
+     ],
+     "noi_dung": "Người lạ đặt mái chèo buộc dải vải đỏ sẫm vào tay bé",
+     "prompt": "close-up of a soldier's hand placing a wooden oar into a small boy's hands, a strip of deep crimson cloth tied to the oar handle, rain drops",
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Cầm lấy. / Có cái này / nước không nuốt được cháu.",
+       "luc": 0.5,
+       "cam_xuc": "dịu lại"
+      }
+     ],
+     "ghi_chu": "Shot gieo vật dẫn đường. Giữ dải đỏ là điểm màu duy nhất."
+    },
+    {
+     "ma": "C02_S07",
+     "dai": 9,
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "keo_ra",
+     "nhan_vat": [
+      "GAO",
+      "KIEN"
+     ],
+     "noi_dung": "Trên gò đất cao, bé ôm mái chèo; bóng người lạ quay đi, khuất vào màn mưa",
+     "prompt": "wide shot, a small boy on a muddy hill hugging a wooden oar, a soldier's silhouette walking away into the heavy rain",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Chú ơi! // Chú tên gì?",
+       "luc": 2.5,
+       "cam_xuc": "gọi với"
+      }
+     ],
+     "ghi_chu": "Không trả lời: để trống 4 s chỉ có tiếng mưa."
+    },
+    {
+     "ma": "C02_S08",
+     "dai": 6,
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "do": true,
+     "nhan_vat": [],
+     "noi_dung": "Đặc tả ba vạch khắc trên cán mái chèo, dải vải đỏ sẫm ướt",
+     "prompt": "extreme close-up of three carved notches on a wet wooden oar handle, a soaked strip of deep crimson cloth tied below",
+     "ghi_chu": "Ba vạch sẽ là chi tiết để Kiên nhận ra ở C04_S08."
+    },
+    {
+     "ma": "C02_S09",
+     "dai": 5,
+     "co_canh": "ELS",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Gò đất nhỏ giữa biển nước, một đốm đuốc xa dần",
+     "prompt": "extreme wide shot, a tiny figure on a small hill in a sea of floodwater, one distant torch light fading away",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Người giữ đê…",
+       "luc": 1.5,
+       "cam_xuc": "thì thầm, nhắc lại"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ma": "C03",
+   "ten": "Bờ đê – câu chủ đề",
+   "nhip": "CHU_DE",
+   "muc_dich": "Nhân vật (không phải người dẫn) nói câu chủ đề.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 1.5
+   },
+   "nhac": {
+    "file": "am_thanh/nhac/day_tram.mp3",
+    "am_luong_db": -14,
+    "ghi_chu": "dây trầm, chậm"
+   },
+   "shot": [
+    {
+     "ma": "C03_S01",
+     "dai": 6,
+     "vao": "hoa_hinh",
+     "co_canh": "WS",
+     "goc": "cao",
+     "chuyen_dong": "day_vao",
+     "nhan_vat": [],
+     "noi_dung": "Hiện tại: phòng tuyến Như Nguyệt, quân và dân phu đắp đê, hàng cọc, trời xám",
+     "prompt": "wide high-angle shot of soldiers and villagers reinforcing a long earthen dike along a river, wooden palisade, grey overcast sky",
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Phòng tuyến Như Nguyệt"
+       ],
+       "luc": 0.8,
+       "dai": 4.5
+      }
+     ],
+     "am_thanh": [
+      "xẻng, đất",
+      "hò khoan xa"
+     ]
+    },
+    {
+     "ma": "C03_S02",
+     "dai": 9.8,
+     "co_canh": "MS",
+     "goc": "hếch",
+     "chuyen_dong": "dung",
+     "tach_lop": true,
+     "nhan_vat": [
+      "LTK"
+     ],
+     "noi_dung": "Lý Thường Kiệt đứng trên đê nhìn sang bờ bắc",
+     "prompt": "medium shot low angle, an elderly Vietnamese general with a trimmed white beard in a dark robe embroidered with clouds, standing on a dike looking across the river",
+     "chu": [
+      {
+       "kieu": "phuon",
+       "dong": [
+        "Lý Thường Kiệt",
+        "Thái úy nhà Lý"
+       ],
+       "luc": 0.5,
+       "vi_tri": "phai"
+      }
+     ],
+     "thoai": [
+      {
+       "vai": "LTK",
+       "loi": "Bên kia sông có mười vạn người. // Bên này có một con đê.",
+       "luc": 1.6,
+       "cam_xuc": "trầm, chậm"
+      }
+     ]
+    },
+    {
+     "ma": "C03_S03",
+     "dai": 6.6,
+     "co_canh": "OTS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "LTK",
+      "KIEN"
+     ],
+     "noi_dung": "Qua vai Lý Thường Kiệt thấy Kiên",
+     "prompt": "over-the-shoulder shot from behind an elderly general toward a young soldier with a scar on his left eyebrow, leather helmet, dark scale armor",
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Đê cao mấy / cũng chỉ là đất, thưa Thái úy.",
+       "luc": 0.5
+      }
+     ]
+    },
+    {
+     "ma": "C03_S04",
+     "dai": 7,
+     "co_canh": "MCU",
+     "goc": "hếch",
+     "chuyen_dong": "day_vao",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Kiên nói câu chủ đề",
+     "prompt": "medium close-up low angle, a young Vietnamese soldier with a scar on his left eyebrow, leather helmet, long grey scarf, determined gaze, wind",
+     "chu": [
+      {
+       "kieu": "phuon",
+       "dong": [
+        "Trần Kiên",
+        "tướng giữ bến (hư cấu)"
+       ],
+       "luc": 0.4
+      }
+     ],
+     "thoai": [
+      {
+       "vai": "KIEN",
+       "loi": "Người đứng trên đê / mới là thành.",
+       "luc": 2.4,
+       "cam_xuc": "chậm, chắc"
+      }
+     ],
+     "ghi_chu": "Câu chủ đề – sẽ lặp lại ở nhịp 7 và được chứng minh ở nhịp 9."
+    },
+    {
+     "ma": "C03_S05",
+     "dai": 6.6,
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "LTK"
+     ],
+     "noi_dung": "Lý Thường Kiệt quay lại nhìn Kiên",
+     "prompt": "close-up of an elderly general with a trimmed white beard, calm heavy gaze, mist behind",
+     "thoai": [
+      {
+       "vai": "LTK",
+       "loi": "Vậy thì / đừng để người ta bỏ đê mà đi.",
+       "luc": 0.6
+      }
+     ]
+    },
+    {
+     "ma": "C03_S06",
+     "dai": 6,
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "lia_trai",
+     "nhan_vat": [],
+     "noi_dung": "Dân phu gánh đất lên đê, lưng còng dưới quang gánh",
+     "prompt": "wide side shot, a line of tired villagers carrying baskets of earth on shoulder poles up a dike, silhouettes against grey sky"
+    },
+    {
+     "ma": "C03_S07",
+     "dai": 4.5,
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Tay Kiên siết chặt một cây cọc gỗ",
+     "prompt": "extreme close-up of a soldier's hand gripping a rough sharpened wooden stake, knuckles white"
+    }
+   ]
+  },
+  {
+   "ma": "C04",
+   "ten": "Làng cháy – giọng phản đề",
+   "nhip": "PHAN_DE",
+   "muc_dich": "Gáo trách người giữ đê + lời thề chưa trả. Kiên nhận ra mái chèo; Gáo thì không biết người đứng trước mặt mình là ai.",
+   "ket_thuc": {
+    "kieu": "fade_den",
+    "dai": 2.0
+   },
+   "nhac": null,
+   "shot": [
+    {
+     "ma": "C04_S01",
+     "dai": 4,
+     "vao": "fade_den",
+     "co_canh": "WS",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "nhan_vat": [],
+     "noi_dung": "Làng ven sông cháy âm ỉ, khói đen, cột nhà đổ",
+     "prompt": "wide shot of a riverside village smoldering after being burned, black smoke, collapsed house posts, no flames visible",
+     "am_thanh": [
+      "lửa tàn lách tách",
+      "gió"
+     ]
+    },
+    {
+     "ma": "C04_S02",
+     "dai": 5.5,
+     "co_canh": "MS",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Gáo 14 tuổi, mặt lấm tro, cầm mái chèo, chặn đường",
+     "prompt": "medium shot, a 14-year-old Vietnamese boy ferryman, ash on his face, cloth headband, patched brown tunic, holding a wooden oar, blocking a path in the smoke",
+     "chu": [
+      {
+       "kieu": "phuon",
+       "dong": [
+        "Gáo",
+        "cậu bé chèo đò (hư cấu)"
+       ],
+       "luc": 0.3,
+       "vi_tri": "phai"
+      }
+     ],
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Các ông đắp đê cho ai?",
+       "luc": 1.8,
+       "cam_xuc": "nén giận"
+      }
+     ]
+    },
+    {
+     "ma": "C04_S03",
+     "dai": 3,
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Kiên khựng lại",
+     "prompt": "medium close-up, a young soldier with a scar on his left eyebrow stopping short, smoke drifting across his face"
+    },
+    {
+     "ma": "C04_S04",
+     "dai": 11.8,
+     "co_canh": "CU",
+     "goc": "ngang",
+     "chuyen_dong": "day_vao",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Gáo nói, mắt đỏ hoe, nước mắt lẫn tro",
+     "prompt": "close-up of a teenage boy's face streaked with ash and tears, trembling with anger, smoke behind",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Giặc hỏi chỗ nước cạn, / bà tôi không nói. // Đê vẫn đứng đó. / Làng tôi thì không còn.",
+       "luc": 0.4,
+       "cam_xuc": "nghẹn, tăng dần"
+      }
+     ]
+    },
+    {
+     "ma": "C04_S05",
+     "dai": 3,
+     "co_canh": "ECU",
+     "goc": "ngang",
+     "chuyen_dong": "zoom_giat",
+     "diem_nhan": 1.2,
+     "do": true,
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Hai tay Gáo bẻ gãy mái chèo, dải vải đỏ sẫm giật mạnh",
+     "prompt": "extreme close-up of two hands snapping a wooden oar in half, a strip of deep crimson cloth whipping in the air, splinters",
+     "am_thanh": [
+      "gỗ gãy (SFX lớn)"
+     ],
+     "sfx": [
+      {
+       "file": "am_thanh/sfx/go_gay.wav",
+       "luc": 1.2,
+       "db": -2
+      }
+     ]
+    },
+    {
+     "ma": "C04_S06",
+     "dai": 3,
+     "co_canh": "MS",
+     "goc": "cao",
+     "chuyen_dong": "dung",
+     "nhan_vat": [],
+     "noi_dung": "Nửa mái chèo rơi xuống bùn ngay chân Kiên",
+     "prompt": "medium high-angle shot, half of a broken wooden oar falling into mud at a soldier's boots"
+    },
+    {
+     "ma": "C04_S07",
+     "dai": 5.4,
+     "co_canh": "MCU",
+     "goc": "ngang",
+     "chuyen_dong": "dung",
+     "nhan_vat": [
+      "GAO"
+     ],
+     "noi_dung": "Gáo quay lưng bỏ đi, nói không nhìn lại",
+     "prompt": "medium close-up from behind, a teenage boy turning away into the smoke, shoulders tense",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Ông không giữ được / thì tôi giữ.",
+       "luc": 0.9,
+       "cam_xuc": "lạnh, dứt khoát"
+      }
+     ],
+     "ghi_chu": "Lời thề chưa trả – được trả ở nhịp 9."
+    },
+    {
+     "ma": "C04_S08",
+     "dai": 5,
+     "co_canh": "CU",
+     "goc": "thẳng xuống",
+     "chuyen_dong": "day_vao",
+     "do": true,
+     "nhan_vat": [
+      "KIEN"
+     ],
+     "noi_dung": "Kiên nhặt nửa mái chèo, ngón tay chạm vào ba vạch khắc. Anh nhận ra.",
+     "prompt": "close-up top-down, a soldier's fingers touching three carved notches on half of a broken oar, a strip of deep crimson cloth, mud",
+     "ghi_chu": "Khán giả biết, Gáo không biết: tạo kịch tính chờ."
+    }
+   ]
+  }
+ ]
+}

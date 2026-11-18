@@ -1,0 +1,25 @@
+{
+ "_ghi_chu": "Khung nhịp nhân vật rút từ 2 tập mẫu Việt Sử Kiêu Hùng (Lũy Thầy 20:22, Đa Bang 22:02). vi_tri_pct = % tổng thời lượng video (credit chiếm 88–100%). cat_phut / loi_pct = khoảng đo được (measured) ở các đoạn tương ứng; dung làm mục tiêu kiểm tra.",
+ "nhip": [
+  {"so": 1, "ma": "MO", "ten": "Hình mở / biểu tượng", "vi_tri_pct": [0, 6], "cat_phut": [1, 5], "loi_pct": [0, 10], "viec": "Không lời. Một hình đại diện chủ đề. Thẻ thời gian/địa danh. Kết bằng fade đen.", "nguon": "Đa Bang 0:00–1:18 (2,3 cắt/phút, 0% lời); Lũy Thầy 0:00–0:19 (1 cắt, 0% lời)"},
+  {"so": 2, "ma": "GIEO_NO", "ten": "Gieo nợ (quá khứ / cảnh nhỏ)", "vi_tri_pct": [6, 11], "cat_phut": [8, 13], "loi_pct": [40, 60], "viec": "Người anh hùng giúp một người dân, gần như vô tình. Chưa lộ tên. Gieo VẬT DẪN ĐƯỜNG.", "nguon": "Đa Bang 1:18–2:22 (11,2 cắt/phút, 52% lời)"},
+  {"so": 3, "ma": "CHU_DE", "ten": "Câu chủ đề", "vi_tri_pct": [11, 15], "cat_phut": [8, 12], "loi_pct": [55, 75], "viec": "Nhân vật (không phải người dẫn) nói nỗi sợ / lời hứa của cả tập.", "nguon": "Đa Bang 2:22–3:14 (10,4 cắt/phút, 69% lời); Lũy Thầy 0:19–0:51 (9,3; 57%)"},
+  {"so": 4, "ma": "PHAN_DE", "ten": "Nút thắt: giọng phản đề", "vi_tri_pct": [15, 18], "cat_phut": [10, 14], "loi_pct": [40, 60], "viec": "Người dân trách người anh hùng + MỘT LỜI THỀ chưa trả. Điểm màu đỏ duy nhất trong khung.", "nguon": "Đa Bang 3:14–4:00 (13,0 cắt/phút, 45% lời)"},
+  {"so": 5, "ma": "THU_THACH", "ten": "Trận / thử thách 1 (xen thuyết minh)", "vi_tri_pct": [18, 40], "cat_phut": [14, 28], "loi_pct": [14, 70], "viec": "Action xen bản đồ thuyết minh. Có một cú 'vũ khí phản chủ'.", "nguon": "Đa Bang 4:00–9:13 (23 / 14 / 28 cắt/phút); Lũy Thầy 5:00–6:38 (17,7)"},
+  {"so": 6, "ma": "DINH_ACTION", "ten": "Đỉnh action / đấu tay đôi", "vi_tri_pct": [40, 52], "cat_phut": [12, 40], "loi_pct": [5, 15], "viec": "Gần như không lời. Nhanh nhất phim. Có thể có khoảng lặng dài không nhạc trước khi xả.", "nguon": "Đa Bang 9:13–11:30 (39,9 cắt/phút, 12%); Lũy Thầy 9:25–11:35 (12,5; 5%, 51 s không lời)"},
+  {"so": 7, "ma": "DIEN_VAN", "ten": "Dụ hàng → diễn văn", "vi_tri_pct": [52, 60], "cat_phut": [6, 17], "loi_pct": [55, 60], "viec": "Phản diện đưa lối thoát; anh hùng từ chối và nói lại câu chủ đề bằng hình ảnh mới. Push-in dài.", "nguon": "Đa Bang 11:30–13:14 (16,7; 58%); Lũy Thầy 7:40–9:22 (7,1; 56%)"},
+  {"so": 8, "ma": "TRAN_CUOI", "ten": "Trận cuối, đổi chất liệu hình", "vi_tri_pct": [60, 68], "cat_phut": [10, 21], "loi_pct": [10, 16], "viec": "Báo trước cái chết (ví dụ chuyển đen trắng). MỘT HÌNH NHẮC giọng phản đề.", "nguon": "Đa Bang 13:14–15:06 (10,2; 12%); Lũy Thầy 14:52–16:38 (20,9; 16%)"},
+  {"so": 9, "ma": "TRA_NO", "ten": "Trả nợ", "vi_tri_pct": [68, 71], "cat_phut": [15, 20], "loi_pct": [10, 20], "viec": "Giọng phản đề quay lại, hành động/hy sinh. MỘT câu thoại nối món nợ + lời thề + câu chủ đề.", "nguon": "Đa Bang 15:06–15:46 (19,5; 15%)"},
+  {"so": 10, "ma": "GUONG_SOI", "ten": "Phản diện nói hết câu / gương soi", "vi_tri_pct": [71, 76], "cat_phut": [15, 19], "loi_pct": [40, 60], "viec": "Kết cục cho nhân vật chính, hình phạt/đảo bất ngờ. Kết bằng cắt vào đen trên một âm lớn.", "nguon": "Đa Bang 15:46–16:41 (18,5; 58%); Lũy Thầy 16:42–17:51 (15,6; 43%, đen 7,5 s)"},
+  {"so": 11, "ma": "LICH_SU_LANH", "ten": "Lịch sử lạnh", "vi_tri_pct": [76, 88], "cat_phut": [0, 3], "loi_pct": [25, 80], "viec": "Người dẫn kể hậu quả trên chất liệu khác (tranh cuộn, bản đồ). Hình chốt bằng vật dẫn đường.", "nguon": "Đa Bang 16:41–18:18 (0 cắt, 79% lời); Lũy Thầy 17:58–18:51 (2,3; 24%)"},
+  {"so": 12, "ma": "MOC_CREDIT", "ten": "Móc tập sau + credit", "vi_tri_pct": [88, 100], "cat_phut": [0, 4], "loi_pct": [0, 30], "viec": "Một hình/câu mở sang tập sau. Credit ghi nguồn nhạc và nhân vật hư cấu.", "nguon": "cả hai tập"}
+ ],
+ "toan_phim": {
+  "cat_phut": {"muc_tieu": [10, 15], "nguon": "Lũy Thầy 10,6; Đa Bang 15,0 (measured)"},
+  "trung_vi_shot_s": {"muc_tieu": [1.8, 3.2], "nguon": "Lũy Thầy 3,08; Đa Bang 1,75"},
+  "loi_pct": {"muc_tieu": [40, 46], "nguon": "Lũy Thầy 41,8%; Đa Bang 45,5%"},
+  "fade_den": {"muc_tieu": [10, 16], "do_dai_s": [0.5, 7.5], "nguon": "Lũy Thầy 14 lần"},
+  "toc_do_doc": {"dan_tu_phut": [150, 160], "thoai_tu_phut": [100, 120]},
+  "khoang_khong_nhac_dai": {"muc_tieu_so_lan": 2, "do_dai_s": [60, 75], "nguon": "Lũy Thầy 3:03–4:12, 9:19–10:28, 17:03–18:18"}
+ }
+}
