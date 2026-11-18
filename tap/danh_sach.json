@@ -3,38 +3,37 @@
   "ma_tap": "T01_nhu_nguyet",
   "thu_muc": "T01_nhu_nguyet",
   "tieu_de": "SÔNG – Phòng tuyến Như Nguyệt 1077",
-  "tong": 1105.9,
-  "so_canh": 15,
-  "so_shot": 212,
-  "trang_thai": "15 cảnh. Tuyến Gáo viết lại ngày 18/11/2026: không hy sinh; chỗ sông cạn thành đường vượt sông.",
+  "tong": 1023.2,
+  "so_canh": 14,
+  "so_shot": 179,
+  "trang_thai": "Bản 2 (18/11/2026): viết lại toàn bộ để không lặp Đa Bang – gói trong một đêm, giọng phản đề là người buôn muối, đan tuyến phía Tống.",
   "series": "Sông – các phòng tuyến",
   "bien_the": {
-   "giong_phan_de": "TRE_EM",
-   "mon_no": "CUU_MANG",
+   "giong_phan_de": "THUONG_NHAN",
+   "mon_no": "BI_MAT",
    "nut_that": [
-    "THU_NHAN",
-    "VU_KHI_PHAN_CHU"
+    "THONG_TIN_SAI",
+    "THU_NHAN"
    ],
-   "ket_tuyen": "SONG_DAN_DUONG",
-   "guong_soi": "NIEM_TIN_SUP_DO",
-   "thoi_gian": "COLD_OPEN_HOI_TUONG",
-   "dan_xen": "MOT_TUYEN"
+   "ket_tuyen": "BO_DI",
+   "guong_soi": "THU_DOAN_QUAY_LAI",
+   "thoi_gian": "MOT_DEM",
+   "dan_xen": "TUYEN_PHE_DICH"
   },
   "chuoi_nhip": [
    "MO",
-   "GIEO_NO",
+   "TUYEN_DICH",
    "CHU_DE",
    "PHAN_DE",
    "THU_THACH",
-   "THU_THACH",
-   "THU_THACH",
+   "GIEO_NO",
+   "TUYEN_DICH",
+   "DOI_CHAT",
    "DINH_ACTION",
    "DIEN_VAN",
-   "TRAN_CUOI",
-   "TRA_NO",
    "GUONG_SOI",
+   "TRA_NO",
    "LICH_SU_LANH",
-   "MOC_CREDIT",
    "MOC_CREDIT"
   ]
  }

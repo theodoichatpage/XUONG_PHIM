@@ -3,7 +3,8 @@
 
 const VE = (() => {
   const NHOM = {MO: 'mo', GIEO_NO: 'tho', CHU_DE: 'drama', PHAN_DE: 'drama', THU_THACH: 'action', DINH_ACTION: 'action', DIEN_VAN: 'drama',
-    TRAN_CUOI: 'action', TRA_NO: 'drama', GUONG_SOI: 'drama', LICH_SU_LANH: 'thuyet', MOC_CREDIT: 'ket'};
+    TRAN_CUOI: 'action', TRA_NO: 'drama', GUONG_SOI: 'drama', LICH_SU_LANH: 'thuyet', MOC_CREDIT: 'ket',
+    TUYEN_DICH: 'drama', DOI_CHAT: 'drama', HOI_TUONG: 'tho'};
   const LOAI = {mo: ['Mở / tựa', '--c-mo'], tho: ['Gieo / ký ức', '--c-tho'], drama: ['Kịch – đối thoại', '--c-drama'],
     action: ['Hành động', '--c-action'], thuyet: ['Thuyết minh / lịch sử', '--c-thuyet'], ket: ['Móc / credit', '--c-ket']};
   const NS = 'http://www.w3.org/2000/svg';
