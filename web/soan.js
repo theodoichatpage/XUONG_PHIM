@@ -193,10 +193,10 @@ const SOAN = (() => {
     const nhanDung = (c, ma) => { const d = dung(c, ma); return d.length ? ` — đã dùng: ${d.join('; ')}` : ' — chưa dùng'; };
     const moTa = (c, v) => [].concat(v || []).map(x => c.lua_chon.find(l => l.ma === x)).filter(Boolean).map(l => `<b>${esc(l.ten)}</b>: ${esc(l.mo_ta)} <span class="muted">Ví dụ: ${esc(l.vi_du)}</span>`).join('<br>');
     m.innerHTML = `<div class="panel"><p class="muted" style="margin:0">Phim tham khảo chỉ để học. Tập trong series nên chọn tổ hợp <b>khác</b> các tập trước: đổi giọng phản đề, đổi món nợ, đan thêm một tuyến truyện mới. Lựa chọn “chưa dùng” là chỗ nên thử trước. Bảng bên phải báo ngay nếu tổ hợp trùng.</p>
-      ${kho.chieu.map(c => `<div class="shot-ed" data-chieu="${c.ma}"><b>${esc(c.ten)}</b> <span class="muted">${esc(c.hoi)}</span>
+      ${kho.chieu.map(c => `<div class="shot-ed" data-chieu="${c.ma}" style="display:grid;gap:6px;min-width:0"><div><b>${esc(c.ten)}</b> <span class="muted">${esc(c.hoi)}</span></div>
         ${c.nhieu
           ? `<div class="row" style="gap:4px 14px;flex-wrap:wrap">${c.lua_chon.map(l => `<label style="font-size:13.5px"><input type="checkbox" data-bt="${c.ma}" value="${l.ma}" ${[].concat(t.bien_the[c.ma] || []).includes(l.ma) ? 'checked' : ''}> ${esc(l.ten)}<span class="muted">${esc(nhanDung(c, l.ma))}</span></label>`).join('')}</div>`
-          : `<select data-bt="${c.ma}"><option value="">— chưa chọn —</option>${c.lua_chon.map(l => `<option value="${l.ma}" ${t.bien_the[c.ma] === l.ma ? 'selected' : ''}>${esc(l.ten + nhanDung(c, l.ma))}</option>`).join('')}</select>`}
+          : `<select data-bt="${c.ma}" style="width:100%;max-width:100%;min-width:0"><option value="">— chưa chọn —</option>${c.lua_chon.map(l => `<option value="${l.ma}" ${t.bien_the[c.ma] === l.ma ? 'selected' : ''}>${esc(l.ten + nhanDung(c, l.ma))}</option>`).join('')}</select>`}
         <div class="muted" data-mota="${c.ma}" style="font-size:13px">${moTa(c, t.bien_the[c.ma])}</div></div>`).join('')}
       <div class="row"><a class="btn" href="#/quy-chuan/bien-the">Xem toàn bộ kho biến thể</a></div></div>`;
     m.querySelectorAll('[data-bt]').forEach(el => el.addEventListener('change', e => {
