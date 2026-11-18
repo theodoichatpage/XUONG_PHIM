@@ -1,6 +1,6 @@
 # Định dạng `tap.json`: một tập phim là một file
 
-Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/tap.json`. Viết đúng định dạng này là có ngay phiếu dựng, bảng shot, prompt ảnh, kịch bản đọc và animatic.
+Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/tap.json`. Viết đúng định dạng này là có ngay phiếu dựng, bảng shot, gói ảnh (kịch bản chi tiết cho công cụ tạo ảnh), kịch bản đọc và animatic.
 
 ## Cấp tập
 
@@ -10,7 +10,7 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `tieu_de` | ✓ | tên tập |
 | `tong_du_kien_s` | | tổng thời lượng dự kiến (giây). Dùng để so vị trí % khi mới viết một phần |
 | `fps`, `rong`, `cao` | | mặc định 24, 1920, 1080 |
-| `phong_cach_prompt` | ✓ | câu phong cách tiếng Anh, tự ghép vào cuối mọi prompt ảnh |
+| `phong_cach_prompt` | | (không dùng cho gói ảnh – phong cách do công cụ tạo ảnh quyết định) |
 | `chu_de` | ✓ | câu chủ đề (nhịp 3), viết bằng lời của nhân vật |
 | `giong_phan_de` | ✓ | ai là giọng phản đề, họ trách điều gì |
 | `vat_dan_duong` | ✓ | các đồ vật / màu đi suốt phim |
@@ -29,6 +29,7 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `ma` | `C01`, `C02`… |
 | `ten`, `muc_dich` | tên cảnh, cảnh này làm gì cho câu chuyện |
 | `nhip` | mã nhịp trong `quy_chuan/khung_12_nhip.json`: `MO`, `GIEO_NO`, `CHU_DE`, `PHAN_DE`, `THU_THACH`, `DINH_ACTION`, `DIEN_VAN`, `TRAN_CUOI`, `TRA_NO`, `GUONG_SOI`, `LICH_SU_LANH`, `MOC_CREDIT`. Một nhịp có thể gồm nhiều cảnh |
+| `boi_canh` | `{"thoi_diem": "đêm, mưa", "dia_diem": "…", "anh_sang": "night, heavy rain, torchlight"}`: đưa vào gói ảnh |
 | `ket_thuc` | `{"kieu": "fade_den", "dai": 1.5}` (shot cuối mờ ra, rồi đen 1,5 s) · `{"kieu": "flash_trang", "dai": 0.4}` · `{"kieu": "cat"}` |
 | `nhac` | `{"file": "am_thanh/nhac/x.mp3", "am_luong_db": -12, "luc": 0, "ghi_chu": "…"}` hoặc `null` (cảnh không nhạc) |
 | `khuon` | `{"tham_khao": "dabang", "ten": "Đa Bang – Hồi 2", "canh": 3}`: cảnh này dựng theo cảnh nào của phim tham khảo (trang web hiện liên kết sang) |
@@ -52,7 +53,7 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `ai_video`, `chuyen_dong_ai` | | shot nên làm bằng AI video, kèm mô tả chuyển động |
 | `nhan_vat` | `["GAO", "KIEN"]` | ai có trong hình (để đính ảnh mẫu) |
 | `noi_dung` | tiếng Việt | mô tả hình cho người dựng |
-| `prompt` | tiếng Anh | prompt ảnh (không cần ghép phong cách, công cụ tự ghép) |
+| `prompt` | tiếng Anh | mô tả **nội dung** hình (chủ thể, hành động, bối cảnh) để công cụ tạo ảnh tham khảo; không ghi phong cách |
 | `anh` | đường dẫn | chỉ ghi khi file không nằm ở `anh/Cxx/<ma>.png` |
 | `thoai` | danh sách | `{"vai": "GAO", "loi": "…", "luc": 0.4, "cam_xuc": "…", "file": "giong/C04_S02_GAO.wav", "tran": false}`. `luc` = giây tính từ đầu shot. `/` ngắt 0,3 s, `//` ngắt 0,8 s. `tran: true` cho phép lời tràn sang shot sau |
 | `chu` | danh sách | `{"kieu": "phuon" \| "the" \| "tua", "dong": ["Tên", "chức danh"], "luc": 0.5, "dai": 5, "vi_tri": "trai" \| "phai"}` |

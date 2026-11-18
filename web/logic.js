@@ -106,7 +106,7 @@ const XP = (() => {
       if (!CHUYEN_DONG.includes(s.chuyen_dong)) loi.push({ma: s.ma, t: `chuyển động '${s.chuyen_dong}' không hợp lệ`});
       if (!CHUYEN_VAO.includes(s.vao)) loi.push({ma: s.ma, t: `cách vào '${s.vao}' không hợp lệ`});
       if (!(+s.dai > 0)) loi.push({ma: s.ma, t: 'độ dài phải lớn hơn 0'});
-      if (['anh', 'video'].includes(s.loai) && !(s.prompt || s.anh)) canhBao.push({ma: s.ma, t: 'chưa có prompt ảnh'});
+      if (['anh', 'video'].includes(s.loai) && !(s.prompt || s.anh)) canhBao.push({ma: s.ma, t: 'chưa có mô tả hình bằng tiếng Anh (trường prompt)'});
       (s.nhan_vat || []).forEach(m => { if (!nv.has(m)) loi.push({ma: s.ma, t: `nhân vật '${m}' chưa khai báo`}); });
       const coDo = /\b(crimson|red|blood)\b/i.test(s.prompt || '');
       if (s.do && !coDo) canhBao.push({ma: s.ma, t: "đánh dấu đỏ sẫm nhưng prompt chưa ghi 'deep crimson'"});

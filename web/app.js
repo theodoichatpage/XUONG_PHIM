@@ -71,7 +71,7 @@ async function trangChu() {
 }
 
 // ---------------------------------------------------------------- trang tập
-const TABS = [['tuyen', 'Tuyến phim'], ['kich-ban', 'Kịch bản'], ['phieu-dung', 'Phiếu dựng'], ['prompt', 'Prompt ảnh'],
+const TABS = [['tuyen', 'Tuyến phim'], ['kich-ban', 'Kịch bản'], ['phieu-dung', 'Phiếu dựng'], ['goi-anh', 'Gói ảnh'],
   ['doc', 'Kịch bản đọc'], ['kiem-tra', 'Kiểm tra'], ['tien-do', 'Tiến độ']];
 
 async function trangTap(ma, tab = 'tuyen', canhMo) {
@@ -99,7 +99,7 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
   APP.querySelector('[data-act="json"]').onclick = () => taiFile('tap.json', JSON.stringify(tap, null, 1));
   APP.querySelector('[data-act="csv"]').onclick = () => taiFile(`${tap.ma_tap}_bang_shot.csv`, XP.csv(tap), 'text/csv');
   const body = $('#tabbody');
-  ({tuyen: tabTuyen, 'kich-ban': tabKichBan, 'phieu-dung': tabPhieu, prompt: tabPrompt, doc: tabDoc, 'kiem-tra': tabKiemTra, 'tien-do': tabTienDo}[tab] || tabTuyen)(tap, r, body, ma, canhMo);
+  ({tuyen: tabTuyen, 'kich-ban': tabKichBan, 'phieu-dung': tabPhieu, 'goi-anh': tabGoiAnh, doc: tabDoc, 'kiem-tra': tabKiemTra, 'tien-do': tabTienDo}[tab] || tabTuyen)(tap, r, body, ma, canhMo);
 }
 
 function tabTuyen(tap, r, body, ma) {
@@ -235,31 +235,47 @@ function tabPhieu(tap, r, body) {
   body.innerHTML = html + '</div></details>';
 }
 
-function tabPrompt(tap, r, body) {
-  const {tl} = XP.timeline(tap);
-  const nv = Object.fromEntries((tap.nhan_vat || []).map(n => [n.ma, n]));
-  const shots = tl.filter(s => !s._ao && ['anh', 'video'].includes(s.loai) && s.prompt);
-  const tatCa = shots.map(s => `[${s.ma}] ${XP.promptDayDu(tap, s)} --ar 16:9`).join('\n\n');
+function tabGoiAnh(tap, r, body, ma) {
+  const g = GOIANH.tao(tap, ma === '__nhap__' ? '' : `${location.origin}/tap/${ma}/tap.json`);
+  const link = ma === '__nhap__' ? '' : `${location.origin}/tap/${encodeURIComponent(ma)}/goi_anh.json`;
+  const mdShot = s => GOIANH.markdown(Object.assign({}, g, {shot: [s], nhan_vat: []})).split('## Shot')[1].trim();
   body.innerHTML = `
-    <p class="muted" style="margin:0">Mỗi prompt đã ghép sẵn câu phong cách. Shot có nhân vật: đính kèm ảnh mẫu của nhân vật (Midjourney: <code>--cref &lt;link ảnh&gt; --cw 80</code>). Lưu ảnh đúng tên file ghi bên cạnh.</p>
-    <div class="row"><button data-copy="${esc(tatCa)}">Chép tất cả ${shots.length} prompt</button></div>
-    <h3>Sổ nhân vật (làm ảnh mẫu trước)</h3>
-    <div class="grid-cards">${(tap.nhan_vat || []).filter(n => n.nhan_dang).map(n => {
-      const p = `character reference sheet, ${n.nhan_dang}, front view, plain grey background, ${tap.phong_cach_prompt || XP.STYLE} --ar 16:9`;
-      return `<div class="card"><b>${esc(n.ten)} <span class="tag">${esc(n.ma)}</span> ${n.loai === 'hư cấu' ? '<span class="tag">hư cấu</span>' : ''}</b>
-        <span class="muted" style="font-size:13px">Lưu thành <code>${esc(n.anh_mau || `so_nhan_vat/${n.ma}.png`)}</code></span>
-        <div class="prompt">${esc(p)}</div><button class="small" data-copy="${esc(p)}">Chép</button></div>`;
-    }).join('')}</div>
-    <h3>Prompt từng shot</h3>
-    ${shots.map(s => {
-      const p = `${XP.promptDayDu(tap, s)} --ar 16:9`;
-      const ref = (s.nhan_vat || []).map(m => nv[m] ? `${nv[m].ten} (${nv[m].anh_mau || `so_nhan_vat/${m}.png`})` : m).join(', ');
-      return `<div class="shot"><div class="st"><b>${s.ma}</b><span>${esc(s.co_canh || '')} ${esc(s.goc || '')}</span><span>lưu: <code>${esc(s.anh || XP.anhMacDinh(s))}</code></span>${s.do ? '<span class="pill red" style="justify-self:start">đỏ sẫm</span>' : ''}</div>
-        <div class="sb"><span class="muted" style="font-size:13px">${esc(s.noi_dung || '')}${ref ? ` · ảnh mẫu: ${esc(ref)}` : ''}</span>
-          <div class="prompt">${esc(p)}</div>
-          ${s.tach_lop ? '<span class="muted" style="font-size:13px">+ Tạo thêm ảnh chỉ có nền (bỏ nhân vật, thêm "empty scene, no people") để làm parallax.</span>' : ''}
-          <div><button class="small" data-copy="${esc(p)}">Chép prompt</button></div></div></div>`;
+    <p class="muted" style="margin:0">Kịch bản chi tiết từng shot để gửi cho công cụ tạo ảnh (Man). Gói chỉ mô tả <b>nội dung</b>: thấy gì, ai, làm gì, khung hình, bối cảnh, liên tục, tên file và kích thước. Prompt và phong cách do Man tự dựng theo quy định của Man.</p>
+    <div class="grid-cards">
+      <div class="card"><b>${g.thong_ke.so_shot_can_anh} shot cần ảnh</b><span class="muted" style="font-size:13px">${g.thong_ke.so_nhan_vat} nhân vật · ${g.thong_ke.so_shot_do_sam} shot đỏ sẫm · ${g.thong_ke.so_shot_den_trang} shot đen trắng · ${g.thong_ke.so_anh_nen} ảnh nền tách lớp</span></div>
+      <div class="card"><b>Tải gói ảnh</b><div class="row"><button class="primary" data-x="json">JSON (cho Man)</button><button data-x="md">Markdown</button><button data-x="csv">Excel</button></div></div>
+      ${link ? `<div class="card"><b>Link cố định cho Man</b><span class="muted" style="font-size:12.5px;overflow-wrap:anywhere">${esc(link)}</span><div class="row"><button class="small" data-copy="${esc(link)}">Chép link</button></div><span class="muted" style="font-size:12px">Luôn khớp với kịch bản mới nhất trên GitHub (Vercel tự xuất lại khi có thay đổi).</span></div>` : '<div class="card"><b>Bản nháp</b><span class="muted" style="font-size:13px">Chưa có link cố định. Tải JSON để gửi, hoặc đưa tap.json lên GitHub.</span></div>'}
+    </div>
+    <h3>Nhân vật (làm ảnh mẫu trước)</h3>
+    <div class="grid-cards">${g.nhan_vat.map(n => `<div class="card" style="gap:4px"><b>${esc(n.ten)} <span class="tag">${esc(n.ma)}</span>${n.loai === 'hư cấu' ? ' <span class="tag">hư cấu</span>' : ''}</b>
+      <span class="muted" style="font-size:13px">${n.so_shot} shot · xuất hiện đầu ở ${esc(n.shot_dau_tien || '')} · ảnh mẫu <code>${esc(n.anh_mau)}</code></span><span style="font-size:13px">${esc(n.dac_diem_en)}</span></div>`).join('')}</div>
+    <div class="row"><button data-x="mo">Mở tất cả cảnh</button><button data-x="dong">Đóng tất cả</button></div>
+    ${tap.canh.map(c => {
+      const ss = g.shot.filter(s => s.canh === c.ma);
+      if (!ss.length) return '';
+      return `<details class="scene"><summary><span class="sc-no">${c.ma}</span><span><b>${esc(c.ten || '')}</b><br><span class="muted" style="font-size:13px">${esc([ss[0].boi_canh.thoi_diem, ss[0].boi_canh.dia_diem].filter(Boolean).join(' · '))}</span></span><span class="meta"><span>${ss.length} ảnh</span></span></summary>
+        <div class="sc-body">${ss.map(s => `<div class="shot">
+          <div class="st"><b>${s.ma}</b><span>${esc(s.khung_hinh.co_canh)} · ${s.dai_s} s</span><span><code>${esc(s.file)}</code></span><span>khuyên ${esc(s.dung.khuyen)}</span>
+            ${s.do_sam ? '<span class="pill red" style="justify-self:start">đỏ sẫm</span>' : ''}${s.den_trang ? '<span class="tag" style="justify-self:start">đen trắng</span>' : ''}</div>
+          <dl class="kv sb">
+            <dt>Hình</dt><dd>${esc(s.mo_ta)}</dd>
+            ${s.noi_dung_en ? `<dt>Nội dung (EN)</dt><dd class="muted">${esc(s.noi_dung_en)}</dd>` : ''}
+            <dt>Khung hình</dt><dd>${esc(s.khung_hinh.goc_may)} · ${esc(s.khung_hinh.ong_kinh)}. ${esc(s.khung_hinh.bo_cuc)}</dd>
+            ${s.boi_canh.anh_sang ? `<dt>Ánh sáng</dt><dd>${esc(s.boi_canh.anh_sang)}</dd>` : ''}
+            ${s.nhan_vat.length ? `<dt>Nhân vật</dt><dd>${s.nhan_vat.map(n => `${esc(n.ten)} (<code>${esc(n.anh_mau)}</code>)`).join(', ')}</dd>` : ''}
+            ${s.thoai_trong_shot.length ? `<dt>Thoại (biểu cảm)</dt><dd>${s.thoai_trong_shot.map(esc).join('<br>')}</dd>` : ''}
+            ${s.ghi_chu_truyen.length ? `<dt>Ghi chú truyện</dt><dd>${esc(s.ghi_chu_truyen.join(' '))}</dd>` : ''}
+            ${s.lien_tuc.ghi_chu.length ? `<dt>Liên tục</dt><dd>${esc(s.lien_tuc.ghi_chu.join(' '))}</dd>` : ''}
+            <dt>Dựng</dt><dd>${esc(s.dung.chuyen_dong_may)}. ${esc(s.dung.le_an_toan)}</dd>
+            ${s.anh_nen.can ? `<dt>Ảnh nền</dt><dd><code>${esc(s.anh_nen.file)}</code> – ${esc(s.anh_nen.mo_ta)}</dd>` : ''}
+            <dt></dt><dd><button class="small" data-copy="${esc(mdShot(s))}">Chép mô tả shot</button></dd>
+          </dl></div>`).join('')}</div></details>`;
     }).join('')}`;
+  body.querySelector('[data-x="json"]').onclick = () => taiFile(`${tap.ma_tap}_goi_anh.json`, JSON.stringify(g, null, 1));
+  body.querySelector('[data-x="md"]').onclick = () => taiFile(`${tap.ma_tap}_goi_anh.md`, GOIANH.markdown(g), 'text/markdown');
+  body.querySelector('[data-x="csv"]').onclick = () => taiFile(`${tap.ma_tap}_goi_anh.csv`, GOIANH.csv(g), 'text/csv');
+  body.querySelector('[data-x="mo"]').onclick = () => body.querySelectorAll('details').forEach(d => d.open = true);
+  body.querySelector('[data-x="dong"]').onclick = () => body.querySelectorAll('details').forEach(d => d.open = false);
 }
 
 function tabDoc(tap, r, body) {
@@ -358,7 +374,7 @@ const QUY_TRINH = `
 
 1. **Soạn tập** → *Tạo tập mới*: nhập mã (không dấu, ví dụ \`T02_bach_dang\`), tên tập, số phút. Web dựng sẵn 12 nhịp, mỗi nhịp có số shot và thời lượng gợi ý.
 2. Điền **thông tin chung**: câu chủ đề, giọng phản đề, vật dẫn đường, nhân vật (mã viết hoa không dấu, dấu hiệu nhận diện để đưa vào prompt).
-3. Viết từng **cảnh** và **shot**: độ dài, cỡ cảnh, góc, chuyển động, nội dung, prompt ảnh (tiếng Anh), thoại (mỗi câu một dòng, \`/\` ngắt 0,3 s, \`//\` ngắt 0,8 s), chữ trên hình.
+3. Viết từng **cảnh** và **shot**: độ dài, cỡ cảnh, góc, chuyển động, nội dung hình (tiếng Việt, kèm một câu tiếng Anh để Man tham khảo), thoại (mỗi câu một dòng, \`/\` ngắt 0,3 s, \`//\` ngắt 0,8 s), chữ trên hình.
 4. Khai báo **gieo – trả**: mỗi đường dây gồm shot gieo, shot nhắc, shot trả.
 5. Nhìn bảng **kiểm tra** bên phải: sửa đến khi *0 lỗi*; cảnh báo về nhịp thì chỉnh độ dài/số shot.
 6. **Lưu**: bản nháp tự lưu trong trình duyệt. Bấm *Tải tap.json* để có file.
@@ -368,9 +384,9 @@ const QUY_TRINH = `
 
 | Bước | Tab trên web |
 |---|---|
-| Làm ảnh mẫu nhân vật | Prompt ảnh → Sổ nhân vật |
+| Gửi kịch bản ảnh cho Man | Gói ảnh → chép link cố định hoặc tải JSON |
 | Thu giọng AI từng câu | Kịch bản đọc (tên file ghi sẵn) |
-| Tạo ảnh từng shot | Prompt ảnh |
+| Đặt ảnh Man tạo vào đúng tên file | Gói ảnh (trường file của từng shot) |
 | Dựng CapCut | Phiếu dựng (mốc, keyframe, chuyển cảnh, chữ, âm thanh) |
 | Đánh dấu tiến độ | Tiến độ |
 | Kỹ thuật: CapCut, màu, âm thanh, xuất file | Quy chuẩn → Hướng dẫn làm video |

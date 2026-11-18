@@ -3,7 +3,7 @@
 Xưởng sản xuất phim lịch sử hoạt họa có biên kịch rõ ràng. Mỗi tập là một file `tap.json` ghi **từng shot**: thời lượng, cỡ cảnh, góc máy, chuyển động camera, thoại, chữ, âm thanh, và các đường dây **gieo – trả** của nhân vật. Từ file đó, công cụ tự sinh:
 - phiếu dựng CapCut;
 - bảng shot;
-- prompt ảnh;
+- gói ảnh (kịch bản chi tiết cho công cụ tạo ảnh);
 - kịch bản đọc;
 - video nháp (animatic) đúng mốc thời gian.
 
@@ -17,7 +17,7 @@ Toàn bộ xưởng chạy được trên web, không cần cài gì và không 
   - **Tuyến phim:** sơ đồ tự vẽ từ kịch bản.
   - **Kịch bản:** từng cảnh, từng shot.
   - **Phiếu dựng:** hướng dẫn dựng CapCut cho từng shot.
-  - **Prompt ảnh:** có nút chép; kèm sổ nhân vật.
+  - **Gói ảnh:** kịch bản chi tiết từng shot cho công cụ tạo ảnh (Man), chỉ nội dung, không prompt; tải JSON / Markdown / Excel hoặc dùng link cố định `/tap/<mã>/goi_anh.json`.
   - **Kịch bản đọc:** lọc theo vai, tên file giọng ghi sẵn.
   - **Kiểm tra:** so với khung 12 nhịp.
   - **Tiến độ:** đánh dấu ảnh / giọng / dựng.

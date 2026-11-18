@@ -2,9 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "echo khong-can-cai",
-  "buildCommand": "python3 cong_cu/cap_nhat_danh_sach.py",
+  "buildCommand": "python3 cong_cu/cap_nhat_danh_sach.py && node cong_cu/xuat_goi_anh.js",
   "outputDirectory": ".",
   "headers": [
-    { "source": "/tap/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] }
+    { "source": "/tap/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }, { "key": "Access-Control-Allow-Origin", "value": "*" }] }
   ]
 }

@@ -169,7 +169,6 @@ const SOAN = (() => {
       <label class="f">Câu chủ đề (do nhân vật nói, không phải người dẫn)<textarea data-p="chu_de" rows="2">${esc(t.chu_de || '')}</textarea></label>
       <label class="f">Giọng phản đề (bắt đầu bằng mã nhân vật, vd. “GAO – …”)<textarea data-p="giong_phan_de" rows="2">${esc(t.giong_phan_de || '')}</textarea></label>
       <label class="f">Vật dẫn đường (mỗi dòng một vật)<textarea data-p="vat_dan_duong" data-t="lines" rows="2">${esc((t.vat_dan_duong || []).join('\n'))}</textarea></label>
-      <label class="f">Câu phong cách (tự ghép vào cuối mọi prompt ảnh)<textarea data-p="phong_cach_prompt" rows="3">${esc(t.phong_cach_prompt || '')}</textarea></label>
       <label class="f">Trạng thái / ghi chú tập<input data-p="trang_thai" value="${esc(t.trang_thai || '')}"></label>
       <div class="panel" style="background:var(--bg)"><b>Năm câu hỏi trước khi viết</b>
         <ol style="margin:0;padding-left:18px"><li>Câu chủ đề là nỗi sợ hay lời hứa nào, ai nói trong 3 phút đầu?</li><li>Ai là giọng phản đề (thường là dân thường nghi ngờ người anh hùng)?</li>
@@ -185,7 +184,7 @@ const SOAN = (() => {
         <label class="f">Tên<input data-p="nhan_vat.${i}.ten" value="${esc(n.ten || '')}"></label>
         <label class="f">Loại<select data-p="nhan_vat.${i}.loai">${opt(['có thật', 'hư cấu', 'giọng'], n.loai)}</select></label>
         <label class="f">Ảnh mẫu<input data-p="nhan_vat.${i}.anh_mau" value="${esc(n.anh_mau || '')}" placeholder="so_nhan_vat/${esc(n.ma)}.png"></label></div>
-        <label class="f">Dấu hiệu nhận diện (tiếng Anh, cho prompt)<textarea data-p="nhan_vat.${i}.nhan_dang" rows="2">${esc(n.nhan_dang || '')}</textarea></label>
+        <label class="f">Đặc điểm nhận diện (tiếng Anh, để công cụ tạo ảnh giữ nhân vật đồng nhất)<textarea data-p="nhan_vat.${i}.nhan_dang" rows="2">${esc(n.nhan_dang || '')}</textarea></label>
         <label class="f">Giọng (cho người lồng tiếng / giọng AI)<input data-p="nhan_vat.${i}.giong" value="${esc(n.giong || '')}"></label>
         <div class="row"><button class="small danger" data-x="xoa" data-i="${i}">Xóa nhân vật</button></div></div>`).join('')}
       <div class="row"><button data-x="them">+ Thêm nhân vật</button></div></div>`;
@@ -260,6 +259,11 @@ const SOAN = (() => {
         <label class="f">Khuôn tham khảo (mã, vd. dabang)<input data-p="${p}.khuon.tham_khao" value="${esc(c.khuon?.tham_khao || '')}"></label>
         <label class="f">Theo cảnh số của khuôn<input type="number" min="1" data-t="num" data-p="${p}.khuon.canh" value="${esc(c.khuon?.canh ?? '')}"></label>
       </div>
+      <div class="fgrid">
+        <label class="f">Thời điểm / thời tiết<input data-p="${p}.boi_canh.thoi_diem" value="${esc(c.boi_canh?.thoi_diem || '')}" placeholder="đêm, mưa"></label>
+        <label class="f">Địa điểm<input data-p="${p}.boi_canh.dia_diem" value="${esc(c.boi_canh?.dia_diem || '')}"></label>
+        <label class="f" style="grid-column:span 2">Ánh sáng (tiếng Anh, nội dung)<input data-p="${p}.boi_canh.anh_sang" value="${esc(c.boi_canh?.anh_sang || '')}" placeholder="night, heavy rain, torchlight"></label>
+      </div>
       <label class="f">Mục đích của cảnh trong câu chuyện<textarea data-p="${p}.muc_dich" rows="2">${esc(c.muc_dich || '')}</textarea></label>
       <div class="row"><button class="small" data-x="len-canh">↑ Đưa cảnh lên</button><button class="small" data-x="xuong-canh">↓ Đưa cảnh xuống</button><button class="small danger" data-x="xoa-canh">Xóa cảnh</button></div>
       ${(c.shot || []).map((s, si) => veShot(s, `${p}.shot.${si}`, si, vai)).join('')}
@@ -314,7 +318,7 @@ const SOAN = (() => {
         <label class="f">Tách lớp parallax<input type="checkbox" data-t="bool" data-p="${p}.tach_lop" ${s.tach_lop ? 'checked' : ''}></label>
       </div>
       <label class="f">Nội dung hình (tiếng Việt)<textarea rows="2" data-p="${p}.noi_dung">${esc(s.noi_dung || '')}</textarea></label>
-      <label class="f">Prompt ảnh (tiếng Anh; phong cách tự ghép)<textarea rows="2" data-p="${p}.prompt">${esc(s.prompt || '')}</textarea></label>
+      <label class="f">Nội dung hình bằng tiếng Anh (tham khảo cho công cụ tạo ảnh, không ghi phong cách)<textarea rows="2" data-p="${p}.prompt">${esc(s.prompt || '')}</textarea></label>
       <div class="sub"><span class="muted" style="font-size:12.5px">Thoại (/ ngắt 0,3 s · // ngắt 0,8 s · “Lúc” = giây tính từ đầu shot)</span>
         ${(s.thoai || []).map((c, j) => `<div class="subrow">
           <div class="cell"><select aria-label="Vai" data-p="${p}.thoai.${j}.vai">${opt([...new Set([...vai, c.vai])], c.vai)}</select></div>

@@ -21,7 +21,7 @@
    "ma": "GAO",
    "ten": "Gáo",
    "loai": "hư cấu",
-   "nhan_dang": "cậu bé chèo đò; lúc bé 8 tuổi, hiện tại 14 tuổi; gầy, da sạm, tóc ngắn rối, khăn vải buộc trán, áo nâu vá vai",
+   "nhan_dang": "a 14-year-old Vietnamese boy ferryman, thin, sun-darkened skin, short messy hair, cloth headband, patched brown tunic (in the flashback scene C02 he is 8 years old, same face and headband)",
    "anh_mau": "so_nhan_vat/GAO.png",
    "giong": "thiếu niên; lúc bé dùng giọng trẻ em"
   },
@@ -29,7 +29,7 @@
    "ma": "KIEN",
    "ten": "Trần Kiên",
    "loai": "hư cấu",
-   "nhan_dang": "tướng trẻ ~25 tuổi, mặt vuông, sẹo mảnh lông mày trái, mũ trụ da, giáp vảy sẫm, khăn quàng xám dài",
+   "nhan_dang": "a young Vietnamese soldier about 25, square face, thin scar on his left eyebrow, leather helmet, dark scale armor, long grey scarf",
    "anh_mau": "so_nhan_vat/KIEN.png",
    "giong": "nam trẻ, chắc, 110 từ/phút"
   },
@@ -37,7 +37,7 @@
    "ma": "LTK",
    "ten": "Lý Thường Kiệt",
    "loai": "có thật",
-   "nhan_dang": "ngoài 60, râu bạc cắt gọn, áo bào sẫm thêu mây, ánh mắt trầm",
+   "nhan_dang": "an elderly Vietnamese general in his sixties, trimmed white beard, dark robe embroidered with clouds, calm heavy gaze, upright posture",
    "anh_mau": "so_nhan_vat/LTK.png",
    "giong": "nam lớn tuổi, trầm, ngắn gọn"
   },
@@ -45,7 +45,7 @@
    "ma": "QQ",
    "ten": "Quách Quỳ",
    "loai": "có thật",
-   "nhan_dang": "chủ tướng quân Tống, ngoài 50, râu quai nón đen pha bạc, áo choàng lông thú",
+   "nhan_dang": "a Song dynasty Chinese commander in his fifties, black-and-grey full beard, fur-trimmed cloak, winged official cap, cold expression",
    "anh_mau": "so_nhan_vat/QQ.png",
    "giong": "nam trung niên, lạnh"
   },
@@ -59,7 +59,7 @@
    "ma": "BA",
    "ten": "Bà nội Gáo",
    "loai": "hư cấu",
-   "nhan_dang": "bà cụ gầy, khăn vấn, áo nâu",
+   "nhan_dang": "a thin old Vietnamese grandmother, cloth head wrap, plain brown peasant clothes",
    "anh_mau": "so_nhan_vat/BA.png",
    "giong": "không thoại"
   },
@@ -75,7 +75,7 @@
    "ma": "SU",
    "ten": "Sứ giả Tống",
    "loai": "hư cấu",
-   "nhan_dang": "áo bào trơn, cúi đầu",
+   "nhan_dang": "a Song dynasty envoy in a plain grey robe, bowing posture",
    "giong": "nam, nhỏ nhẹ"
   },
   {
@@ -312,6 +312,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 1
+   },
+   "boi_canh": {
+    "thoi_diem": "đêm, sương trên sông",
+    "dia_diem": "sông Như Nguyệt",
+    "anh_sang": "night, thin moonlight through river mist"
    }
   },
   {
@@ -520,6 +525,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 2
+   },
+   "boi_canh": {
+    "thoi_diem": "đêm, mưa lũ",
+    "dia_diem": "làng ven sông ngập nước",
+    "anh_sang": "night, heavy rain, flickering torchlight, wet reflections"
    }
   },
   {
@@ -691,6 +701,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 3
+   },
+   "boi_canh": {
+    "thoi_diem": "ngày u ám",
+    "dia_diem": "đê Như Nguyệt",
+    "anh_sang": "overcast daylight, flat grey sky, soft diffused light"
    }
   },
   {
@@ -856,6 +871,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 4
+   },
+   "boi_canh": {
+    "thoi_diem": "ngày, khói làng cháy",
+    "dia_diem": "làng ven sông bị đốt",
+    "anh_sang": "overcast day, drifting black smoke, ash in the air, muted light"
    }
   },
   {
@@ -1266,6 +1286,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 5
+   },
+   "boi_canh": {
+    "thoi_diem": "ngày, sương sớm",
+    "dia_diem": "hai bờ sông Như Nguyệt",
+    "anh_sang": "morning mist, pale diffused light, low contrast distance"
    }
   },
   {
@@ -1512,6 +1537,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 6
+   },
+   "boi_canh": {
+    "thoi_diem": "bản đồ / chạng vạng",
+    "dia_diem": "bản đồ giấy cũ, bờ sông",
+    "anh_sang": "dusk; map scenes are flat paper"
    }
   },
   {
@@ -1937,6 +1967,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 7
+   },
+   "boi_canh": {
+    "thoi_diem": "đêm, lửa không màu",
+    "dia_diem": "lều chỉ huy, bến nam",
+    "anh_sang": "night, oil lamps and pale white-grey firelight, deep shadows"
    }
   },
   {
@@ -2581,6 +2616,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 8
+   },
+   "boi_canh": {
+    "thoi_diem": "đêm không trăng",
+    "dia_diem": "cầu phao giữa sông",
+    "anh_sang": "moonless night, only torchlight, high contrast, black water"
    }
   },
   {
@@ -2888,6 +2928,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 9
+   },
+   "boi_canh": {
+    "thoi_diem": "bình minh → đêm",
+    "dia_diem": "đê nam, đền nhỏ bên sông",
+    "anh_sang": "early dawn grey light (last two shots: night with faint lamp glow)"
    }
   },
   {
@@ -3144,6 +3189,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 10
+   },
+   "boi_canh": {
+    "thoi_diem": "sáng sớm, mực đen trắng",
+    "dia_diem": "đê và mặt sông",
+    "anh_sang": "early morning mist over the river"
    }
   },
   {
@@ -3314,6 +3364,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 11
+   },
+   "boi_canh": {
+    "thoi_diem": "ngày, lửa đỏ sẫm",
+    "dia_diem": "giữa sông, chân cầu phao",
+    "anh_sang": "daylight dimmed by smoke, deep crimson fire as the only color"
    }
   },
   {
@@ -3507,6 +3562,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 12
+   },
+   "boi_canh": {
+    "thoi_diem": "ngày, khói tan",
+    "dia_diem": "đài chỉ huy Tống, đê nam",
+    "anh_sang": "grey daylight, smoke haze, distant glow of dying fire"
    }
   },
   {
@@ -3594,6 +3654,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 13
+   },
+   "boi_canh": {
+    "thoi_diem": "tranh cuộn",
+    "dia_diem": "tranh cuộn giấy cổ",
+    "anh_sang": "scene painted on an old handscroll"
    }
   },
   {
@@ -3653,6 +3718,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 14
+   },
+   "boi_canh": {
+    "thoi_diem": "bình minh",
+    "dia_diem": "bãi cát ven sông",
+    "anh_sang": "soft dawn light, low sun haze, calm"
    }
   },
   {
@@ -3729,6 +3799,11 @@
     "tham_khao": "dabang",
     "ten": "Đa Bang – Hồi 2",
     "canh": 15
+   },
+   "boi_canh": {
+    "thoi_diem": "bình minh",
+    "dia_diem": "mặt sông yên",
+    "anh_sang": "soft dawn light, mist, calm water"
    }
   }
  ]
