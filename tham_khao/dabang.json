@@ -1,0 +1,762 @@
+{
+ "thu_tu": 1,
+ "ma": "dabang",
+ "kenh": "Việt Sử Kiêu Hùng",
+ "tieu_de_goc": "[16+] Tử chiến thành Đa Bang – Hồi 2: SẮT",
+ "link": "https://www.youtube.com/watch?v=JVYFlYU2RIQ",
+ "dang": "2018-12-20",
+ "luot_xem": 1178227,
+ "boi_canh": "1406–1407, nhà Hồ chống quân Minh",
+ "khung_hinh": "2520×1080 (≈2,33:1)",
+ "ten": "Tử chiến thành Đa Bang – Hồi 2: SẮT",
+ "so": {
+  "shot": 332,
+  "cpm": "15,0",
+  "tv": "1,75 s",
+  "loi": "45,5%"
+ },
+ "chude": "“Thần không ngại đánh, chỉ sợ lòng dân không theo” (Hồ Nguyên Trừng, 3:09–3:11)",
+ "phande": "Cá Nhỏ – cô gái làng chài trách tướng quân không bảo vệ nổi dân",
+ "canh": [
+  {
+   "n": 1,
+   "a": "0:00",
+   "b": "1:18",
+   "loai": "mo",
+   "nhip": "1 Mở",
+   "ten": "Cold open: thành sắt, chữ SẮT",
+   "cpm": 2.3,
+   "loi": 0,
+   "ct": [
+    [
+     "0:02",
+     "Thẻ 16+"
+    ],
+    [
+     "0:20",
+     "Thành lũy dựng 3D, mưa tên, đuốc"
+    ],
+    [
+     "0:46",
+     "Vũ khí sắt cận cảnh, tay áo giáp"
+    ],
+    [
+     "1:12",
+     "Chữ “SẮT” trên lửa"
+    ]
+   ],
+   "nv": []
+  },
+  {
+   "n": 2,
+   "a": "1:18",
+   "b": "2:22",
+   "loai": "tho",
+   "nhip": "2 Gieo nợ",
+   "ten": "Quá khứ: Cá Nhỏ bé được cứu",
+   "cpm": 11.2,
+   "loi": 52,
+   "ct": [
+    [
+     "1:25",
+     "Cá Nhỏ (bé) ốm, nói với ông nội “ngủ dậy sẽ đi chơi với nội”"
+    ],
+    [
+     "1:42",
+     "Một người đổi tiền giấy cho ông lão, gọi đại phu vào cứu người (chưa lộ tên)"
+    ],
+    [
+     "1:51",
+     "Hàng xóm kể: cha cô bé bị bắt đi lính, chỉ còn ông nội bám trụ, mong cha con gặp lại"
+    ],
+    [
+     "1:46",
+     "Hình gieo: con thuyền nhỏ, xấp tiền giấy trong tay"
+    ]
+   ],
+   "nv": [
+    "CANHO",
+    "NOI",
+    "HNT"
+   ]
+  },
+  {
+   "n": 3,
+   "a": "2:22",
+   "b": "3:14",
+   "loai": "drama",
+   "nhip": "3 Câu chủ đề",
+   "ten": "Cha con họ Hồ trên thuyền: sắt và lòng dân",
+   "cpm": 10.4,
+   "loi": 69,
+   "ct": [
+    [
+     "2:23",
+     "Hồ Quý Ly tin vào thuyền lớn, pháo mạnh"
+    ],
+    [
+     "2:45",
+     "Thẻ tên Hồ Nguyên Trừng – Tướng quân Đại Ngu"
+    ],
+    [
+     "2:53",
+     "Thẻ tên Hồ Quý Ly – Vua Đại Ngu"
+    ],
+    [
+     "3:09",
+     "Hồ Nguyên Trừng: không ngại đánh, chỉ sợ lòng dân không theo"
+    ]
+   ],
+   "nv": [
+    "HQL",
+    "HNT"
+   ]
+  },
+  {
+   "n": 4,
+   "a": "3:14",
+   "b": "4:00",
+   "loai": "drama",
+   "nhip": "4 Phản đề",
+   "ten": "Làng cháy: Cá Nhỏ trách tướng quân",
+   "cpm": 13,
+   "loi": 45,
+   "ct": [
+    [
+     "3:28",
+     "Cá Nhỏ (lớn): sao giờ ngài mới tới? Ông nội vì giữ bí mật cho ngài mà bị giặc giết"
+    ],
+    [
+     "3:35",
+     "Thẻ tên “Cá Nhỏ”, giọt nước mắt vàng – điểm màu duy nhất"
+    ],
+    [
+     "3:46",
+     "Tướng quân mà một người dân cũng không bảo vệ được thì làm được gì?"
+    ],
+    [
+     "3:55",
+     "Lời thề: “ngài không làm được thì tôi làm”"
+    ]
+   ],
+   "nv": [
+    "CANHO",
+    "HNT"
+   ]
+  },
+  {
+   "n": 5,
+   "a": "4:00",
+   "b": "5:52",
+   "loai": "action",
+   "nhip": "5 Thử thách",
+   "ten": "Trận mở: Mộc Thạnh, pháo thành",
+   "cpm": 23,
+   "loi": 14,
+   "ct": [
+    [
+     "4:13",
+     "Thẻ tên Mộc Thạnh – Phó tướng quân Minh, tay cầm thủ cấp"
+    ],
+    [
+     "4:30",
+     "“Thần pháo giữ lệnh – phát!”"
+    ],
+    [
+     "5:08",
+     "Tiếng hét “Đừng!” (người nói chưa chắc)"
+    ],
+    [
+     "5:32",
+     "Mộc Thạnh cười giữa lửa"
+    ]
+   ],
+   "nv": [
+    "MT",
+    "HNT"
+   ]
+  },
+  {
+   "n": 6,
+   "a": "5:52",
+   "b": "7:22",
+   "loai": "thuyet",
+   "nhip": "5 Thử thách",
+   "ten": "Thần cơ pháo + mưu Trương Phụ (bản đồ)",
+   "cpm": 14,
+   "loi": 70,
+   "ct": [
+    [
+     "5:40",
+     "Lời dẫn: thần cơ sang pháo của Hồ Nguyên Trừng, mạnh nhất thời bấy giờ"
+    ],
+    [
+     "6:01",
+     "Nhưng không bắn được gần – giặc áp sát"
+    ],
+    [
+     "6:22",
+     "Thẻ tên Trương Phụ – Đại tướng quân Minh"
+    ],
+    [
+     "6:25",
+     "Lời dẫn: Trương Phụ dò được tướng nhà Hồ yếu, đánh lạc hướng, vây ba mặt, hò reo nghi binh"
+    ]
+   ],
+   "nv": [
+    "TP",
+    "DAN"
+   ]
+  },
+  {
+   "n": 7,
+   "a": "7:22",
+   "b": "9:13",
+   "loai": "action",
+   "nhip": "5 Thử thách",
+   "ten": "Tượng binh → hỏa sư → voi quay đầu",
+   "cpm": 28.1,
+   "loi": 43,
+   "ct": [
+    [
+     "7:32",
+     "Đạn pháo sắp hết, tường thành sắp vỡ: xin tướng quân ban lệnh"
+    ],
+    [
+     "7:46",
+     "“Mở cửa thành, tượng binh tấn công!”"
+    ],
+    [
+     "8:28",
+     "Giặc đã biết trước nhờ hàng tướng, có phòng bị"
+    ],
+    [
+     "8:37",
+     "Hỏa sư (sư tử lửa) xông ra"
+    ],
+    [
+     "8:46",
+     "Voi hoảng, quay đầu giẫm ngược vào thành – vũ khí phản chủ"
+    ]
+   ],
+   "nv": [
+    "HNT",
+    "DAN"
+   ]
+  },
+  {
+   "n": 8,
+   "a": "9:13",
+   "b": "11:30",
+   "loai": "action",
+   "nhip": "6 Đỉnh action",
+   "ten": "Song đấu",
+   "cpm": 39.9,
+   "loi": 12,
+   "ct": [
+    [
+     "9:14",
+     "Màn khói đen 8 s – khoảng lặng trước đỉnh"
+    ],
+    [
+     "9:28",
+     "Mộc Thạnh: ta cho ngươi cơ hội phân cao thấp, thắng thì toàn mạng"
+    ],
+    [
+     "9:44",
+     "Đấu kiếm hơn 1 phút, nhanh nhất phim (≈40 cắt/phút)"
+    ],
+    [
+     "11:26",
+     "Một mũi tên bắn tới; ai thắng trận đấu – chưa xác định từ hình"
+    ]
+   ],
+   "nv": [
+    "MT",
+    "HNT"
+   ]
+  },
+  {
+   "n": 9,
+   "a": "11:30",
+   "b": "13:14",
+   "loai": "drama",
+   "nhip": "7 Diễn văn",
+   "ten": "Dụ hàng + diễn văn “ngọn lửa”",
+   "cpm": 16.7,
+   "loi": 58,
+   "ct": [
+    [
+     "11:32",
+     "Trương Phụ: mũi tên không xuyên tim là tha một mạng; quy phục thì được trọng dụng"
+    ],
+    [
+     "12:03",
+     "Tướng quân: ai muốn hàng thì hàng, ta không trách"
+    ],
+    [
+     "12:30",
+     "Hàng thì mất thứ anh em đã chết để giữ: xương máu tổ tiên, hồn dân tộc"
+    ],
+    [
+     "12:56",
+     "“Ngọn lửa thiêng sẽ truyền tới ngàn năm” – cả quân xung phong"
+    ]
+   ],
+   "nv": [
+    "TP",
+    "HNT"
+   ]
+  },
+  {
+   "n": 10,
+   "a": "13:14",
+   "b": "15:06",
+   "loai": "action",
+   "nhip": "8 Trận cuối",
+   "ten": "Trận cuối vẽ mực đen trắng + bài hát",
+   "cpm": 10.2,
+   "loi": 12,
+   "ct": [
+    [
+     "13:16",
+     "Đổi chất liệu: mực trắng đen, như cõi chết đang tới"
+    ],
+    [
+     "13:58",
+     "Bài hát “Hồn hề…” phủ lên trận"
+    ],
+    [
+     "13:44",
+     "Hình nhắc: bàn tay nâng bát cơm, tan thành bụi"
+    ],
+    [
+     "14:52",
+     "Khoảng đen ngắn rồi trận vỡ"
+    ]
+   ],
+   "nv": [
+    "HNT"
+   ]
+  },
+  {
+   "n": 11,
+   "a": "15:06",
+   "b": "15:46",
+   "loai": "drama",
+   "nhip": "9 Trả nợ",
+   "ten": "Cá Nhỏ trả mạng",
+   "cpm": 19.5,
+   "loi": 15,
+   "ct": [
+    [
+     "15:08",
+     "Cá Nhỏ: “Hồ Nguyên Trừng, mạng này đã trả lại cho ngài”"
+    ],
+    [
+     "15:10",
+     "Ôm thùng thuốc nổ chạy vào hàng giặc"
+    ],
+    [
+     "15:12",
+     "“Hãy tiếp tục bảo vệ ngọn lửa đó”"
+    ],
+    [
+     "15:34",
+     "Vụ nổ lớn"
+    ]
+   ],
+   "nv": [
+    "CANHO",
+    "HNT"
+   ]
+  },
+  {
+   "n": 12,
+   "a": "15:46",
+   "b": "16:41",
+   "loai": "drama",
+   "nhip": "10 Gương soi",
+   "ten": "Trương Phụ: “sống để chứng kiến”",
+   "cpm": 18.5,
+   "loi": 58,
+   "ct": [
+    [
+     "15:55",
+     "Trương Phụ: ngọn lửa đó là gì ta cũng dập tắt"
+    ],
+    [
+     "16:08",
+     "Lịch sử ta đốt, tinh thần ta đập nát, dân ta bắt làm nô lệ"
+    ],
+    [
+     "16:25",
+     "Hình phạt là được sống: “ngươi phải sống để chứng kiến tất cả”"
+    ]
+   ],
+   "nv": [
+    "TP",
+    "HNT"
+   ]
+  },
+  {
+   "n": 13,
+   "a": "16:41",
+   "b": "18:18",
+   "loai": "thuyet",
+   "nhip": "11 Lịch sử lạnh",
+   "ten": "Tranh cuộn: thất thủ, diệt văn hóa",
+   "cpm": 0,
+   "loi": 79,
+   "ct": [
+    [
+     "16:42",
+     "12/1406 Đa Bang thất thủ; 5/1407 cha con họ Hồ bị bắt"
+    ],
+    [
+     "17:03",
+     "Nhà Minh đốt sách, phá bia, bắt người tài"
+    ],
+    [
+     "17:57",
+     "Trích ý Bình Ngô đại cáo: tội ác không ghi hết"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ]
+  },
+  {
+   "n": 14,
+   "a": "18:18",
+   "b": "18:46",
+   "loai": "ket",
+   "nhip": "12 Móc tập sau",
+   "ten": "Cầu nối Lam Sơn",
+   "cpm": 4.3,
+   "loi": 32,
+   "ct": [
+    [
+     "18:15",
+     "“Núi Lam Sơn dấy nghĩa…”"
+    ],
+    [
+     "18:32",
+     "Kỵ sĩ với chim ưng – mở sang hồi sau"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ]
+  },
+  {
+   "n": 15,
+   "a": "18:46",
+   "b": "22:02",
+   "loai": "ket",
+   "nhip": "12 Credit",
+   "ten": "Credit + nhạc chủ đề + cảm ơn",
+   "cpm": 3.1,
+   "loi": 10,
+   "ct": [
+    [
+     "18:46",
+     "Credit đoàn làm phim, bài hát chủ đề"
+    ],
+    [
+     "20:02",
+     "Kêu gọi ủng hộ, danh sách cảm ơn (đỉnh xem lại 20:43 do người xem tìm tên mình)"
+    ]
+   ],
+   "nv": []
+  }
+ ],
+ "nhanvat": [
+  {
+   "ma": "CANHO",
+   "ten": "Cá Nhỏ",
+   "vai": "dân – giọng phản đề",
+   "main": true,
+   "seg": [
+    [
+     "1:18",
+     "2:22"
+    ],
+    [
+     "3:14",
+     "4:00"
+    ],
+    [
+     "15:06",
+     "15:46"
+    ]
+   ],
+   "mo": [
+    [
+     "13:44",
+     "13:52"
+    ]
+   ]
+  },
+  {
+   "ma": "HNT",
+   "ten": "Hồ Nguyên Trừng",
+   "vai": "tướng quân, nhân vật chính",
+   "seg": [
+    [
+     "2:22",
+     "4:00"
+    ],
+    [
+     "7:30",
+     "7:50"
+    ],
+    [
+     "11:30",
+     "13:14"
+    ],
+    [
+     "15:06",
+     "16:41"
+    ]
+   ],
+   "mo": [
+    [
+     "1:42",
+     "1:50"
+    ],
+    [
+     "4:00",
+     "5:52"
+    ],
+    [
+     "9:13",
+     "11:30"
+    ],
+    [
+     "13:14",
+     "15:06"
+    ]
+   ]
+  },
+  {
+   "ma": "HQL",
+   "ten": "Hồ Quý Ly",
+   "vai": "vua, tin vào sắt",
+   "seg": [
+    [
+     "2:22",
+     "3:14"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "NOI",
+   "ten": "Ông nội Cá Nhỏ",
+   "vai": "chết ngoài khung",
+   "seg": [
+    [
+     "1:18",
+     "2:22"
+    ]
+   ],
+   "mo": [
+    [
+     "3:28",
+     "3:35"
+    ]
+   ]
+  },
+  {
+   "ma": "MT",
+   "ten": "Mộc Thạnh",
+   "vai": "phó tướng Minh",
+   "seg": [
+    [
+     "4:00",
+     "5:52"
+    ],
+    [
+     "9:13",
+     "11:30"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "TP",
+   "ten": "Trương Phụ",
+   "vai": "đại tướng Minh, phản diện",
+   "seg": [
+    [
+     "6:12",
+     "7:22"
+    ],
+    [
+     "11:30",
+     "12:03"
+    ],
+    [
+     "15:46",
+     "16:41"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "DAN",
+   "ten": "Người dẫn",
+   "vai": "chỉ có giọng",
+   "seg": [
+    [
+     "5:40",
+     "7:22"
+    ],
+    [
+     "8:04",
+     "8:58"
+    ],
+    [
+     "16:41",
+     "18:30"
+    ]
+   ],
+   "mo": []
+  }
+ ],
+ "day": [
+  {
+   "ten": "Món nợ cứu mạng",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "1:42"
+    ],
+    [
+     "nhắc",
+     "13:44"
+    ],
+    [
+     "trả",
+     "15:08"
+    ]
+   ],
+   "y": "Người cứu chưa lộ tên khi gieo; câu “mạng này trả lại cho ngài” làm khán giả tự nối."
+  },
+  {
+   "ten": "Lời thề “ngài không làm thì tôi làm”",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:55"
+    ],
+    [
+     "trả",
+     "15:10"
+    ]
+   ],
+   "y": "Lời thề của giọng phản đề được giữ bằng hành động."
+  },
+  {
+   "ten": "“Chỉ sợ lòng dân không theo”",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:09"
+    ],
+    [
+     "đảo",
+     "3:28"
+    ],
+    [
+     "trả",
+     "15:08"
+    ]
+   ],
+   "y": "Câu chủ đề → dân quay lưng ngay sau đó → dân theo bằng mạng sống."
+  },
+  {
+   "ten": "Sắt: thuyền to, pháo mạnh",
+   "moc": [
+    [
+     "gieo",
+     "2:23"
+    ],
+    [
+     "nhắc",
+     "5:45"
+    ],
+    [
+     "trả",
+     "16:45"
+    ]
+   ],
+   "y": "Tựa phim là lời mỉa: sắt không giữ được thành."
+  },
+  {
+   "ten": "Tượng binh",
+   "moc": [
+    [
+     "gieo",
+     "8:04"
+    ],
+    [
+     "trả",
+     "8:46"
+    ]
+   ],
+   "y": "Vũ khí phản chủ: voi quay đầu giẫm quân mình."
+  },
+  {
+   "ten": "Ngọn lửa",
+   "moc": [
+    [
+     "gieo",
+     "12:56"
+    ],
+    [
+     "nhắc",
+     "15:12"
+    ],
+    [
+     "trả",
+     "15:57"
+    ]
+   ],
+   "y": "Một mô-típ, ba người nói: tướng → dân → giặc."
+  },
+  {
+   "ten": "“Sống để chứng kiến”",
+   "moc": [
+    [
+     "gieo",
+     "16:25"
+    ],
+    [
+     "trả",
+     "17:03"
+    ]
+   ],
+   "y": "Lời đe dọa của phản diện thành sự thật trong lời dẫn."
+  },
+  {
+   "ten": "Báo thù (móc tập sau)",
+   "moc": [
+    [
+     "gieo",
+     "17:57"
+    ],
+    [
+     "trả",
+     "18:32"
+    ]
+   ],
+   "y": "Đau thương làm tiền đề cho hồi sau."
+  }
+ ],
+ "dai_s": 1322
+}

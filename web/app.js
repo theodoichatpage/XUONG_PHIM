@@ -48,14 +48,11 @@ document.addEventListener('click', e => {
 async function trangChu() {
   let ds = [];
   try { ds = await lay('tap/danh_sach.json'); } catch (e) { /* chưa có danh sách */ }
+  let tk = [];
+  try { tk = (await lay('tham_khao/danh_sach.json')).sort((a, b) => a.thu_tu - b.thu_tu); } catch (e) { /* chưa có */ }
   const nhap = LS.get('xp_ban_nhap', null);
   APP.innerHTML = `
-    <section class="panel">
-      <h1>Xưởng Phim VOX</h1>
-      <p class="lead">Mỗi tập là một kịch bản từng shot: thời lượng, cỡ cảnh, góc máy, chuyển động, thoại, chữ, âm thanh và các đường dây gieo → trả. Mở một tập để xem tuyến phim, phiếu dựng CapCut, prompt ảnh và kịch bản đọc; hoặc soạn tập mới ngay trên web.</p>
-      <div class="row"><a class="btn primary" href="#/soan">Soạn tập mới</a><a class="btn" href="#/quy-chuan">Quy chuẩn &amp; hướng dẫn làm video</a></div>
-    </section>
-    <h2>Các tập</h2>
+    <h2>Các tập của Xưởng VOX</h2>
     <div class="grid-cards">
       ${ds.map(t => `<a class="card" href="#/tap/${encodeURIComponent(t.thu_muc || t.ma_tap)}">
           <span class="tag">${esc(t.ma_tap)}</span><h3>${esc(t.tieu_de)}</h3>
@@ -63,7 +60,14 @@ async function trangChu() {
           ${t.trang_thai ? `<p class="muted" style="margin:0;font-size:13px">${esc(t.trang_thai)}</p>` : ''}</a>`).join('') || '<p class="muted">Chưa có tập nào trong tap/danh_sach.json.</p>'}
       ${nhap ? `<a class="card" href="#/tap/__nhap__"><span class="tag red">Bản nháp trên máy này</span><h3>${esc(nhap.tieu_de || nhap.ma_tap)}</h3>
           <p class="muted" style="margin:0;font-size:13px">Đang soạn, chưa đưa lên GitHub. Mở để xem như một tập, hoặc vào Soạn tập để sửa tiếp.</p></a>` : ''}
-    </div>`;
+    </div>
+    ${tk.length ? `<h2>Phim tham khảo – Việt Sử Kiêu Hùng</h2>
+    <div class="grid-cards">${tk.map(t => `<a class="card" href="#/tham-khao/${encodeURIComponent(t.ma)}">
+        <span class="tag">Tập ${t.thu_tu} · đăng ${esc(t.dang.split('-').reverse().join('/'))}</span><h3>${esc(t.ten)}</h3>
+        <div class="meta"><span>Dài <b>${XP.tc(t.dai_s, false)}</b></span><span>Cảnh <b>${t.so_canh}</b></span><span>Đường dây <b>${t.so_day}</b></span></div>
+        <p class="muted" style="margin:0;font-size:13px">${esc(t.boi_canh)}</p></a>`).join('')}
+      <a class="card" href="#/tham-khao/so-sanh"><span class="tag">Đối chiếu</span><h3>Hai tập trên cùng khung 12 nhịp</h3>
+        <p class="muted" style="margin:0;font-size:13px">So từng nhịp và công thức rút ra cho tuyến phim mới.</p></a></div>` : ''}`;
 }
 
 // ---------------------------------------------------------------- trang tập
@@ -329,6 +333,7 @@ async function route() {
   const nav = k => document.querySelector(`[data-nav="${k}"]`)?.setAttribute('aria-current', 'page');
   try {
     if (h[0] === 'tap' && h[1]) { nav('home'); await trangTap(h[1], h[2] || 'tuyen', h[3]); }
+    else if (h[0] === 'tham-khao') { nav('tk'); await TK.mo(APP, h[1]); }
     else if (h[0] === 'soan') { nav('soan'); await SOAN.mo(APP, h[1]); }
     else if (h[0] === 'quy-chuan') { nav('quy'); await trangQuyChuan(h[1] || 'khung'); }
     else { nav('home'); await trangChu(); }

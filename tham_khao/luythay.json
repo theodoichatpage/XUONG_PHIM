@@ -1,0 +1,888 @@
+{
+ "thu_tu": 2,
+ "ma": "luythay",
+ "kenh": "Việt Sử Kiêu Hùng",
+ "tieu_de_goc": "[16+] Huyết Chiến Lũy Thầy | Series CHIẾN QUỐC | Dã sử",
+ "link": "https://www.youtube.com/watch?v=3kCGQ5fzhwI",
+ "dang": "2022-07-17",
+ "luot_xem": 515346,
+ "boi_canh": "1672, Trịnh – Nguyễn phân tranh",
+ "khung_hinh": "1920×1080 (16:9)",
+ "ten": "Huyết Chiến Lũy Thầy",
+ "so": {
+  "shot": 217,
+  "cpm": "10,6",
+  "tv": "3,08 s",
+  "loi": "41,8%"
+ },
+ "chude": "“Nam Bắc phân tranh, anh em chém giết là nỗi đau lớn nhất đời cha” (Trịnh Tạc, 0:31) và lời hứa “trận chiến cuối cùng” (Trịnh Căn, 0:37)",
+ "phande": "Bà lão nông: “ở đâu cũng là nước Việt, ai cai trị cũng như nhau”",
+ "canh": [
+  {
+   "n": 1,
+   "a": "0:00",
+   "b": "0:19",
+   "loai": "mo",
+   "nhip": "1 Mở",
+   "ten": "Thẻ 16+, logo, “Mùa hạ 1672”, chiến thuyền",
+   "cpm": 3.1,
+   "loi": 0,
+   "ct": [
+    [
+     "0:11",
+     "Thẻ thời gian “Mùa hạ 1672”"
+    ],
+    [
+     "0:13",
+     "Mũi thuyền xé sương"
+    ]
+   ],
+   "nv": []
+  },
+  {
+   "n": 2,
+   "a": "0:19",
+   "b": "0:52",
+   "loai": "drama",
+   "nhip": "3 Chủ đề / lời hứa",
+   "ten": "Cha con họ Trịnh trên thuyền",
+   "cpm": 9.3,
+   "loi": 57,
+   "ct": [
+    [
+     "0:22",
+     "Trịnh Tạc: Trịnh – Nguyễn vốn anh em, nay chém giết nhau, đó là nỗi đau lớn nhất đời cha"
+    ],
+    [
+     "0:37",
+     "Trịnh Căn: đây sẽ là trận cuối, sơn hà thống nhất, anh em đoàn tụ"
+    ],
+    [
+     "0:35",
+     "Hình gieo: cặp kính tròn của Trịnh Căn"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "TT"
+   ]
+  },
+  {
+   "n": 3,
+   "a": "0:52",
+   "b": "1:45",
+   "loai": "drama",
+   "nhip": "2+4 Gieo / phản đề",
+   "ten": "Hữu Dật gặt lúa cùng bà lão",
+   "cpm": 5.7,
+   "loi": 62,
+   "ct": [
+    [
+     "0:59",
+     "Tướng già cải trang nông dân, gặt lúa (thẻ tên lộ ở 1:10)"
+    ],
+    [
+     "1:01",
+     "Bà lão: đến tuổi này ngài nên nghỉ ngơi"
+    ],
+    [
+     "1:16",
+     "Hữu Dật hỏi: nếu lũy vỡ, bà có hàng để về với gia đình không?"
+    ],
+    [
+     "1:25",
+     "Bà lão: đâu cũng là nước Việt; dân chỉ cầu no ấm, ai cai trị cũng như nhau"
+    ]
+   ],
+   "nv": [
+    "HD",
+    "BL"
+   ]
+  },
+  {
+   "n": 4,
+   "a": "1:45",
+   "b": "2:48",
+   "loai": "thuyet",
+   "nhip": "5 Thuyết minh",
+   "ten": "Bản đồ bối cảnh 1600 → 1672",
+   "cpm": 0.9,
+   "loi": 72,
+   "ct": [
+    [
+     "1:46",
+     "1600 Nguyễn Hoàng về Thuận Hóa"
+    ],
+    [
+     "2:04",
+     "1630 Đào Duy Từ thiết kế Lũy Thầy"
+    ],
+    [
+     "2:32",
+     "1672 Trịnh Tạc thân chinh, Trịnh Căn thống lĩnh"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ]
+  },
+  {
+   "n": 5,
+   "a": "2:48",
+   "b": "3:15",
+   "loai": "action",
+   "nhip": "Tựa + trận mở",
+   "ten": "Tựa phim + montage trận đầu",
+   "cpm": 35,
+   "loi": 13,
+   "ct": [
+    [
+     "2:48",
+     "Flash trắng → tựa HUYẾT CHIẾN LŨY THẦY"
+    ],
+    [
+     "3:01",
+     "8 cắt trong 14 s, chỉ tiếng hô"
+    ]
+   ],
+   "nv": []
+  },
+  {
+   "n": 6,
+   "a": "3:15",
+   "b": "4:37",
+   "loai": "drama",
+   "nhip": "Phản diện lập uy",
+   "ten": "Doanh trại Trịnh: báo thiệt hại, xử chém",
+   "cpm": 18.5,
+   "loi": 51,
+   "ct": [
+    [
+     "3:24",
+     "Tướng báo mất ba nghìn quân"
+    ],
+    [
+     "3:30",
+     "Mưu sĩ: đánh chỗ yếu"
+    ],
+    [
+     "3:45",
+     "Trịnh Căn kể “ba tội đáng chém” của một tướng"
+    ],
+    [
+     "4:08",
+     "Nhát chém trên nền đen"
+    ],
+    [
+     "4:21",
+     "Tuyên thệ: trận này thống nhất giang sơn – “Giết!”"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "TT2",
+    "MS"
+   ]
+  },
+  {
+   "n": 7,
+   "a": "4:37",
+   "b": "5:00",
+   "loai": "thuyet",
+   "nhip": "Cầu nối",
+   "ten": "Lời dẫn: lũy thủng, lũy lành",
+   "cpm": 5.1,
+   "loi": 66,
+   "ct": [
+    [
+     "4:42",
+     "Trịnh phá hơn 30 trượng; Hữu Dật đắp lại trong một đêm"
+    ]
+   ],
+   "nv": [
+    "DAN",
+    "HD"
+   ]
+  },
+  {
+   "n": 8,
+   "a": "5:00",
+   "b": "6:38",
+   "loai": "action",
+   "nhip": "5 Thử thách",
+   "ten": "Hỏa tiễn, xe chông; Hữu Dật trúng thương",
+   "cpm": 17.7,
+   "loi": 17,
+   "ct": [
+    [
+     "5:00",
+     "Trịnh Căn ra lệnh hỏa tiễn"
+    ],
+    [
+     "6:30",
+     "Tướng già trúng thương, vết đỏ ở ngực"
+    ],
+    [
+     "6:38",
+     "Fade đen"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "HD"
+   ]
+  },
+  {
+   "n": 9,
+   "a": "6:40",
+   "b": "7:14",
+   "loai": "tho",
+   "nhip": "Khoảng lặng",
+   "ten": "Đầm lầy Võ Xá: lính than chờ",
+   "cpm": 5.3,
+   "loi": 30,
+   "ct": [
+    [
+     "6:50",
+     "Lính than chán chờ đợi"
+    ],
+    [
+     "7:09",
+     "Người thứ ba: “thời cơ chưa đến”"
+    ]
+   ],
+   "nv": [
+    "LINH"
+   ]
+  },
+  {
+   "n": 10,
+   "a": "7:14",
+   "b": "7:40",
+   "loai": "action",
+   "nhip": "5 Thử thách",
+   "ten": "Giáp lá cà ban ngày",
+   "cpm": 29.3,
+   "loi": 13,
+   "ct": [
+    [
+     "7:16",
+     "Insert lưỡi đao + vệt đỏ trên nền đen"
+    ]
+   ],
+   "nv": [
+    "LINH"
+   ]
+  },
+  {
+   "n": 11,
+   "a": "7:40",
+   "b": "9:22",
+   "loai": "drama",
+   "nhip": "7 Diễn văn",
+   "ten": "Xử lính đào ngũ → diễn văn của Hữu Dật",
+   "cpm": 7.1,
+   "loi": 56,
+   "ct": [
+    [
+     "8:01",
+     "Lính bị trói: đằng nào cũng chết"
+    ],
+    [
+     "8:29",
+     "“Lão bảy mươi như ta còn không sợ chết”"
+    ],
+    [
+     "8:44",
+     "Nếu lũy sập: nhà cửa không còn, vợ con ly tán"
+    ],
+    [
+     "9:14",
+     "“Đánh!” – fade đen 3,3 s"
+    ]
+   ],
+   "nv": [
+    "HD",
+    "LINH"
+   ]
+  },
+  {
+   "n": 12,
+   "a": "9:25",
+   "b": "11:35",
+   "loai": "action",
+   "nhip": "6 Đỉnh action",
+   "ten": "Đêm Võ Xá: cảm tử quân đốt kho lương",
+   "cpm": 12.5,
+   "loi": 5,
+   "ct": [
+    [
+     "9:32",
+     "“Phải đợi đến chừng nào!”"
+    ],
+    [
+     "10:25",
+     "“Đi ngay đi” – nhạc vào ở 10:28 (đỉnh xem lại)"
+    ],
+    [
+     "11:30",
+     "Top-down biển lửa 43 s"
+    ]
+   ],
+   "nv": [
+    "LINH",
+    "HD"
+   ]
+  },
+  {
+   "n": 13,
+   "a": "11:40",
+   "b": "12:14",
+   "loai": "thuyet",
+   "nhip": "Cái giá",
+   "ten": "Lời dẫn: thắng mà mất quá nửa",
+   "cpm": 1.7,
+   "loi": 35,
+   "ct": [
+    [
+     "12:07",
+     "Đội cảm tử mất quá nửa, số còn lại bị bắt"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ]
+  },
+  {
+   "n": 14,
+   "a": "12:14",
+   "b": "14:07",
+   "loai": "drama",
+   "nhip": "Đổi nhịp chậm",
+   "ten": "Nghị hòa: sứ giả, chén rượu “tri kỷ”",
+   "cpm": 6.4,
+   "loi": 50,
+   "ct": [
+    [
+     "12:22",
+     "Sứ giả: Trịnh Căn mời đích thân đến, mới thả tù binh"
+    ],
+    [
+     "13:22",
+     "Hai đối thủ gọi nhau là tri kỷ"
+    ],
+    [
+     "13:58",
+     "Chén rượu: nước sông không phạm nước giếng"
+    ]
+   ],
+   "nv": [
+    "HD",
+    "TC",
+    "SG"
+   ]
+  },
+  {
+   "n": 15,
+   "a": "14:10",
+   "b": "14:52",
+   "loai": "drama",
+   "nhip": "Từ chối lối thoát",
+   "ten": "Trên thuyền: khuyên dừng / “ý trời”",
+   "cpm": 11.4,
+   "loi": 58,
+   "ct": [
+    [
+     "14:19",
+     "Quan khuyên dừng sau 40 năm chiến tranh (người nói chưa chắc)"
+    ],
+    [
+     "14:48",
+     "Trịnh Căn: ý trời phải thuận theo ta"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "MS"
+   ]
+  },
+  {
+   "n": 16,
+   "a": "14:52",
+   "b": "16:38",
+   "loai": "action",
+   "nhip": "8 Trận cuối",
+   "ten": "Tổng tấn công, trúng kế, hỏa công",
+   "cpm": 20.9,
+   "loi": 16,
+   "ct": [
+    [
+     "15:15",
+     "Khói trắng toàn khung 10 s"
+    ],
+    [
+     "16:00",
+     "Dày cắt nhất phim (≈8 cắt/10 s)"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "HD"
+   ]
+  },
+  {
+   "n": 17,
+   "a": "16:42",
+   "b": "17:51",
+   "loai": "drama",
+   "nhip": "10 Gương soi",
+   "ten": "Trịnh Căn thua – đối chất – phát súng",
+   "cpm": 15.6,
+   "loi": 43,
+   "ct": [
+    [
+     "16:48",
+     "“Ta thua rồi”"
+    ],
+    [
+     "17:01",
+     "Xin lấy mạng mình đổi đường sống cho lính"
+    ],
+    [
+     "17:33",
+     "Hữu Dật: chính ngài gây chiến trước; ngài không có quyền ngã giá"
+    ],
+    [
+     "17:50",
+     "Rút súng – cắt vào đen 7,5 s"
+    ]
+   ],
+   "nv": [
+    "TC",
+    "HD"
+   ]
+  },
+  {
+   "n": 18,
+   "a": "17:58",
+   "b": "18:51",
+   "loai": "thuyet",
+   "nhip": "11 Lịch sử lạnh",
+   "ten": "Kính rơi, chân dung tan bụi, lời dẫn kết",
+   "cpm": 2.3,
+   "loi": 24,
+   "ct": [
+    [
+     "18:14",
+     "Cặp kính rơi trên đất"
+    ],
+    [
+     "18:24",
+     "Chân dung tan thành bụi (là ai: chưa xác định)"
+    ],
+    [
+     "18:34",
+     "Thêm khoảng 100 năm yên bình"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ]
+  },
+  {
+   "n": 19,
+   "a": "18:54",
+   "b": "20:22",
+   "loai": "ket",
+   "nhip": "12 Móc + credit",
+   "ten": "Credit, teaser áo choàng đỏ, CTA",
+   "cpm": 0,
+   "loi": 0,
+   "ct": [
+    [
+     "19:48",
+     "Teaser tập sau"
+    ],
+    [
+     "20:12",
+     "End card gây quỹ"
+    ]
+   ],
+   "nv": []
+  }
+ ],
+ "nhanvat": [
+  {
+   "ma": "HD",
+   "ten": "Nguyễn Hữu Dật",
+   "vai": "tướng giữ lũy, nhân vật chính",
+   "main": true,
+   "seg": [
+    [
+     "0:59",
+     "1:45"
+    ],
+    [
+     "6:30",
+     "6:38"
+    ],
+    [
+     "7:40",
+     "9:21"
+    ],
+    [
+     "10:23",
+     "10:30"
+    ],
+    [
+     "12:14",
+     "14:07"
+    ],
+    [
+     "16:56",
+     "17:51"
+    ]
+   ],
+   "mo": [
+    [
+     "4:36",
+     "4:48"
+    ],
+    [
+     "5:22",
+     "5:24"
+    ]
+   ]
+  },
+  {
+   "ma": "TC",
+   "ten": "Trịnh Căn",
+   "vai": "chỉ huy Trịnh, phản diện có lý lẽ",
+   "seg": [
+    [
+     "0:19",
+     "0:52"
+    ],
+    [
+     "3:31",
+     "4:36"
+    ],
+    [
+     "5:00",
+     "5:02"
+    ],
+    [
+     "11:16",
+     "11:27"
+    ],
+    [
+     "12:59",
+     "14:07"
+    ],
+    [
+     "14:18",
+     "15:00"
+    ],
+    [
+     "15:35",
+     "15:52"
+    ],
+    [
+     "16:46",
+     "17:12"
+    ],
+    [
+     "17:38",
+     "17:46"
+    ],
+    [
+     "18:08",
+     "18:12"
+    ]
+   ],
+   "mo": [
+    [
+     "18:14",
+     "18:20"
+    ]
+   ]
+  },
+  {
+   "ma": "TT",
+   "ten": "Trịnh Tạc",
+   "vai": "người cha",
+   "seg": [
+    [
+     "0:19",
+     "0:52"
+    ]
+   ],
+   "mo": [
+    [
+     "18:24",
+     "18:32"
+    ]
+   ]
+  },
+  {
+   "ma": "BL",
+   "ten": "Bà lão nông",
+   "vai": "dân – giọng phản đề",
+   "seg": [
+    [
+     "0:59",
+     "1:45"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "LINH",
+   "ten": "Lính (Anh Hai, Bé Út, Anh Ba)",
+   "vai": "lính thường → cảm tử",
+   "seg": [
+    [
+     "6:49",
+     "7:14"
+    ],
+    [
+     "8:00",
+     "8:15"
+    ],
+    [
+     "9:31",
+     "9:44"
+    ]
+   ],
+   "mo": [
+    [
+     "10:00",
+     "11:35"
+    ]
+   ]
+  },
+  {
+   "ma": "MS",
+   "ten": "Mưu sĩ / quan Trịnh",
+   "vai": "phụ",
+   "seg": [
+    [
+     "3:29",
+     "3:37"
+    ]
+   ],
+   "mo": [
+    [
+     "14:18",
+     "14:41"
+    ]
+   ]
+  },
+  {
+   "ma": "TT2",
+   "ten": "Tướng Trịnh bị xử",
+   "vai": "không thoại",
+   "seg": [
+    [
+     "3:42",
+     "4:15"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "SG",
+   "ten": "Sứ giả Trịnh",
+   "vai": "phụ",
+   "seg": [
+    [
+     "12:21",
+     "12:39"
+    ]
+   ],
+   "mo": []
+  },
+  {
+   "ma": "DAN",
+   "ten": "Người dẫn",
+   "vai": "chỉ có giọng",
+   "seg": [
+    [
+     "1:45",
+     "2:59"
+    ],
+    [
+     "4:37",
+     "5:00"
+    ],
+    [
+     "11:59",
+     "12:11"
+    ],
+    [
+     "18:34",
+     "18:50"
+    ]
+   ],
+   "mo": []
+  }
+ ],
+ "day": [
+  {
+   "ten": "“Trận chiến cuối cùng”",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "0:37"
+    ],
+    [
+     "nhắc",
+     "14:48"
+    ],
+    [
+     "trả",
+     "16:48"
+    ]
+   ],
+   "y": "Lời hứa thành sự thật theo nghĩa ngược: trận cuối của chính hắn."
+  },
+  {
+   "ten": "Ba tội đáng chém → bị xử",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:45"
+    ],
+    [
+     "trả",
+     "17:33"
+    ]
+   ],
+   "y": "Gương soi: kẻ xử án thành kẻ bị xử."
+  },
+  {
+   "ten": "Tri kỷ → phát súng",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "13:22"
+    ],
+    [
+     "trả",
+     "17:50"
+    ]
+   ],
+   "y": "Cảnh danh dự gieo kỳ vọng khoan hồng, rồi đảo ngược."
+  },
+  {
+   "ten": "Cặp kính tròn",
+   "moc": [
+    [
+     "gieo",
+     "0:35"
+    ],
+    [
+     "nhắc",
+     "4:48"
+    ],
+    [
+     "nhắc",
+     "15:50"
+    ],
+    [
+     "trả",
+     "18:14"
+    ]
+   ],
+   "y": "Đồ vật kể cái chết, không cần cho thấy xác."
+  },
+  {
+   "ten": "“Ngài nên nghỉ ngơi”",
+   "moc": [
+    [
+     "gieo",
+     "1:01"
+    ],
+    [
+     "trả",
+     "8:29"
+    ]
+   ],
+   "y": "Câu đời thường trả bằng câu anh hùng."
+  },
+  {
+   "ten": "“Ai cai trị cũng vậy”",
+   "moc": [
+    [
+     "gieo",
+     "1:38"
+    ],
+    [
+     "trả",
+     "8:44"
+    ]
+   ],
+   "y": "Câu hỏi chủ đề được diễn văn trả lời."
+  },
+  {
+   "ten": "“Thời cơ chưa đến”",
+   "moc": [
+    [
+     "gieo",
+     "7:09"
+    ],
+    [
+     "trả",
+     "10:00"
+    ]
+   ],
+   "y": "Vòng chờ 3 phút rồi xả."
+  },
+  {
+   "ten": "Đào ngũ → “Đánh!”",
+   "moc": [
+    [
+     "gieo",
+     "8:01"
+    ],
+    [
+     "trả",
+     "9:14"
+    ]
+   ],
+   "y": "Đảo tâm lý trong một cảnh."
+  },
+  {
+   "ten": "Thắng có giá",
+   "moc": [
+    [
+     "gieo",
+     "11:24"
+    ],
+    [
+     "trả",
+     "12:07"
+    ]
+   ],
+   "y": "Thắng xong liền trả giá."
+  },
+  {
+   "ten": "Nỗi đau anh em",
+   "moc": [
+    [
+     "gieo",
+     "0:31"
+    ],
+    [
+     "trả",
+     "18:34"
+    ]
+   ],
+   "y": "Chủ đề khép vòng ở mức lịch sử."
+  }
+ ],
+ "dai_s": 1222
+}
