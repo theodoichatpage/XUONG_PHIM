@@ -2,7 +2,7 @@
  "ma_tap": "T01_nhu_nguyet",
  "tieu_de": "SÔNG – Phòng tuyến Như Nguyệt 1077",
  "trang_thai": "Đã viết đủ 15 cảnh theo tuyến phim duyệt ngày 18/11/2026 (khuôn Đa Bang).",
- "tong_du_kien_s": 1000,
+ "tong_du_kien_s": 1075,
  "fps": 24,
  "rong": 1920,
  "cao": 1080,
@@ -398,7 +398,7 @@
     },
     {
      "ma": "C02_S04",
-     "dai": 4,
+     "dai": 5.5,
      "co_canh": "MCU",
      "goc": "hếch",
      "chuyen_dong": "dung",
@@ -410,7 +410,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Nắm lấy! / Đừng nhìn xuống nước.",
+       "loi": "Nắm lấy tay chú! / Đừng nhìn xuống nước.",
        "luc": 0.4,
        "cam_xuc": "gấp, chắc"
       }
@@ -418,7 +418,7 @@
     },
     {
      "ma": "C02_S05",
-     "dai": 6,
+     "dai": 6.1,
      "co_canh": "MS",
      "goc": "ngang",
      "chuyen_dong": "rung",
@@ -437,7 +437,7 @@
       },
       {
        "vai": "KIEN",
-       "loi": "Người giữ đê.",
+       "loi": "Chú là người giữ đê.",
        "luc": 3.0
       }
      ]
@@ -574,7 +574,7 @@
     },
     {
      "ma": "C03_S02",
-     "dai": 9.8,
+     "dai": 11.8,
      "co_canh": "MS",
      "goc": "hếch",
      "chuyen_dong": "dung",
@@ -598,7 +598,7 @@
      "thoai": [
       {
        "vai": "LTK",
-       "loi": "Bên kia sông có mười vạn người. // Bên này có một con đê.",
+       "loi": "Bên kia sông có mười vạn quân Tống. // Bên này, / ta chỉ có một con đê.",
        "luc": 1.6,
        "cam_xuc": "trầm, chậm"
       }
@@ -606,7 +606,7 @@
     },
     {
      "ma": "C03_S03",
-     "dai": 6.6,
+     "dai": 7.7,
      "co_canh": "OTS",
      "goc": "ngang",
      "chuyen_dong": "dung",
@@ -619,14 +619,14 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Đê cao mấy / cũng chỉ là đất, thưa Thái úy.",
+       "loi": "Đê cao mấy / thì cũng chỉ là đất thôi, thưa Thái úy.",
        "luc": 0.5
       }
      ]
     },
     {
      "ma": "C03_S04",
-     "dai": 7,
+     "dai": 9.6,
      "co_canh": "MCU",
      "goc": "hếch",
      "chuyen_dong": "day_vao",
@@ -648,7 +648,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Người đứng trên đê / mới là thành.",
+       "loi": "Chính những người đứng trên đê / mới là bức thành giữ sông.",
        "luc": 2.4,
        "cam_xuc": "chậm, chắc"
       }
@@ -657,7 +657,7 @@
     },
     {
      "ma": "C03_S05",
-     "dai": 6.6,
+     "dai": 6.8,
      "co_canh": "CU",
      "goc": "ngang",
      "chuyen_dong": "dung",
@@ -736,7 +736,7 @@
     },
     {
      "ma": "C04_S02",
-     "dai": 5.5,
+     "dai": 8.0,
      "co_canh": "MS",
      "goc": "ngang",
      "chuyen_dong": "dung",
@@ -759,7 +759,7 @@
      "thoai": [
       {
        "vai": "GAO",
-       "loi": "Các ông đắp đê cho ai?",
+       "loi": "Các ông đắp đê này / là để giữ cho ai?",
        "luc": 1.8,
        "cam_xuc": "nén giận"
       }
@@ -779,7 +779,7 @@
     },
     {
      "ma": "C04_S04",
-     "dai": 14,
+     "dai": 14.2,
      "co_canh": "CU",
      "goc": "ngang",
      "chuyen_dong": "day_vao",
@@ -823,7 +823,7 @@
     },
     {
      "ma": "C04_S06",
-     "dai": 7.2,
+     "dai": 7.5,
      "co_canh": "MS",
      "goc": "cao",
      "chuyen_dong": "dung",
@@ -841,7 +841,7 @@
     },
     {
      "ma": "C04_S07",
-     "dai": 5.4,
+     "dai": 9.8,
      "co_canh": "MCU",
      "goc": "ngang",
      "chuyen_dong": "dung",
@@ -853,7 +853,7 @@
      "thoai": [
       {
        "vai": "GAO",
-       "loi": "Ông không giữ được / thì tôi giữ.",
+       "loi": "Các ông không bảo vệ được dân, / thì tôi tự bảo vệ con sông này.",
        "luc": 0.9,
        "cam_xuc": "lạnh, dứt khoát"
       }
@@ -975,7 +975,7 @@
     },
     {
      "ma": "C05_S05",
-     "dai": 5.3,
+     "dai": 8.2,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -988,7 +988,7 @@
      "thoai": [
       {
        "vai": "QQ",
-       "loi": "Mười vạn người. // Một con sông.",
+       "loi": "Ta có mười vạn quân. // Chúng chỉ có một con sông.",
        "luc": 1.0,
        "cam_xuc": "lạnh, chậm"
       }
@@ -1213,7 +1213,7 @@
     },
     {
      "ma": "C05_S22",
-     "dai": 5.5,
+     "dai": 8.6,
      "vao": "cat",
      "co_canh": "MS",
      "goc": "ngang",
@@ -1226,7 +1226,7 @@
      "thoai": [
       {
        "vai": "QQ",
-       "loi": "Đêm nay / chưa phải đêm của sông.",
+       "loi": "Chưa vội. / Đợi một đêm tối trời, / ta sẽ bắc cầu qua sông.",
        "luc": 0.5,
        "cam_xuc": "thản nhiên"
       }
@@ -1258,7 +1258,7 @@
     },
     {
      "ma": "C05_S25",
-     "dai": 6,
+     "dai": 8.8,
      "vao": "cat",
      "co_canh": "MS",
      "goc": "ngang",
@@ -1272,7 +1272,7 @@
      "thoai": [
       {
        "vai": "LTK",
-       "loi": "Họ không thử sông. / Họ thử chúng ta.",
+       "loi": "Trận vừa rồi, / họ chỉ dò xem quân ta mạnh yếu thế nào.",
        "luc": 1.0,
        "cam_xuc": "trầm"
       }
@@ -1500,7 +1500,7 @@
      "thoai": [
       {
        "vai": "DAN",
-       "loi": "Còn bên này, / người giữ bến là lính, / là dân phu, / và những người chèo đò thuộc từng khúc nước.",
+       "loi": "Còn bên này, / người giữ bến là lính, / là dân phu, / và những người chèo đò biết rõ từng khúc sông.",
        "luc": 0.4
       }
      ]
@@ -1603,7 +1603,7 @@
     },
     {
      "ma": "C07_S03",
-     "dai": 6.5,
+     "dai": 7.0,
      "vao": "cat",
      "co_canh": "OTS",
      "goc": "ngang",
@@ -1617,14 +1617,14 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Cháy được cầu phao, / chúng phải đóng lại từ đầu.",
+       "loi": "Đốt được cầu phao, / chúng sẽ phải làm lại từ đầu.",
        "luc": 0.3
       }
      ]
     },
     {
      "ma": "C07_S04",
-     "dai": 7,
+     "dai": 10.6,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -1637,7 +1637,7 @@
      "thoai": [
       {
        "vai": "LTK",
-       "loi": "Lửa không có chủ. // Gió đổi / thì nó cũng đổi.",
+       "loi": "Lửa không phân biệt ta với địch. // Gió đổi chiều / là nó quay lại đốt mình.",
        "luc": 0.4,
        "cam_xuc": "chậm"
       }
@@ -1645,7 +1645,7 @@
     },
     {
      "ma": "C07_S05",
-     "dai": 3.5,
+     "dai": 4.6,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -1658,7 +1658,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Gió đang thổi xuống.",
+       "loi": "Gió đang thổi xuôi về phía địch.",
        "luc": 0.4
       }
      ]
@@ -1781,7 +1781,7 @@
     },
     {
      "ma": "C07_S16",
-     "dai": 3,
+     "dai": 5.4,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -1794,7 +1794,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Cắt dây! / Đẩy ra!",
+       "loi": "Cắt dây thuyền! / Đẩy bè lửa ra xa!",
        "luc": 0.3
       }
      ]
@@ -1856,7 +1856,7 @@
     },
     {
      "ma": "C07_S22",
-     "dai": 6,
+     "dai": 6.4,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "hếch",
@@ -1869,7 +1869,7 @@
      "thoai": [
       {
        "vai": "QQ",
-       "loi": "Trời cũng biết / đứng về phía đông người.",
+       "loi": "Đến trời cũng đứng về phía bên đông quân hơn.",
        "luc": 0.5
       }
      ]
@@ -1926,7 +1926,7 @@
     },
     {
      "ma": "C07_S27",
-     "dai": 4.5,
+     "dai": 5.6,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -1939,7 +1939,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Lửa của ta… / đốt nhà ta.",
+       "loi": "Lửa của ta… / lại đốt chính nhà mình.",
        "luc": 0.5,
        "cam_xuc": "thì thầm"
       }
@@ -2102,7 +2102,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Giờ.",
+       "loi": "Đốt đuốc!",
        "luc": 0.4,
        "cam_xuc": "thì thầm"
       }
@@ -2226,7 +2226,7 @@
     },
     {
      "ma": "C08_S19",
-     "dai": 8.0,
+     "dai": 9.8,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "hếch",
@@ -2239,7 +2239,7 @@
      "thoai": [
       {
        "vai": "HT",
-       "loi": "Tướng nam! / Đấu với ta. // Ngươi thắng, / ta cho quân rút.",
+       "loi": "Tướng nhà Lý! / Ra đây đấu với ta. // Ngươi thắng, / ta cho quân rút.",
        "luc": 0.4,
        "cam_xuc": "khinh khỉnh"
       }
@@ -2481,7 +2481,7 @@
     },
     {
      "ma": "C08_S38",
-     "dai": 3.5,
+     "dai": 5.9,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -2495,7 +2495,7 @@
      "thoai": [
       {
        "vai": "HT",
-       "loi": "Sông… / không phải của ngươi.",
+       "loi": "Con sông này / rồi sẽ là của nhà Tống.",
        "luc": 0.3,
        "cam_xuc": "rít qua kẽ răng"
       }
@@ -2503,7 +2503,7 @@
     },
     {
      "ma": "C08_S39",
-     "dai": 3.1,
+     "dai": 6.9,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -2516,7 +2516,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Cũng không phải của ngươi.",
+       "loi": "Sông này có chủ. / Chủ nó đang đứng trên đê kia.",
        "luc": 0.2
       }
      ]
@@ -2679,7 +2679,7 @@
     },
     {
      "ma": "C09_S03",
-     "dai": 11.7,
+     "dai": 11.9,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -2724,7 +2724,7 @@
     },
     {
      "ma": "C09_S06",
-     "dai": 9.5,
+     "dai": 9.9,
      "vao": "cat",
      "co_canh": "MS",
      "goc": "hếch",
@@ -2755,7 +2755,7 @@
     },
     {
      "ma": "C09_S08",
-     "dai": 13.6,
+     "dai": 13.8,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "hếch",
@@ -2777,7 +2777,7 @@
     },
     {
      "ma": "C09_S09",
-     "dai": 7.3,
+     "dai": 11.0,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "hếch",
@@ -2790,7 +2790,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Đê là đất. // Người đứng trên đê / mới là thành.",
+       "loi": "Đê chỉ là đất. // Chính chúng ta, / những người đứng trên đê, / mới là bức thành.",
        "luc": 0.5
       }
      ]
@@ -2850,7 +2850,7 @@
     },
     {
      "ma": "C09_S14",
-     "dai": 4,
+     "dai": 5.9,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "hếch",
@@ -2863,7 +2863,7 @@
      "thoai": [
       {
        "vai": "GAO",
-       "loi": "Người giữ đê…",
+       "loi": "Chú là… / người giữ đê năm ấy.",
        "luc": 1.4,
        "cam_xuc": "thì thầm, run"
       }
@@ -2884,7 +2884,7 @@
     },
     {
      "ma": "C09_S16",
-     "dai": 8.5,
+     "dai": 8.9,
      "vao": "cat",
      "co_canh": "ELS",
      "goc": "ngang",
@@ -2909,12 +2909,21 @@
        ],
        "luc": 0.8,
        "dai": 5
+      },
+      {
+       "kieu": "the",
+       "dong": [
+        "Sông núi nước Nam, vua Nam ở.",
+        "Sách trời đã định rõ cõi bờ."
+       ],
+       "luc": 1.5,
+       "dai": 6.5
       }
      ]
     },
     {
      "ma": "C09_S17",
-     "dai": 8.5,
+     "dai": 8.7,
      "vao": "cat",
      "co_canh": "WS",
      "goc": "ngang",
@@ -2928,6 +2937,17 @@
        "loi": "Như hà nghịch lỗ lai xâm phạm? / Nhữ đẳng hành khan thủ bại hư.",
        "luc": 0.4,
        "cam_xuc": "ngâm, vang, chậm"
+      }
+     ],
+     "chu": [
+      {
+       "kieu": "the",
+       "dong": [
+        "Cớ sao giặc dữ sang xâm phạm?",
+        "Rồi sẽ chuốc lấy bại vong."
+       ],
+       "luc": 0.8,
+       "dai": 7
       }
      ]
     }
@@ -3039,7 +3059,7 @@
     },
     {
      "ma": "C10_S08",
-     "dai": 4,
+     "dai": 7.6,
      "vao": "cat",
      "co_canh": "MS",
      "goc": "ngang",
@@ -3052,7 +3072,7 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Lấp! / Lấp bằng người cũng được!",
+       "loi": "Lấp chỗ vỡ lại! / Hết đất thì lấy thân mình mà chắn!",
        "luc": 0.4,
        "cam_xuc": "gào"
       }
@@ -3146,7 +3166,7 @@
     },
     {
      "ma": "C10_S16",
-     "dai": 4.5,
+     "dai": 5.7,
      "vao": "cat",
      "co_canh": "WS",
      "goc": "ngang",
@@ -3160,7 +3180,7 @@
      "thoai": [
       {
        "vai": "HT",
-       "loi": "Hết đê rồi, / tướng nam.",
+       "loi": "Đê vỡ rồi. / Ngươi hết chỗ đứng rồi.",
        "luc": 0.6
       }
      ]
@@ -3282,7 +3302,7 @@
     },
     {
      "ma": "C11_S05",
-     "dai": 9,
+     "dai": 11.1,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -3295,7 +3315,7 @@
      "thoai": [
       {
        "vai": "GAO",
-       "loi": "Năm ấy chú cõng tôi qua nước. // Hôm nay / tôi chở chú qua sông.",
+       "loi": "Năm ấy chú cõng tôi qua lũ. // Hôm nay / đến lượt tôi giữ con sông cho chú.",
        "luc": 0.3,
        "cam_xuc": "bình thản, không quay lại"
       }
@@ -3405,7 +3425,7 @@
     },
     {
      "ma": "C12_S02",
-     "dai": 7.5,
+     "dai": 8.2,
      "vao": "cat",
      "co_canh": "MCU",
      "goc": "ngang",
@@ -3418,7 +3438,7 @@
      "thoai": [
       {
        "vai": "QQ",
-       "loi": "Ta mang mười vạn người / đến để lấy một con sông.",
+       "loi": "Ta mang mười vạn quân sang đây / chỉ để vượt một con sông.",
        "luc": 0.4,
        "cam_xuc": "chậm, tự giễu"
       }
@@ -3426,7 +3446,7 @@
     },
     {
      "ma": "C12_S03",
-     "dai": 4.4,
+     "dai": 6.2,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -3439,7 +3459,7 @@
      "thoai": [
       {
        "vai": "HT",
-       "loi": "Tướng quân, / còn bè. / Còn người.",
+       "loi": "Tướng quân, / ta vẫn còn bè, / vẫn còn quân.",
        "luc": 0.3
       }
      ]
@@ -3457,7 +3477,7 @@
     },
     {
      "ma": "C12_S05",
-     "dai": 8.5,
+     "dai": 12.8,
      "vao": "cat",
      "co_canh": "CU",
      "goc": "ngang",
@@ -3470,7 +3490,7 @@
      "thoai": [
       {
        "vai": "QQ",
-       "loi": "Hóa ra / con sông không ở dưới nước. // Nó đứng trên đê.",
+       "loi": "Ta tưởng phải vượt một con sông. // Hóa ra thứ chặn ta / là những con người đứng trên đê kia.",
        "luc": 0.4,
        "cam_xuc": "khẽ"
       }
