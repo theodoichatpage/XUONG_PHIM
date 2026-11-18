@@ -1,0 +1,640 @@
+{
+ "ma": "dabang1",
+ "series": "Tử chiến thành Đa Bang",
+ "thu_tu_series": 1,
+ "nhan": "Hồi 1: Giấy",
+ "thu_tu": 1,
+ "kenh": "Việt Sử Kiêu Hùng",
+ "ten": "Tử chiến thành Đa Bang – Hồi 1: Giấy",
+ "tieu_de_goc": "[16+] Tử chiến thành Đa Bang - Hồi 1: Giấy",
+ "link": "https://www.youtube.com/watch?v=_8IJ9bvnitY",
+ "dang": "2018-01-11",
+ "luot_xem": 1471996,
+ "boi_canh": "1400–1406: nhà Hồ lập nước Đại Ngu, chuẩn bị chống quân Minh",
+ "khung_hinh": "1920×1080 (16:9)",
+ "dai_s": 1048,
+ "so": {
+  "shot": 235,
+  "cpm": "13,4",
+  "tv": "2,74 s",
+  "loi": "66,2%"
+ },
+ "chude": "Tiền giấy thu kim loại làm vũ khí, đổi lại lòng dân không theo nhà Hồ (lời dẫn 1:46–2:05)",
+ "phande": "Mộc Thạnh – tướng Minh mưu sâu, dám bất chấp thủ đoạn; và chính lòng dân bất mãn (khẩu hiệu “Phò Trần diệt Hồ”)",
+ "canh": [
+  {
+   "n": 1,
+   "a": "0:00",
+   "b": "0:54",
+   "loai": "mo",
+   "nhip": "1 Mở",
+   "ten": "Cold open + tựa “Tử chiến thành Đa Bang”",
+   "ct": [
+    [
+     "0:51",
+     "Tựa series"
+    ],
+    [
+     "0:54",
+     "Chữ tựa tập: GIẤY"
+    ]
+   ],
+   "nv": [],
+   "cpm": 25.6,
+   "loi": 0
+  },
+  {
+   "n": 2,
+   "a": "0:54",
+   "b": "2:05",
+   "loai": "thuyet",
+   "nhip": "5 Thuyết minh (đặt sớm)",
+   "ten": "Lời dẫn: nhà Hồ, thành Đa Bang, tiền giấy",
+   "ct": [
+    [
+     "0:54",
+     "1400 Hồ Quý Ly phế Thiếu Đế, lập nhà Hồ, quốc hiệu Đại Ngu"
+    ],
+    [
+     "1:05",
+     "Nho sĩ nhà Trần cầu viện nhà Minh, bị phục kích giết"
+    ],
+    [
+     "1:17",
+     "Hồ Nguyên Trừng xây thành Đa Bang, đóng cọc trên sông Bạch Hạc"
+    ],
+    [
+     "1:46",
+     "Phát hành tiền giấy để thu kim loại làm vũ khí bí mật"
+    ],
+    [
+     "1:58",
+     "Lòng dân không tin, bất mãn nhà Hồ"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ],
+   "cpm": 8.5,
+   "loi": 85
+  },
+  {
+   "n": 3,
+   "a": "2:05",
+   "b": "2:58",
+   "loai": "drama",
+   "nhip": "Ra mắt đối thủ",
+   "ten": "Việt Trì: Mộc Thạnh săn hạc",
+   "ct": [
+    [
+     "2:14",
+     "Một tướng Minh nằm giữa đồng lau ngắm hạc bay"
+    ],
+    [
+     "2:19",
+     "Lính Minh càu nhàu: sao lại để phó tướng đi do thám"
+    ],
+    [
+     "2:28",
+     "Mộc Thạnh: biết người biết ta; quân Mông Nguyên thua ba lần vì không hiểu người Nam"
+    ],
+    [
+     "2:48",
+     "Giương cung bắn hạc – thẻ tên Mộc Thạnh"
+    ]
+   ],
+   "nv": [
+    "MT"
+   ],
+   "cpm": 6.8,
+   "loi": 48
+  },
+  {
+   "n": 4,
+   "a": "2:58",
+   "b": "5:40",
+   "loai": "drama",
+   "nhip": "3 Câu chủ đề / gieo",
+   "ten": "Hai đối thủ ẩn danh bên bờ sông",
+   "ct": [
+    [
+     "3:16",
+     "Ông lão câu cá đội nón (chưa lộ danh tính) và Mộc Thạnh cải trang gặp nhau"
+    ],
+    [
+     "3:21",
+     "Mộc Thạnh: một mẻ lưới là tóm gọn cả lũ, sao phải ngồi câu?"
+    ],
+    [
+     "3:36",
+     "Ông lão: đánh một mẻ cho sướng thì dễ, để lại cho đời sau mới khó"
+    ],
+    [
+     "4:07",
+     "Mộc Thạnh: kẻ anh hùng muốn thành việc lớn không ngại sinh linh đồ thán"
+    ],
+    [
+     "4:37",
+     "Ông lão nhắc tích “trí tính quá non, rốt cuộc cũng là xe cát”"
+    ],
+    [
+     "4:54",
+     "“Đạo bất đồng bất tương vi mưu” – chia tay, hẹn ngày gặp lại"
+    ],
+    [
+     "5:04",
+     "Lính đến báo: việc đổi tiền giấy đã xong – lộ ông lão là Hồ Nguyên Trừng"
+    ],
+    [
+     "5:21",
+     "“Là cường địch, nếu là tướng Minh thì ắt phải giết”"
+    ]
+   ],
+   "nv": [
+    "HNT",
+    "MT"
+   ],
+   "cpm": 8.1,
+   "loi": 62
+  },
+  {
+   "n": 5,
+   "a": "5:40",
+   "b": "6:32",
+   "loai": "thuyet",
+   "nhip": "5 Thuyết minh",
+   "ten": "Lời dẫn: quân Minh sang, ván gỗ “Phò Trần diệt Hồ”",
+   "ct": [
+    [
+     "5:42",
+     "9/1406 quân Minh đổ bộ; Trương Phụ đại tướng, Mộc Thạnh phó tướng"
+    ],
+    [
+     "6:00",
+     "Mộc Thạnh biết lòng dân không theo nhà Hồ"
+    ],
+    [
+     "6:05",
+     "Thả ván gỗ khắc hịch “Phò Trần diệt Hồ” trôi sông"
+    ],
+    [
+     "6:12",
+     "Dân không chống cự, quân Minh từng bước áp sát Đa Bang"
+    ]
+   ],
+   "nv": [
+    "DAN",
+    "MT"
+   ],
+   "cpm": 8.1,
+   "loi": 80
+  },
+  {
+   "n": 6,
+   "a": "6:32",
+   "b": "9:40",
+   "loai": "drama",
+   "nhip": "Nút thắt phe địch",
+   "ten": "Trại Minh: kế bãi cát và quân lệnh trạng",
+   "ct": [
+    [
+     "6:34",
+     "Một tướng xin thưởng vì kế của Mộc Thạnh; Mộc Thạnh mỉa mai kẻ chỉ biết tranh công"
+    ],
+    [
+     "7:01",
+     "Trương Phụ hỏi kế"
+    ],
+    [
+     "7:15",
+     "Mộc Thạnh: đường sông bị cọc chặn, nhưng hai ngày nữa nước ròng lộ bãi cát trước thành"
+    ],
+    [
+     "8:00",
+     "Muốn vượt sông phải chiếm một đồn nhỏ trước bãi"
+    ],
+    [
+     "8:18",
+     "Xin 1.000 quân; Trương Phụ không cho"
+    ],
+    [
+     "8:55",
+     "Mộc Thạnh lập quân lệnh trạng: thua thì nộp mạng, thắng thì đòi binh phù"
+    ],
+    [
+     "9:26",
+     "Trương Phụ nhận lời"
+    ]
+   ],
+   "nv": [
+    "TP",
+    "MT"
+   ],
+   "cpm": 13.7,
+   "loi": 78
+  },
+  {
+   "n": 7,
+   "a": "9:40",
+   "b": "10:28",
+   "loai": "drama",
+   "nhip": "Mâu thuẫn nội bộ",
+   "ten": "Tướng Minh âm mưu để Mộc Thạnh chết",
+   "ct": [
+    [
+     "9:42",
+     "Một tướng hỏi vì sao chủ tướng nghe kẻ tiểu tử"
+    ],
+    [
+     "9:55",
+     "Trương Phụ: ta không cần kẻ nghi ngờ quyết định của chủ tướng"
+    ],
+    [
+     "10:09",
+     "Tướng kia thề khiến Mộc Thạnh phải chôn thây ở trận này"
+    ]
+   ],
+   "nv": [
+    "TP"
+   ],
+   "cpm": 7.5,
+   "loi": 62
+  },
+  {
+   "n": 8,
+   "a": "10:28",
+   "b": "13:14",
+   "loai": "drama",
+   "nhip": "7 Quyết định",
+   "ten": "Đại Ngu bàn kế: giữ đồn hay phục kích giết Mộc Thạnh",
+   "ct": [
+    [
+     "10:29",
+     "Tin báo: Mộc Thạnh đem 1.000 quân đánh tiền đồn"
+    ],
+    [
+     "10:42",
+     "Tình báo: Mộc Thạnh và Trương Phụ có mâu thuẫn"
+    ],
+    [
+     "11:24",
+     "Giữ đồn bằng đại quân thì Mộc Thạnh không dám đánh – mất cơ hội giết hắn"
+    ],
+    [
+     "12:09",
+     "Các tướng khuyên cố thủ, đừng trái chiến lược của Thượng Hoàng"
+    ],
+    [
+     "12:42",
+     "Hồ Nguyên Trừng: dù nghịch ý Thượng Hoàng vẫn quyết phục kích"
+    ],
+    [
+     "13:00",
+     "Một tướng xin đi thay vì ngài phải giữ thành"
+    ],
+    [
+     "13:13",
+     "“Giết Mộc Thạnh, Đa Bang bất bại!”"
+    ]
+   ],
+   "nv": [
+    "HNT"
+   ],
+   "cpm": 11.2,
+   "loi": 82
+  },
+  {
+   "n": 9,
+   "a": "13:14",
+   "b": "15:06",
+   "loai": "action",
+   "nhip": "6 Đỉnh action + đảo chiều",
+   "ten": "Phục kích ở tiền đồn – bị phản bội",
+   "ct": [
+    [
+     "13:16",
+     "Trận phục kích ở bãi sông, mưa tên"
+    ],
+    [
+     "13:47",
+     "Mộc Thạnh khinh tướng Đại Ngu: kẻ vắt mũi chưa sạch"
+    ],
+    [
+     "13:56",
+     "“Ai là thợ săn, ai là thú bị săn, còn chưa biết”"
+    ],
+    [
+     "14:08",
+     "Tướng Đại Ngu bị chính lính mình đâm sau lưng (tên tướng: chưa xác định)"
+    ],
+    [
+     "14:11",
+     "Kẻ phản: hôm nay trả thù Hồ Quý Ly"
+    ],
+    [
+     "14:29",
+     "Hô “Phò Trần diệt Hồ” – quay giáo theo Mộc Thạnh"
+    ],
+    [
+     "14:56",
+     "Màn hình chuyển đỏ"
+    ]
+   ],
+   "nv": [
+    "MT"
+   ],
+   "cpm": 31.1,
+   "loi": 41
+  },
+  {
+   "n": 10,
+   "a": "15:06",
+   "b": "16:30",
+   "loai": "drama",
+   "nhip": "10 Gương soi",
+   "ten": "Hồ Quý Ly trách con – thần cơ sang pháo",
+   "ct": [
+    [
+     "15:06",
+     "Báo: phục kích thất bại, tiền đồn đã mất, giặc sát chân thành"
+    ],
+    [
+     "15:13",
+     "Hồ Quý Ly: thân là con trưởng lẽ ra phải dùng trí trá; giờ hiểu vì sao ngôi vua không truyền cho ngươi"
+    ],
+    [
+     "15:36",
+     "Trách con cãi lời làm hao binh tổn tướng"
+    ],
+    [
+     "15:53",
+     "Hỏi về vũ khí chế từ đồng sắt thu gom"
+    ],
+    [
+     "16:12",
+     "“Thần cơ sang pháo đã sẵn sàng”"
+    ],
+    [
+     "16:19",
+     "Cho phương Bắc biết giang sơn Đại Ngu là của Hồ Quý Ly"
+    ]
+   ],
+   "nv": [
+    "HQL",
+    "HNT"
+   ],
+   "cpm": 16.4,
+   "loi": 58
+  },
+  {
+   "n": 11,
+   "a": "16:30",
+   "b": "17:28",
+   "loai": "ket",
+   "nhip": "12 Móc tập sau",
+   "ten": "“Đa Bang thành bại, hồi sau phân định” + credit",
+   "ct": [
+    [
+     "16:32",
+     "Non xanh còn đó, nước biếc còn đây – hẹn hồi sau"
+    ]
+   ],
+   "nv": [],
+   "cpm": 5.2,
+   "loi": 12
+  }
+ ],
+ "nhanvat": [
+  {
+   "ma": "HNT",
+   "ten": "Hồ Nguyên Trừng",
+   "main": true,
+   "seg": [
+    [
+     "3:16",
+     "5:40"
+    ],
+    [
+     "10:28",
+     "13:14"
+    ],
+    [
+     "15:30",
+     "16:30"
+    ]
+   ],
+   "mo": [
+    [
+     "1:17",
+     "1:30"
+    ]
+   ]
+  },
+  {
+   "ma": "MT",
+   "ten": "Mộc Thạnh",
+   "seg": [
+    [
+     "2:14",
+     "2:58"
+    ],
+    [
+     "3:16",
+     "5:00"
+    ],
+    [
+     "6:34",
+     "9:40"
+    ],
+    [
+     "13:40",
+     "14:52"
+    ]
+   ],
+   "mo": [
+    [
+     "6:00",
+     "6:12"
+    ],
+    [
+     "10:29",
+     "10:55"
+    ]
+   ]
+  },
+  {
+   "ma": "TP",
+   "ten": "Trương Phụ",
+   "seg": [
+    [
+     "7:01",
+     "9:40"
+    ],
+    [
+     "9:40",
+     "10:10"
+    ]
+   ],
+   "mo": [
+    [
+     "5:42",
+     "5:48"
+    ]
+   ]
+  },
+  {
+   "ma": "HQL",
+   "ten": "Hồ Quý Ly",
+   "seg": [
+    [
+     "15:13",
+     "16:30"
+    ]
+   ],
+   "mo": [
+    [
+     "0:54",
+     "1:15"
+    ],
+    [
+     "1:46",
+     "1:58"
+    ]
+   ]
+  },
+  {
+   "ma": "DAN",
+   "ten": "Người dẫn",
+   "seg": [
+    [
+     "0:54",
+     "2:05"
+    ],
+    [
+     "5:40",
+     "6:32"
+    ]
+   ],
+   "mo": []
+  }
+ ],
+ "day": [
+  {
+   "ten": "Tiền giấy → lòng dân → phản bội",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "1:46"
+    ],
+    [
+     "nhắc",
+     "6:05"
+    ],
+    [
+     "trả",
+     "14:29"
+    ]
+   ],
+   "y": "Chính sách tiền giấy làm mất lòng dân; ván gỗ “Phò Trần diệt Hồ” gieo mầm; quân mình quay giáo ngay giữa trận."
+  },
+  {
+   "ten": "Hai đối thủ ẩn danh",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:16"
+    ],
+    [
+     "nhắc",
+     "5:21"
+    ],
+    [
+     "trả",
+     "13:47"
+    ]
+   ],
+   "y": "Gặp nhau như hai người lạ, nói về cách đánh cá; lần gặp sau là trận phục kích."
+  },
+  {
+   "ten": "Lưới hay cần câu",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:21"
+    ],
+    [
+     "trả",
+     "13:56"
+    ]
+   ],
+   "y": "“Ai là thợ săn, ai là thú” – cách nghĩ “một mẻ lưới” của Mộc Thạnh thắng."
+  },
+  {
+   "ten": "Bãi cát lúc nước ròng",
+   "moc": [
+    [
+     "gieo",
+     "7:31"
+    ],
+    [
+     "nhắc",
+     "11:17"
+    ],
+    [
+     "trả",
+     "15:10"
+    ]
+   ],
+   "y": "Mộc Thạnh tính trước con nước; Đại Ngu biết nhưng vẫn mất đồn."
+  },
+  {
+   "ten": "Quân lệnh trạng",
+   "moc": [
+    [
+     "gieo",
+     "8:55"
+    ],
+    [
+     "nhắc",
+     "10:09"
+    ],
+    [
+     "trả",
+     "14:48"
+    ]
+   ],
+   "y": "Đặt cược tính mạng để giành binh quyền; phe địch cũng chia rẽ."
+  },
+  {
+   "ten": "Thu kim loại → thần cơ sang pháo",
+   "moc": [
+    [
+     "gieo",
+     "1:46"
+    ],
+    [
+     "trả",
+     "16:12"
+    ]
+   ],
+   "y": "Cái giá của tiền giấy đổi lấy vũ khí – móc sang Hồi 2 “Sắt”."
+  },
+  {
+   "ten": "Cha – con họ Hồ",
+   "moc": [
+    [
+     "gieo",
+     "12:42"
+    ],
+    [
+     "trả",
+     "15:13"
+    ]
+   ],
+   "y": "Con trái lệnh cha để làm điều mình tin; cha trách vì không biết dùng thủ đoạn."
+  }
+ ]
+}

@@ -1,0 +1,636 @@
+{
+ "ma": "dabang_nt",
+ "series": "Tử chiến thành Đa Bang",
+ "thu_tu_series": 3,
+ "nhan": "Ngoại truyện: Huyết Mạch Trần Gia",
+ "thu_tu": 3,
+ "kenh": "Việt Sử Kiêu Hùng",
+ "ten": "Huyết Mạch Trần Gia – Ngoại truyện Đa Bang",
+ "tieu_de_goc": "[16+] Huyết Mạch Trần Gia | Tử chiến thành Đa Bang - Ngoại truyện",
+ "link": "https://www.youtube.com/watch?v=WIToAbOD4m4",
+ "dang": "2018-06-24",
+ "luot_xem": 763559,
+ "boi_canh": "1369–1371: Dương Nhật Lễ cướp ngôi, Trần Phủ giành lại; Lê Quý Ly bước lên chính trường",
+ "khung_hinh": "1920×1080 (16:9)",
+ "dai_s": 944,
+ "so": {
+  "shot": 271,
+  "cpm": "17,2",
+  "tv": "2,10 s",
+  "loi": "58,3%"
+ },
+ "chude": "“Huyết mạch” – dòng máu hoàng tộc không được chọn, và cái giá của việc tranh đoạt quyền lực",
+ "phande": "Trần Phủ – người mang huyết mạch Trần nhưng muốn đứng ngoài tranh đoạt",
+ "canh": [
+  {
+   "n": 1,
+   "a": "0:00",
+   "b": "2:14",
+   "loai": "action",
+   "nhip": "1 Mở (hành động)",
+   "ten": "Cold open: Trần Phủ ở ẩn bị thích khách tập kích",
+   "ct": [
+    [
+     "0:10",
+     "Núi non, đàn ngỗng trời"
+    ],
+    [
+     "0:58",
+     "Một người mặc áo lông cho ngỗng ăn"
+    ],
+    [
+     "1:08",
+     "Thích khách đeo mặt nạ cười tấn công"
+    ],
+    [
+     "1:52",
+     "Người ở ẩn rút đao đánh trả"
+    ]
+   ],
+   "nv": [
+    "TPH"
+   ],
+   "cpm": 22.4,
+   "loi": 7
+  },
+  {
+   "n": 2,
+   "a": "2:14",
+   "b": "2:35",
+   "loai": "drama",
+   "nhip": "Gặp mặt",
+   "ten": "Thiên Ninh tìm được Trần Phủ",
+   "ct": [
+    [
+     "2:14",
+     "Thái sư Đại Việt lại trốn nơi thâm sơn"
+    ],
+    [
+     "2:19",
+     "“Trần Phủ, tìm ngươi quả thật không dễ”"
+    ]
+   ],
+   "nv": [
+    "TN",
+    "TPH"
+   ],
+   "cpm": 8.6,
+   "loi": 37
+  },
+  {
+   "n": 3,
+   "a": "2:35",
+   "b": "3:40",
+   "loai": "thuyet",
+   "nhip": "5 Thuyết minh (hồi tưởng)",
+   "ten": "Lời dẫn: nhà Trần suy, Dương Nhật Lễ lên ngôi",
+   "ct": [
+    [
+     "2:35",
+     "Cơ nghiệp nhà Trần trăm năm bắt đầu suy tàn"
+    ],
+    [
+     "2:45",
+     "1369 Trần Dụ Tông mất, không con nối dõi"
+    ],
+    [
+     "2:53",
+     "Triều đình chia hai phe: phe muốn lập Trần Phủ, phe Hiến Từ Thái hậu muốn lập Dương Nhật Lễ"
+    ],
+    [
+     "3:20",
+     "Nhật Lễ lên ngôi, hiệu Đại Định"
+    ]
+   ],
+   "nv": [
+    "DAN"
+   ],
+   "cpm": 4.6,
+   "loi": 72
+  },
+  {
+   "n": 4,
+   "a": "3:40",
+   "b": "4:22",
+   "loai": "drama",
+   "nhip": "Đảo chiều",
+   "ten": "Nhật Lễ trở mặt, sát hại Hiến Từ Thái hậu",
+   "ct": [
+    [
+     "3:42",
+     "Thái hậu: dã tâm của ngươi sẽ không thành"
+    ],
+    [
+     "3:52",
+     "Nhật Lễ: còn tưởng ta là quân cờ trong tay bà sao?"
+    ],
+    [
+     "4:05",
+     "Lời dẫn: Nhật Lễ lộ dã tâm"
+    ],
+    [
+     "4:13",
+     "“Thiên hạ này là của họ Dương”"
+    ]
+   ],
+   "nv": [
+    "NL",
+    "HT"
+   ],
+   "cpm": 5.7,
+   "loi": 66
+  },
+  {
+   "n": 5,
+   "a": "4:22",
+   "b": "5:44",
+   "loai": "drama",
+   "nhip": "2 Gieo nợ máu",
+   "ten": "Tôn thất bị tàn sát – Thiên Ninh mất con",
+   "ct": [
+    [
+     "4:22",
+     "Tôn thất nhà Trần mưu ám sát, bị lộ"
+    ],
+    [
+     "4:30",
+     "Nhật Lễ tàn sát họ Trần, có hai con của Thiên Ninh"
+    ],
+    [
+     "4:43",
+     "Giữa pháp trường, Thiên Ninh ôm xác con gào khóc"
+    ],
+    [
+     "5:00",
+     "Trần Phủ chán mưu sâu kế hiểm, rời Thăng Long"
+    ],
+    [
+     "5:23",
+     "Thiên Ninh: nợ máu phải trả bằng máu"
+    ],
+    [
+     "5:31",
+     "Lên đường ngàn dặm thuyết phục Trần Phủ"
+    ]
+   ],
+   "nv": [
+    "TN",
+    "TPH",
+    "DAN"
+   ],
+   "cpm": 16.8,
+   "loi": 69
+  },
+  {
+   "n": 6,
+   "a": "5:44",
+   "b": "7:30",
+   "loai": "drama",
+   "nhip": "4 Phản đề",
+   "ten": "Đối chất 1: Trần Phủ từ chối",
+   "ct": [
+    [
+     "5:55",
+     "Thiên Ninh: thích khách vừa rồi là người của Nhật Lễ; ngươi không trốn được cả đời"
+    ],
+    [
+     "6:28",
+     "“Hãy cùng ta quay về giết Nhật Lễ”; nhắc huyết mạch Trần gia"
+    ],
+    [
+     "6:42",
+     "Trần Phủ: thứ đáng sợ này ta không được chọn, người đời vì nó mà tàn sát nhau"
+    ],
+    [
+     "7:00",
+     "“Cuộc tranh đoạt này, ta xin đứng ngoài”"
+    ],
+    [
+     "7:15",
+     "Thiên Ninh: không làm gì thì tay không nhuốm máu sao? Ngươi chỉ là kẻ hèn nhát"
+    ]
+   ],
+   "nv": [
+    "TN",
+    "TPH"
+   ],
+   "cpm": 15.8,
+   "loi": 68
+  },
+  {
+   "n": 7,
+   "a": "7:30",
+   "b": "9:42",
+   "loai": "drama",
+   "nhip": "7 Đối chất 2",
+   "ten": "Đối chất 2: “Có đáng không?”",
+   "ct": [
+    [
+     "7:33",
+     "Trần Phủ nhận mình hèn, nhưng trách mẹ con Thiên Ninh đưa Nhật Lễ lên ngôi rồi bị trở mặt"
+    ],
+    [
+     "7:52",
+     "“Lúc mưu đoạt ngôi sao không nghĩ cái giá phải trả có đáng không?”"
+    ],
+    [
+     "8:02",
+     "Thiên Ninh: mẹ bị đầu độc, con bị bêu đầu – có đáng không?"
+    ],
+    [
+     "8:22",
+     "Thề hy sinh mọi thứ vì thiên hạ nhà Trần"
+    ],
+    [
+     "8:52",
+     "Trần Phủ: chúng ta đều chỉ là quân cờ quyền lực"
+    ],
+    [
+     "9:27",
+     "Thiên Ninh: ta vẫn sẽ quay về; trốn tránh hay đối mặt, ngươi tự chọn"
+    ]
+   ],
+   "nv": [
+    "TN",
+    "TPH"
+   ],
+   "cpm": 13.2,
+   "loi": 69
+  },
+  {
+   "n": 8,
+   "a": "9:42",
+   "b": "10:36",
+   "loai": "action",
+   "nhip": "Đỉnh hình ảnh",
+   "ten": "Montage “huyết mạch”: máu, tế bào, lửa",
+   "ct": [
+    [
+     "9:42",
+     "Dồn dập hình ảnh, 72 cắt/phút (đo được)"
+    ],
+    [
+     "10:02",
+     "Hình trừu tượng: bào thai, mạch máu, tế bào đỏ"
+    ],
+    [
+     "10:14",
+     "Tiếng hô “Thong thả!” (diễn ý chưa chắc)"
+    ],
+    [
+     "10:26",
+     "Câu thơ về phò vua giữ nhà Trần"
+    ]
+   ],
+   "nv": [],
+   "cpm": 72.2,
+   "loi": 23
+  },
+  {
+   "n": 9,
+   "a": "10:36",
+   "b": "13:16",
+   "loai": "drama",
+   "nhip": "9 Trả nợ / gieo bi kịch",
+   "ten": "Bên đống lửa: Lê Quý Ly thề phò tá",
+   "ct": [
+    [
+     "10:39",
+     "Quý Ly: theo ngài đã lâu, lần đầu thấy ngài phiền não"
+    ],
+    [
+     "10:50",
+     "Trần Phủ: nhà Trần rối loạn, tôn thất ai giữ thân nấy"
+    ],
+    [
+     "11:22",
+     "Quý Ly: nếu thiên hạ đã thối nát thì thay đi"
+    ],
+    [
+     "11:46",
+     "“Muốn cứu thiên hạ mà phải giết cả người thân, ngài làm được không?”"
+    ],
+    [
+     "11:57",
+     "Muốn dẹp đại loạn phải có đại trị: lập đội quân tuyệt đối trung thành, ai cản thì dẹp"
+    ],
+    [
+     "12:21",
+     "Trần Phủ: quay về là bước trên con đường chết chóc"
+    ],
+    [
+     "12:40",
+     "Quý Ly: nguyện dốc lòng phò tá – tuyệt không hối hận"
+    ],
+    [
+     "13:01",
+     "Trần Phủ tin vào “thiên hạ trong mộng” nhờ câu thề ấy"
+    ]
+   ],
+   "nv": [
+    "QL",
+    "TPH"
+   ],
+   "cpm": 12.4,
+   "loi": 69
+  },
+  {
+   "n": 10,
+   "a": "13:16",
+   "b": "14:30",
+   "loai": "thuyet",
+   "nhip": "11 Lịch sử lạnh",
+   "ten": "Lời dẫn: Trần Phủ lên ngôi, Lê Quý Ly bước lên chính trường",
+   "ct": [
+    [
+     "13:18",
+     "1370 Trần Phủ hợp binh cùng Thiên Ninh tiến về Thăng Long"
+    ],
+    [
+     "13:30",
+     "Có nội ứng, lật đổ Nhật Lễ, lên ngôi – Trần Nghệ Tông"
+    ],
+    [
+     "14:04",
+     "Phong Lê Quý Ly làm Khu mật Đại sứ"
+    ],
+    [
+     "14:24",
+     "1371 Lê Quý Ly bước lên vũ đài quyền lực – mở chương cuối của nhà Trần"
+    ]
+   ],
+   "nv": [
+    "DAN",
+    "TPH",
+    "QL"
+   ],
+   "cpm": 17.8,
+   "loi": 71
+  },
+  {
+   "n": 11,
+   "a": "14:30",
+   "b": "15:44",
+   "loai": "ket",
+   "nhip": "12 Credit",
+   "ten": "Credit",
+   "ct": [
+    [
+     "14:36",
+     "Credit đoàn làm phim"
+    ]
+   ],
+   "nv": [],
+   "cpm": 6.5,
+   "loi": 3
+  }
+ ],
+ "nhanvat": [
+  {
+   "ma": "TN",
+   "ten": "Thiên Ninh Công chúa",
+   "main": true,
+   "seg": [
+    [
+     "2:14",
+     "2:35"
+    ],
+    [
+     "4:43",
+     "5:00"
+    ],
+    [
+     "5:44",
+     "9:42"
+    ]
+   ],
+   "mo": [
+    [
+     "5:15",
+     "5:44"
+    ],
+    [
+     "13:18",
+     "13:25"
+    ]
+   ]
+  },
+  {
+   "ma": "TPH",
+   "ten": "Trần Phủ (Trần Nghệ Tông)",
+   "seg": [
+    [
+     "0:58",
+     "2:14"
+    ],
+    [
+     "5:44",
+     "9:42"
+    ],
+    [
+     "10:36",
+     "13:16"
+    ]
+   ],
+   "mo": [
+    [
+     "2:56",
+     "3:03"
+    ],
+    [
+     "5:00",
+     "5:15"
+    ],
+    [
+     "13:30",
+     "14:10"
+    ]
+   ]
+  },
+  {
+   "ma": "QL",
+   "ten": "Lê Quý Ly",
+   "seg": [
+    [
+     "10:36",
+     "13:16"
+    ]
+   ],
+   "mo": [
+    [
+     "14:04",
+     "14:30"
+    ]
+   ]
+  },
+  {
+   "ma": "NL",
+   "ten": "Dương Nhật Lễ",
+   "seg": [
+    [
+     "3:40",
+     "4:22"
+    ]
+   ],
+   "mo": [
+    [
+     "4:30",
+     "4:43"
+    ],
+    [
+     "5:55",
+     "6:07"
+    ],
+    [
+     "13:30",
+     "13:40"
+    ]
+   ]
+  },
+  {
+   "ma": "HT",
+   "ten": "Hiến Từ Thái hậu",
+   "seg": [
+    [
+     "3:40",
+     "4:00"
+    ]
+   ],
+   "mo": [
+    [
+     "3:03",
+     "3:13"
+    ]
+   ]
+  },
+  {
+   "ma": "DAN",
+   "ten": "Người dẫn",
+   "seg": [
+    [
+     "2:35",
+     "3:40"
+    ],
+    [
+     "4:05",
+     "5:44"
+    ],
+    [
+     "13:16",
+     "14:30"
+    ]
+   ],
+   "mo": []
+  }
+ ],
+ "day": [
+  {
+   "ten": "Huyết mạch Trần gia",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "6:32"
+    ],
+    [
+     "nhắc",
+     "6:42"
+    ],
+    [
+     "nhắc",
+     "10:02"
+    ],
+    [
+     "trả",
+     "13:30"
+    ]
+   ],
+   "y": "Dòng máu không được chọn: Thiên Ninh dùng nó để thuyết phục, Trần Phủ coi nó là lời nguyền, cuối cùng vẫn phải gánh."
+  },
+  {
+   "ten": "“Có đáng không?”",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "7:52"
+    ],
+    [
+     "trả",
+     "8:02"
+    ]
+   ],
+   "y": "Câu hỏi của Trần Phủ bị trả lại bằng nỗi đau mất mẹ, mất con."
+  },
+  {
+   "ten": "Quân cờ quyền lực",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "3:52"
+    ],
+    [
+     "nhắc",
+     "8:52"
+    ],
+    [
+     "trả",
+     "14:24"
+    ]
+   ],
+   "y": "Nhật Lễ thoát làm quân cờ bằng cách giết người đưa mình lên; Trần Phủ tự nhận là quân cờ; kẻ thật sự cầm cờ là Lê Quý Ly."
+  },
+  {
+   "ten": "“Tuyệt không hối hận” – trớ trêu lịch sử",
+   "main": true,
+   "moc": [
+    [
+     "gieo",
+     "12:40"
+    ],
+    [
+     "trả",
+     "14:24"
+    ]
+   ],
+   "y": "Người thề phò tá nhà Trần chính là người về sau chấm dứt nhà Trần – khán giả biết trước, nhân vật thì không."
+  },
+  {
+   "ten": "Nợ máu",
+   "moc": [
+    [
+     "gieo",
+     "4:43"
+    ],
+    [
+     "nhắc",
+     "5:23"
+    ],
+    [
+     "trả",
+     "13:30"
+    ]
+   ],
+   "y": "Thiên Ninh mất con → thề trả bằng máu → Nhật Lễ bị lật đổ."
+  },
+  {
+   "ten": "Trốn tránh hay đối mặt",
+   "moc": [
+    [
+     "gieo",
+     "7:00"
+    ],
+    [
+     "nhắc",
+     "9:32"
+    ],
+    [
+     "trả",
+     "13:18"
+    ]
+   ],
+   "y": "Trần Phủ xin đứng ngoài → bị đặt trước lựa chọn → quay về."
+  }
+ ]
+}

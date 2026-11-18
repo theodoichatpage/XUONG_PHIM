@@ -1,7 +1,24 @@
 [
  {
   "thu_tu": 1,
+  "ma": "dabang1",
+  "series": "Tử chiến thành Đa Bang",
+  "thu_tu_series": 1,
+  "nhan": "Hồi 1: Giấy",
+  "ten": "Tử chiến thành Đa Bang – Hồi 1: Giấy",
+  "dang": "2018-01-11",
+  "dai_s": 1048,
+  "boi_canh": "1400–1406: nhà Hồ lập nước Đại Ngu, chuẩn bị chống quân Minh",
+  "so_canh": 11,
+  "so_day": 7,
+  "link": "https://www.youtube.com/watch?v=_8IJ9bvnitY"
+ },
+ {
+  "thu_tu": 2,
   "ma": "dabang",
+  "series": "Tử chiến thành Đa Bang",
+  "thu_tu_series": 2,
+  "nhan": "Hồi 2: Sắt",
   "ten": "Tử chiến thành Đa Bang – Hồi 2: SẮT",
   "dang": "2018-12-20",
   "dai_s": 1322,
@@ -11,8 +28,25 @@
   "link": "https://www.youtube.com/watch?v=JVYFlYU2RIQ"
  },
  {
-  "thu_tu": 2,
+  "thu_tu": 3,
+  "ma": "dabang_nt",
+  "series": "Tử chiến thành Đa Bang",
+  "thu_tu_series": 3,
+  "nhan": "Ngoại truyện: Huyết Mạch Trần Gia",
+  "ten": "Huyết Mạch Trần Gia – Ngoại truyện Đa Bang",
+  "dang": "2018-06-24",
+  "dai_s": 944,
+  "boi_canh": "1369–1371: Dương Nhật Lễ cướp ngôi, Trần Phủ giành lại; Lê Quý Ly bước lên chính trường",
+  "so_canh": 11,
+  "so_day": 6,
+  "link": "https://www.youtube.com/watch?v=WIToAbOD4m4"
+ },
+ {
+  "thu_tu": 4,
   "ma": "luythay",
+  "series": "Series Chiến Quốc",
+  "thu_tu_series": 1,
+  "nhan": "Huyết Chiến Lũy Thầy",
   "ten": "Huyết Chiến Lũy Thầy",
   "dang": "2022-07-17",
   "dai_s": 1222,

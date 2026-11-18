@@ -61,14 +61,16 @@ const TK = (() => {
 
   async function mo(app, ma, canh) {
     const ds = (await lay('tham_khao/danh_sach.json')).sort((a, b) => a.thu_tu - b.thu_tu);
-    const thanhTap = `<nav class="tabs">${ds.map(t => `<a class="tab" aria-selected="${t.ma === ma}" href="#/tham-khao/${t.ma}">Tập ${t.thu_tu}: ${esc(t.ten)}</a>`).join('')}
-      <a class="tab" aria-selected="${ma === 'so-sanh'}" href="#/tham-khao/so-sanh">Đối chiếu khung</a></nav>`;
+    const series = [...new Set(ds.map(t => t.series))];
+    const thanhTap = `<div style="display:grid;gap:6px">${series.map(se => `<div class="row" style="gap:6px"><span class="muted" style="font-size:12.5px;font-weight:600;min-width:150px">${esc(se)}</span>
+        ${ds.filter(t => t.series === se).sort((a, b) => a.thu_tu_series - b.thu_tu_series).map(t => `<a class="tab" aria-selected="${t.ma === ma}" href="#/tham-khao/${t.ma}">${esc(t.nhan)}</a>`).join('')}</div>`).join('')}
+      <div class="row" style="gap:6px"><span class="muted" style="font-size:12.5px;font-weight:600;min-width:150px">So sánh</span><a class="tab" aria-selected="${ma === 'so-sanh'}" href="#/tham-khao/so-sanh">Đối chiếu khung</a></div></div>`;
     if (!ma) { location.replace(`#/tham-khao/${ds[0].ma}`); return; }
     if (ma === 'so-sanh') return soSanh(app, ds, thanhTap);
     const f = await lay(`tham_khao/${ma}.json`);
     app.innerHTML = `<section class="panel">
       ${thanhTap}
-      <div class="row" style="justify-content:space-between"><span class="tag">Phim tham khảo · Tập ${f.thu_tu} · ${esc(f.kenh)}</span>
+      <div class="row" style="justify-content:space-between"><span class="tag">${esc(f.series || 'Phim tham khảo')} · ${esc(f.nhan || '')} · ${esc(f.kenh)}</span>
         <a class="btn" href="${esc(f.link)}" target="_blank" rel="noopener">Xem phim gốc trên YouTube ↗</a></div>
       <h1>${esc(f.ten)}</h1>
       <div class="meta"><span>Đăng <b>${esc(f.dang.split('-').reverse().join('/'))}</b></span><span>Dài <b>${fmt(f.dai_s)}</b></span><span>Shot <b>${f.so.shot}</b></span>
@@ -109,11 +111,11 @@ const TK = (() => {
 
   async function soSanh(app, ds, thanhTap) {
     const ss = await lay('tham_khao/so_sanh.json');
-    const ten = ds.map(t => esc(t.ten));
+    const ten = ['dabang', 'luythay'].map(m => esc((ds.find(t => t.ma === m) || {}).ten || m));
     app.innerHTML = `<section class="panel">${thanhTap}
       <h1>Hai tập trên cùng khung 12 nhịp</h1>
       <p class="lead">Cùng một bộ khung, hai cách sắp. Đa Bang đi đúng thứ tự 12 nhịp và trả nợ bằng hành động của người dân. Lũy Thầy đặt diễn văn sớm, để giọng phản đề không quay lại, và dồn nút thắt vào cuộc đối chất cuối.</p>
-      <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Nhịp</th><th>Tập 1: ${ten[0] || ''}</th><th>Tập 2: ${ten[1] || ''}</th></tr></thead>
+      <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Nhịp</th><th>${ten[0]}</th><th>${ten[1]}</th></tr></thead>
         <tbody>${ss.khung.map(r => `<tr><td><b>${esc(r[0])}</b></td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('')}</tbody></table></div>
       <h3>Công thức rút ra cho tuyến phim mới</h3>
       <div class="scroll" style="background:var(--paper)"><table><tbody>

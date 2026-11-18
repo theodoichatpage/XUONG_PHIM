@@ -1,5 +1,5 @@
 {
- "thu_tu": 2,
+ "thu_tu": 4,
  "ma": "luythay",
  "kenh": "Việt Sử Kiêu Hùng",
  "tieu_de_goc": "[16+] Huyết Chiến Lũy Thầy | Series CHIẾN QUỐC | Dã sử",
@@ -884,5 +884,8 @@
    "y": "Chủ đề khép vòng ở mức lịch sử."
   }
  ],
- "dai_s": 1222
+ "dai_s": 1222,
+ "series": "Series Chiến Quốc",
+ "thu_tu_series": 1,
+ "nhan": "Huyết Chiến Lũy Thầy"
 }

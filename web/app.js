@@ -62,12 +62,12 @@ async function trangChu() {
           <p class="muted" style="margin:0;font-size:13px">Đang soạn, chưa đưa lên GitHub. Mở để xem như một tập, hoặc vào Soạn tập để sửa tiếp.</p></a>` : ''}
     </div>
     ${tk.length ? `<h2>Phim tham khảo – Việt Sử Kiêu Hùng</h2>
-    <div class="grid-cards">${tk.map(t => `<a class="card" href="#/tham-khao/${encodeURIComponent(t.ma)}">
-        <span class="tag">Tập ${t.thu_tu} · đăng ${esc(t.dang.split('-').reverse().join('/'))}</span><h3>${esc(t.ten)}</h3>
+    ${[...new Set(tk.map(t => t.series))].map(se => `<h3>${esc(se)}</h3><div class="grid-cards">${tk.filter(t => t.series === se).map(t => `<a class="card" href="#/tham-khao/${encodeURIComponent(t.ma)}">
+        <span class="tag">${esc(t.nhan)} · đăng ${esc(t.dang.split('-').reverse().join('/'))}</span><h3>${esc(t.ten)}</h3>
         <div class="meta"><span>Dài <b>${XP.tc(t.dai_s, false)}</b></span><span>Cảnh <b>${t.so_canh}</b></span><span>Đường dây <b>${t.so_day}</b></span></div>
-        <p class="muted" style="margin:0;font-size:13px">${esc(t.boi_canh)}</p></a>`).join('')}
-      <a class="card" href="#/tham-khao/so-sanh"><span class="tag">Đối chiếu</span><h3>Hai tập trên cùng khung 12 nhịp</h3>
-        <p class="muted" style="margin:0;font-size:13px">So từng nhịp và công thức rút ra cho tuyến phim mới.</p></a></div>` : ''}`;
+        <p class="muted" style="margin:0;font-size:13px">${esc(t.boi_canh)}</p></a>`).join('')}</div>`).join('')}
+      <div class="grid-cards"><a class="card" href="#/tham-khao/so-sanh"><span class="tag">Đối chiếu</span><h3>Hai tập trên cùng khung 12 nhịp</h3>
+        <p class="muted" style="margin:0;font-size:13px">Đa Bang Hồi 2 và Lũy Thầy đặt cạnh nhau theo 12 nhịp; công thức rút ra.</p></a></div>` : ''}`;
 }
 
 // ---------------------------------------------------------------- trang tập

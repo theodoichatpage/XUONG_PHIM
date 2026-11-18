@@ -1,5 +1,5 @@
 {
- "thu_tu": 1,
+ "thu_tu": 2,
  "ma": "dabang",
  "kenh": "Việt Sử Kiêu Hùng",
  "tieu_de_goc": "[16+] Tử chiến thành Đa Bang – Hồi 2: SẮT",
@@ -758,5 +758,8 @@
    "y": "Đau thương làm tiền đề cho hồi sau."
   }
  ],
- "dai_s": 1322
+ "dai_s": 1322,
+ "series": "Tử chiến thành Đa Bang",
+ "thu_tu_series": 2,
+ "nhan": "Hồi 2: Sắt"
 }
