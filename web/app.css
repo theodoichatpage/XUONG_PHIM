@@ -19,7 +19,8 @@ a{color:inherit}
 .top{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--bg)}
 .top-in{max-width:1240px;margin:0 auto;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;
   padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px))}
-.brand{font:700 18px var(--font-d);text-decoration:none;letter-spacing:.01em}
+.brand{display:inline-flex;align-items:center;gap:10px;font:700 18px var(--font-d);text-decoration:none;letter-spacing:.01em}
+.brand-logo{display:block;width:38px;height:38px;object-fit:contain;border-radius:7px;flex:none}
 .brand b{color:#e7a3a3}
 .mainnav{display:flex;gap:4px;flex-wrap:wrap}
 .mainnav a{text-decoration:none;padding:6px 10px;border-radius:6px;font-size:14px;opacity:.85}
