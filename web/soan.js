@@ -257,6 +257,8 @@ const SOAN = (() => {
         <label class="f">Độ dài màn đen/trắng (s)<input type="number" step="0.1" min="0" data-t="num" data-p="${p}.ket_thuc.dai" value="${esc(kt.dai ?? '')}"></label>
         <label class="f">File nhạc<input data-p="${p}.nhac.file" value="${esc(c.nhac?.file || '')}" placeholder="am_thanh/nhac/ten.mp3"></label>
         <label class="f">Âm lượng nhạc (dB)<input type="number" data-t="num" data-p="${p}.nhac.am_luong_db" value="${esc(c.nhac?.am_luong_db ?? '')}"></label>
+        <label class="f">Khuôn tham khảo (mã, vd. dabang)<input data-p="${p}.khuon.tham_khao" value="${esc(c.khuon?.tham_khao || '')}"></label>
+        <label class="f">Theo cảnh số của khuôn<input type="number" min="1" data-t="num" data-p="${p}.khuon.canh" value="${esc(c.khuon?.canh ?? '')}"></label>
       </div>
       <label class="f">Mục đích của cảnh trong câu chuyện<textarea data-p="${p}.muc_dich" rows="2">${esc(c.muc_dich || '')}</textarea></label>
       <div class="row"><button class="small" data-x="len-canh">↑ Đưa cảnh lên</button><button class="small" data-x="xuong-canh">↓ Đưa cảnh xuống</button><button class="small danger" data-x="xoa-canh">Xóa cảnh</button></div>

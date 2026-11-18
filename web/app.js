@@ -109,18 +109,73 @@ function tabTuyen(tap, r, body, ma) {
     <p class="muted" style="font-size:13px;margin:0">Sơ đồ tự vẽ từ kịch bản. Bấm một cảnh để đọc kịch bản cảnh đó. Ô đặc: nhân vật có trong hình; ô mờ: chỉ có giọng.</p>
     <h3>Đường dây gieo → trả</h3>
     <div class="grid-cards" id="gt"></div>
-    <h3>Các cảnh</h3>
+    <h3>Đọc dọc từng cảnh</h3>
+    <div style="display:grid;gap:10px">${theCanh(tap, r, ma)}</div>
+    <h3>Bảng tóm tắt cảnh</h3>
     <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Cảnh</th><th>Tên</th><th>Nhịp</th><th class="num">Vào</th><th class="num">Dài</th><th class="num">Shot</th><th class="num">Cắt/phút</th><th class="num">Từ thoại</th><th>Mục đích</th></tr></thead>
     <tbody>${r.bang.map(b => {
       const c = tap.canh.find(x => x.ma === b.ma) || {};
       return `<tr><td><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${b.ma}">${b.ma}</a></td><td>${esc(b.ten)}</td><td><span class="tag">${esc(b.nhip)}</span></td>
         <td class="num">${XP.tc(b.bd, false)}</td><td class="num">${b.dai.toFixed(0)} s</td><td class="num">${b.ns}</td><td class="num">${(b.cat / b.dai * 60).toFixed(1)}</td><td class="num">${b.tu}</td><td>${esc(c.muc_dich || '')}</td></tr>`;
     }).join('')}</tbody></table></div>`;
-  $('#sv').append(VE.tuyenPhim(tap, null, cm => location.hash = `#/tap/${encodeURIComponent(ma)}/kich-ban/${cm}`));
+  $('#sv').append(VE.tuyenPhim(tap, null, cm => {
+    const card = document.getElementById(`tc-${cm}`);
+    if (card) { card.scrollIntoView({block: 'center'}); card.classList.add('hl'); setTimeout(() => card.classList.remove('hl'), 1600); }
+  }));
   $('#gt').innerHTML = r.gt.map(({g, moc}, i) => `<div class="card" style="gap:4px">
       <span class="tag${VE.chinh(tap, g, i) ? ' red' : ''}" style="justify-self:start">${VE.chinh(tap, g, i) ? 'Đường dây chính' : 'Đường dây phụ'}</span>
       <b>${esc(g.mo_ta || g.ma)}</b>
       <span class="muted" style="font-size:12.5px">${moc.map(x => `${{gieo: 'gieo', nhac: 'nhắc', tra: 'trả'}[x.k]} ${x.m} (${XP.tc(x.t, false)})`).join(' → ')}</span></div>`).join('') || '<p class="muted">Chưa khai báo gieo – trả.</p>';
+}
+
+// Thẻ "đọc dọc từng cảnh" – cùng kiểu với trang Phim tham khảo, rút điểm nhấn từ các shot
+const LOAI_CANH = {mo: ['Mở / tựa', '--c-mo'], tho: ['Gieo / ký ức', '--c-tho'], drama: ['Kịch – đối thoại', '--c-drama'],
+  action: ['Hành động', '--c-action'], thuyet: ['Thuyết minh / lịch sử', '--c-thuyet'], ket: ['Móc / credit', '--c-ket']};
+function theCanh(tap, r, ma) {
+  const K = CACHE['quy_chuan/khung_12_nhip.json'];
+  const NHIP = K ? Object.fromEntries(K.nhip.map(n => [n.ma, n])) : {};
+  const {tl} = XP.timeline(tap);
+  const ten = Object.fromEntries((tap.nhan_vat || []).map(n => [n.ma, n.ten || n.ma]));
+  const viTri = Object.fromEntries(tl.map(s => [s.ma, s.bat_dau]));
+  const cut = (s, n) => s.length > n ? s.slice(0, n - 1) + '…' : s;
+  return tap.canh.map((c, ci) => {
+    const ss = tl.filter(s => s.chi_so_canh === ci && !s._ao);
+    if (!ss.length) return '';
+    const b = r.bang.find(x => x.ma === c.ma) || {};
+    const bd = ss[0].bat_dau, kt = b.kt ?? (bd + ss.reduce((a, s) => a + +s.dai, 0));
+    const loai = VE.NHOM[c.nhip] || 'drama';
+    const q = NHIP[c.nhip];
+    // điểm nhấn: câu thoại, chữ trên hình, shot đỏ sẫm, chuyển cảnh đặc biệt
+    const nhan = [];
+    ss.forEach(s => {
+      s.thoai.forEach(t => nhan.push([s.bat_dau + (+t.luc || 0), `${ten[t.vai] || t.vai}: “${cut(t.loi.replace(/\s*\/\/\s*/g, '… ').replace(/\s*\/\s*/g, ' '), 110)}”`, s.ma]));
+      (s.chu || []).forEach(x => nhan.push([s.bat_dau + (+x.luc || 0), `Chữ ${({phuon: 'phướn', the: 'thẻ', tua: 'tựa'})[x.kieu] || x.kieu}: “${(x.dong || []).join(' / ')}”`, s.ma]));
+      if (s.do && !s.thoai.length) nhan.push([s.bat_dau, `Đỏ sẫm – ${cut(s.noi_dung || '', 110)}`, s.ma]);
+      if (s.loai === 'den' && !s._ao) nhan.push([s.bat_dau, `Màn đen ${(+s.dai).toFixed(1)} s`, s.ma]);
+    });
+    nhan.sort((a, b) => a[0] - b[0]);
+    const nv = [...new Set(ss.flatMap(s => [...(s.nhan_vat || []), ...s.thoai.map(t => t.vai)]))];
+    const day = (tap.gieo_tra || []).map((g, i) => {
+      const k = ['gieo', 'nhac', 'tra'].flatMap(kk => (g[kk] || []).filter(m => ss.some(s => s.ma === m)).map(() => ({gieo: 'gieo', nhac: 'nhắc', tra: 'trả'})[kk]));
+      return k.length ? `<span class="tag${VE.chinh(tap, g, i) ? ' red' : ''}">${esc(g.mo_ta || g.ma)}: ${[...new Set(k)].join(', ')}</span>` : '';
+    }).join('');
+    const cpm = b.dai ? b.cat / b.dai * 60 : 0, lp = b.dai ? Math.min(100, b.noi / b.dai * 100) : 0;
+    const kh = c.khuon;
+    return `<article class="scene" id="tc-${c.ma}" tabindex="-1" style="padding:14px;display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px">
+      <div class="muted" style="display:grid;gap:3px;align-content:start;font-size:13px;font-variant-numeric:tabular-nums"><span class="sc-no" style="color:var(--ink)">${ci + 1}</span><span>${XP.tc(bd, false)} – ${XP.tc(kt, false)}</span><span>${XP.tc(kt - bd, false)} phút</span><span>${ss.length} shot</span></div>
+      <div style="display:grid;gap:6px;min-width:0">
+        <div class="row"><span class="pill" style="background:var(${LOAI_CANH[loai][1]});color:${['tho', 'mo'].includes(loai) ? 'var(--ink)' : '#fff'}">${LOAI_CANH[loai][0]}</span>
+          <span class="tag">${q ? `Nhịp ${q.so} ${esc(q.ten)}` : esc(c.nhip || '')}</span>
+          ${kh ? `<a class="tag" href="#/tham-khao/${encodeURIComponent(kh.tham_khao)}/${kh.canh}">Theo cảnh ${kh.canh} của khuôn ${esc(kh.ten || kh.tham_khao)} ↗</a>` : ''}</div>
+        <h3>${esc(c.ten || '')} <span class="muted" style="font-weight:500">(${c.ma})</span></h3>
+        ${c.muc_dich ? `<p style="margin:0">${esc(c.muc_dich)}</p>` : ''}
+        ${nhan.length ? `<ul style="margin:0;padding-left:18px;display:grid;gap:3px">${nhan.slice(0, 9).map(([t, s, m]) => `<li><span class="muted" style="font-size:12.5px;margin-right:6px;font-variant-numeric:tabular-nums">${XP.tc(t, false)}</span>${esc(s)} <a class="muted" style="font-size:12px" href="#/tap/${encodeURIComponent(ma)}/kich-ban/${c.ma}">${m}</a></li>`).join('')}
+          ${nhan.length > 9 ? `<li class="muted"><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${c.ma}">+ ${nhan.length - 9} điểm nữa trong tab Kịch bản</a></li>` : ''}</ul>` : '<p class="muted" style="margin:0">Cảnh không có thoại hay chữ – kể bằng hình.</p>'}
+        ${nv.length ? `<div class="muted" style="font-size:13px">Nhân vật: ${nv.map(m => esc(ten[m] || m)).join(', ')}</div>` : ''}
+        <div class="muted" style="font-size:13px">Kịch bản: ${cpm.toFixed(1).replace('.', ',')} cắt/phút · có lời ≈${lp.toFixed(0)}%${q ? ` · mục tiêu nhịp: ${q.cat_phut.join('–')} cắt/phút, ${q.loi_pct.join('–')}% lời` : ''}</div>
+        ${day ? `<div class="row">${day}</div>` : ''}
+      </div></article>`;
+  }).join('');
 }
 
 function dongThoai(c, s) {
@@ -333,14 +388,14 @@ async function route() {
   const nav = k => document.querySelector(`[data-nav="${k}"]`)?.setAttribute('aria-current', 'page');
   try {
     if (h[0] === 'tap' && h[1]) { nav('home'); await trangTap(h[1], h[2] || 'tuyen', h[3]); }
-    else if (h[0] === 'tham-khao') { nav('tk'); await TK.mo(APP, h[1]); }
+    else if (h[0] === 'tham-khao') { nav('tk'); await TK.mo(APP, h[1], h[2]); }
     else if (h[0] === 'soan') { nav('soan'); await SOAN.mo(APP, h[1]); }
     else if (h[0] === 'quy-chuan') { nav('quy'); await trangQuyChuan(h[1] || 'khung'); }
     else { nav('home'); await trangChu(); }
   } catch (e) {
     APP.innerHTML = `<section class="panel"><h2>Không mở được trang</h2><p>${esc(e.message)}</p><p><a href="#/">Về trang chủ</a></p></section>`;
   }
-  if (!h[3]) window.scrollTo(0, 0);
+  if (!h[3] && !(h[0] === 'tham-khao' && h[2])) window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', route);
 route();

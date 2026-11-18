@@ -31,6 +31,7 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `nhip` | mã nhịp trong `quy_chuan/khung_12_nhip.json`: `MO`, `GIEO_NO`, `CHU_DE`, `PHAN_DE`, `THU_THACH`, `DINH_ACTION`, `DIEN_VAN`, `TRAN_CUOI`, `TRA_NO`, `GUONG_SOI`, `LICH_SU_LANH`, `MOC_CREDIT`. Một nhịp có thể gồm nhiều cảnh |
 | `ket_thuc` | `{"kieu": "fade_den", "dai": 1.5}` (shot cuối mờ ra, rồi đen 1,5 s) · `{"kieu": "flash_trang", "dai": 0.4}` · `{"kieu": "cat"}` |
 | `nhac` | `{"file": "am_thanh/nhac/x.mp3", "am_luong_db": -12, "luc": 0, "ghi_chu": "…"}` hoặc `null` (cảnh không nhạc) |
+| `khuon` | `{"tham_khao": "dabang", "ten": "Đa Bang – Hồi 2", "canh": 3}`: cảnh này dựng theo cảnh nào của phim tham khảo (trang web hiện liên kết sang) |
 | `shot` | danh sách shot |
 
 ## Shot

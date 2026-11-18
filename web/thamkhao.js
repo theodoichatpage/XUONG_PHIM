@@ -59,7 +59,7 @@ const TK = (() => {
     return svg;
   }
 
-  async function mo(app, ma) {
+  async function mo(app, ma, canh) {
     const ds = (await lay('tham_khao/danh_sach.json')).sort((a, b) => a.thu_tu - b.thu_tu);
     const thanhTap = `<nav class="tabs">${ds.map(t => `<a class="tab" aria-selected="${t.ma === ma}" href="#/tham-khao/${t.ma}">Tập ${t.thu_tu}: ${esc(t.ten)}</a>`).join('')}
       <a class="tab" aria-selected="${ma === 'so-sanh'}" href="#/tham-khao/so-sanh">Đối chiếu khung</a></nav>`;
@@ -101,6 +101,10 @@ const TK = (() => {
       }).join('')}</div>
       <p class="muted" style="font-size:13px;margin:0">${esc(CHU_THICH)}</p></section>`;
     app.querySelector('#tk-sv').append(so(f));
+    if (canh) {
+      const card = document.getElementById(`tk-canh-${canh}`);
+      if (card) setTimeout(() => { card.scrollIntoView({block: 'center'}); card.classList.add('hl'); setTimeout(() => card.classList.remove('hl'), 2000); }, 60);
+    }
   }
 
   async function soSanh(app, ds, thanhTap) {

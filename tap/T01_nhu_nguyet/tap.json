@@ -307,7 +307,12 @@
       "hit lớn + chuông đồng ngân"
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 1
+   }
   },
   {
    "ma": "C02",
@@ -510,7 +515,12 @@
       }
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 2
+   }
   },
   {
    "ma": "C03",
@@ -676,7 +686,12 @@
      "noi_dung": "Tay Kiên siết chặt một cây cọc gỗ",
      "prompt": "extreme close-up of a soldier's hand gripping a rough sharpened wooden stake, knuckles white"
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 3
+   }
   },
   {
    "ma": "C04",
@@ -836,7 +851,12 @@
      "prompt": "close-up top-down, a soldier's fingers touching three carved notches on half of a broken oar, a strip of deep crimson cloth, mud",
      "ghi_chu": "Khán giả biết, Gáo không biết: tạo kịch tính chờ."
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 4
+   }
   },
   {
    "ma": "C05",
@@ -1241,7 +1261,12 @@
      "prompt": "extreme wide high-angle shot, two riverbanks with a black river between them, mist, torches on both sides",
      "nhan_vat": []
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 5
+   }
   },
   {
    "ma": "C06",
@@ -1482,7 +1507,12 @@
      "prompt": "extreme wide high-angle shot, the river at dusk, torches being lit along both banks",
      "nhan_vat": []
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 6
+   }
   },
   {
    "ma": "C07",
@@ -1902,7 +1932,12 @@
      "prompt": "extreme wide high-angle shot, smoke over the river while the Song pontoon bridge is extended by another section",
      "nhan_vat": []
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 7
+   }
   },
   {
    "ma": "C08",
@@ -2541,7 +2576,12 @@
      "prompt": "extreme wide high-angle shot, a pontoon bridge broken in two in the middle of the river, floating torches",
      "nhan_vat": []
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 8
+   }
   },
   {
    "ma": "C09",
@@ -2843,7 +2883,12 @@
       }
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 9
+   }
   },
   {
    "ma": "C10",
@@ -3094,7 +3139,12 @@
      ],
      "do": true
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 10
+   }
   },
   {
    "ma": "C11",
@@ -3259,7 +3309,12 @@
       "gỗ gãy"
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 11
+   }
   },
   {
    "ma": "C12",
@@ -3447,7 +3502,12 @@
       }
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 12
+   }
   },
   {
    "ma": "C13",
@@ -3529,7 +3589,12 @@
       }
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 13
+   }
   },
   {
    "ma": "C14",
@@ -3583,7 +3648,12 @@
       }
      ]
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 14
+   }
   },
   {
    "ma": "C15",
@@ -3654,7 +3724,12 @@
      ],
      "loai": "den"
     }
-   ]
+   ],
+   "khuon": {
+    "tham_khao": "dabang",
+    "ten": "Đa Bang – Hồi 2",
+    "canh": 15
+   }
   }
  ]
 }
