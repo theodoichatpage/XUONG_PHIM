@@ -11,7 +11,10 @@ Thư mục gốc của xưởng là thư mục chứa `cong_cu/`, `quy_chuan/` v
 
 1. `quy_chuan/khung_12_nhip.json`: 12 nhịp, vị trí %, cắt/phút và % có lời mục tiêu (đo từ nguồn).
 2. `quy_chuan/dinh_dang_tap.md`: định dạng `tap.json`.
-3. Nếu đang làm tiếp một tập: đọc `tap/<mã>/tap.json` và `tap/<mã>/kiem_tra.md`.
+3. `quy_chuan/kho_bien_the.json`: kho biến thể 7 chiều, và `tham_khao/danh_sach.json` + `tap/danh_sach.json` để biết tổ hợp nào đã dùng.
+
+**Khung 12 nhịp và phim tham khảo chỉ để học, không phải khuôn.** Trong một series, mỗi tập phải có tổ hợp biến thể và thứ tự nhịp của riêng mình: đổi giọng phản đề, đổi món nợ, đổi kiểu nút thắt, đan thêm một tuyến truyện mới (tuyến phía địch, hậu phương, đời sau, nhiều góc nhìn…). Được đảo, gộp, bỏ nhịp hoặc chen nhịp riêng (`nhip` để trống hoặc mã riêng).
+4. Nếu đang làm tiếp một tập: đọc `tap/<mã>/tap.json` và `tap/<mã>/kiem_tra.md`.
 
 ## Quy trình một tập mới
 
@@ -21,7 +24,8 @@ Thư mục gốc của xưởng là thư mục chứa `cong_cu/`, `quy_chuan/` v
    - `giong_phan_de`: thường là một dân thường nghi ngờ người anh hùng;
    - món nợ giữa người anh hùng và giọng phản đề: một ân huệ nhỏ, gieo **trước** lời trách và gieo nhẹ;
    - `vat_dan_duong`: một đồ vật đi suốt phim, mang màu đỏ sẫm;
-   - **gương soi**: hành động đầu phim quay lại đánh vào chính người làm.
+   - **gương soi**: hành động đầu phim quay lại đánh vào chính người làm;
+   - `bien_the`: chọn từ kho, ưu tiên lựa chọn chưa dùng; trùng tối đa 2 chiều với bất kỳ tập / phim tham khảo nào.
 3. Chạy `python cong_cu/lap_khung.py <ma> "<tên>" --phut <n>` để có ngân sách thời gian từng nhịp.
 4. **Viết `tap.json`** theo khung: điền từng cảnh và shot.
    - Thoại ngắn, đời thường. Mỗi câu một dòng `thoai`.
@@ -30,7 +34,7 @@ Thư mục gốc của xưởng là thư mục chứa `cong_cu/`, `quy_chuan/` v
    - **Không dùng lại nhân vật, thoại, cảnh hư cấu, nhạc hay hình của Việt Sử Kiêu Hùng hoặc phim khác.** Chỉ học cấu trúc và nhịp.
    - `prompt` viết bằng tiếng Anh, có đủ dấu hiệu nhận diện nhân vật. Không ghi màu đỏ trừ shot `do: true`.
    - Ghi `gieo_tra` cho mọi vật dẫn đường, câu chủ đề và lời thề.
-5. Chạy `python cong_cu/kiem_tra.py tap/<ma>`. Sửa đến khi **0 lỗi**. Cảnh báo về nhịp thì chỉnh độ dài shot hoặc số shot cho vào khoảng mục tiêu, trừ khi có lý do kể chuyện (ghi lý do vào `ghi_chu` của cảnh).
+5. Chạy `python cong_cu/kiem_tra.py tap/<ma>`. Sửa đến khi **0 lỗi** và không còn cảnh báo *lặp công thức*. Độ lệch so với khung 12 nhịp chỉ là ghi chú, không bắt buộc sửa.
 6. Chạy `python cong_cu/phieu_dung.py tap/<ma>`. Lệnh này xuất `phieu_dung.md`, `bang_shot.csv`, `prompt_anh.txt` và `kich_ban_doc.md`.
 7. Chạy `python cong_cu/dung_animatic.py tap/<ma>`. Shot chưa có ảnh hiện thẻ storyboard; animatic giúp xem nhịp trước khi tốn công làm ảnh.
 8. Báo cho người dùng:

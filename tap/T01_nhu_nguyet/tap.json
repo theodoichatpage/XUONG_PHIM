@@ -208,6 +208,19 @@
    ]
   }
  ],
+ "series": "Sông – các phòng tuyến",
+ "bien_the": {
+  "giong_phan_de": "TRE_EM",
+  "mon_no": "CUU_MANG",
+  "nut_that": [
+   "THU_NHAN",
+   "VU_KHI_PHAN_CHU"
+  ],
+  "ket_tuyen": "SONG_DAN_DUONG",
+  "guong_soi": "NIEM_TIN_SUP_DO",
+  "thoi_gian": "COLD_OPEN_HOI_TUONG",
+  "dan_xen": "MOT_TUYEN"
+ },
  "canh": [
   {
    "ma": "C01",

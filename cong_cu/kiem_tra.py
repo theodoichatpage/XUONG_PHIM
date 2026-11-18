@@ -11,8 +11,59 @@ import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).r
 from chung import KHUNG, NHIP, CHUYEN_DONG, CHUYEN_VAO, LOAI_SHOT, doc_tap, timeline, tc, so_tu, tim_anh, tim_giong, utf8_stdout
 
 
+def so_lap(tap, thu_muc):
+    """So tổ hợp biến thể + thứ tự nhịp của tập với các tập VOX khác và phim tham khảo."""
+    import json
+    from difflib import SequenceMatcher
+    from chung import GOC
+    kho = json.loads((GOC / "quy_chuan" / "kho_bien_the.json").read_text(encoding="utf-8"))
+    ten_chieu = {c["ma"]: c["ten"] for c in kho["chieu"]}
+    bt = tap.get("bien_the") or {}
+    chuoi = [c.get("nhip") or "RIENG" for c in tap.get("canh", [])]
+    khac = []
+    for p in sorted((GOC / "tap").glob("*/tap.json")):
+        if p.parent.resolve() == thu_muc.resolve():
+            continue
+        t = json.loads(p.read_text(encoding="utf-8"))
+        khac.append({"ten": f"Tập {t.get('ma_tap', p.parent.name)}", "bien_the": t.get("bien_the") or {},
+                     "chuoi_nhip": [c.get("nhip") or "RIENG" for c in t.get("canh", [])]})
+    for e in json.loads((GOC / "tham_khao" / "danh_sach.json").read_text(encoding="utf-8")):
+        khac.append({"ten": f"Tham khảo: {e['ten']}", "bien_the": e.get("bien_the") or {}, "chuoi_nhip": e.get("chuoi_nhip") or []})
+    nguong = kho["nguong"]["canh_bao_so_chieu_trung"]
+    nguy = kho["nguong"]["cap_nguy_hiem"]
+    ct_nguong = kho.get("cau_truc", {}).get("canh_bao_tu_pct", 75)
+    kq = []
+    for o in khac:
+        trung = []
+        for c in kho["chieu"]:
+            a, b = bt.get(c["ma"]), o["bien_the"].get(c["ma"])
+            if not a or not b:
+                continue
+            if c.get("nhieu"):
+                if set(a) & set(b):
+                    trung.append(c["ma"])
+            elif a == b:
+                trung.append(c["ma"])
+        ct = SequenceMatcher(None, chuoi, o["chuoi_nhip"]).ratio() * 100 if chuoi and o["chuoi_nhip"] else 0
+        cap = [p for p in nguy if all(x in trung for x in p)]
+        ly = []
+        if len(trung) >= nguong:
+            ly.append(f"trùng {len(trung)}/{len(kho['chieu'])} chiều biến thể")
+        if cap:
+            ly.append("trùng cặp " + "; ".join(" + ".join(ten_chieu[x] for x in p) for p in cap))
+        if ct >= ct_nguong:
+            ly.append(f"thứ tự nhịp giống {ct:.0f}%")
+        kq.append({"ten": o["ten"], "so_trung": len(trung), "so_chieu": len(kho["chieu"]),
+                   "chieu_trung": [ten_chieu[x] for x in trung], "cau_truc_pct": ct,
+                   "canh_bao": f"Lặp công thức với {o['ten']}: " + ", ".join(ly) if ly else ""})
+    if not bt:
+        kq.insert(0, {"ten": "(tập này)", "so_trung": 0, "so_chieu": len(kho["chieu"]), "chieu_trung": [], "cau_truc_pct": 0,
+                      "canh_bao": "Tập chưa chọn biến thể (trường bien_the) – chưa so được công thức với các tập khác"})
+    return kq
+
+
 def kiem_tra(tap, thu_muc):
-    loi, canh_bao, tot = [], [], []
+    loi, canh_bao, tot, ghi_chu = [], [], [], []
     tl, tong = timeline(tap, thu_muc)
     ma_shot = [s["ma"] for s in tl if not s.get("_ao")]
     vi_tri = {s["ma"]: s["bat_dau"] for s in tl}
@@ -80,25 +131,25 @@ def kiem_tra(tap, thu_muc):
         cpm = n["cat"] / n["dai"] * 60 if n["dai"] else 0
         lp = min(100, n["noi"] / n["dai"] * 100) if n["dai"] else 0
         if not q:
-            canh_bao.append(f"Cảnh {', '.join(n['canh'])}: nhịp '{ma}' không có trong khung 12 nhịp")
+            ghi_chu.append(f"Cảnh {', '.join(n['canh'])}: nhịp riêng '{ma}' (ngoài khung 12 nhịp — được phép)")
             nhip_rows.append((ma, "?", n, cpm, lp, "", "", ""))
             continue
         vt = (n["bd"] / phim * 100, min(100, n["kt"] / phim * 100))
         lech_vt = ""
         if ma != "MOC_CREDIT" and (vt[0] < q["vi_tri_pct"][0] - 4 or vt[0] > q["vi_tri_pct"][1] + 2):
             lech_vt = "⚠"
-            canh_bao.append(f"Nhịp {q['so']} {q['ten']}: bắt đầu ở {vt[0]:.0f}% thời lượng, khung đề xuất {q['vi_tri_pct'][0]}–{q['vi_tri_pct'][1]}%")
+            ghi_chu.append(f"Nhịp {q['so']} {q['ten']}: bắt đầu ở {vt[0]:.0f}% thời lượng, khung đề xuất {q['vi_tri_pct'][0]}–{q['vi_tri_pct'][1]}%")
         lc = "⚠" if not (q["cat_phut"][0] * 0.8 <= cpm <= q["cat_phut"][1] * 1.2) else ""
         if lc:
-            canh_bao.append(f"Nhịp {q['so']} {q['ten']}: {cpm:.1f} cắt/phút, mục tiêu {q['cat_phut'][0]}–{q['cat_phut'][1]}")
+            ghi_chu.append(f"Nhịp {q['so']} {q['ten']}: {cpm:.1f} cắt/phút, mục tiêu {q['cat_phut'][0]}–{q['cat_phut'][1]}")
         ll = "⚠" if not (q["loi_pct"][0] - 8 <= lp <= q["loi_pct"][1] + 8) else ""
         if ll:
-            canh_bao.append(f"Nhịp {q['so']} {q['ten']}: có lời {lp:.0f}%, mục tiêu {q['loi_pct'][0]}–{q['loi_pct'][1]}%")
+            ghi_chu.append(f"Nhịp {q['so']} {q['ten']}: có lời {lp:.0f}%, mục tiêu {q['loi_pct'][0]}–{q['loi_pct'][1]}%")
         nhip_rows.append((ma, q, n, cpm, lp, lech_vt, lc, ll))
     co = {k for k in theo_nhip}
     thieu = [n for n in KHUNG["nhip"] if n["ma"] not in co]
     for n in thieu:
-        canh_bao.append(f"Chưa có cảnh nào cho nhịp {n['so']} – {n['ten']}")
+        ghi_chu.append(f"Chưa có cảnh nào cho nhịp {n['so']} – {n['ten']}")
 
     # ---- gieo – trả
     gt_rows = []
@@ -132,7 +183,11 @@ def kiem_tra(tap, thu_muc):
     cpm_t = tong_cat / tong * 60 if tong else 0
     if not (tp["cat_phut"]["muc_tieu"][0] * 0.8 <= cpm_t <= tp["cat_phut"]["muc_tieu"][1] * 1.2):
         canh_bao.append(f"Toàn phim {cpm_t:.1f} cắt/phút, mục tiêu {tp['cat_phut']['muc_tieu']}")
-    return dict(loi=loi, canh_bao=canh_bao, bang=bang, nhip=nhip_rows, gt=gt_rows, tong=tong, tong_cat=tong_cat, so_den=so_den,
+    lap = so_lap(tap, thu_muc)
+    for x in lap:
+        if x['canh_bao']:
+            canh_bao.append(x['canh_bao'])
+    return dict(loi=loi, canh_bao=canh_bao, ghi_chu=ghi_chu, lap=lap, bang=bang, nhip=nhip_rows, gt=gt_rows, tong=tong, tong_cat=tong_cat, so_den=so_den,
                 noi_tong=noi_tong, trung_vi=trung_vi, anh=(anh_co, anh_can), giong=(giong_co, len(cau)), cpm=cpm_t)
 
 
@@ -149,6 +204,11 @@ def bao_cao(tap, r):
         L += ["## Lỗi (phải sửa)", ""] + [f"- {x}" for x in r["loi"]] + [""]
     if r["canh_bao"]:
         L += ["## Cảnh báo (nên xem)", ""] + [f"- {x}" for x in r["canh_bao"]] + [""]
+    if r["lap"]:
+        L += ["## Lặp công thức với tập khác / phim tham khảo", "", "| So với | Trùng biến thể | Chiều trùng | Thứ tự nhịp giống |", "|---|---|---|---|"]
+        L += [f"| {x['ten']} | {x['so_trung']}/{x['so_chieu']} | {', '.join(x['chieu_trung']) or '–'} | {x['cau_truc_pct']:.0f}% |" for x in r["lap"]] + [""]
+    if r["ghi_chu"]:
+        L += ["## Ghi chú so với khung 12 nhịp (tham khảo, không bắt buộc)", ""] + [f"- {x}" for x in r["ghi_chu"]] + [""]
     L += ["## So với khung 12 nhịp", "", "| Nhịp | Vị trí | Dài | Cắt/phút (mục tiêu) | Có lời (mục tiêu) | Cảnh |", "|---|---|---|---|---|---|"]
     phim = max(r["tong"], float(tap.get("tong_du_kien_s") or 0)) or 1.0
     for ma, q, n, cpm, lp, a, b, c in r["nhip"]:

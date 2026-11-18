@@ -14,6 +14,8 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `chu_de` | ✓ | câu chủ đề (nhịp 3), viết bằng lời của nhân vật |
 | `giong_phan_de` | ✓ | ai là giọng phản đề, họ trách điều gì |
 | `vat_dan_duong` | ✓ | các đồ vật / màu đi suốt phim |
+| `series` | | tên series (các tập cùng series không được lặp công thức) |
+| `bien_the` | ✓ | tổ hợp chọn từ `quy_chuan/kho_bien_the.json`: `{giong_phan_de, mon_no, nut_that: [1–3 mã], ket_tuyen, guong_soi, thoi_gian, dan_xen}`. Bộ kiểm tra so với mọi tập khác và phim tham khảo: cảnh báo khi trùng ≥3 chiều, trùng cặp giọng phản đề + món nợ / kết tuyến, hoặc thứ tự `nhip` của các cảnh giống ≥75% |
 | `nhan_vat` | ✓ | danh sách nhân vật (bảng dưới) |
 | `gieo_tra` | ✓ | các đường dây gieo – nhắc – trả (bảng dưới) |
 | `canh` | ✓ | danh sách cảnh, theo thứ tự chiếu |

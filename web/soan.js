@@ -6,6 +6,7 @@ const SOAN = (() => {
   const KEY = 'xp_ban_nhap';
   let S = null;        // {tap, tab, canhMo}
   let K = null;        // khung 12 nhịp
+  let NG = null;       // kho biến thể + các tập / phim khác để so lặp công thức
   let APPEL = null;
   let hen = null;
 
@@ -86,6 +87,7 @@ const SOAN = (() => {
   async function mo(app, ma) {
     APPEL = app;
     K = await khung();
+    NG = await ngoaiKiemTra();
     if (!ma) {
       const nhap = LS.get(KEY, null);
       if (nhap) { location.hash = '#/soan/__nhap__'; return; }
@@ -116,7 +118,7 @@ const SOAN = (() => {
           <a class="btn" href="#/tap/__nhap__">Xem như một tập</a><button class="danger" id="b-moi">Bỏ nháp, bắt đầu lại</button></div></div></section>
       <div class="ed">
         <div style="display:grid;gap:12px;min-width:0">
-          <nav class="tabs">${[['chung', 'Thông tin chung'], ['nhan-vat', 'Nhân vật'], ['canh', 'Cảnh & shot'], ['gieo-tra', 'Gieo – trả'], ['json', 'JSON']]
+          <nav class="tabs">${[['chung', 'Thông tin chung'], ['bien-the', 'Biến thể'], ['nhan-vat', 'Nhân vật'], ['canh', 'Cảnh & shot'], ['gieo-tra', 'Gieo – trả'], ['json', 'JSON']]
             .map(([k, n]) => `<button class="tab" data-tab="${k}" aria-selected="${S.tab === k}">${n}</button>`).join('')}</nav>
           <div id="ed-main" style="display:grid;gap:12px;min-width:0"></div>
         </div>
@@ -133,21 +135,26 @@ const SOAN = (() => {
     const main = APPEL.querySelector('#ed-main');
     main.addEventListener('input', onInput);
     main.addEventListener('change', onInput);
-    ({chung: veChung, 'nhan-vat': veNhanVat, canh: veCanhList, 'gieo-tra': veGieoTra, json: veJson}[S.tab] || veChung)(main);
+    ({chung: veChung, 'bien-the': veBienThe, 'nhan-vat': veNhanVat, canh: veCanhList, 'gieo-tra': veGieoTra, json: veJson}[S.tab] || veChung)(main);
     veBen();
   }
 
   function veBen() {
     const side = APPEL && APPEL.querySelector('#ed-side');
     if (!side) return;
-    const r = XP.kiemTra(S.tap, K);
+    const r = XP.kiemTra(S.tap, K, NG);
+    const lap = r.lap.filter(x => x.ma).sort((a, b) => b.trung.length - a.trung.length || b.ct - a.ct).slice(0, 4);
     const link = m => m && /^C\d+/.test(m) ? `<a href="#" data-goto="${esc(m)}">${esc(m)}</a>: ` : (m ? `${esc(m)}: ` : '');
     side.innerHTML = `
       <div class="panel" style="gap:8px"><h3>Kiểm tra tức thì</h3>
         <div class="meta"><span>Dài <b>${XP.tc(r.tong, false)}</b></span><span>Shot <b>${r.soShot}</b></span><span>Cắt/phút <b>${r.cpm.toFixed(1)}</b></span><span>Có lời <b>${r.loiPct.toFixed(0)}%</b></span></div>
         <div class="row">${r.loi.length ? `<span class="pill err">${r.loi.length} lỗi</span>` : '<span class="pill ok">0 lỗi</span>'}${r.canhBao.length ? `<span class="pill warn">${r.canhBao.length} cảnh báo</span>` : ''}</div>
         <div class="issues">${r.loi.map(x => `<div class="i e">${link(x.ma)}${esc(x.t)}</div>`).join('')}${r.canhBao.map(x => `<div class="i w">${link(x.ma)}${esc(x.t)}</div>`).join('')}</div></div>
-      <div class="panel" style="gap:6px"><h3>Nhịp</h3>
+      ${lap.length ? `<div class="panel" style="gap:6px"><h3>Lặp công thức</h3>
+        <table style="font-size:12.5px"><thead><tr><th>So với</th><th class="num">Biến thể</th><th class="num">Thứ tự nhịp</th></tr></thead><tbody>${lap.map(x => `<tr><td>${x.canhBao ? '⚠ ' : ''}${esc(x.ten)}</td><td class="num">${x.trung.length}/${x.soChieu}</td><td class="num">${x.ct.toFixed(0)}%</td></tr>`).join('')}</tbody></table>
+        <span class="muted" style="font-size:12px">Đổi lựa chọn ở tab Biến thể; đảo, gộp hoặc chen nhịp riêng ở tab Cảnh.</span></div>` : ''}
+      ${r.ghiChu.length ? `<details class="panel" style="gap:6px"><summary><b>Ghi chú so với khung (${r.ghiChu.length})</b> <span class="muted">– tham khảo, không bắt buộc</span></summary><div class="issues">${r.ghiChu.map(x => `<div class="i">${link(x.ma)}${esc(x.t)}</div>`).join('')}</div></details>` : ''}
+      <div class="panel" style="gap:6px"><h3>Nhịp (so với khung tham khảo)</h3>
         <table style="font-size:12.5px"><tbody>${r.nhip.map(x => `<tr><td>${x.q ? x.q.so : '?'}</td><td>${x.q ? esc(x.q.ten) : esc(x.ma)}</td>
           <td class="num">${x.vt.toFixed(0)}%${x.lechVt ? ' ⚠' : ''}</td><td class="num">${x.cpm.toFixed(0)}/ph${x.lechCat ? ' ⚠' : ''}</td><td class="num">${x.lp.toFixed(0)}%${x.lechLoi ? ' ⚠' : ''}</td></tr>`).join('')}</tbody></table></div>`;
     side.querySelectorAll('[data-goto]').forEach(a => a.onclick = e => {
@@ -164,6 +171,7 @@ const SOAN = (() => {
       <div class="fgrid">
         <label class="f">Mã tập<input data-p="ma_tap" value="${esc(t.ma_tap)}"></label>
         <label class="f">Tên tập<input data-p="tieu_de" value="${esc(t.tieu_de)}"></label>
+        <label class="f">Series<input data-p="series" value="${esc(t.series || '')}" placeholder="Sông – các phòng tuyến"></label>
         <label class="f">Tổng dự kiến (giây)<input data-p="tong_du_kien_s" data-t="num" type="number" value="${esc(t.tong_du_kien_s ?? '')}"></label>
       </div>
       <label class="f">Câu chủ đề (do nhân vật nói, không phải người dẫn)<textarea data-p="chu_de" rows="2">${esc(t.chu_de || '')}</textarea></label>
@@ -172,8 +180,33 @@ const SOAN = (() => {
       <label class="f">Trạng thái / ghi chú tập<input data-p="trang_thai" value="${esc(t.trang_thai || '')}"></label>
       <div class="panel" style="background:var(--bg)"><b>Năm câu hỏi trước khi viết</b>
         <ol style="margin:0;padding-left:18px"><li>Câu chủ đề là nỗi sợ hay lời hứa nào, ai nói trong 3 phút đầu?</li><li>Ai là giọng phản đề (thường là dân thường nghi ngờ người anh hùng)?</li>
-        <li>Món nợ giữa họ là gì? Gieo trước lời trách, gieo nhẹ, chưa lộ người làm.</li><li>Vật dẫn đường nào đi suốt phim, mang màu đỏ sẫm?</li><li>Gương soi: hành động đầu phim nào sẽ quay lại đánh vào chính người làm?</li></ol></div>
+        <li>Món nợ giữa họ là gì? Gieo trước lời trách, gieo nhẹ, chưa lộ người làm.</li><li>Vật dẫn đường nào đi suốt phim, mang màu đỏ sẫm?</li><li>Gương soi: hành động đầu phim nào sẽ quay lại đánh vào chính người làm?</li><li>Điều gì <b>mới</b> so với các tập trước (tuyến đan xen, kiểu nút thắt, thứ tự kể)? Chọn ở tab Biến thể.</li></ol></div>
     </div>`;
+  }
+
+  // Tab biến thể: chọn tổ hợp cho tập, xem lựa chọn nào đã dùng ở tập khác / phim tham khảo
+  function veBienThe(m) {
+    const t = S.tap;
+    t.bien_the = t.bien_the || {};
+    const kho = NG.kho;
+    const dung = (c, ma) => NG.khac.filter(o => o.ma !== t.ma_tap && [].concat((o.bien_the || {})[c.ma] || []).includes(ma)).map(o => o.ten.replace(/^Tham khảo: /, ''));
+    const nhanDung = (c, ma) => { const d = dung(c, ma); return d.length ? ` — đã dùng: ${d.join('; ')}` : ' — chưa dùng'; };
+    const moTa = (c, v) => [].concat(v || []).map(x => c.lua_chon.find(l => l.ma === x)).filter(Boolean).map(l => `<b>${esc(l.ten)}</b>: ${esc(l.mo_ta)} <span class="muted">Ví dụ: ${esc(l.vi_du)}</span>`).join('<br>');
+    m.innerHTML = `<div class="panel"><p class="muted" style="margin:0">Phim tham khảo chỉ để học. Tập trong series nên chọn tổ hợp <b>khác</b> các tập trước: đổi giọng phản đề, đổi món nợ, đan thêm một tuyến truyện mới. Lựa chọn “chưa dùng” là chỗ nên thử trước. Bảng bên phải báo ngay nếu tổ hợp trùng.</p>
+      ${kho.chieu.map(c => `<div class="shot-ed" data-chieu="${c.ma}"><b>${esc(c.ten)}</b> <span class="muted">${esc(c.hoi)}</span>
+        ${c.nhieu
+          ? `<div class="row" style="gap:4px 14px;flex-wrap:wrap">${c.lua_chon.map(l => `<label style="font-size:13.5px"><input type="checkbox" data-bt="${c.ma}" value="${l.ma}" ${[].concat(t.bien_the[c.ma] || []).includes(l.ma) ? 'checked' : ''}> ${esc(l.ten)}<span class="muted">${esc(nhanDung(c, l.ma))}</span></label>`).join('')}</div>`
+          : `<select data-bt="${c.ma}"><option value="">— chưa chọn —</option>${c.lua_chon.map(l => `<option value="${l.ma}" ${t.bien_the[c.ma] === l.ma ? 'selected' : ''}>${esc(l.ten + nhanDung(c, l.ma))}</option>`).join('')}</select>`}
+        <div class="muted" data-mota="${c.ma}" style="font-size:13px">${moTa(c, t.bien_the[c.ma])}</div></div>`).join('')}
+      <div class="row"><a class="btn" href="#/quy-chuan/bien-the">Xem toàn bộ kho biến thể</a></div></div>`;
+    m.querySelectorAll('[data-bt]').forEach(el => el.addEventListener('change', e => {
+      e.stopPropagation();
+      const c = kho.chieu.find(x => x.ma === el.dataset.bt);
+      const v = c.nhieu ? [...m.querySelectorAll(`[data-bt="${c.ma}"]:checked`)].map(x => x.value) : el.value;
+      if (!v || (Array.isArray(v) && !v.length)) delete t.bien_the[c.ma]; else t.bien_the[c.ma] = v;
+      m.querySelector(`[data-mota="${c.ma}"]`).innerHTML = moTa(c, t.bien_the[c.ma]);
+      henKiem();
+    }));
   }
 
   function veNhanVat(m) {

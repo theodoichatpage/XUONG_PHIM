@@ -11,7 +11,32 @@
   "boi_canh": "1400–1406: nhà Hồ lập nước Đại Ngu, chuẩn bị chống quân Minh",
   "so_canh": 11,
   "so_day": 7,
-  "link": "https://www.youtube.com/watch?v=_8IJ9bvnitY"
+  "link": "https://www.youtube.com/watch?v=_8IJ9bvnitY",
+  "bien_the": {
+   "giong_phan_de": "KE_THU",
+   "mon_no": "NO_NGUOC",
+   "nut_that": [
+    "DOI_THU_AN_DANH",
+    "PHAN_BOI_NOI_BO"
+   ],
+   "ket_tuyen": "DOI_PHE",
+   "guong_soi": "KE_SAN_BI_SAN",
+   "thoi_gian": "SONG_SONG_HAI_PHE",
+   "dan_xen": "HAI_TUYEN_HOI_TU"
+  },
+  "chuoi_nhip": [
+   "MO",
+   "THU_THACH",
+   "RIENG",
+   "CHU_DE",
+   "THU_THACH",
+   "RIENG",
+   "RIENG",
+   "DIEN_VAN",
+   "DINH_ACTION",
+   "GUONG_SOI",
+   "MOC_CREDIT"
+  ]
  },
  {
   "thu_tu": 2,
@@ -25,7 +50,36 @@
   "boi_canh": "1406–1407, nhà Hồ chống quân Minh",
   "so_canh": 15,
   "so_day": 8,
-  "link": "https://www.youtube.com/watch?v=JVYFlYU2RIQ"
+  "link": "https://www.youtube.com/watch?v=JVYFlYU2RIQ",
+  "bien_the": {
+   "giong_phan_de": "TRE_EM",
+   "mon_no": "CUU_MANG",
+   "nut_that": [
+    "VU_KHI_PHAN_CHU",
+    "HINH_PHAT_LA_SONG"
+   ],
+   "ket_tuyen": "HY_SINH",
+   "guong_soi": "NIEM_TIN_SUP_DO",
+   "thoi_gian": "COLD_OPEN_HOI_TUONG",
+   "dan_xen": "MOT_TUYEN"
+  },
+  "chuoi_nhip": [
+   "MO",
+   "GIEO_NO",
+   "CHU_DE",
+   "PHAN_DE",
+   "THU_THACH",
+   "THU_THACH",
+   "THU_THACH",
+   "DINH_ACTION",
+   "DIEN_VAN",
+   "TRAN_CUOI",
+   "TRA_NO",
+   "GUONG_SOI",
+   "LICH_SU_LANH",
+   "MOC_CREDIT",
+   "MOC_CREDIT"
+  ]
  },
  {
   "thu_tu": 3,
@@ -39,7 +93,31 @@
   "boi_canh": "1369–1371: Dương Nhật Lễ cướp ngôi, Trần Phủ giành lại; Lê Quý Ly bước lên chính trường",
   "so_canh": 11,
   "so_day": 6,
-  "link": "https://www.youtube.com/watch?v=WIToAbOD4m4"
+  "link": "https://www.youtube.com/watch?v=WIToAbOD4m4",
+  "bien_the": {
+   "giong_phan_de": "NGUOI_DUNG_NGOAI",
+   "mon_no": "NO_MAU",
+   "nut_that": [
+    "TRO_TRE_LICH_SU"
+   ],
+   "ket_tuyen": "DUOC_THUYET_PHUC",
+   "guong_soi": "NGUOI_GIUP_KET_LIEU",
+   "thoi_gian": "COLD_OPEN_HOI_TUONG",
+   "dan_xen": "TUYEN_TAP_TRUOC"
+  },
+  "chuoi_nhip": [
+   "MO",
+   "RIENG",
+   "THU_THACH",
+   "RIENG",
+   "GIEO_NO",
+   "PHAN_DE",
+   "DIEN_VAN",
+   "RIENG",
+   "TRA_NO",
+   "LICH_SU_LANH",
+   "MOC_CREDIT"
+  ]
  },
  {
   "thu_tu": 4,
@@ -53,6 +131,39 @@
   "boi_canh": "1672, Trịnh – Nguyễn phân tranh",
   "so_canh": 19,
   "so_day": 10,
-  "link": "https://www.youtube.com/watch?v=3kCGQ5fzhwI"
+  "link": "https://www.youtube.com/watch?v=3kCGQ5fzhwI",
+  "bien_the": {
+   "giong_phan_de": "NGUOI_GIA",
+   "mon_no": "LOI_HUA",
+   "nut_that": [
+    "DAO_KY_VONG_DANH_DU",
+    "CHIEN_THANG_CO_GIA"
+   ],
+   "ket_tuyen": "KHONG_QUAY_LAI",
+   "guong_soi": "KE_XU_BI_XU",
+   "thoi_gian": "SONG_SONG_HAI_PHE",
+   "dan_xen": "TUYEN_PHE_DICH"
+  },
+  "chuoi_nhip": [
+   "MO",
+   "CHU_DE",
+   "GIEO_NO",
+   "THU_THACH",
+   "RIENG",
+   "RIENG",
+   "RIENG",
+   "THU_THACH",
+   "RIENG",
+   "THU_THACH",
+   "DIEN_VAN",
+   "DINH_ACTION",
+   "RIENG",
+   "RIENG",
+   "RIENG",
+   "TRAN_CUOI",
+   "GUONG_SOI",
+   "LICH_SU_LANH",
+   "MOC_CREDIT"
+  ]
  }
 ]

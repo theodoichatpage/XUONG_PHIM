@@ -19,7 +19,7 @@ Toàn bộ xưởng chạy được trên web, không cần cài gì và không 
   - **Phiếu dựng:** hướng dẫn dựng CapCut cho từng shot.
   - **Gói ảnh:** kịch bản chi tiết từng shot cho công cụ tạo ảnh (Man), chỉ nội dung, không prompt; tải JSON / Markdown / Excel hoặc dùng link cố định `/tap/<mã>/goi_anh.json`.
   - **Kịch bản đọc:** lọc theo vai, tên file giọng ghi sẵn.
-  - **Kiểm tra:** so với khung 12 nhịp.
+  - **Kiểm tra:** lỗi, cảnh báo lặp công thức (tổ hợp biến thể + thứ tự nhịp so với các tập khác và phim tham khảo), ghi chú so với khung 12 nhịp tham khảo.
   - **Tiến độ:** đánh dấu ảnh / giọng / dựng.
 - **Soạn tập:** tạo khung 12 nhịp, sửa cảnh / shot / thoại / chữ / nhân vật / gieo – trả, kiểm tra ngay khi gõ, tự lưu nháp, tải `tap.json`.
 - **Quy chuẩn & hướng dẫn:** khung 12 nhịp, hướng dẫn làm video, định dạng `tap.json`, quy trình làm tập mới trên web.
@@ -35,7 +35,8 @@ Vercel chạy `python3 cong_cu/cap_nhat_danh_sach.py` (khai báo trong `vercel.j
 
 ```
 quy_chuan/
-  khung_12_nhip.json      12 nhịp: vị trí %, cắt/phút, % có lời mục tiêu (đo từ nguồn)
+  khung_12_nhip.json      12 nhịp tham khảo: vị trí %, cắt/phút, % có lời (đo từ nguồn) – không bắt buộc
+  kho_bien_the.json       kho biến thể 7 chiều để các tập trong series không lặp công thức
   dinh_dang_tap.md        định dạng tap.json
   huong_dan_lam_video.md  tay nghề: sổ nhân vật, prompt AI, giọng AI, dựng CapCut, âm thanh, màu, xuất
 cong_cu/

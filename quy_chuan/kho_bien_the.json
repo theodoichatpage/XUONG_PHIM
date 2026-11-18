@@ -1,0 +1,75 @@
+{
+ "_ghi_chu": "Kho biến thể: mỗi tập chọn MỘT lựa chọn cho mỗi chiều (riêng nut_that chọn 1–3). Khung 12 nhịp chỉ quy định chức năng; kho này quyết định nội dung, để các tập không lặp một công thức. Bộ kiểm tra so tổ hợp của tập với mọi tập VOX khác và phim tham khảo.",
+ "nguong": {"canh_bao_so_chieu_trung": 3, "cap_nguy_hiem": [["giong_phan_de", "ket_tuyen"], ["giong_phan_de", "mon_no"]]},
+ "chieu": [
+  {"ma": "giong_phan_de", "ten": "Giọng phản đề", "hoi": "Ai đặt câu hỏi, nghi ngờ hoặc trách người anh hùng?", "nhieu": false, "lua_chon": [
+   {"ma": "TRE_EM", "ten": "Đứa trẻ / thiếu niên", "mo_ta": "Người nhỏ tuổi, mất mát, trách thẳng.", "vi_du": "Cá Nhỏ (Đa Bang – Hồi 2); Gáo (T01)"},
+   {"ma": "NGUOI_GIA", "ten": "Người già / dân quê", "mo_ta": "Giọng của kinh nghiệm và mệt mỏi: ai cai trị cũng vậy.", "vi_du": "Bà lão nông (Lũy Thầy)"},
+   {"ma": "LINH_THUONG", "ten": "Lính thường muốn bỏ đi", "mo_ta": "Người trong hàng ngũ, chán chiến tranh, muốn về.", "vi_du": "Lính đào ngũ (Lũy Thầy)"},
+   {"ma": "CHA_ME", "ten": "Cha / mẹ của nhân vật chính", "mo_ta": "Người có quyền phán xét, trách bằng tình thân hoặc quyền lực.", "vi_du": "Hồ Quý Ly trách con (Đa Bang – Hồi 1)"},
+   {"ma": "KE_THU", "ten": "Kẻ thù nói ra sự thật", "mo_ta": "Đối thủ chỉ ra điểm yếu thật của phe ta.", "vi_du": "Mộc Thạnh – “lưới hay cần câu” (Đa Bang – Hồi 1)"},
+   {"ma": "NGUOI_DUNG_NGOAI", "ten": "Người có quyền mà muốn đứng ngoài", "mo_ta": "Người được kỳ vọng gánh vác nhưng từ chối, đặt câu hỏi về cái giá.", "vi_du": "Trần Phủ (Đa Bang – Ngoại truyện)"},
+   {"ma": "NGUOI_VO", "ten": "Vợ / người thương", "mo_ta": "Người chờ ở nhà, hỏi điều người lính không dám hỏi.", "vi_du": "chưa dùng"},
+   {"ma": "SU_NHO_SI", "ten": "Nhà sư / nho sĩ", "mo_ta": "Giọng đạo lý: hỏi về sát sinh, chính danh.", "vi_du": "chưa dùng"},
+   {"ma": "THUONG_NHAN", "ten": "Thương nhân / người buôn", "mo_ta": "Giọng lợi ích: chiến tranh làm ai giàu, ai nghèo.", "vi_du": "chưa dùng"},
+   {"ma": "HANG_TUONG", "ten": "Người bên địch đổi phe", "mo_ta": "Kẻ từng là địch, nghi ngờ cả hai bên.", "vi_du": "chưa dùng"}
+  ]},
+  {"ma": "mon_no", "ten": "Món nợ / sợi dây", "hoi": "Điều gì ràng buộc người anh hùng với giọng phản đề?", "nhieu": false, "lua_chon": [
+   {"ma": "CUU_MANG", "ten": "Ơn cứu mạng", "mo_ta": "Người anh hùng từng cứu người kia (hoặc ngược lại).", "vi_du": "Cá Nhỏ được cứu (Đa Bang – Hồi 2); Gáo được cứu (T01)"},
+   {"ma": "LOI_HUA", "ten": "Lời hứa", "mo_ta": "Một lời hứa nói ra sớm, trả ngược nghĩa ở cuối.", "vi_du": "“Trận chiến cuối cùng” (Lũy Thầy)"},
+   {"ma": "NO_MAU", "ten": "Nợ máu", "mo_ta": "Người thân bị giết, thù phải trả.", "vi_du": "Thiên Ninh mất con (Đa Bang – Ngoại truyện)"},
+   {"ma": "NO_NGUOC", "ten": "Món nợ ngược (người cầm quyền nợ dân)", "mo_ta": "Chính sách / quyết định của phe ta làm dân chịu thiệt.", "vi_du": "Tiền giấy thu kim loại (Đa Bang – Hồi 1)"},
+   {"ma": "BI_MAT", "ten": "Bí mật được giữ", "mo_ta": "Ai đó giữ bí mật và trả giá vì nó.", "vi_du": "Chỗ sông cạn (T01, lớp thứ hai)"},
+   {"ma": "THU_CU", "ten": "Thù cũ", "mo_ta": "Mối thù từ đời trước, chờ dịp trả.", "vi_du": "Kẻ phản thù Hồ Quý Ly (Đa Bang – Hồi 1)"},
+   {"ma": "THAY_TRO", "ten": "Thầy – trò / người dìu dắt", "mo_ta": "Người dạy nghề, dạy võ, dạy chữ.", "vi_du": "chưa dùng"},
+   {"ma": "HUYET_THONG", "ten": "Huyết thống / danh phận", "mo_ta": "Dòng máu, gia tộc không được chọn.", "vi_du": "Huyết mạch Trần gia (Đa Bang – Ngoại truyện)"}
+  ]},
+  {"ma": "nut_that", "ten": "Kiểu nút thắt", "hoi": "Cú đảo chiều chính của tập là gì? (chọn 1–3)", "nhieu": true, "lua_chon": [
+   {"ma": "PHAN_BOI_NOI_BO", "ten": "Phản bội từ bên trong", "mo_ta": "Người phe ta quay giáo đúng lúc quyết định.", "vi_du": "“Phò Trần diệt Hồ” giữa trận phục kích (Đa Bang – Hồi 1)"},
+   {"ma": "DOI_THU_AN_DANH", "ten": "Đối thủ gặp nhau ẩn danh", "mo_ta": "Hai kẻ thù gặp như người lạ trước khi biết nhau.", "vi_du": "Ông lão câu cá và Mộc Thạnh (Đa Bang – Hồi 1)"},
+   {"ma": "VU_KHI_PHAN_CHU", "ten": "Vũ khí phản chủ", "mo_ta": "Thứ phe ta dựa vào quay lại đánh phe ta.", "vi_du": "Voi quay đầu (Đa Bang – Hồi 2); bè lửa gió ngược (T01)"},
+   {"ma": "DAO_KY_VONG_DANH_DU", "ten": "Đảo kỳ vọng sau cảnh danh dự", "mo_ta": "Một cảnh tôn trọng nhau gieo kỳ vọng khoan hồng rồi bị phá.", "vi_du": "Chén rượu tri kỷ → phát súng (Lũy Thầy)"},
+   {"ma": "TRO_TRE_LICH_SU", "ten": "Trớ trêu lịch sử", "mo_ta": "Khán giả biết kết cục thật, nhân vật thì không.", "vi_du": "Lê Quý Ly thề “tuyệt không hối hận” (Đa Bang – Ngoại truyện)"},
+   {"ma": "THU_NHAN", "ten": "Lời thú nhận", "mo_ta": "Người anh hùng thừa nhận chính mình gây ra mất mát.", "vi_du": "Kiên: lệnh giữ kín chỗ cạn là của ta (T01)"},
+   {"ma": "HINH_PHAT_LA_SONG", "ten": "Hình phạt là được sống", "mo_ta": "Kẻ thắng tha mạng để kẻ thua chứng kiến thất bại.", "vi_du": "Trương Phụ: “sống để chứng kiến” (Đa Bang – Hồi 2)"},
+   {"ma": "CHIEN_THANG_CO_GIA", "ten": "Chiến thắng có giá", "mo_ta": "Thắng xong liền trả giá nặng.", "vi_du": "Cảm tử quân mất quá nửa (Lũy Thầy)"},
+   {"ma": "DOI_PHE_GIUA_TRAN", "ten": "Đổi phe giữa trận", "mo_ta": "Một nhân vật bên địch quay sang phe ta.", "vi_du": "chưa dùng"},
+   {"ma": "THONG_TIN_SAI", "ten": "Tin tình báo sai / bẫy", "mo_ta": "Quyết định dựa trên tin mà đối phương cố tình thả ra.", "vi_du": "chưa dùng"}
+  ]},
+  {"ma": "ket_tuyen", "ten": "Kết của tuyến phản đề", "hoi": "Giọng phản đề kết thúc thế nào?", "nhieu": false, "lua_chon": [
+   {"ma": "HY_SINH", "ten": "Hy sinh để trả nợ", "mo_ta": "Chết trong hành động giữ lời / trả ơn.", "vi_du": "Cá Nhỏ ôm thuốc nổ (Đa Bang – Hồi 2)"},
+   {"ma": "SONG_DAN_DUONG", "ten": "Sống và dùng tài / bí mật của mình", "mo_ta": "Trả nợ bằng hiểu biết riêng, không bằng cái chết.", "vi_du": "Gáo dẫn quân qua chỗ cạn (T01)"},
+   {"ma": "DUOC_THUYET_PHUC", "ten": "Bị thuyết phục, quay về gánh vác", "mo_ta": "Người đứng ngoài chấp nhận vai trò.", "vi_du": "Trần Phủ quay về (Đa Bang – Ngoại truyện)"},
+   {"ma": "DOI_PHE", "ten": "Đổi phe / quay giáo", "mo_ta": "Giọng phản đề đi theo phía bên kia.", "vi_du": "Quân Đại Ngu theo “Phò Trần diệt Hồ” (Đa Bang – Hồi 1)"},
+   {"ma": "KHONG_QUAY_LAI", "ten": "Không quay lại – câu hỏi được trả lời gián tiếp", "mo_ta": "Nhân vật biến mất; câu hỏi của họ được người khác trả lời.", "vi_du": "Bà lão nông (Lũy Thầy)"},
+   {"ma": "BO_DI", "ten": "Bỏ đi, giữ nguyên nghi ngờ", "mo_ta": "Không ai thuyết phục được; khán giả tự phán xét.", "vi_du": "chưa dùng"},
+   {"ma": "THANH_NGUOI_KE", "ten": "Trở thành người kể lại", "mo_ta": "Sống sót để kể chuyện cho đời sau (có thể là người dẫn).", "vi_du": "chưa dùng"}
+  ]},
+  {"ma": "guong_soi", "ten": "Gương soi", "hoi": "Điều gì ở đầu phim quay lại đánh vào chính người làm?", "nhieu": false, "lua_chon": [
+   {"ma": "KE_XU_BI_XU", "ten": "Kẻ xử án bị xử", "mo_ta": "Nhân vật phán xét người khác, cuối phim bị phán xét theo đúng cách đó.", "vi_du": "Trịnh Căn chém tướng → bị kết tội (Lũy Thầy)"},
+   {"ma": "NIEM_TIN_SUP_DO", "ten": "Niềm tin vào sức mạnh sụp đổ", "mo_ta": "Thứ được tin là bất khả xâm phạm (sắt, số đông, cầu) thất bại.", "vi_du": "“Sắt” (Đa Bang – Hồi 2); cầu phao và mười vạn quân (T01)"},
+   {"ma": "KE_SAN_BI_SAN", "ten": "Kẻ săn thành con mồi", "mo_ta": "Bên giăng bẫy rơi vào bẫy.", "vi_du": "“Ai là thợ săn, ai là thú” (Đa Bang – Hồi 1)"},
+   {"ma": "NGUOI_GIUP_KET_LIEU", "ten": "Người giúp đỡ thành người kết liễu", "mo_ta": "Kẻ hôm nay phò tá sẽ là kẻ chấm dứt ngày mai.", "vi_du": "Lê Quý Ly (Đa Bang – Ngoại truyện)"},
+   {"ma": "LOI_NOI_THANH_THAT", "ten": "Lời nói / lời đe dọa thành sự thật", "mo_ta": "Một câu nói đầu phim xảy ra đúng theo nghĩa khác.", "vi_du": "“Trận chiến cuối cùng” (Lũy Thầy)"},
+   {"ma": "THU_DOAN_QUAY_LAI", "ten": "Thủ đoạn quay lại hại mình", "mo_ta": "Mưu kế của nhân vật trở thành nguyên nhân thất bại.", "vi_du": "chưa dùng"}
+  ]},
+  {"ma": "thoi_gian", "ten": "Cấu trúc thời gian", "hoi": "Phim kể theo trình tự nào?", "nhieu": false, "lua_chon": [
+   {"ma": "TUYEN_TINH", "ten": "Tuyến tính", "mo_ta": "Kể từ đầu đến cuối, không hồi tưởng.", "vi_du": "chưa dùng thuần"},
+   {"ma": "COLD_OPEN_HOI_TUONG", "ten": "Cold open → lùi về quá khứ → hiện tại", "mo_ta": "Mở bằng biểu tượng / hành động, rồi kể lại nguồn gốc.", "vi_du": "Đa Bang – Hồi 2; Ngoại truyện; T01"},
+   {"ma": "SONG_SONG_HAI_PHE", "ten": "Song song hai phe", "mo_ta": "Xen kẽ cảnh hai phe, mỗi phe một mâu thuẫn riêng.", "vi_du": "Đa Bang – Hồi 1; Lũy Thầy"},
+   {"ma": "THUYET_MINH_TRUOC", "ten": "Thuyết minh bối cảnh ngay đầu", "mo_ta": "Lời dẫn đặt bối cảnh trước khi vào kịch.", "vi_du": "Đa Bang – Hồi 1 (một phần)"},
+   {"ma": "KE_LAI_TU_KET", "ten": "Kể lại từ kết cục", "mo_ta": "Mở bằng cảnh cuối (ai sống, ai chết) rồi kể lại.", "vi_du": "chưa dùng"},
+   {"ma": "MOT_DEM", "ten": "Gói trong một đêm / một ngày", "mo_ta": "Toàn bộ phim diễn ra trong thời gian rất ngắn.", "vi_du": "chưa dùng"}
+  ]},
+  {"ma": "dan_xen", "ten": "Đan xen tuyến truyện", "hoi": "Ngoài tuyến chính, tập đan thêm câu chuyện nào?", "nhieu": false, "lua_chon": [
+   {"ma": "MOT_TUYEN", "ten": "Một tuyến (anh hùng + phản đề)", "mo_ta": "Chỉ một đường dây chính, phản đề bám theo anh hùng.", "vi_du": "Đa Bang – Hồi 2; T01"},
+   {"ma": "HAI_TUYEN_HOI_TU", "ten": "Hai tuyến hội tụ", "mo_ta": "Hai câu chuyện chạy riêng, gặp nhau ở trận cuối.", "vi_du": "Đa Bang – Hồi 1 (ông lão câu cá / triều đình)"},
+   {"ma": "TUYEN_PHE_DICH", "ten": "Tuyến phía địch có bi kịch riêng", "mo_ta": "Phía bên kia có nhân vật với nỗi niềm riêng, không chỉ là phản diện.", "vi_du": "Lũy Thầy (Trịnh Căn / Nguyễn Hữu Dật)"},
+   {"ma": "TUYEN_HAU_PHUONG", "ten": "Tuyến hậu phương", "mo_ta": "Xen cảnh người ở nhà (làng, chợ, triều đình) phản chiếu tiền tuyến.", "vi_du": "chưa dùng"},
+   {"ma": "TUYEN_DOI_SAU", "ten": "Tuyến đời sau", "mo_ta": "Một người ở thời sau tìm lại dấu vết trận đánh, đan xen với quá khứ.", "vi_du": "chưa dùng"},
+   {"ma": "NHIEU_GOC_NHIN", "ten": "Một sự kiện, nhiều góc nhìn", "mo_ta": "Cùng một đêm / một trận được kể lại qua 2–3 người, mỗi lần lộ thêm sự thật.", "vi_du": "chưa dùng"},
+   {"ma": "TUYEN_TAP_TRUOC", "ten": "Nối nhân vật tập trước", "mo_ta": "Một nhân vật phụ của tập trước trở thành tuyến phụ, nối series.", "vi_du": "Trần Phủ / Lê Quý Ly (Đa Bang – Ngoại truyện)"}
+  ]}
+ ],
+ "cau_truc": {"_ghi_chu": "So thứ tự nhịp giữa các tập. Khung 12 nhịp chỉ là tham khảo: được đảo, gộp, bỏ nhịp hoặc chen nhịp riêng.", "canh_bao_tu_pct": 75}
+}

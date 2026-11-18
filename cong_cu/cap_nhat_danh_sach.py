@@ -19,7 +19,9 @@ def main():
         tl, tong = timeline(tap)
         ds.append({"ma_tap": tap.get("ma_tap", p.parent.name), "thu_muc": p.parent.name, "tieu_de": tap.get("tieu_de", ""),
                    "tong": round(tong, 2), "so_canh": len(tap.get("canh", [])),
-                   "so_shot": sum(1 for s in tl if not s.get("_ao")), "trang_thai": tap.get("trang_thai", "")})
+                   "so_shot": sum(1 for s in tl if not s.get("_ao")), "trang_thai": tap.get("trang_thai", ""),
+                   "series": tap.get("series", ""), "bien_the": tap.get("bien_the", {}),
+                   "chuoi_nhip": [c.get("nhip") or "RIENG" for c in tap.get("canh", [])]})
     (GOC / "tap" / "danh_sach.json").write_text(json.dumps(ds, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"tap/danh_sach.json: {len(ds)} tập")
 

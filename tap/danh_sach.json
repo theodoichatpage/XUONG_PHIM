@@ -3,9 +3,39 @@
   "ma_tap": "T01_nhu_nguyet",
   "thu_muc": "T01_nhu_nguyet",
   "tieu_de": "SÔNG – Phòng tuyến Như Nguyệt 1077",
-  "tong": 1000.7,
+  "tong": 1105.9,
   "so_canh": 15,
-  "so_shot": 210,
-  "trang_thai": "Đã viết đủ 15 cảnh theo tuyến phim duyệt ngày 18/11/2026 (khuôn Đa Bang)."
+  "so_shot": 212,
+  "trang_thai": "15 cảnh. Tuyến Gáo viết lại ngày 18/11/2026: không hy sinh; chỗ sông cạn thành đường vượt sông.",
+  "series": "Sông – các phòng tuyến",
+  "bien_the": {
+   "giong_phan_de": "TRE_EM",
+   "mon_no": "CUU_MANG",
+   "nut_that": [
+    "THU_NHAN",
+    "VU_KHI_PHAN_CHU"
+   ],
+   "ket_tuyen": "SONG_DAN_DUONG",
+   "guong_soi": "NIEM_TIN_SUP_DO",
+   "thoi_gian": "COLD_OPEN_HOI_TUONG",
+   "dan_xen": "MOT_TUYEN"
+  },
+  "chuoi_nhip": [
+   "MO",
+   "GIEO_NO",
+   "CHU_DE",
+   "PHAN_DE",
+   "THU_THACH",
+   "THU_THACH",
+   "THU_THACH",
+   "DINH_ACTION",
+   "DIEN_VAN",
+   "TRAN_CUOI",
+   "TRA_NO",
+   "GUONG_SOI",
+   "LICH_SU_LANH",
+   "MOC_CREDIT",
+   "MOC_CREDIT"
+  ]
  }
 ]

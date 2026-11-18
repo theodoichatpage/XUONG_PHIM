@@ -89,8 +89,8 @@ const XP = (() => {
   };
 
   // Kiểm tra theo khung 12 nhịp (giống kiem_tra.py, không kiểm file ảnh/giọng vì web không thấy ổ đĩa)
-  function kiemTra(tap, khung) {
-    const loi = [], canhBao = [];
+  function kiemTra(tap, khung, ngoai) {
+    const loi = [], canhBao = [], ghiChu = [];
     const NHIP = Object.fromEntries(khung.nhip.map(n => [n.ma, n]));
     const {tl, tong} = timeline(tap);
     const thuc = tl.filter(s => !s._ao);
@@ -138,13 +138,13 @@ const XP = (() => {
       const q = NHIP[k];
       const cpm = n.dai ? n.cat / n.dai * 60 : 0, lp = n.dai ? Math.min(100, n.noi / n.dai * 100) : 0;
       const r = {ma: k, q, n, cpm, lp, vt: n.bd / phim * 100, lechVt: false, lechCat: false, lechLoi: false};
-      if (!q) { canhBao.push({ma: n.canh.join(', '), t: `nhịp '${k}' không có trong khung 12 nhịp`}); return r; }
-      if (k !== 'MOC_CREDIT' && (r.vt < q.vi_tri_pct[0] - 4 || r.vt > q.vi_tri_pct[1] + 2)) { r.lechVt = true; canhBao.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: bắt đầu ở ${r.vt.toFixed(0)}% thời lượng, khung đề xuất ${q.vi_tri_pct[0]}–${q.vi_tri_pct[1]}%`}); }
-      if (!(q.cat_phut[0] * 0.8 <= cpm && cpm <= q.cat_phut[1] * 1.2)) { r.lechCat = true; canhBao.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: ${cpm.toFixed(1)} cắt/phút, mục tiêu ${q.cat_phut[0]}–${q.cat_phut[1]}`}); }
-      if (!(q.loi_pct[0] - 8 <= lp && lp <= q.loi_pct[1] + 8)) { r.lechLoi = true; canhBao.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: có lời ${lp.toFixed(0)}%, mục tiêu ${q.loi_pct[0]}–${q.loi_pct[1]}%`}); }
+      if (!q) { ghiChu.push({ma: n.canh.join(', '), t: `nhịp riêng '${k}' (ngoài khung 12 nhịp — được phép)`}); return r; }
+      if (k !== 'MOC_CREDIT' && (r.vt < q.vi_tri_pct[0] - 4 || r.vt > q.vi_tri_pct[1] + 2)) { r.lechVt = true; ghiChu.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: bắt đầu ở ${r.vt.toFixed(0)}% thời lượng, khung đề xuất ${q.vi_tri_pct[0]}–${q.vi_tri_pct[1]}%`}); }
+      if (!(q.cat_phut[0] * 0.8 <= cpm && cpm <= q.cat_phut[1] * 1.2)) { r.lechCat = true; ghiChu.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: ${cpm.toFixed(1)} cắt/phút, mục tiêu ${q.cat_phut[0]}–${q.cat_phut[1]}`}); }
+      if (!(q.loi_pct[0] - 8 <= lp && lp <= q.loi_pct[1] + 8)) { r.lechLoi = true; ghiChu.push({ma: null, t: `Nhịp ${q.so} ${q.ten}: có lời ${lp.toFixed(0)}%, mục tiêu ${q.loi_pct[0]}–${q.loi_pct[1]}%`}); }
       return r;
     });
-    khung.nhip.filter(n => !theoNhip[n.ma]).forEach(n => canhBao.push({ma: null, t: `Chưa có cảnh nào cho nhịp ${n.so} – ${n.ten}`}));
+    khung.nhip.filter(n => !theoNhip[n.ma]).forEach(n => ghiChu.push({ma: null, t: `Chưa có cảnh nào cho nhịp ${n.so} – ${n.ten}`}));
     const gt = (tap.gieo_tra || []).map(g => {
       const moc = [];
       ['gieo', 'nhac', 'tra'].forEach(k => (g[k] || []).forEach(m => {
@@ -162,9 +162,48 @@ const XP = (() => {
     const cpmT = tong ? tongCat / tong * 60 : 0;
     const mt = khung.toan_phim.cat_phut.muc_tieu;
     if (tong && !(mt[0] * 0.8 <= cpmT && cpmT <= mt[1] * 1.2)) canhBao.push({ma: null, t: `Toàn phim ${cpmT.toFixed(1)} cắt/phút, mục tiêu ${mt[0]}–${mt[1]}`});
-    return {loi, canhBao, bang, nhip, gt, tong, tongCat, cpm: cpmT, trungVi: daiShot.length ? daiShot[Math.floor(daiShot.length / 2)] : 0,
+    const lap = ngoai && ngoai.kho ? soLap(tap, ngoai.kho, ngoai.khac || []) : [];
+    lap.forEach(x => x.canhBao && canhBao.push({ma: null, t: x.canhBao}));
+    return {loi, canhBao, ghiChu, lap, bang, nhip, gt, tong, tongCat, cpm: cpmT, trungVi: daiShot.length ? daiShot[Math.floor(daiShot.length / 2)] : 0,
       soDen: tl.filter(s => s.loai === 'den').length, loiPct: tong ? Math.min(100, noiTong / tong * 100) : 0, soShot: thuc.length,
       soCau: tl.reduce((a, s) => a + s.thoai.length, 0), phim};
+  }
+
+  // Tỉ lệ giống nhau của hai chuỗi (giống difflib.SequenceMatcher.ratio đủ dùng: 2*LCS/(a+b))
+  function giong(a, b) {
+    if (!a.length || !b.length) return 0;
+    const d = Array.from({length: a.length + 1}, () => new Array(b.length + 1).fill(0));
+    for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++)
+      d[i][j] = a[i - 1] === b[j - 1] ? d[i - 1][j - 1] + 1 : Math.max(d[i - 1][j], d[i][j - 1]);
+    return 2 * d[a.length][b.length] / (a.length + b.length) * 100;
+  }
+  const chuoiNhip = tap => (tap.canh || []).map(c => c.nhip || 'RIENG');
+
+  // So tổ hợp biến thể + thứ tự nhịp với tập khác / phim tham khảo (giống so_lap trong kiem_tra.py)
+  // khac: [{ma, ten, bien_the, chuoi_nhip}]
+  function soLap(tap, kho, khac) {
+    const bt = tap.bien_the || {}, chuoi = chuoiNhip(tap);
+    const tenC = Object.fromEntries(kho.chieu.map(c => [c.ma, c.ten]));
+    const ng = kho.nguong.canh_bao_so_chieu_trung, ctNg = (kho.cau_truc || {}).canh_bao_tu_pct || 75;
+    const kq = khac.filter(o => o.ma !== tap.ma_tap).map(o => {
+      const ob = o.bien_the || {};
+      const trung = kho.chieu.filter(c => {
+        const a = bt[c.ma], b = ob[c.ma];
+        if (!a || !b || (Array.isArray(a) && !a.length)) return false;
+        return c.nhieu ? [].concat(a).some(x => [].concat(b).includes(x)) : a === b;
+      }).map(c => c.ma);
+      const ct = giong(chuoi, o.chuoi_nhip || []);
+      const cap = kho.nguong.cap_nguy_hiem.filter(p => p.every(x => trung.includes(x)));
+      const ly = [];
+      if (trung.length >= ng) ly.push(`trùng ${trung.length}/${kho.chieu.length} chiều biến thể`);
+      if (cap.length) ly.push('trùng cặp ' + cap.map(p => p.map(x => tenC[x]).join(' + ')).join('; '));
+      if (ct >= ctNg) ly.push(`thứ tự nhịp giống ${ct.toFixed(0)}%`);
+      return {ma: o.ma, ten: o.ten, trung, chieuTrung: trung.map(x => tenC[x]), soChieu: kho.chieu.length, ct,
+        canhBao: ly.length ? `Lặp công thức với ${o.ten}: ${ly.join(', ')}` : ''};
+    });
+    if (!Object.keys(bt).length) kq.unshift({ma: '', ten: '(tập này)', trung: [], chieuTrung: [], soChieu: kho.chieu.length, ct: 0,
+      canhBao: 'Tập chưa chọn biến thể – vào Soạn tập → tab Biến thể để chọn, rồi mới so được công thức với các tập khác'});
+    return kq;
   }
 
   // Khung tập mới (giống lap_khung.py)
@@ -208,6 +247,6 @@ const XP = (() => {
     return '﻿' + rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\r\n');
   }
 
-  return {tc, soTu, uocLuongDoc, chuan, timeline, promptDayDu, anhMacDinh, keyframe, kiemTra, lapKhung, danhMaLai, csv,
+  return {tc, soTu, uocLuongDoc, chuan, timeline, promptDayDu, anhMacDinh, keyframe, kiemTra, soLap, giong, chuoiNhip, lapKhung, danhMaLai, csv,
     CHUYEN_DONG, CHUYEN_VAO, LOAI_SHOT, CD_VI, VAO_VI, VAO_HD, CHU_HD, STYLE};
 })();

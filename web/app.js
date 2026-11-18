@@ -19,6 +19,14 @@ async function lay(url, kieu = 'json') {
   return v;
 }
 const khung = () => lay('quy_chuan/khung_12_nhip.json');
+const khoBienThe = () => lay('quy_chuan/kho_bien_the.json');
+// Dữ liệu để so lặp công thức: kho biến thể + mọi tập VOX + phim tham khảo
+async function ngoaiKiemTra() {
+  const [kho, ds, tk] = await Promise.all([khoBienThe(), lay('tap/danh_sach.json').catch(() => []), lay('tham_khao/danh_sach.json').catch(() => [])]);
+  return {kho, khac: [
+    ...ds.map(d => ({ma: d.ma_tap, ten: `Tập ${d.ma_tap}`, bien_the: d.bien_the, chuoi_nhip: d.chuoi_nhip})),
+    ...tk.map(d => ({ma: 'tk:' + d.ma, ten: `Tham khảo: ${d.ten}`, bien_the: d.bien_the, chuoi_nhip: d.chuoi_nhip}))]};
+}
 
 function toast(t) {
   const el = $('#toast');
@@ -79,7 +87,9 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
   const tap = ma === '__nhap__' ? LS.get('xp_ban_nhap', null) : await lay(`tap/${ma}/tap.json`);
   if (!tap) { APP.innerHTML = '<p>Không có bản nháp nào trên máy này.</p>'; return; }
   XP.chuan(tap);
-  const r = XP.kiemTra(tap, K);
+  const NG = await ngoaiKiemTra();
+  const r = XP.kiemTra(tap, K, NG);
+  r.kho = NG.kho;
   APP.innerHTML = `
     <section class="panel">
       <div class="row" style="justify-content:space-between"><span class="tag">${esc(tap.ma_tap)}${ma === '__nhap__' ? ' · bản nháp' : ''}</span>
@@ -300,16 +310,34 @@ function tabDoc(tap, r, body) {
 function tabKiemTra(tap, r, body, ma) {
   const link = m => m && /^C\d+(_S\d+)?$/.test(m) ? `<a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${m.split('_')[0]}">${m}</a>: ` : (m ? `${esc(m)}: ` : '');
   body.innerHTML = `
-    <p class="muted" style="margin:0">So kịch bản với khung 12 nhịp đo từ 2 tập mẫu. Thời lượng lời là ước lượng (người dẫn 155 từ/phút, thoại 110 từ/phút); khi có file giọng thật, chạy <code>cong_cu/kiem_tra.py</code> trên máy để đo chính xác.</p>
+    <p class="muted" style="margin:0">Khung 12 nhịp và các phim tham khảo chỉ để học, không phải khuôn: mỗi tập nên có tổ hợp biến thể và thứ tự nhịp của riêng mình. Độ lệch so với khung chỉ là ghi chú. Thời lượng lời là ước lượng (người dẫn 155 từ/phút, thoại 110 từ/phút); khi có file giọng thật, chạy <code>cong_cu/kiem_tra.py</code> trên máy để đo chính xác.</p>
     ${r.loi.length ? `<h3>Lỗi (phải sửa)</h3><div class="issues">${r.loi.map(x => `<div class="i e">${link(x.ma)}${esc(x.t)}</div>`).join('')}</div>` : '<p><span class="pill ok">0 lỗi</span></p>'}
     ${r.canhBao.length ? `<h3>Cảnh báo (nên xem)</h3><div class="issues">${r.canhBao.map(x => `<div class="i w">${link(x.ma)}${esc(x.t)}</div>`).join('')}</div>` : ''}
-    <h3>So với khung 12 nhịp</h3>
+    ${bangLap(tap, r)}
+    ${r.ghiChu.length ? `<h3>Ghi chú so với khung 12 nhịp (tham khảo, không bắt buộc)</h3><div class="issues">${r.ghiChu.map(x => `<div class="i">${link(x.ma)}${esc(x.t)}</div>`).join('')}</div>` : ''}
+    <h3>So với khung 12 nhịp (tham khảo)</h3>
     <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Nhịp</th><th class="num">Vị trí</th><th class="num">Dài</th><th class="num">Cắt/phút (mục tiêu)</th><th class="num">Có lời (mục tiêu)</th><th>Cảnh</th></tr></thead><tbody>
     ${r.nhip.map(x => `<tr><td>${x.q ? `${x.q.so}. ${esc(x.q.ten)}` : esc(x.ma)}</td>
       <td class="num">${XP.tc(x.n.bd, false)} (${x.vt.toFixed(0)}%) ${x.lechVt ? '⚠' : ''}</td><td class="num">${x.n.dai.toFixed(0)} s</td>
       <td class="num">${x.cpm.toFixed(1)} ${x.q ? `(${x.q.cat_phut.join('–')})` : ''} ${x.lechCat ? '⚠' : ''}</td>
       <td class="num">${x.lp.toFixed(0)}% ${x.q ? `(${x.q.loi_pct.join('–')}%)` : ''} ${x.lechLoi ? '⚠' : ''}</td><td>${x.n.canh.join(', ')}</td></tr>`).join('')}
     </tbody></table></div>`;
+}
+
+// Bảng biến thể của tập + mức lặp với tập khác / phim tham khảo
+function bangLap(tap, r) {
+  if (!r.kho) return '';
+  const bt = tap.bien_the || {};
+  const ten = (c, m) => (c.lua_chon.find(x => x.ma === m) || {ten: m}).ten;
+  const giaTri = c => { const v = bt[c.ma]; if (!v || (Array.isArray(v) && !v.length)) return '<span class="muted">chưa chọn</span>'; return [].concat(v).map(m => esc(ten(c, m))).join(', '); };
+  const lap = r.lap.filter(x => x.ma);
+  return `<h3>Biến thể của tập</h3>
+    <div class="scroll" style="background:var(--paper)"><table><tbody>${r.kho.chieu.map(c => `<tr><td><b>${esc(c.ten)}</b></td><td>${giaTri(c)}</td></tr>`).join('')}</tbody></table></div>
+    ${lap.length ? `<h3>Lặp công thức với tập khác / phim tham khảo</h3>
+    <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>So với</th><th class="num">Trùng biến thể</th><th>Chiều trùng</th><th class="num">Thứ tự nhịp giống</th></tr></thead><tbody>
+    ${lap.map(x => `<tr><td>${x.canhBao ? '⚠ ' : ''}${esc(x.ten)}</td><td class="num">${x.trung.length}/${x.soChieu}</td><td>${esc(x.chieuTrung.join(', ')) || '–'}</td><td class="num">${x.ct.toFixed(0)}%</td></tr>`).join('')}
+    </tbody></table></div>` : ''}
+    <p class="muted" style="font-size:13px">Cảnh báo khi trùng từ ${r.kho.nguong.canh_bao_so_chieu_trung} chiều trở lên, trùng cặp nguy hiểm (giọng phản đề đi cùng món nợ hoặc kết tuyến), hoặc thứ tự nhịp giống từ ${(r.kho.cau_truc || {}).canh_bao_tu_pct || 75}%. Xem <a href="#/quy-chuan/bien-the">Kho biến thể</a>.</p>`;
 }
 
 function tabTienDo(tap, r, body) {
@@ -350,18 +378,29 @@ function tabTienDo(tap, r, body) {
 }
 
 // ---------------------------------------------------------------- quy chuẩn
-const DOCS = [['khung', 'Khung 12 nhịp'], ['huong-dan', 'Hướng dẫn làm video'], ['dinh-dang', 'Định dạng tap.json'], ['quy-trinh', 'Quy trình trên web']];
+const DOCS = [['khung', 'Khung 12 nhịp'], ['bien-the', 'Kho biến thể'], ['huong-dan', 'Hướng dẫn làm video'], ['dinh-dang', 'Định dạng tap.json'], ['quy-trinh', 'Quy trình trên web']];
 async function trangQuyChuan(doc = 'khung') {
   APP.innerHTML = `<section class="panel"><h1>Quy chuẩn &amp; hướng dẫn</h1>
     <nav class="tabs">${DOCS.map(([k, t]) => `<a class="tab" aria-selected="${k === doc}" href="#/quy-chuan/${k}">${t}</a>`).join('')}</nav><div id="docbody" class="doc-wrap"></div></section>`;
   const b = $('#docbody');
   if (doc === 'khung') {
     const K = await khung();
-    b.innerHTML = `<p class="lead">Mỗi tập đi qua 12 nhịp. Vị trí tính theo % tổng thời lượng; nhịp cắt và % có lời là khoảng đo được từ 2 tập mẫu (Lũy Thầy 20:22, Đa Bang 22:02).</p>
+    b.innerHTML = `<p class="lead"><b>Khung tham khảo, không phải khuôn.</b> 12 nhịp là chức năng đo được từ các phim mẫu; mỗi tập được đảo, gộp, bỏ nhịp hoặc chen nhịp riêng, miễn là có tổ hợp biến thể và thứ tự kể của riêng mình (xem Kho biến thể). Vị trí tính theo % tổng thời lượng; nhịp cắt và % có lời là khoảng đo được từ 2 tập mẫu (Lũy Thầy 20:22, Đa Bang 22:02).</p>
       <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>#</th><th>Nhịp (mã)</th><th class="num">Vị trí</th><th class="num">Cắt/phút</th><th class="num">Có lời</th><th>Việc phải làm</th><th>Đo từ nguồn</th></tr></thead><tbody>
       ${K.nhip.map(n => `<tr><td>${n.so}</td><td><b>${esc(n.ten)}</b><br><code>${n.ma}</code></td><td class="num">${n.vi_tri_pct.join('–')}%</td><td class="num">${n.cat_phut.join('–')}</td><td class="num">${n.loi_pct.join('–')}%</td><td>${esc(n.viec)}</td><td class="muted">${esc(n.nguon)}</td></tr>`).join('')}
       </tbody></table></div>
       <h3>Toàn phim</h3><ul>${Object.entries(K.toan_phim).map(([k, v]) => `<li><b>${esc(k)}</b>: ${esc(JSON.stringify(v.muc_tieu || v))}${v.nguon ? ` <span class="muted">(${esc(v.nguon)})</span>` : ''}</li>`).join('')}</ul>`;
+  } else if (doc === 'bien-the') {
+    const [kho, ds, tk] = await Promise.all([khoBienThe(), lay('tap/danh_sach.json').catch(() => []), lay('tham_khao/danh_sach.json').catch(() => [])]);
+    const tat = [...ds.map(d => ({ten: d.ma_tap, vox: true, bt: d.bien_the || {}})), ...tk.map(d => ({ten: d.nhan || d.ten, vox: false, bt: d.bien_the || {}}))];
+    const dung = (c, m) => tat.filter(x => [].concat(x.bt[c.ma] || []).includes(m));
+    b.innerHTML = `<p class="lead">Khung 12 nhịp chỉ nói mỗi đoạn phim làm <i>việc gì</i>. Kho này quyết định <i>bằng cách nào</i>. Mỗi tập chọn một lựa chọn cho mỗi chiều; tập sau nên đổi ít nhất ${kho.chieu.length - kho.nguong.canh_bao_so_chieu_trung + 1} chiều so với mọi tập trước và phim tham khảo, và không giữ nguyên thứ tự nhịp. Được đảo, gộp, bỏ nhịp hoặc chen nhịp riêng.</p>
+      <p class="muted">Lựa chọn <b>chưa dùng</b> là chỗ nên thử trước. Nhãn <span class="pill warn">VOX</span> là tập của xưởng đã dùng; nhãn xám là phim tham khảo.</p>
+      ${kho.chieu.map(c => `<h3>${esc(c.ten)}${c.nhieu ? ' <span class="muted" style="font-weight:400">(chọn 1–3)</span>' : ''}</h3><p class="muted" style="margin-top:0">${esc(c.hoi)}</p>
+        <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>Lựa chọn</th><th>Ý nghĩa</th><th>Ví dụ</th><th>Đã dùng ở</th></tr></thead><tbody>
+        ${c.lua_chon.map(l => { const d = dung(c, l.ma); return `<tr><td><b>${esc(l.ten)}</b><br><code>${l.ma}</code></td><td>${esc(l.mo_ta)}</td><td class="muted">${esc(l.vi_du)}</td>
+          <td>${d.length ? d.map(x => `<span class="pill ${x.vox ? 'warn' : ''}">${x.vox ? 'VOX ' : ''}${esc(x.ten)}</span>`).join(' ') : '<span class="pill ok">chưa dùng</span>'}</td></tr>`; }).join('')}
+        </tbody></table></div>`).join('')}`;
   } else if (doc === 'quy-trinh') {
     b.innerHTML = `<div class="doc">${marked.parse(QUY_TRINH)}</div>`;
   } else {
@@ -376,9 +415,10 @@ const QUY_TRINH = `
 2. Điền **thông tin chung**: câu chủ đề, giọng phản đề, vật dẫn đường, nhân vật (mã viết hoa không dấu, dấu hiệu nhận diện để đưa vào prompt).
 3. Viết từng **cảnh** và **shot**: độ dài, cỡ cảnh, góc, chuyển động, nội dung hình (tiếng Việt, kèm một câu tiếng Anh để Man tham khảo), thoại (mỗi câu một dòng, \`/\` ngắt 0,3 s, \`//\` ngắt 0,8 s), chữ trên hình.
 4. Khai báo **gieo – trả**: mỗi đường dây gồm shot gieo, shot nhắc, shot trả.
-5. Nhìn bảng **kiểm tra** bên phải: sửa đến khi *0 lỗi*; cảnh báo về nhịp thì chỉnh độ dài/số shot.
-6. **Lưu**: bản nháp tự lưu trong trình duyệt. Bấm *Tải tap.json* để có file.
-7. **Đưa lên xưởng**: trên GitHub, mở repo \`XUONG_PHIM\` → thư mục \`tap\` → *Add file → Upload files* → kéo thư mục \`T02_…\` chứa \`tap.json\` (hoặc tạo file \`tap/T02_…/tap.json\` rồi dán nội dung) → *Commit changes*. Vercel tự cập nhật web sau khoảng 1 phút; tập mới hiện ở trang *Các tập*.
+5. Chọn **biến thể** (tab Biến thể): giọng phản đề, món nợ, nút thắt, kết tuyến, gương soi, cấu trúc thời gian, tuyến đan xen. Bảng kiểm tra cảnh báo nếu tổ hợp hoặc thứ tự nhịp lặp tập khác / phim tham khảo.
+6. Nhìn bảng **kiểm tra** bên phải: sửa đến khi *0 lỗi* và không còn cảnh báo lặp công thức. Lệch khung 12 nhịp chỉ là ghi chú, không cần sửa.
+7. **Lưu**: bản nháp tự lưu trong trình duyệt. Bấm *Tải tap.json* để có file.
+8. **Đưa lên xưởng**: trên GitHub, mở repo \`XUONG_PHIM\` → thư mục \`tap\` → *Add file → Upload files* → kéo thư mục \`T02_…\` chứa \`tap.json\` (hoặc tạo file \`tap/T02_…/tap.json\` rồi dán nội dung) → *Commit changes*. Vercel tự cập nhật web sau khoảng 1 phút; tập mới hiện ở trang *Các tập*.
 
 ## Sản xuất từ một tập đã có
 
