@@ -36,7 +36,7 @@ h3{font-size:15px;margin:0}
 .sc-body,.shot .sb,#tabbody,#ed-main{min-width:0}
 #tabbody{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
 h1,h2,h3{overflow-wrap:anywhere}
-.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:12px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:8px;text-decoration:none;min-width:0}
 .card:hover{border-color:var(--ink)}
 .meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
@@ -98,7 +98,7 @@ svg text{font-family:var(--font-b)}
 label.f{display:grid;gap:3px;font-size:12.5px;color:var(--muted);min-width:0}
 label.f input,label.f select,label.f textarea,.cell input,.cell select,.cell textarea{font:14px var(--font-b);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:6px 8px;width:100%;min-width:0}
 textarea{resize:vertical}
-.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:8px}
 .shot-ed{border:1px solid var(--line);border-radius:6px;padding:10px;display:grid;gap:8px;background:var(--bg)}
 .shot-ed.do{border-left:4px solid var(--red)}
 .sub{display:grid;gap:6px}
