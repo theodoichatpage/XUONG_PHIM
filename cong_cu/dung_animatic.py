@@ -275,17 +275,17 @@ def tron_am_thanh(ffmpeg, muc, tong, ra, tmpdir):
     F = []
     nhom = {"giong": [], "nhac": [], "sfx": []}
     for i, m in enumerate(muc, 1):
-        if m["loai"] == "nhac":
+        if m["loai"] in ("nhac", "nen"):
             ins += ["-stream_loop", "-1"]
         ins += ["-i", str(m["file"])]
         ms = int(round(m["bat_dau"] * 1000))
         chain = f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo"
-        if m["loai"] == "nhac":
+        if m["loai"] in ("nhac", "nen"):
             dai = m["dai"]
             chain += f",atrim=0:{dai:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=1,afade=t=out:st={max(0, dai - 1.5):.3f}:d=1.5"
         chain += f",volume={m.get('db', 0)}dB,adelay={ms}|{ms}[a{i}]"
         F.append(chain)
-        nhom[m["loai"]].append(f"[a{i}]")
+        nhom["sfx" if m["loai"] == "nen" else m["loai"]].append(f"[a{i}]")
     tron_ = []
     if nhom["giong"]:
         F.append("".join(nhom["giong"]) + f"amix=inputs={len(nhom['giong'])}:normalize=0:duration=longest,asplit=2[gv][gsc]")
@@ -376,6 +376,14 @@ def main():
             bd = ss[0]["bat_dau"] + float(c["nhac"].get("luc", 0))
             kt = ss[-1]["bat_dau"] + float(ss[-1]["dai"])
             muc.append({"file": f, "bat_dau": bd, "dai": max(0.5, kt - bd), "db": c["nhac"].get("am_luong_db", -10), "loai": "nhac"})
+    # nền âm: lặp suốt cảnh, không bị ducking
+    for c in tap["canh"]:
+        na = c.get("nen_am")
+        ss = [x for x in tl if x["canh"]["ma"] == c["ma"]]
+        if not na or not ss or not (tm / na["file"]).exists():
+            continue
+        bd, kt = ss[0]["bat_dau"], ss[-1]["bat_dau"] + float(ss[-1]["dai"])
+        muc.append({"file": tm / na["file"], "bat_dau": bd, "dai": max(0.5, kt - bd), "db": na.get("am_luong_db", -22), "loai": "nen"})
 
     tmpdir = tempfile.mkdtemp(prefix="animatic_")
     wav = Path(tmpdir) / "am_thanh.wav"

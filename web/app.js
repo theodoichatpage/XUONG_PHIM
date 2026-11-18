@@ -79,7 +79,7 @@ async function trangChu() {
 }
 
 // ---------------------------------------------------------------- trang tập
-const TABS = [['tuyen', 'Tuyến phim'], ['kich-ban', 'Kịch bản'], ['phieu-dung', 'Phiếu dựng'], ['goi-anh', 'Gói ảnh'],
+const TABS = [['tuyen', 'Tuyến phim'], ['kich-ban', 'Kịch bản'], ['phieu-dung', 'Phiếu dựng'], ['goi-anh', 'Gói ảnh'], ['am-thanh', 'Âm thanh'],
   ['doc', 'Kịch bản đọc'], ['kiem-tra', 'Kiểm tra'], ['tien-do', 'Tiến độ']];
 
 async function trangTap(ma, tab = 'tuyen', canhMo) {
@@ -109,7 +109,7 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
   APP.querySelector('[data-act="json"]').onclick = () => taiFile('tap.json', JSON.stringify(tap, null, 1));
   APP.querySelector('[data-act="csv"]').onclick = () => taiFile(`${tap.ma_tap}_bang_shot.csv`, XP.csv(tap), 'text/csv');
   const body = $('#tabbody');
-  ({tuyen: tabTuyen, 'kich-ban': tabKichBan, 'phieu-dung': tabPhieu, 'goi-anh': tabGoiAnh, doc: tabDoc, 'kiem-tra': tabKiemTra, 'tien-do': tabTienDo}[tab] || tabTuyen)(tap, r, body, ma, canhMo);
+  ({tuyen: tabTuyen, 'kich-ban': tabKichBan, 'phieu-dung': tabPhieu, 'goi-anh': tabGoiAnh, 'am-thanh': tabAmThanh, doc: tabDoc, 'kiem-tra': tabKiemTra, 'tien-do': tabTienDo}[tab] || tabTuyen)(tap, r, body, ma, canhMo);
 }
 
 function tabTuyen(tap, r, body, ma) {
@@ -227,7 +227,7 @@ function tabPhieu(tap, r, body) {
     if (c.ma !== cur) {
       if (cur) html += '</div></details>';
       cur = c.ma;
-      html += `<details class="scene" open><summary><span class="sc-no">${c.ma}</span><span><b>${esc(c.ten)}</b>${c.nhac ? `<br><span class="muted" style="font-size:13px">Nhạc: ${esc(c.nhac.file || '')} · ${c.nhac.am_luong_db ?? -12} dB · ${esc(c.nhac.ghi_chu || '')}</span>` : '<br><span class="muted" style="font-size:13px">Không nhạc</span>'}</span><span class="tag">${esc(c.nhip || '')}</span></summary><div class="sc-body">`;
+      html += `<details class="scene" open><summary><span class="sc-no">${c.ma}</span><span><b>${esc(c.ten)}</b>${c.nhac ? `<br><span class="muted" style="font-size:13px">Nhạc: ${esc(c.nhac.file || '')} · ${c.nhac.am_luong_db ?? -12} dB · ${esc(c.nhac.ghi_chu || '')}</span>` : '<br><span class="muted" style="font-size:13px">Không nhạc</span>'}${c.nen_am ? `<br><span class="muted" style="font-size:13px">Nền âm: ${esc(c.nen_am.file || '')} · ${esc(c.nen_am.mo_ta || '')} · ${c.nen_am.am_luong_db ?? -22} dB</span>` : ''}</span><span class="tag">${esc(c.nhip || '')}</span></summary><div class="sc-body">`;
     }
     if (s._ao) { html += `<div class="shot"><div class="st"><b>${XP.tc(s.bat_dau)}</b></div><div class="sb"><b>${s.loai === 'den' ? 'Màn đen' : 'Màn trắng'} ${(+s.dai).toFixed(1)} s</b><span class="muted">Media → Thư viện → màu ${s.loai === 'den' ? 'Đen' : 'Trắng'}; clip trước: Hoạt hình → Mờ dần ra 0,6 s.</span></div></div>`; return; }
     html += `<div class="shot"><div class="st"><b>${s.ma}</b><span>Bắt đầu ${XP.tc(s.bat_dau)}</span><span>Dài ${(+s.dai).toFixed(2)} s</span><span>${esc(s.co_canh || '')} ${esc(s.goc || '')}</span></div>
@@ -287,6 +287,87 @@ function tabGoiAnh(tap, r, body, ma) {
   body.querySelector('[data-x="csv"]').onclick = () => taiFile(`${tap.ma_tap}_goi_anh.csv`, GOIANH.csv(g), 'text/csv');
   body.querySelector('[data-x="mo"]').onclick = () => body.querySelectorAll('details').forEach(d => d.open = true);
   body.querySelector('[data-x="dong"]').onclick = () => body.querySelectorAll('details').forEach(d => d.open = false);
+}
+
+// ---------------------------------------------------------------- âm thanh: nhạc (prompt Suno), nền âm, hiệu ứng
+function goiAmThanh(tap, r) {
+  const {tl} = XP.timeline(tap);
+  const moc = Object.fromEntries(r.bang.map(b => [b.ma, b]));
+  const nhac = (tap.bang_nhac || []).map(n => {
+    const dung = tap.canh.filter(c => c.nhac && c.nhac.file === n.file && moc[c.ma]).map(c => {
+      const b = moc[c.ma], vao = b.bd + (+c.nhac.luc || 0);
+      return {canh: c.ma, ten: c.ten, vao, ra: b.kt, dai: b.kt - vao, db: c.nhac.am_luong_db ?? -12, ghi_chu: c.nhac.ghi_chu || ''};
+    });
+    return Object.assign({}, n, {dung_o: dung, can_s: Math.ceil(Math.max(0, ...dung.map(d => d.dai)) + 10)});
+  });
+  const chuaCo = tap.canh.filter(c => c.nhac && c.nhac.file && !nhac.some(n => n.file === c.nhac.file)).map(c => c.nhac.file);
+  const nen = tap.canh.filter(c => c.nen_am && moc[c.ma]).map(c => Object.assign({canh: c.ma, ten: c.ten, vao: moc[c.ma].bd, ra: moc[c.ma].kt}, c.nen_am));
+  const kho = tap.kho_sfx || {};
+  const sfx = [];
+  tl.filter(s => !s._ao).forEach(s => (s.sfx || []).forEach(x => sfx.push({t: s.bat_dau + (+x.luc || 0), shot: s.ma, ten: x.ten || x.file, file: x.file, db: x.db ?? 0, tim: (kho[x.ten] || {}).tim || ''})));
+  return {nhac, chuaCo, nen, sfx};
+}
+const timPixabay = k => `https://pixabay.com/sound-effects/search/${encodeURIComponent(k)}/`;
+const timFreesound = k => `https://freesound.org/search/?q=${encodeURIComponent(k)}&f=license:%22Creative+Commons+0%22`;
+
+function amThanhMd(tap, A) {
+  const F = '```';
+  const L = [`# Âm thanh – ${tap.tieu_de}`, '', '## Nhạc (làm bằng Suno, chế độ Custom)', ''];
+  A.nhac.forEach(n => {
+    L.push(`### ${n.ten} → ${n.file}`, '', `- Dùng ở: ${n.dung_o.map(d => `${d.canh} ${XP.tc(d.vao, false)}–${XP.tc(d.ra, false)} (${Math.round(d.dai)} s, ${d.db} dB)`).join('; ') || 'chưa gắn cảnh'}`,
+      `- Cần dài ít nhất: ${n.can_s} s`, `- Cách dùng: ${n.dung || ''}`, `- ${n.khong_loi ? 'Bật Instrumental (không lời)' : 'Có lời – dán phần Lyrics'}`, '', 'Style of Music:', F, n.style, F);
+    if (!n.khong_loi && n.loi) L.push('', 'Lyrics:', F, n.loi, F);
+    L.push('');
+  });
+  L.push('## Nền âm từng cảnh (lặp suốt cảnh)', '', '| Cảnh | Mốc | File | Âm | Từ khóa tìm | dB |', '|---|---|---|---|---|---|');
+  A.nen.forEach(x => L.push(`| ${x.canh} | ${XP.tc(x.vao, false)}–${XP.tc(x.ra, false)} | ${x.file} | ${x.mo_ta} | ${x.tim || ''} | ${x.am_luong_db ?? -22} |`));
+  L.push('', '## Hiệu ứng theo mốc giờ', '', '| Mốc | Shot | Hiệu ứng | File | dB | Từ khóa tìm |', '|---|---|---|---|---|---|');
+  A.sfx.forEach(x => L.push(`| ${XP.tc(x.t)} | ${x.shot} | ${x.ten} | ${x.file} | ${x.db} | ${x.tim} |`));
+  return L.join('\n') + '\n';
+}
+function amThanhCsv(A) {
+  const rows = [['Mốc', 'Shot', 'Hiệu ứng', 'File', 'dB', 'Từ khóa tìm']].concat(A.sfx.map(x => [XP.tc(x.t), x.shot, x.ten, x.file, x.db, x.tim]));
+  return '﻿' + rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\r\n');
+}
+
+function tabAmThanh(tap, r, body) {
+  const A = goiAmThanh(tap, r);
+  const tenFile = f => f.split('/').pop();
+  const tim = k => k ? `<a href="${timPixabay(k)}" target="_blank" rel="noopener">Pixabay</a> · <a href="${timFreesound(k)}" target="_blank" rel="noopener">Freesound</a>` : '';
+  const dsFile = [...new Set(A.sfx.map(x => x.file))];
+  body.innerHTML = `
+    <p class="muted" style="margin:0">Nhạc, nền âm và hiệu ứng cho từng đoạn, kèm mốc giờ. Nhạc làm bằng Suno theo prompt bên dưới; hiệu ứng và nền âm lấy từ thư viện miễn phí. Đặt file đúng tên vào thư mục <code>am_thanh/</code> của tập thì animatic tự trộn.</p>
+    <div class="grid-cards">
+      <div class="card"><b>${A.nhac.length} đoạn nhạc</b><span class="muted" style="font-size:13px">${A.nhac.filter(n => !n.khong_loi).length} bài có lời · ${A.nen.length} nền âm · ${dsFile.length} file hiệu ứng (${A.sfx.length} lần dùng)</span></div>
+      <div class="card"><b>Tải về</b><div class="row"><button class="primary" data-x="md">Gói âm thanh (Markdown)</button><button data-x="csv">Hiệu ứng (Excel)</button></div></div>
+      <div class="card" style="gap:4px"><b>Làm nhạc bằng Suno</b><span style="font-size:13px">Create → Custom → dán <i>Style of Music</i>. Đoạn không lời bật <i>Instrumental</i>; bài có lời dán <i>Lyrics</i>. Tạo 2 bản, chọn bản hợp; thiếu độ dài thì <i>Extend</i>. Tải MP3, đổi tên đúng file.</span>
+        <span class="muted" style="font-size:12px">Đăng YouTube có kiếm tiền: tạo bài khi đang dùng gói Suno trả phí (gói miễn phí không cho dùng thương mại). Nên đọc lại điều khoản Suno hiện hành.</span></div>
+    </div>
+    ${A.chuaCo.length ? `<div class="issues">${A.chuaCo.map(f => `<div class="i w">Cảnh dùng <code>${esc(f)}</code> nhưng bảng nhạc chưa có prompt cho file này.</div>`).join('')}</div>` : ''}
+    <h3>Nhạc nền và bài hát</h3>
+    <div style="display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(420px,100%),1fr))">${A.nhac.map(n => `<div class="card" style="gap:6px;align-content:start">
+      <div class="row" style="justify-content:space-between"><b>${esc(n.ten)} <code>${esc(tenFile(n.file))}</code></b>
+        <span>${n.khong_loi ? '<span class="tag">Không lời · bật Instrumental</span>' : '<span class="pill red">Có lời</span>'} <span class="tag">cần ≥ ${n.can_s} s</span></span></div>
+      <div class="muted" style="font-size:13px">${n.dung_o.map(d => `<b>${d.canh}</b> ${XP.tc(d.vao, false)}–${XP.tc(d.ra, false)} · ${Math.round(d.dai)} s · ${d.db} dB`).join('<br>') || 'Chưa gắn vào cảnh nào'}</div>
+      <div style="font-size:13.5px">${esc(n.dung || '')}</div>
+      <div class="muted" style="font-size:12px;font-weight:600">STYLE OF MUSIC</div><div class="prompt">${esc(n.style)}</div>
+      ${!n.khong_loi && n.loi ? `<div class="muted" style="font-size:12px;font-weight:600">LYRICS</div><div class="prompt" style="max-height:260px;overflow:auto">${esc(n.loi)}</div>` : ''}
+      <div class="row"><button class="small" data-copy="${esc(n.style)}">Chép Style</button>${!n.khong_loi && n.loi ? `<button class="small" data-copy="${esc(n.loi)}">Chép Lyrics</button>` : ''}<button class="small" data-copy="${esc(n.ten)}">Chép tên bài</button></div>
+    </div>`).join('')}</div>
+    <div class="cot2">
+      <div class="cot"><h3>Nền âm từng cảnh</h3>
+        <div class="scroll" style="background:var(--paper)"><table class="gon"><thead><tr><th>Cảnh</th><th class="num">Mốc</th><th>Âm</th><th>File</th><th class="num">dB</th><th>Tìm</th></tr></thead><tbody>
+        ${A.nen.map(x => `<tr><td>${x.canh}</td><td class="num">${XP.tc(x.vao, false)}–${XP.tc(x.ra, false)}</td><td>${esc(x.mo_ta)}</td><td><code>${esc(tenFile(x.file))}</code></td><td class="num">${x.am_luong_db ?? -22}</td><td>${tim(x.tim)}</td></tr>`).join('')}
+        </tbody></table></div>
+        <p class="muted" style="font-size:12.5px;margin:0">Nền âm đặt rất nhỏ (−20 đến −24 dB), lặp suốt cảnh, mờ vào/ra 1 s ở đầu và cuối cảnh.</p></div>
+      <div class="cot"><h3>Hiệu ứng theo mốc giờ</h3>
+        <div class="scroll" style="background:var(--paper);max-height:620px;overflow:auto"><table class="gon"><thead><tr><th class="num">Mốc</th><th>Shot</th><th>Hiệu ứng</th><th>File</th><th class="num">dB</th><th>Tìm</th></tr></thead><tbody>
+        ${A.sfx.map(x => `<tr><td class="num">${XP.tc(x.t)}</td><td>${x.shot}</td><td>${esc(x.ten)}</td><td><code>${esc(tenFile(x.file))}</code></td><td class="num">${x.db}</td><td>${tim(x.tim)}</td></tr>`).join('')}
+        </tbody></table></div>
+        <p class="muted" style="font-size:12.5px;margin:0">Pixabay: được dùng thương mại, không cần ghi nguồn. Freesound: link đã lọc sẵn CC0; nếu lấy file giấy phép khác thì ghi nguồn ở credit.</p></div>
+    </div>`;
+  body.querySelector('[data-x="md"]').onclick = () => taiFile(`${tap.ma_tap}_am_thanh.md`, amThanhMd(tap, A), 'text/markdown');
+  body.querySelector('[data-x="csv"]').onclick = () => taiFile(`${tap.ma_tap}_hieu_ung.csv`, amThanhCsv(A), 'text/csv');
 }
 
 function tabDoc(tap, r, body) {

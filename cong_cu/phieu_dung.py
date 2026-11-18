@@ -123,6 +123,9 @@ def main():
             if c.get("nhac"):
                 nh = c["nhac"]
                 D.append(f"_Nhạc:_ `{nh.get('file', '?')}` {nh.get('ghi_chu', '')} · âm lượng {nh.get('am_luong_db', -18)} dB, ducking dưới giọng ≈−16 dB  ")
+            if c.get("nen_am"):
+                na = c["nen_am"]
+                D.append(f"_Nền âm:_ `{na.get('file', '?')}` {na.get('mo_ta', '')} · {na.get('am_luong_db', -22)} dB, lặp suốt cảnh, mờ vào/ra 1 s  ")
             D.append("")
         if s.get("_ao"):
             D.append(f"**[{tc(s['bat_dau'])}] {'Màn đen' if s['loai'] == 'den' else 'Màn trắng'} {s['dai']:.1f} s** – "

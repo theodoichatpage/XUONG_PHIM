@@ -300,7 +300,21 @@
       "gió",
       "nước vỗ cọc"
      ],
-     "ma": "C01_S01"
+     "ma": "C01_S01",
+     "sfx": [
+      {
+       "ten": "gió",
+       "file": "am_thanh/sfx/gio.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "nước vỗ cọc",
+       "file": "am_thanh/sfx/nuoc_vo_coc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 5,
@@ -330,7 +344,15 @@
      "am_thanh": [
       "mái chèo khua nước"
      ],
-     "ma": "C01_S03"
+     "ma": "C01_S03",
+     "sfx": [
+      {
+       "ten": "mái chèo khua nước",
+       "file": "am_thanh/sfx/mai_cheo_khua_nuoc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3.5,
@@ -472,9 +494,23 @@
      "am_thanh": [
       "hit lớn + chuông đồng ngân"
      ],
-     "ma": "C01_S11"
+     "ma": "C01_S11",
+     "sfx": [
+      {
+       "ten": "hit lớn + chuông đồng ngân",
+       "file": "am_thanh/sfx/hit_lon_chuong_dong_ngan.wav",
+       "luc": 0,
+       "db": -2
+      }
+     ]
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/song_hoang_hon.wav",
+    "mo_ta": "gió sông, nước vỗ cọc, quạ xa",
+    "tim": "river wind ambience water lapping",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C02",
@@ -520,7 +556,21 @@
       "tiếng ho",
       "đám đông thì thầm"
      ],
-     "ma": "C02_S01"
+     "ma": "C02_S01",
+     "sfx": [
+      {
+       "ten": "tiếng ho",
+       "file": "am_thanh/sfx/tieng_ho.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "đám đông thì thầm",
+       "file": "am_thanh/sfx/dam_dong_thi_tham.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3.5,
@@ -664,7 +714,15 @@
      "am_thanh": [
       "cộp"
      ],
-     "ma": "C02_S08"
+     "ma": "C02_S08",
+     "sfx": [
+      {
+       "ten": "cộp",
+       "file": "am_thanh/sfx/cop.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 4,
@@ -736,7 +794,18 @@
       "TT",
       "DAO"
      ],
-     "ma": "C02_S12"
+     "ma": "C02_S12",
+     "am_thanh": [
+      "bước chân trên bùn"
+     ],
+     "sfx": [
+      {
+       "ten": "bước chân trên bùn",
+       "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 6.3,
@@ -790,7 +859,15 @@
      "am_thanh": [
       "bạc va lách cách"
      ],
-     "ma": "C02_S15"
+     "ma": "C02_S15",
+     "sfx": [
+      {
+       "ten": "bạc va lách cách",
+       "file": "am_thanh/sfx/bac_va_lach_cach.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 12.3,
@@ -844,7 +921,18 @@
        "luc": 0.7
       }
      ],
-     "ma": "C02_S18"
+     "ma": "C02_S18",
+     "am_thanh": [
+      "nước vỗ"
+     ],
+     "sfx": [
+      {
+       "ten": "nước vỗ",
+       "file": "am_thanh/sfx/nuoc_vo.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2,
@@ -872,7 +960,13 @@
      ],
      "ma": "C02_S20"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/trai_quan_dem.wav",
+    "mo_ta": "lửa trại lách tách, tiếng ho rải rác, ngựa xa",
+    "tim": "army camp night campfire crowd ambience",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C03",
@@ -916,7 +1010,15 @@
      "am_thanh": [
       "quang gánh kẽo kẹt"
      ],
-     "ma": "C03_S01"
+     "ma": "C03_S01",
+     "sfx": [
+      {
+       "ten": "quang gánh kẽo kẹt",
+       "file": "am_thanh/sfx/quang_ganh_keo_ket.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3.5,
@@ -1061,7 +1163,18 @@
      "nhan_vat": [
       "TS"
      ],
-     "ma": "C03_S08"
+     "ma": "C03_S08",
+     "am_thanh": [
+      "bước chân trên bùn"
+     ],
+     "sfx": [
+      {
+       "ten": "bước chân trên bùn",
+       "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 9.3,
@@ -1124,7 +1237,13 @@
      ],
      "ma": "C03_S11"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/de_dem.wav",
+    "mo_ta": "dế, gió nhẹ, đuốc lách tách",
+    "tim": "night crickets wind torch crackle",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C04",
@@ -1158,7 +1277,21 @@
       "tiếng quát",
       "nước bắn"
      ],
-     "ma": "C04_S01"
+     "ma": "C04_S01",
+     "sfx": [
+      {
+       "ten": "tiếng quát",
+       "file": "am_thanh/sfx/tieng_quat.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "nước bắn",
+       "file": "am_thanh/sfx/nuoc_ban.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2,
@@ -1172,7 +1305,15 @@
      "am_thanh": [
       "bạc lăn"
      ],
-     "ma": "C04_S02"
+     "ma": "C04_S02",
+     "sfx": [
+      {
+       "ten": "bạc lăn",
+       "file": "am_thanh/sfx/bac_lan.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3,
@@ -1384,7 +1525,13 @@
      ],
      "ma": "C04_S14"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/ben_chay.wav",
+    "mo_ta": "nước vỗ, gỗ cháy âm ỉ",
+    "tim": "smoldering embers water lapping",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C05",
@@ -1517,7 +1664,15 @@
      "am_thanh": [
       "nước vỗ"
      ],
-     "ma": "C05_S06"
+     "ma": "C05_S06",
+     "sfx": [
+      {
+       "ten": "nước vỗ",
+       "file": "am_thanh/sfx/nuoc_vo.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 6.7,
@@ -1595,7 +1750,15 @@
      "am_thanh": [
       "lửa reo"
      ],
-     "ma": "C06_S01"
+     "ma": "C06_S01",
+     "sfx": [
+      {
+       "ten": "lửa reo",
+       "file": "am_thanh/sfx/lua_reo.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3,
@@ -1679,7 +1842,21 @@
       "gỗ gãy",
       "nước"
      ],
-     "ma": "C06_S07"
+     "ma": "C06_S07",
+     "sfx": [
+      {
+       "ten": "gỗ gãy",
+       "file": "am_thanh/sfx/go_gay.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "nước",
+       "file": "am_thanh/sfx/nuoc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3,
@@ -1721,7 +1898,13 @@
      "do": true,
      "ma": "C06_S10"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/lua_lon.wav",
+    "mo_ta": "lửa lớn reo (đen trắng)",
+    "tim": "large fire roaring",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C07",
@@ -1765,7 +1948,21 @@
       "bước chân trên bùn",
       "tiếng ho bị nén"
      ],
-     "ma": "C07_S01"
+     "ma": "C07_S01",
+     "sfx": [
+      {
+       "ten": "bước chân trên bùn",
+       "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "tiếng ho bị nén",
+       "file": "am_thanh/sfx/tieng_ho_bi_nen.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3.5,
@@ -1831,7 +2028,18 @@
        "cam_xuc": "khinh"
       }
      ],
-     "ma": "C07_S04"
+     "ma": "C07_S04",
+     "am_thanh": [
+      "mũ trụ"
+     ],
+     "sfx": [
+      {
+       "ten": "mũ trụ",
+       "file": "am_thanh/sfx/mu_tru.wav",
+       "luc": 0.3,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 6.3,
@@ -1929,9 +2137,26 @@
      "noi_dung": "Xa xa, lều Quách Quỳ vẫn sáng đèn; không ai báo",
      "prompt": "extreme wide shot, far away a large command tent still lit, quiet, unaware",
      "nhan_vat": [],
-     "ma": "C07_S11"
+     "ma": "C07_S11",
+     "am_thanh": [
+      "nước bắn"
+     ],
+     "sfx": [
+      {
+       "ten": "nước bắn",
+       "file": "am_thanh/sfx/nuoc_ban.wav",
+       "luc": 0.5,
+       "db": -6
+      }
+     ]
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/bai_song_dem.wav",
+    "mo_ta": "ếch nhái, nước chảy, côn trùng đêm",
+    "tim": "night river frogs insects ambience",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C08",
@@ -1945,7 +2170,7 @@
     "file": "am_thanh/nhac/doi_chat.mp3",
     "am_luong_db": -18,
     "ghi_chu": "gần như im; một nốt đàn bầu khi Kiên nói “Là ta”",
-    "luc": 30
+    "luc": 28.6
    },
    "boi_canh": {
     "thoi_diem": "canh ba",
@@ -1968,7 +2193,15 @@
      "am_thanh": [
       "cửa gỗ"
      ],
-     "ma": "C08_S01"
+     "ma": "C08_S01",
+     "sfx": [
+      {
+       "ten": "cửa gỗ",
+       "file": "am_thanh/sfx/cua_go.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 5.8,
@@ -2083,7 +2316,18 @@
        "cam_xuc": "thẳng, nặng"
       }
      ],
-     "ma": "C08_S07"
+     "ma": "C08_S07",
+     "am_thanh": [
+      "lửa nổ lách tách"
+     ],
+     "sfx": [
+      {
+       "ten": "lửa nổ lách tách",
+       "file": "am_thanh/sfx/lua_no_lach_tach.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 9.3,
@@ -2286,9 +2530,30 @@
      ],
      "am_thanh": [
       "dây đứt",
-      "cửa bật"
+      "cửa bật",
+      "dao cắt dây"
      ],
-     "ma": "C08_S18"
+     "ma": "C08_S18",
+     "sfx": [
+      {
+       "ten": "dây đứt",
+       "file": "am_thanh/sfx/day_dut.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "cửa bật",
+       "file": "am_thanh/sfx/cua_bat.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "dao cắt dây",
+       "file": "am_thanh/sfx/dao_cat_day.wav",
+       "luc": 0.6,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 5.9,
@@ -2311,7 +2576,13 @@
      ],
      "ma": "C08_S19"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/nha_do.wav",
+    "mo_ta": "đèn dầu lép bép, nước vỗ dưới sàn gỗ",
+    "tim": "boathouse interior water under floor creak",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C09",
@@ -2326,7 +2597,7 @@
     "file": "am_thanh/nhac/con_ngua.mp3",
     "am_luong_db": -9,
     "ghi_chu": "vào khi đuốc bừng sáng, dừng hẳn khi Hàn Tuấn bị cuốn đi; vào lại nhỏ khi đò mụ Đào xuất hiện",
-    "luc": 12
+    "luc": 19.6
    },
    "boi_canh": {
     "thoi_diem": "canh tư",
@@ -2348,7 +2619,21 @@
       "nước chảy",
       "nhịp thở"
      ],
-     "ma": "C09_S01"
+     "ma": "C09_S01",
+     "sfx": [
+      {
+       "ten": "nước chảy",
+       "file": "am_thanh/sfx/nuoc_chay.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "nhịp thở",
+       "file": "am_thanh/sfx/nhip_tho.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 4,
@@ -2408,7 +2693,15 @@
      "am_thanh": [
       "nước xoáy"
      ],
-     "ma": "C09_S05"
+     "ma": "C09_S05",
+     "sfx": [
+      {
+       "ten": "nước xoáy",
+       "file": "am_thanh/sfx/nuoc_xoay.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2,
@@ -2419,7 +2712,18 @@
      "noi_dung": "Lính Tống chìm, giáo rơi",
      "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor sinking, spears falling",
      "nhan_vat": [],
-     "ma": "C09_S06"
+     "ma": "C09_S06",
+     "am_thanh": [
+      "người ngã xuống nước"
+     ],
+     "sfx": [
+      {
+       "ten": "người ngã xuống nước",
+       "file": "am_thanh/sfx/nguoi_nga_xuong_nuoc.wav",
+       "luc": 0.4,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3.6,
@@ -2465,7 +2769,15 @@
      "am_thanh": [
       "lửa bùng"
      ],
-     "ma": "C09_S09"
+     "ma": "C09_S09",
+     "sfx": [
+      {
+       "ten": "lửa bùng",
+       "file": "am_thanh/sfx/lua_bung.wav",
+       "luc": 0,
+       "db": -4
+      }
+     ]
     },
     {
      "dai": 1.8,
@@ -2500,7 +2812,15 @@
      "am_thanh": [
       "tên rít"
      ],
-     "ma": "C09_S11"
+     "ma": "C09_S11",
+     "sfx": [
+      {
+       "ten": "tên rít",
+       "file": "am_thanh/sfx/ten_rit.wav",
+       "luc": 0,
+       "db": -4
+      }
+     ]
     },
     {
      "dai": 1.5,
@@ -2511,7 +2831,18 @@
      "noi_dung": "Khiên Tống cắm đầy tên",
      "prompt": "medium shot, Song dynasty Chinese soldiers in lamellar armor raising shields studded with arrows",
      "nhan_vat": [],
-     "ma": "C09_S12"
+     "ma": "C09_S12",
+     "am_thanh": [
+      "tên cắm khiên"
+     ],
+     "sfx": [
+      {
+       "ten": "tên cắm khiên",
+       "file": "am_thanh/sfx/ten_cam_khien.wav",
+       "luc": 0.2,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2,
@@ -2522,7 +2853,18 @@
      "noi_dung": "Bè Tống lật trong xoáy",
      "prompt": "wide shot, log rafts capsizing in a whirlpool",
      "nhan_vat": [],
-     "ma": "C09_S13"
+     "ma": "C09_S13",
+     "am_thanh": [
+      "bè lật"
+     ],
+     "sfx": [
+      {
+       "ten": "bè lật",
+       "file": "am_thanh/sfx/be_lat.wav",
+       "luc": 0.3,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 1.5,
@@ -2535,7 +2877,18 @@
      "nhan_vat": [
       "KIEN"
      ],
-     "ma": "C09_S14"
+     "ma": "C09_S14",
+     "am_thanh": [
+      "kiếm rút"
+     ],
+     "sfx": [
+      {
+       "ten": "kiếm rút",
+       "file": "am_thanh/sfx/kiem_rut.wav",
+       "luc": 0.4,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 1.5,
@@ -2609,7 +2962,15 @@
      "am_thanh": [
       "kim loại"
      ],
-     "ma": "C09_S19"
+     "ma": "C09_S19",
+     "sfx": [
+      {
+       "ten": "kim loại",
+       "file": "am_thanh/sfx/kim_loai.wav",
+       "luc": 0,
+       "db": -3
+      }
+     ]
     },
     {
      "dai": 1.2,
@@ -2622,7 +2983,18 @@
      "nhan_vat": [
       "KIEN"
      ],
-     "ma": "C09_S20"
+     "ma": "C09_S20",
+     "am_thanh": [
+      "bước chân trên bùn"
+     ],
+     "sfx": [
+      {
+       "ten": "bước chân trên bùn",
+       "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+       "luc": 0.1,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 1.0,
@@ -2635,7 +3007,18 @@
      "nhan_vat": [
       "HT"
      ],
-     "ma": "C09_S21"
+     "ma": "C09_S21",
+     "am_thanh": [
+      "kim loại"
+     ],
+     "sfx": [
+      {
+       "ten": "kim loại",
+       "file": "am_thanh/sfx/kim_loai.wav",
+       "luc": 0.6,
+       "db": -3
+      }
+     ]
     },
     {
      "dai": 1.5,
@@ -2649,7 +3032,25 @@
       "KIEN",
       "HT"
      ],
-     "ma": "C09_S22"
+     "ma": "C09_S22",
+     "am_thanh": [
+      "kim loại",
+      "nước bắn"
+     ],
+     "sfx": [
+      {
+       "ten": "kim loại",
+       "file": "am_thanh/sfx/kim_loai.wav",
+       "luc": 0.3,
+       "db": -3
+      },
+      {
+       "ten": "nước bắn",
+       "file": "am_thanh/sfx/nuoc_ban.wav",
+       "luc": 1.0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2,
@@ -2665,7 +3066,15 @@
      "am_thanh": [
       "nước nuốt"
      ],
-     "ma": "C09_S23"
+     "ma": "C09_S23",
+     "sfx": [
+      {
+       "ten": "nước nuốt",
+       "file": "am_thanh/sfx/nuoc_nuot.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2.5,
@@ -2703,7 +3112,18 @@
       "DAO",
       "LT"
      ],
-     "ma": "C09_S26"
+     "ma": "C09_S26",
+     "am_thanh": [
+      "nước bắn"
+     ],
+     "sfx": [
+      {
+       "ten": "nước bắn",
+       "file": "am_thanh/sfx/nuoc_ban.wav",
+       "luc": 0.3,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2.5,
@@ -2782,9 +3202,26 @@
      "noi_dung": "Cồn Ngựa: đuốc, bè vỡ trôi, quân Tống rút về bờ bắc",
      "prompt": "extreme wide high-angle shot, torches along the bank, broken rafts drifting, the remnants of an army retreating north across the river",
      "nhan_vat": [],
-     "ma": "C09_S31"
+     "ma": "C09_S31",
+     "am_thanh": [
+      "trống trận xa"
+     ],
+     "sfx": [
+      {
+       "ten": "trống trận xa",
+       "file": "am_thanh/sfx/trong_tran_xa.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/nuoc_xiet.wav",
+    "mo_ta": "nước chảy xiết",
+    "tim": "fast river rapids water",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C10",
@@ -2994,7 +3431,13 @@
      ],
      "ma": "C10_S10"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/de_khuya.wav",
+    "mo_ta": "gió khuya, đuốc tàn",
+    "tim": "late night wind quiet",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C11",
@@ -3033,7 +3476,18 @@
        "dai": 3.5
       }
      ],
-     "ma": "C11_S01"
+     "ma": "C11_S01",
+     "am_thanh": [
+      "bước chân trên bùn"
+     ],
+     "sfx": [
+      {
+       "ten": "bước chân trên bùn",
+       "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3,
@@ -3158,7 +3612,18 @@
      "nhan_vat": [
       "SU"
      ],
-     "ma": "C11_S09"
+     "ma": "C11_S09",
+     "am_thanh": [
+      "mái chèo khua nước"
+     ],
+     "sfx": [
+      {
+       "ten": "mái chèo khua nước",
+       "file": "am_thanh/sfx/mai_cheo_khua_nuoc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 9.9,
@@ -3227,9 +3692,23 @@
      "am_thanh": [
       "trống thu quân"
      ],
-     "ma": "C11_S13"
+     "ma": "C11_S13",
+     "sfx": [
+      {
+       "ten": "trống thu quân",
+       "file": "am_thanh/sfx/trong_thu_quan.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/trai_sang.wav",
+    "mo_ta": "gió sớm, quạ, tiếng ho",
+    "tim": "dawn wind crows distant",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C12",
@@ -3275,7 +3754,21 @@
       "chim sớm",
       "nước lặng"
      ],
-     "ma": "C12_S01"
+     "ma": "C12_S01",
+     "sfx": [
+      {
+       "ten": "chim sớm",
+       "file": "am_thanh/sfx/chim_som.wav",
+       "luc": 0,
+       "db": -6
+      },
+      {
+       "ten": "nước lặng",
+       "file": "am_thanh/sfx/nuoc_lang.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 3,
@@ -3339,7 +3832,15 @@
      "am_thanh": [
       "bạc rơi xuống nước"
      ],
-     "ma": "C12_S05"
+     "ma": "C12_S05",
+     "sfx": [
+      {
+       "ten": "bạc rơi xuống nước",
+       "file": "am_thanh/sfx/bac_roi_xuong_nuoc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 2.5,
@@ -3479,7 +3980,18 @@
       "DAO"
      ],
      "do": true,
-     "ma": "C12_S13"
+     "ma": "C12_S13",
+     "am_thanh": [
+      "mái chèo khua nước"
+     ],
+     "sfx": [
+      {
+       "ten": "mái chèo khua nước",
+       "file": "am_thanh/sfx/mai_cheo_khua_nuoc.wav",
+       "luc": 1.2,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 4,
@@ -3507,7 +4019,13 @@
      ],
      "ma": "C12_S15"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/rang_sang.wav",
+    "mo_ta": "chim sớm, nước lặng",
+    "tim": "dawn birds calm water",
+    "am_luong_db": -22
+   }
   },
   {
    "ma": "C13",
@@ -3629,7 +4147,18 @@
        "dai": 3.5
       }
      ],
-     "ma": "C14_S01"
+     "ma": "C14_S01",
+     "am_thanh": [
+      "mái chèo khua nước"
+     ],
+     "sfx": [
+      {
+       "ten": "mái chèo khua nước",
+       "file": "am_thanh/sfx/mai_cheo_khua_nuoc.wav",
+       "luc": 0,
+       "db": -6
+      }
+     ]
     },
     {
      "dai": 70,
@@ -3685,7 +4214,262 @@
      ],
      "ma": "C14_S03"
     }
-   ]
+   ],
+   "nen_am": {
+    "file": "am_thanh/nen/song_sang.wav",
+    "mo_ta": "nước lặng, chim xa",
+    "tim": "calm river morning birds",
+    "am_luong_db": -22
+   }
   }
- ]
+ ],
+ "bang_nhac": [
+  {
+   "file": "am_thanh/nhac/drone_tram.mp3",
+   "ten": "Sông chiều",
+   "khong_loi": true,
+   "style": "dark cinematic ambient drone, low cello and deep sub bass, distant wind texture, no melody, no drums, slow and tense, no vocals",
+   "dung": "Mở phim. Không giai điệu, chỉ là tấm nền tối. Cắt ngay trước màn trắng của tựa."
+  },
+  {
+   "file": "am_thanh/nhac/trai_tong.mp3",
+   "ten": "Trại giặc",
+   "khong_loi": true,
+   "style": "cold sparse orchestral underscore, low strings ostinato, muted gong hits, bowed erhu, 60 BPM, ominous and sickly, no vocals",
+   "dung": "Tuyến phía Tống. Hạ nhỏ dưới thoại; để tiếng ho của lính nghe rõ."
+  },
+  {
+   "file": "am_thanh/nhac/day_tram.mp3",
+   "ten": "Trên đê",
+   "khong_loi": true,
+   "style": "slow solemn low strings, warm cello lines, subtle dan bau, steady pulse 56 BPM, dignified Vietnamese historical drama underscore, no vocals",
+   "dung": "Câu chủ đề. Giữ nhỏ, không cao trào."
+  },
+  {
+   "file": "am_thanh/nhac/thuyet_minh.mp3",
+   "ten": "Hai bờ",
+   "khong_loi": true,
+   "style": "documentary narration underscore, steady ostinato on plucked dan tranh and low strings, 72 BPM, neutral and focused, no vocals",
+   "dung": "Bản đồ + lời dẫn. Nhịp đều để người xem nghe rõ lời."
+  },
+  {
+   "file": "am_thanh/nhac/sao_buon.mp3",
+   "ten": "Đêm đốt bến",
+   "khong_loi": true,
+   "style": "solo Vietnamese bamboo flute, mournful, slow rubato, long reverb, sparse, no percussion, no vocals",
+   "dung": "Hồi tưởng đen trắng. Dừng hẳn đúng lúc cột buồm đổ (C06_S07)."
+  },
+  {
+   "file": "am_thanh/nhac/vuot_lenh.mp3",
+   "ten": "Vượt lệnh",
+   "khong_loi": true,
+   "style": "tense military underscore, soft steady low war drums, slowly rising strings, 80 BPM, stealthy night, building suspense, no vocals",
+   "dung": "Căng dần đến cuối cảnh rồi cắt cụt sang nhà đò."
+  },
+  {
+   "file": "am_thanh/nhac/doi_chat.mp3",
+   "ten": "Đối chất",
+   "khong_loi": true,
+   "style": "near silence, very sparse dark ambient pad, one sustained dan bau note with slow vibrato, intimate, minimal, no drums, no vocals",
+   "dung": "Vào lúc Kiên nói “Là ta” (C08_S07). Suno hay chơi dày: chọn bản thưa nhất, chỉ lấy 20–40 giây đầu."
+  },
+  {
+   "file": "am_thanh/nhac/con_ngua.mp3",
+   "ten": "Cồn Ngựa",
+   "khong_loi": true,
+   "style": "epic battle music, pounding war drums, fast staccato strings, brass stabs, Asian percussion, 132 BPM, chaotic night battle, abrupt ending, no vocals",
+   "dung": "Vào khi đuốc bừng sáng (C09_S09). Cắt hẳn khi Hàn Tuấn bị cuốn đi (C09_S23); vào lại nhỏ khi đò mụ Đào xuất hiện."
+  },
+  {
+   "file": "am_thanh/nhac/dien_van.mp3",
+   "ten": "Người dưới bến",
+   "khong_loi": true,
+   "style": "slow rising strings, grave but warm, gentle dan tranh arpeggios, 60 BPM, swelling then fading to silence, no vocals",
+   "dung": "Tắt hẳn trước tiếng ngâm thơ thần (C10_S07)."
+  },
+  {
+   "file": "am_thanh/nhac/chu_de_nho.mp3",
+   "ten": "Bến (không lời)",
+   "khong_loi": true,
+   "style": "solo dan tranh and bamboo flute, gentle melancholic Vietnamese folk melody, slow 68 BPM, intimate, no vocals",
+   "dung": "Phiên bản không lời của bài “Bến”. Cách hay nhất: làm bài “Bến” trước, rồi trong Suno chọn Cover / Instrumental để giữ cùng giai điệu."
+  },
+  {
+   "file": "am_thanh/nhac/lich_su.mp3",
+   "ten": "Sử ghi",
+   "khong_loi": true,
+   "style": "very quiet solo dan bau over a soft drone, contemplative historical epilogue, slow, sparse, no vocals",
+   "dung": "Dưới lời dẫn tranh cuộn, rất nhỏ."
+  },
+  {
+   "file": "am_thanh/nhac/chu_de.mp3",
+   "ten": "Bến",
+   "khong_loi": false,
+   "style": "Vietnamese folk ballad, husky female alto vocal, dan tranh, bamboo flute, soft frame drum, cello, slow 68 BPM, cinematic, melancholic and proud",
+   "loi": "[Intro]\n[sáo trúc]\n\n[Verse 1]\nChiều buông trên bến Như Nguyệt\nCon đò muối nhỏ chở nắng qua sông\nHai mươi năm sóng quen tay chèo\nKhúc nào sâu, khúc nào nông\n\n[Chorus]\nSông ơi, đừng hỏi tôi đứng bên nào\nTôi chỉ giữ một bến nước nhà\nLửa đã cháy cánh buồm năm ấy\nMà đường qua sông, tôi chẳng bán cho ai\n\n[Verse 2]\nĐêm không trăng, đuốc hai bờ cháy\nNgười lính trẻ chới với giữa dòng\nBàn tay muối kéo người lên khỏi nước\nDưới sông sâu ai cũng là người\n\n[Chorus]\nSông ơi, đừng hỏi tôi đứng bên nào\nTôi chỉ giữ một bến nước nhà\nLửa đã cháy cánh buồm năm ấy\nMà đường qua sông, tôi chẳng bán cho ai\n\n[Outro]\nSử ghi tên người cầm gươm giáo\nKhông ghi tên người chèo đò\nMảnh buồm đỏ buộc đầu mũi\nCon đò đi... về bến nào...\n[End]",
+   "dung": "Bài hát chủ đề, lời viết mới cho tập này. Vào ở C14 (con đò buộc vải đỏ) và chạy hết credit. Nếu dài hơn credit thì mờ dần ở cuối."
+  }
+ ],
+ "kho_sfx": {
+  "bè lật": {
+   "file": "am_thanh/sfx/be_lat.wav",
+   "tim": "wood raft capsize splash"
+  },
+  "bước chân trên bùn": {
+   "file": "am_thanh/sfx/buoc_chan_tren_bun.wav",
+   "tim": "footsteps mud"
+  },
+  "bạc lăn": {
+   "file": "am_thanh/sfx/bac_lan.wav",
+   "tim": "coins rolling wood"
+  },
+  "bạc rơi xuống nước": {
+   "file": "am_thanh/sfx/bac_roi_xuong_nuoc.wav",
+   "tim": "coins drop water"
+  },
+  "bạc va lách cách": {
+   "file": "am_thanh/sfx/bac_va_lach_cach.wav",
+   "tim": "coins pouch drop"
+  },
+  "chim sớm": {
+   "file": "am_thanh/sfx/chim_som.wav",
+   "tim": "morning birds"
+  },
+  "cộp": {
+   "file": "am_thanh/sfx/cop.wav",
+   "tim": "wooden table slam"
+  },
+  "cửa bật": {
+   "file": "am_thanh/sfx/cua_bat.wav",
+   "tim": "door slam open"
+  },
+  "cửa gỗ": {
+   "file": "am_thanh/sfx/cua_go.wav",
+   "tim": "wooden door creak open"
+  },
+  "dao cắt dây": {
+   "file": "am_thanh/sfx/dao_cat_day.wav",
+   "tim": "knife cut rope"
+  },
+  "dây đứt": {
+   "file": "am_thanh/sfx/day_dut.wav",
+   "tim": "rope snap"
+  },
+  "gió": {
+   "file": "am_thanh/sfx/gio.wav",
+   "tim": "wind gust"
+  },
+  "gỗ gãy": {
+   "file": "am_thanh/sfx/go_gay.wav",
+   "tim": "wood crack break"
+  },
+  "hit lớn + chuông đồng ngân": {
+   "file": "am_thanh/sfx/hit_lon_chuong_dong_ngan.wav",
+   "tim": "cinematic hit bronze bell"
+  },
+  "kim loại": {
+   "file": "am_thanh/sfx/kim_loai.wav",
+   "tim": "sword clash"
+  },
+  "kiếm rút": {
+   "file": "am_thanh/sfx/kiem_rut.wav",
+   "tim": "sword unsheath"
+  },
+  "lửa bùng": {
+   "file": "am_thanh/sfx/lua_bung.wav",
+   "tim": "torch ignite whoosh"
+  },
+  "lửa nổ lách tách": {
+   "file": "am_thanh/sfx/lua_no_lach_tach.wav",
+   "tim": "fire crackle close"
+  },
+  "lửa reo": {
+   "file": "am_thanh/sfx/lua_reo.wav",
+   "tim": "fire whoosh"
+  },
+  "mái chèo khua nước": {
+   "file": "am_thanh/sfx/mai_cheo_khua_nuoc.wav",
+   "tim": "oar rowing splash"
+  },
+  "mũ trụ": {
+   "file": "am_thanh/sfx/mu_tru.wav",
+   "tim": "armor rattle"
+  },
+  "người ngã xuống nước": {
+   "file": "am_thanh/sfx/nguoi_nga_xuong_nuoc.wav",
+   "tim": "body fall water splash"
+  },
+  "nhịp thở": {
+   "file": "am_thanh/sfx/nhip_tho.wav",
+   "tim": "heavy breathing"
+  },
+  "nước": {
+   "file": "am_thanh/sfx/nuoc.wav",
+   "tim": "splash body water"
+  },
+  "nước bắn": {
+   "file": "am_thanh/sfx/nuoc_ban.wav",
+   "tim": "water splash"
+  },
+  "nước chảy": {
+   "file": "am_thanh/sfx/nuoc_chay.wav",
+   "tim": "river flowing"
+  },
+  "nước lặng": {
+   "file": "am_thanh/sfx/nuoc_lang.wav",
+   "tim": "calm water"
+  },
+  "nước nuốt": {
+   "file": "am_thanh/sfx/nuoc_nuot.wav",
+   "tim": "underwater gulp"
+  },
+  "nước vỗ": {
+   "file": "am_thanh/sfx/nuoc_vo.wav",
+   "tim": "water lapping"
+  },
+  "nước vỗ cọc": {
+   "file": "am_thanh/sfx/nuoc_vo_coc.wav",
+   "tim": "water lapping wooden post"
+  },
+  "nước xoáy": {
+   "file": "am_thanh/sfx/nuoc_xoay.wav",
+   "tim": "whirlpool water"
+  },
+  "quang gánh kẽo kẹt": {
+   "file": "am_thanh/sfx/quang_ganh_keo_ket.wav",
+   "tim": "wood creak carrying pole"
+  },
+  "tiếng ho": {
+   "file": "am_thanh/sfx/tieng_ho.wav",
+   "tim": "cough man"
+  },
+  "tiếng ho bị nén": {
+   "file": "am_thanh/sfx/tieng_ho_bi_nen.wav",
+   "tim": "muffled cough"
+  },
+  "tiếng quát": {
+   "file": "am_thanh/sfx/tieng_quat.wav",
+   "tim": "men shouting"
+  },
+  "trống thu quân": {
+   "file": "am_thanh/sfx/trong_thu_quan.wav",
+   "tim": "war drum slow"
+  },
+  "trống trận xa": {
+   "file": "am_thanh/sfx/trong_tran_xa.wav",
+   "tim": "distant war drums"
+  },
+  "tên cắm khiên": {
+   "file": "am_thanh/sfx/ten_cam_khien.wav",
+   "tim": "arrow impact wood shield"
+  },
+  "tên rít": {
+   "file": "am_thanh/sfx/ten_rit.wav",
+   "tim": "arrows whoosh volley"
+  },
+  "đám đông thì thầm": {
+   "file": "am_thanh/sfx/dam_dong_thi_tham.wav",
+   "tim": "crowd murmur"
+  }
+ }
 }

@@ -34,6 +34,7 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `boi_canh` | `{"thoi_diem": "đêm, mưa", "dia_diem": "…", "anh_sang": "night, heavy rain, torchlight"}`: đưa vào gói ảnh |
 | `ket_thuc` | `{"kieu": "fade_den", "dai": 1.5}` (shot cuối mờ ra, rồi đen 1,5 s) · `{"kieu": "flash_trang", "dai": 0.4}` · `{"kieu": "cat"}` |
 | `nhac` | `{"file": "am_thanh/nhac/x.mp3", "am_luong_db": -12, "luc": 0, "ghi_chu": "…"}` hoặc `null` (cảnh không nhạc) |
+| `nen_am` | `{"file": "am_thanh/nen/x.wav", "mo_ta": "dế, gió", "tim": "night crickets wind", "am_luong_db": -22}` – nền âm lặp suốt cảnh |
 | `khuon` | `{"tham_khao": "dabang", "ten": "Đa Bang – Hồi 2", "canh": 3}`: cảnh này dựng theo cảnh nào của phim tham khảo (trang web hiện liên kết sang) |
 | `shot` | danh sách shot |
 
@@ -60,5 +61,10 @@ Mọi công cụ trong xưởng đều đọc cùng một file `tap/<mã tập>/
 | `thoai` | danh sách | `{"vai": "GAO", "loi": "…", "luc": 0.4, "cam_xuc": "…", "file": "giong/C04_S02_GAO.wav", "tran": false}`. `luc` = giây tính từ đầu shot. `/` ngắt 0,3 s, `//` ngắt 0,8 s. `tran: true` cho phép lời tràn sang shot sau |
 | `chu` | danh sách | `{"kieu": "phuon" \| "the" \| "tua", "dong": ["Tên", "chức danh"], "luc": 0.5, "dai": 5, "vi_tri": "trai" \| "phai"}` |
 | `am_thanh` | danh sách chữ | tiếng môi trường / SFX cần tìm |
-| `sfx` | danh sách | `{"file": "am_thanh/sfx/go_gay.wav", "luc": 1.2, "db": -2}` (có file thì animatic tự trộn) |
+| `sfx` | danh sách | `{"ten": "gỗ gãy", "file": "am_thanh/sfx/go_gay.wav", "luc": 1.2, "db": -2}` (có file thì animatic tự trộn) |
+
+**Âm thanh cấp tập** (tab *Âm thanh* trên web đọc các trường này):
+
+- `bang_nhac`: mỗi đoạn nhạc một mục `{"file", "ten", "khong_loi": true|false, "style": "prompt Style of Music cho Suno (tiếng Anh)", "loi": "lời bài hát có [Verse]/[Chorus] (chỉ khi khong_loi=false)", "dung": "cách dùng khi dựng"}`. `file` khớp với `nhac.file` của cảnh; web tự tính mốc vào/ra và độ dài cần.
+- `kho_sfx`: `{"tên hiệu ứng": {"file": "am_thanh/sfx/x.wav", "tim": "từ khóa tiếng Anh để tìm trên Pixabay/Freesound"}}`.
 | `ghi_chu` | | lưu ý dựng |
