@@ -78,6 +78,74 @@ async function trangChu() {
         <p class="muted" style="margin:0;font-size:13px">Đa Bang Hồi 2 và Lũy Thầy đặt cạnh nhau theo 12 nhịp; công thức rút ra.</p></a></div>` : ''}`;
 }
 
+// ---------------------------------------------------------------- sửa tại chỗ: nhấn đúp vào chữ để sửa
+const SUA = (p, kieu) => ` data-sua="${p}"${kieu ? ` data-kieu="${kieu}"` : ''} title="Nhấn đúp để sửa"`;
+const pShot = s => `canh.${s.chi_so_canh}.shot.${s.chi_so_shot}`;
+const khoa = k => /^\d+$/.test(k) ? +k : k;
+const layPath = (o, p) => p.split('.').reduce((a, k) => a == null ? a : a[khoa(k)], o);
+function ganPath(o, p, v) { const ks = p.split('.'), last = ks.pop(); (ks.length ? layPath(o, ks.join('.')) : o)[khoa(last)] = v; }
+
+function batSuaTaiCho(tap, ma, tab) {
+  APP.ondblclick = e => {
+    const el = e.target.closest('[data-sua]');
+    if (!el || el.querySelector('textarea.sua')) return;
+    e.preventDefault();
+    window.getSelection()?.removeAllRanges();
+    const p = el.dataset.sua, pipe = el.dataset.kieu === 'pipe';
+    const cu = layPath(tap, p);
+    const goc = pipe ? (cu || []).join(' | ') : String(cu ?? '');
+    const html = el.innerHTML;
+    const ta = document.createElement('textarea');
+    ta.className = 'sua'; ta.rows = 1; ta.value = goc;
+    el.innerHTML = ''; el.appendChild(ta);
+    const cao = () => { ta.style.height = 'auto'; ta.style.height = (ta.scrollHeight + 2) + 'px'; };
+    cao(); ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length);
+    let xong = false;
+    const traLai = () => { xong = true; el.innerHTML = html; };
+    const ghi = async () => {
+      if (xong) return;
+      xong = true;
+      const v = ta.value.trim();
+      if (v === goc.trim()) { el.innerHTML = html; return; }
+      let dich;
+      if (ma === '__nhap__') dich = tap;
+      else {
+        const nhap = LS.get('xp_ban_nhap', null);
+        if (nhap && nhap.ma_tap === tap.ma_tap) {
+          if (JSON.stringify(layPath(nhap, p) ?? null) !== JSON.stringify(cu ?? null)) {
+            el.innerHTML = html;
+            if (confirm('Máy này đã có bản nháp của tập này và chỗ này trong bản nháp đã khác bản đang xem. Mở bản nháp để sửa?')) location.hash = `#/tap/__nhap__/${tab}`;
+            return;
+          }
+          dich = nhap;
+        } else {
+          if (nhap && !confirm(`Trên máy đang có bản nháp “${nhap.tieu_de || nhap.ma_tap}” chưa đưa lên GitHub. Thay bằng bản sửa của ${tap.ma_tap}?`)) { el.innerHTML = html; return; }
+          dich = JSON.parse(JSON.stringify(tap));
+        }
+      }
+      ganPath(dich, p, pipe ? v.split('|').map(x => x.trim()).filter(Boolean) : v);
+      LS.set('xp_ban_nhap', dich);
+      const mo = [...APP.querySelectorAll('details[open][id]')].map(d => d.id);
+      const y = window.scrollY;
+      const ci = (p.match(/^canh\.(\d+)/) || [])[1];
+      if (ma !== '__nhap__') history.replaceState(null, '', `#/tap/__nhap__/${tab}`);
+      await trangTap('__nhap__', tab, tab === 'kich-ban' && ci != null ? dich.canh[+ci]?.ma : undefined);
+      mo.forEach(id => { const d = document.getElementById(id); if (d) d.open = true; });
+      setTimeout(() => window.scrollTo(0, y), 80);
+      toast('Đã lưu vào bản nháp trên máy này');
+    };
+    ta.addEventListener('input', cao);
+    ta.addEventListener('click', ev => ev.preventDefault());   // không đóng/mở cảnh khi bấm trong ô sửa
+    ta.addEventListener('keydown', ev => {
+      ev.stopPropagation();
+      if (ev.key === 'Escape') { ev.preventDefault(); traLai(); }
+      else if (ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); ghi(); }
+    });
+    ta.addEventListener('keyup', ev => ev.preventDefault());
+    ta.addEventListener('blur', ghi);
+  };
+}
+
 // ---------------------------------------------------------------- trang tập
 const TABS = [['tuyen', 'Tuyến phim'], ['kich-ban', 'Kịch bản'], ['phieu-dung', 'Phiếu dựng'], ['goi-anh', 'Gói ảnh'], ['am-thanh', 'Âm thanh'],
   ['doc', 'Kịch bản đọc'], ['kiem-tra', 'Kiểm tra'], ['tien-do', 'Tiến độ']];
@@ -97,12 +165,13 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
           <button data-act="json">Tải tap.json</button><button data-act="csv">Tải bảng shot (Excel)</button>
           <a class="btn" href="#/soan/${encodeURIComponent(ma)}">Sửa trong trình soạn</a>
         </div></div>
-      <h1>${esc(tap.tieu_de)}</h1>
+      <h1${SUA('tieu_de')}>${esc(tap.tieu_de)}</h1>
       <div class="meta"><span>Dài <b>${XP.tc(r.tong, false)}</b></span><span>Shot <b>${r.soShot}</b></span><span>Cắt/phút <b>${r.cpm.toFixed(1)}</b></span>
         <span>Trung vị shot <b>${r.trungVi.toFixed(2)} s</b></span><span>Có lời <b>≈${r.loiPct.toFixed(0)}%</b></span><span>Câu thoại <b>${r.soCau}</b></span>
-        <span>${r.loi.length ? `<span class="pill err">${r.loi.length} lỗi</span>` : '<span class="pill ok">0 lỗi</span>'} ${r.canhBao.length ? `<span class="pill warn">${r.canhBao.length} cảnh báo</span>` : ''}</span></div>
-      ${tap.chu_de ? `<div class="meta"><span>Câu chủ đề: <b style="font-weight:500">${esc(tap.chu_de)}</b></span></div>` : ''}
-      ${tap.giong_phan_de ? `<div class="meta"><span>Giọng phản đề: <b style="font-weight:500">${esc(tap.giong_phan_de)}</b></span></div>` : ''}
+        <span>${r.loi.length ? `<span class="pill err">${r.loi.length} lỗi</span>` : '<span class="pill ok">0 lỗi</span>'} ${r.canhBao.length ? `<span class="pill warn">${r.canhBao.length} cảnh báo</span>` : ''}</span>
+        <span class="muted" style="font-size:13px">Nhấn đúp vào chữ để sửa · Enter lưu · Shift+Enter xuống dòng · Esc bỏ</span></div>
+      ${tap.chu_de ? `<div class="meta"><span>Câu chủ đề: <b style="font-weight:500"${SUA('chu_de')}>${esc(tap.chu_de)}</b></span></div>` : ''}
+      ${tap.giong_phan_de ? `<div class="meta"><span>Giọng phản đề: <b style="font-weight:500"${SUA('giong_phan_de')}>${esc(tap.giong_phan_de)}</b></span></div>` : ''}
       <nav class="tabs" role="tablist">${TABS.map(([k, t]) => `<a class="tab" role="tab" aria-selected="${k === tab}" href="#/tap/${encodeURIComponent(ma)}/${k}">${t}</a>`).join('')}</nav>
       <div id="tabbody"></div>
     </section>`;
@@ -110,6 +179,7 @@ async function trangTap(ma, tab = 'tuyen', canhMo) {
   APP.querySelector('[data-act="csv"]').onclick = () => taiFile(`${tap.ma_tap}_bang_shot.csv`, XP.csv(tap), 'text/csv');
   const body = $('#tabbody');
   ({tuyen: tabTuyen, 'kich-ban': tabKichBan, 'phieu-dung': tabPhieu, 'goi-anh': tabGoiAnh, 'am-thanh': tabAmThanh, doc: tabDoc, 'kiem-tra': tabKiemTra, 'tien-do': tabTienDo}[tab] || tabTuyen)(tap, r, body, ma, canhMo);
+  batSuaTaiCho(tap, ma, tab);
 }
 
 function tabTuyen(tap, r, body, ma) {
@@ -125,9 +195,9 @@ function tabTuyen(tap, r, body, ma) {
     <div class="cot cot-dinh"><h3>Bảng tóm tắt cảnh</h3>
     <div class="scroll" style="background:var(--paper)"><table class="gon"><thead><tr><th>Cảnh</th><th>Tên</th><th>Nhịp</th><th class="num">Vào</th><th class="num">Dài</th><th class="num">Shot</th><th class="num">Cắt/phút</th><th class="num">Từ thoại</th><th>Mục đích</th></tr></thead>
     <tbody>${r.bang.map(b => {
-      const c = tap.canh.find(x => x.ma === b.ma) || {};
-      return `<tr><td><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${b.ma}">${b.ma}</a></td><td>${esc(b.ten)}</td><td><span class="tag">${esc(b.nhip)}</span></td>
-        <td class="num">${XP.tc(b.bd, false)}</td><td class="num">${b.dai.toFixed(0)} s</td><td class="num">${b.ns}</td><td class="num">${(b.cat / b.dai * 60).toFixed(1)}</td><td class="num">${b.tu}</td><td>${esc(c.muc_dich || '')}</td></tr>`;
+      const ci = tap.canh.findIndex(x => x.ma === b.ma), c = tap.canh[ci] || {};
+      return `<tr><td><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${b.ma}">${b.ma}</a></td><td${SUA(`canh.${ci}.ten`)}>${esc(b.ten)}</td><td><span class="tag">${esc(b.nhip)}</span></td>
+        <td class="num">${XP.tc(b.bd, false)}</td><td class="num">${b.dai.toFixed(0)} s</td><td class="num">${b.ns}</td><td class="num">${(b.cat / b.dai * 60).toFixed(1)}</td><td class="num">${b.tu}</td><td${SUA(`canh.${ci}.muc_dich`)}>${esc(c.muc_dich || '')}</td></tr>`;
     }).join('')}</tbody></table></div></div></div>`;
   VE.vuaKhung($('#sv'), w => VE.tuyenPhim(tap, null, cm => {
     const card = document.getElementById(`tc-${cm}`);
@@ -159,10 +229,10 @@ function theCanh(tap, r, ma) {
     // điểm nhấn: câu thoại, chữ trên hình, shot đỏ sẫm, chuyển cảnh đặc biệt
     const nhan = [];
     ss.forEach(s => {
-      s.thoai.forEach(t => nhan.push([s.bat_dau + (+t.luc || 0), `${ten[t.vai] || t.vai}: “${cut(t.loi.replace(/\s*\/\/\s*/g, '… ').replace(/\s*\/\s*/g, ' '), 110)}”`, s.ma]));
-      (s.chu || []).forEach(x => nhan.push([s.bat_dau + (+x.luc || 0), `Chữ ${({phuon: 'phướn', the: 'thẻ', tua: 'tựa'})[x.kieu] || x.kieu}: “${(x.dong || []).join(' / ')}”`, s.ma]));
-      if (s.do && !s.thoai.length) nhan.push([s.bat_dau, `Đỏ sẫm – ${cut(s.noi_dung || '', 110)}`, s.ma]);
-      if (s.loai === 'den' && !s._ao) nhan.push([s.bat_dau, `Màn đen ${(+s.dai).toFixed(1)} s`, s.ma]);
+      s.thoai.forEach((t, j) => nhan.push([s.bat_dau + (+t.luc || 0), `${ten[t.vai] || t.vai}: `, `“${cut(t.loi.replace(/\s*\/\/\s*/g, '… ').replace(/\s*\/\s*/g, ' '), 110)}”`, s.ma, SUA(`${pShot(s)}.thoai.${j}.loi`)]));
+      (s.chu || []).forEach((x, j) => nhan.push([s.bat_dau + (+x.luc || 0), `Chữ ${({phuon: 'phướn', the: 'thẻ', tua: 'tựa'})[x.kieu] || x.kieu}: `, `“${(x.dong || []).join(' / ')}”`, s.ma, SUA(`${pShot(s)}.chu.${j}.dong`, 'pipe')]));
+      if (s.do && !s.thoai.length) nhan.push([s.bat_dau, 'Đỏ sẫm – ', cut(s.noi_dung || '', 110), s.ma, SUA(`${pShot(s)}.noi_dung`)]);
+      if (s.loai === 'den' && !s._ao) nhan.push([s.bat_dau, `Màn đen ${(+s.dai).toFixed(1)} s`, '', s.ma, '']);
     });
     nhan.sort((a, b) => a[0] - b[0]);
     const nv = [...new Set(ss.flatMap(s => [...(s.nhan_vat || []), ...s.thoai.map(t => t.vai)]))];
@@ -178,9 +248,9 @@ function theCanh(tap, r, ma) {
         <div class="row"><span class="pill" style="background:var(${LOAI_CANH[loai][1]});color:${['tho', 'mo'].includes(loai) ? 'var(--ink)' : '#fff'}">${LOAI_CANH[loai][0]}</span>
           <span class="tag">${q ? `Nhịp ${q.so} ${esc(q.ten)}` : esc(c.nhip || '')}</span>
           ${kh ? `<a class="tag" href="#/tham-khao/${encodeURIComponent(kh.tham_khao)}/${kh.canh}">Theo cảnh ${kh.canh} của khuôn ${esc(kh.ten || kh.tham_khao)} ↗</a>` : ''}</div>
-        <h3>${esc(c.ten || '')} <span class="muted" style="font-weight:500">(${c.ma})</span></h3>
-        ${c.muc_dich ? `<p style="margin:0">${esc(c.muc_dich)}</p>` : ''}
-        ${nhan.length ? `<ul style="margin:0;padding-left:18px;display:grid;gap:3px">${nhan.slice(0, 9).map(([t, s, m]) => `<li><span class="muted" style="font-size:12.5px;margin-right:6px;font-variant-numeric:tabular-nums">${XP.tc(t, false)}</span>${esc(s)} <a class="muted" style="font-size:12px" href="#/tap/${encodeURIComponent(ma)}/kich-ban/${c.ma}">${m}</a></li>`).join('')}
+        <h3><span${SUA(`canh.${ci}.ten`)}>${esc(c.ten || '')}</span> <span class="muted" style="font-weight:500">(${c.ma})</span></h3>
+        <p style="margin:0"${SUA(`canh.${ci}.muc_dich`)}>${esc(c.muc_dich || '')}</p>
+        ${nhan.length ? `<ul style="margin:0;padding-left:18px;display:grid;gap:3px">${nhan.slice(0, 9).map(([t, nh, s, m, sua]) => `<li><span class="muted" style="font-size:12.5px;margin-right:6px;font-variant-numeric:tabular-nums">${XP.tc(t, false)}</span>${esc(nh)}${s ? `<span${sua}>${esc(s)}</span>` : ''} <a class="muted" style="font-size:12px" href="#/tap/${encodeURIComponent(ma)}/kich-ban/${c.ma}">${m}</a></li>`).join('')}
           ${nhan.length > 9 ? `<li class="muted"><a href="#/tap/${encodeURIComponent(ma)}/kich-ban/${c.ma}">+ ${nhan.length - 9} điểm nữa trong tab Kịch bản</a></li>` : ''}</ul>` : '<p class="muted" style="margin:0">Cảnh không có thoại hay chữ – kể bằng hình.</p>'}
         ${nv.length ? `<div class="muted" style="font-size:13px">Nhân vật: ${nv.map(m => esc(ten[m] || m)).join(', ')}</div>` : ''}
         <div class="muted" style="font-size:13px">Kịch bản: ${cpm.toFixed(1).replace('.', ',')} cắt/phút · có lời ≈${lp.toFixed(0)}%${q ? ` · mục tiêu nhịp: ${q.cat_phut.join('–')} cắt/phút, ${q.loi_pct.join('–')}% lời` : ''}</div>
@@ -189,8 +259,9 @@ function theCanh(tap, r, ma) {
   }).join('');
 }
 
-function dongThoai(c, s) {
-  return `<div class="line"><span class="who">${esc(c.vai)}${c.cam_xuc ? ` · ${esc(c.cam_xuc)}` : ''} · ${XP.tc(s.bat_dau + (+c.luc || 0))}</span><div>${esc(c.loi)}</div></div>`;
+function dongThoai(c, s, j) {
+  const p = `${pShot(s)}.thoai.${j}`;
+  return `<div class="line"><span class="who">${esc(c.vai)} · <span${SUA(`${p}.cam_xuc`)}>${esc(c.cam_xuc || '(cách đọc)')}</span> · ${XP.tc(s.bat_dau + (+c.luc || 0))}</span><div${SUA(`${p}.loi`)}>${esc(c.loi)}</div></div>`;
 }
 
 function tabKichBan(tap, r, body, ma, canhMo) {
@@ -201,16 +272,16 @@ function tabKichBan(tap, r, body, ma, canhMo) {
       const ss = tl.filter(s => s.chi_so_canh === ci && !s._ao);
       const bd = ss.length ? ss[0].bat_dau : 0;
       return `<details class="scene" id="canh-${c.ma}" ${canhMo === c.ma || (!canhMo && ci === 0) ? 'open' : ''}>
-        <summary><span class="sc-no">${c.ma}</span><span><b>${esc(c.ten)}</b><br><span class="muted" style="font-size:13px">${esc(c.muc_dich || '')}</span></span>
+        <summary><span class="sc-no">${c.ma}</span><span><b${SUA(`canh.${ci}.ten`)}>${esc(c.ten)}</b><br><span class="muted" style="font-size:13px"${SUA(`canh.${ci}.muc_dich`)}>${esc(c.muc_dich || '')}</span></span>
           <span class="meta"><span>${XP.tc(bd, false)}</span><span class="tag">${esc(c.nhip || '')}</span><span>${ss.length} shot</span></span></summary>
         <div class="sc-body">${ss.map(s => `<div class="shot">
           <div class="st"><b>${s.ma}</b><span>${XP.tc(s.bat_dau)} · ${(+s.dai).toFixed(1)} s</span><span>${esc(s.co_canh || '')} · ${esc(s.goc || '')}</span><span>${esc(XP.CD_VI[s.chuyen_dong] || s.chuyen_dong)}</span>
             ${s.vao !== 'cat' ? `<span>${esc(XP.VAO_VI[s.vao])}</span>` : ''}${s.do ? '<span class="pill red" style="justify-self:start">đỏ sẫm</span>' : ''}</div>
           <div class="sb${s.do ? ' do-mark' : ''}" ${s.do ? 'style="padding-left:10px"' : ''}>
-            <div>${esc(s.noi_dung || '')}</div>
+            <div${SUA(`${pShot(s)}.noi_dung`)}>${esc(s.noi_dung || '')}</div>
             ${(s.nhan_vat || []).length ? `<div class="muted" style="font-size:13px">Nhân vật: ${s.nhan_vat.map(m => esc(ten[m] || m)).join(', ')}</div>` : ''}
-            ${s.thoai.map(c => dongThoai(c, s)).join('')}
-            ${(s.chu || []).map(x => `<div class="muted" style="font-size:13px">Chữ (${esc(x.kieu)}): “${esc((x.dong || []).join(' / '))}”</div>`).join('')}
+            ${s.thoai.map((c, j) => dongThoai(c, s, j)).join('')}
+            ${(s.chu || []).map((x, j) => `<div class="muted" style="font-size:13px">Chữ (${esc(x.kieu)}): <span${SUA(`${pShot(s)}.chu.${j}.dong`, 'pipe')}>“${esc((x.dong || []).join(' / '))}”</span></div>`).join('')}
             ${(s.am_thanh || []).length ? `<div class="muted" style="font-size:13px">Âm thanh: ${esc(s.am_thanh.join(', '))}</div>` : ''}
           </div></div>`).join('')}</div></details>`;
     }).join('');
@@ -227,20 +298,20 @@ function tabPhieu(tap, r, body) {
     if (c.ma !== cur) {
       if (cur) html += '</div></details>';
       cur = c.ma;
-      html += `<details class="scene" open><summary><span class="sc-no">${c.ma}</span><span><b>${esc(c.ten)}</b>${c.nhac ? `<br><span class="muted" style="font-size:13px">Nhạc: ${esc(c.nhac.file || '')} · ${c.nhac.am_luong_db ?? -12} dB · ${esc(c.nhac.ghi_chu || '')}</span>` : '<br><span class="muted" style="font-size:13px">Không nhạc</span>'}${c.nen_am ? `<br><span class="muted" style="font-size:13px">Nền âm: ${esc(c.nen_am.file || '')} · ${esc(c.nen_am.mo_ta || '')} · ${c.nen_am.am_luong_db ?? -22} dB</span>` : ''}</span><span class="tag">${esc(c.nhip || '')}</span></summary><div class="sc-body">`;
+      html += `<details class="scene" open><summary><span class="sc-no">${c.ma}</span><span><b${SUA(`canh.${s.chi_so_canh}.ten`)}>${esc(c.ten)}</b>${c.nhac ? `<br><span class="muted" style="font-size:13px">Nhạc: ${esc(c.nhac.file || '')} · ${c.nhac.am_luong_db ?? -12} dB · ${esc(c.nhac.ghi_chu || '')}</span>` : '<br><span class="muted" style="font-size:13px">Không nhạc</span>'}${c.nen_am ? `<br><span class="muted" style="font-size:13px">Nền âm: ${esc(c.nen_am.file || '')} · ${esc(c.nen_am.mo_ta || '')} · ${c.nen_am.am_luong_db ?? -22} dB</span>` : ''}</span><span class="tag">${esc(c.nhip || '')}</span></summary><div class="sc-body">`;
     }
     if (s._ao) { html += `<div class="shot"><div class="st"><b>${XP.tc(s.bat_dau)}</b></div><div class="sb"><b>${s.loai === 'den' ? 'Màn đen' : 'Màn trắng'} ${(+s.dai).toFixed(1)} s</b><span class="muted">Media → Thư viện → màu ${s.loai === 'den' ? 'Đen' : 'Trắng'}; clip trước: Hoạt hình → Mờ dần ra 0,6 s.</span></div></div>`; return; }
     html += `<div class="shot"><div class="st"><b>${s.ma}</b><span>Bắt đầu ${XP.tc(s.bat_dau)}</span><span>Dài ${(+s.dai).toFixed(2)} s</span><span>${esc(s.co_canh || '')} ${esc(s.goc || '')}</span></div>
       <dl class="kv sb">
-        <dt>Hình</dt><dd>${esc(s.noi_dung || '')}${s.do ? ' — <b style="color:var(--red)">có điểm đỏ sẫm</b>' : ''}</dd>
+        <dt>Hình</dt><dd><span${SUA(`${pShot(s)}.noi_dung`)}>${esc(s.noi_dung || '')}</span>${s.do ? ' — <b style="color:var(--red)">có điểm đỏ sẫm</b>' : ''}</dd>
         <dt>File</dt><dd><code>${['den', 'trang'].includes(s.loai) ? `màu ${s.loai === 'den' ? 'đen' : 'trắng'} từ Thư viện` : esc(s.anh || XP.anhMacDinh(s))}</code></dd>
         <dt>Vào bằng</dt><dd>${esc(XP.VAO_VI[s.vao] || s.vao)} ${esc(XP.VAO_HD[s.vao] || '')}</dd>
         <dt>Chuyển động</dt><dd>${esc(XP.CD_VI[s.chuyen_dong] || s.chuyen_dong)}. ${esc(XP.keyframe(s))}</dd>
-        ${(s.chu || []).map(x => `<dt>Chữ ${XP.tc(s.bat_dau + (+x.luc || 0))}</dt><dd>“${esc((x.dong || []).join(' / '))}” – ${esc(XP.CHU_HD[x.kieu] || x.kieu)}</dd>`).join('')}
-        ${s.thoai.map(c => `<dt>Giọng ${XP.tc(s.bat_dau + (+c.luc || 0))}</dt><dd><code>${esc(c.file || `giong/${s.ma}_${c.vai}.wav`)}</code> ≈${c._dai.toFixed(1)} s – ${esc(c.vai)}: “${esc(c.loi)}”</dd>`).join('')}
+        ${(s.chu || []).map((x, j) => `<dt>Chữ ${XP.tc(s.bat_dau + (+x.luc || 0))}</dt><dd><span${SUA(`${pShot(s)}.chu.${j}.dong`, 'pipe')}>“${esc((x.dong || []).join(' / '))}”</span> – ${esc(XP.CHU_HD[x.kieu] || x.kieu)}</dd>`).join('')}
+        ${s.thoai.map((c, j) => `<dt>Giọng ${XP.tc(s.bat_dau + (+c.luc || 0))}</dt><dd><code>${esc(c.file || `giong/${s.ma}_${c.vai}.wav`)}</code> ≈${c._dai.toFixed(1)} s – ${esc(c.vai)}: “<span${SUA(`${pShot(s)}.thoai.${j}.loi`)}>${esc(c.loi)}</span>”</dd>`).join('')}
         ${(s.am_thanh || []).length ? `<dt>Âm thanh</dt><dd>${esc(s.am_thanh.join(', '))}</dd>` : ''}
         ${(s.sfx || []).map(x => `<dt>SFX ${XP.tc(s.bat_dau + (+x.luc || 0))}</dt><dd><code>${esc(x.file)}</code> ${x.db || 0} dB</dd>`).join('')}
-        ${s.ghi_chu ? `<dt>Ghi chú</dt><dd>${esc(s.ghi_chu)}</dd>` : ''}
+        ${s.ghi_chu ? `<dt>Ghi chú</dt><dd${SUA(`${pShot(s)}.ghi_chu`)}>${esc(s.ghi_chu)}</dd>` : ''}
       </dl></div>`;
   });
   body.innerHTML = html + '</div></details>';
@@ -384,7 +455,7 @@ function tabDoc(tap, r, body) {
     <div class="grid-cards">${Object.keys(vai).map(v => `<div class="card" style="gap:4px"><b>${esc(nv[v]?.ten || v)} <span class="tag">${esc(v)}</span></b><span class="muted" style="font-size:13px">${esc(nv[v]?.giong || '')}</span><span style="font-size:13px">${vai[v].length} câu · ≈${vai[v].reduce((a, x) => a + x.c._dai, 0).toFixed(0)} s</span></div>`).join('')}</div>
     <div class="scroll" style="background:var(--paper)"><table><thead><tr><th>File</th><th>Vai</th><th class="num">Mốc</th><th>Lời</th><th>Cách đọc</th><th></th></tr></thead><tbody>
     ${ds.map(({s, c}) => `<tr><td><code>${esc(c.file || `giong/${s.ma}_${c.vai}.wav`)}</code></td><td>${esc(c.vai)}</td><td class="num">${XP.tc(s.bat_dau + (+c.luc || 0), false)}</td>
-      <td>${esc(c.loi)}</td><td class="muted">${esc(c.cam_xuc || '')}</td><td><button class="small" data-copy="${esc(c.loi.replace(/\s*\/\/\s*/g, '… ').replace(/\s*\/\s*/g, ', '))}">Chép</button></td></tr>`).join('')}
+      <td${SUA(`${pShot(s)}.thoai.${s.thoai.indexOf(c)}.loi`)}>${esc(c.loi)}</td><td class="muted"${SUA(`${pShot(s)}.thoai.${s.thoai.indexOf(c)}.cam_xuc`)}>${esc(c.cam_xuc || '')}</td><td><button class="small" data-copy="${esc(c.loi.replace(/\s*\/\/\s*/g, '… ').replace(/\s*\/\s*/g, ', '))}">Chép</button></td></tr>`).join('')}
     </tbody></table></div>`;
   $('#loc').onchange = e => { LS.set('xp_doc_loc', e.target.value); tabDoc(tap, r, body); };
 }

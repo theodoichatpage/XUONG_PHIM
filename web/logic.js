@@ -45,7 +45,7 @@ const XP = (() => {
       shots.forEach((s0, si) => {
         const s = Object.assign({loai: 'anh', vao: 'cat', chuyen_dong: 'dung', thoai: [], chu: [], sfx: []}, s0);
         s.thoai = (s.thoai || []).map(c => Object.assign({}, c, {_dai: uocLuongDoc(c.vai, c.loi)}));
-        Object.assign(s, {bat_dau: t, canh, chi_so_canh: ci, la_dau_canh: si === 0, la_cuoi_canh: si === shots.length - 1});
+        Object.assign(s, {bat_dau: t, canh, chi_so_canh: ci, chi_so_shot: si, la_dau_canh: si === 0, la_cuoi_canh: si === shots.length - 1});
         out.push(s);
         t += +s.dai || 0;
       });
