@@ -444,7 +444,7 @@
     },
     {
      "ma": "C02_S06",
-     "dai": 7,
+     "dai": 11.5,
      "co_canh": "CU",
      "goc": "ngang",
      "chuyen_dong": "day_vao",
@@ -458,9 +458,9 @@
      "thoai": [
       {
        "vai": "KIEN",
-       "loi": "Cầm lấy. / Có cái này / nước không nuốt được cháu.",
+       "loi": "Ôm chặt cái mái chèo này. / Có nó, cháu sẽ nổi, / nước không cuốn cháu đi được đâu.",
        "luc": 0.5,
-       "cam_xuc": "dịu lại"
+       "cam_xuc": "dịu lại, chậm"
       }
      ],
      "ghi_chu": "Shot gieo vật dẫn đường. Giữ dải đỏ là điểm màu duy nhất."
@@ -779,7 +779,7 @@
     },
     {
      "ma": "C04_S04",
-     "dai": 11.8,
+     "dai": 14,
      "co_canh": "CU",
      "goc": "ngang",
      "chuyen_dong": "day_vao",
@@ -791,7 +791,7 @@
      "thoai": [
       {
        "vai": "GAO",
-       "loi": "Giặc hỏi chỗ nước cạn, / bà tôi không nói. // Đê vẫn đứng đó. / Làng tôi thì không còn.",
+       "loi": "Giặc bắt bà tôi chỉ chỗ sông cạn để chúng lội qua. / Bà không nói. // Chúng giết bà, / rồi đốt cả làng.",
        "luc": 0.4,
        "cam_xuc": "nghẹn, tăng dần"
       }
@@ -823,13 +823,21 @@
     },
     {
      "ma": "C04_S06",
-     "dai": 3,
+     "dai": 7.2,
      "co_canh": "MS",
      "goc": "cao",
      "chuyen_dong": "dung",
      "nhan_vat": [],
-     "noi_dung": "Nửa mái chèo rơi xuống bùn ngay chân Kiên",
-     "prompt": "medium high-angle shot, half of a broken wooden oar falling into mud at a soldier's boots"
+     "noi_dung": "Nửa mái chèo rơi xuống bùn ngay chân Kiên; Gáo nói",
+     "prompt": "medium high-angle shot, half of a broken wooden oar falling into mud at a soldier's boots",
+     "thoai": [
+      {
+       "vai": "GAO",
+       "loi": "Các ông giữ được con đê. / Còn làng tôi thì cháy sạch.",
+       "luc": 0.3,
+       "cam_xuc": "cay đắng"
+      }
+     ]
     },
     {
      "ma": "C04_S07",
